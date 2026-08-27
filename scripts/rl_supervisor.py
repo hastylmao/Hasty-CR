@@ -199,7 +199,7 @@ class Supervisor:
         log(f"attempt {self.attempts} '{name}' on rung '{rung.name}': {rung.why}")
         log(f"  entropy {rung.entropy}->{rung.entropy_final}  lr {rung.lr}  "
             f"kl {rung.target_kl}  league {rung.league}  "
-            f"scripted {rung.scripted_share:.0%}  init {init.name}")
+            f"scripted {self.args.scripted_share if self.args.scripted_share is not None else rung.scripted_share:.0%}  init {init.name}")
         return Attempt(rung, name, process, log_path, time.time())
 
     def prune(self, keeping: str) -> None:

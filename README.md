@@ -30,30 +30,38 @@
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="50%" align="center">
 
-<video src="https://github.com/hastylmao/Hasty-CR/raw/main/docs/assets/simulator-showcase.mp4" controls muted loop width="100%"></video>
+<a href="docs/assets/simulator-showcase.mp4"><img src="docs/assets/simulator-preview.gif" width="300" alt="The simulator running a match"></a>
 
-**The simulator, running headless-fast with a renderer attached.**
+### The simulator
+
 Two policies fighting on the integer engine. Same seed, same match, every time — down to the tick a projectile lands on.
 
-`python -m sim.watch`
+```bash
+python -m sim.watch
+```
+
+<sub><a href="docs/assets/simulator-showcase.mp4"><b>▶ full video</b></a></sub>
 
 </td>
-<td width="50%" valign="top">
+<td width="50%" align="center">
 
-<video src="https://github.com/hastylmao/Hasty-CR/raw/main/docs/assets/bot-showcase.mp4" controls muted loop width="100%"></video>
+<a href="docs/assets/bot-showcase.mp4"><img src="docs/assets/bot-preview.gif" width="300" alt="The trained agent playing live"></a>
 
-**The same policy playing the actual game.**
-Vision reads the emulator, the trained network picks the card and the tile, and taps go back to the device. No scripting of the plays.
+### The same policy, live
 
-`.\run.ps1 -Brain rl -Checkpoint <path>`
+Vision reads the emulator, the trained network picks the card and the tile, taps go back to the device. None of the plays are scripted.
+
+```powershell
+.\run.ps1 -Brain rl -Checkpoint <path>
+```
+
+<sub><a href="docs/assets/bot-showcase.mp4"><b>▶ full video</b></a></sub>
 
 </td>
 </tr>
 </table>
-
-<sub>If the players don't load, GitHub is being GitHub — [simulator](docs/assets/simulator-showcase.mp4) · [live bot](docs/assets/bot-showcase.mp4).</sub>
 
 <br>
 

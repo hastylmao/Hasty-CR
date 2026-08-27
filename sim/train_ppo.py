@@ -270,7 +270,7 @@ def main() -> int:
                              "minibatches, and a behaviour clone starts at "
                              "top-1 probability 0.99 - so sixteen unbounded "
                              "steps a rollout is enough to walk it off a "
-                             "policy worth 75%. Five runs did exactly that. "
+                             "policy worth 75%%. Five runs did exactly that. "
                              "0 disables")
     parser.add_argument("--value-warmup", type=int, default=0,
                         help="steps spent fitting the critic before the policy "
@@ -280,8 +280,8 @@ def main() -> int:
                              "and a RANDOM value head. PPO advantages are "
                              "returns minus values, so the first updates are "
                              "noise scaled by a garbage critic, and they shred "
-                             "the clone. Three runs regressed from a 75% clone "
-                             "to 35% before this was found. Use ~300k with "
+                             "the clone. Three runs regressed from a 75%% clone "
+                             "to 35%% before this was found. Use ~300k with "
                              "--init")
     parser.add_argument("--value-warmup-lr", type=float, default=1e-3,
                         help="learning rate during value warmup. Much larger "

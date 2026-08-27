@@ -2346,6 +2346,7 @@ class Battle:
         # Sight range exists precisely so that does not happen.
         best, best_d = None, None
         fallback, fallback_d = None, None
+        offlane, offlane_d = None, None
         sniper, sniper_d = None, None
         # Loop-invariant, and this is the hottest loop in the engine: how far
         # the unit can see does not depend on which candidate is being looked
@@ -2393,18 +2394,33 @@ class Battle:
             # they do not pull from the far corner of the map. Crown towers
             # are exempt because they are not a pull, they are where the unit
             # is going when it can see nothing at all.
+            #
+            # Crown towers are additionally lane-committed - see
+            # `arena.same_lane`. Exempting them from the sight gate above is
+            # right, because a unit that can see nothing still has to be
+            # walking somewhere; letting them then compete on raw distance was
+            # not, because with the near princess tower already down the far
+            # lane's tower is nearer than the king, and the unit crosses the
+            # whole arena. The far tower stays eligible, but only once this
+            # lane has nothing standing.
             pulled_by = (other.is_building if entity.target_only_buildings
                          else other.is_tower)
-            if (pulled_by and (other.is_tower or gap <= sight)
-                    and (fallback_d is None or gap < fallback_d)):
-                fallback, fallback_d = other, gap
+            if pulled_by:
+                if other.is_tower:
+                    if arena.same_lane(entity.pos, other.pos):
+                        if fallback_d is None or gap < fallback_d:
+                            fallback, fallback_d = other, gap
+                    elif offlane_d is None or gap < offlane_d:
+                        offlane, offlane_d = other, gap
+                elif gap <= sight and (fallback_d is None or gap < fallback_d):
+                    fallback, fallback_d = other, gap
             if (best is None and self._is_sniper_target(entity, other)
                     and self._pending_damage(other.uid) < other.hitpoints
                     and (sniper_d is None or gap < sniper_d)):
                 sniper, sniper_d = other, gap
 
         if best is None:
-            best = sniper or fallback
+            best = sniper or fallback or offlane
         if best is None:
             entity.target_uid = None
             # Nothing attackable, which is not the same as nowhere to go. A
@@ -3667,6 +3683,7 @@ class Battle:
         sight = (entity.ability_siege_range_mt if self._siege_active(entity)
                  else entity.sight_range_mt)
         best, best_gap = None, None
+        offlane, offlane_gap = None, None
         distant, distant_gap = None, None
         for other in self.entities.values():
             if (other.side == entity.side or not other.alive
@@ -3674,12 +3691,25 @@ class Battle:
                     or other.untargetable):
                 continue
             gap = distance(entity.pos, other.pos) - other.collision_radius_mt
-            if other.is_tower or gap <= sight:
+            if other.is_tower:
+                # Crown towers are lane-committed; buildings are not. A Cannon
+                # dropped in the middle is *meant* to pull a Hog out of either
+                # lane, which is why the building case is gated on sight range
+                # and not on lane.
+                if arena.same_lane(entity.pos, other.pos):
+                    if best_gap is None or gap < best_gap:
+                        best, best_gap = other, gap
+                elif offlane_gap is None or gap < offlane_gap:
+                    offlane, offlane_gap = other, gap
+            elif gap <= sight:
                 if best_gap is None or gap < best_gap:
                     best, best_gap = other, gap
             elif distant_gap is None or gap < distant_gap:
                 distant, distant_gap = other, gap
-        chosen = best if best is not None else distant
+        # The far lane's tower is a real destination and outranks the
+        # out-of-sight-building last resort, which exists only so a unit in a
+        # bare test arena is not stranded.
+        chosen = best or offlane or distant
         return chosen.uid if chosen is not None else None
 
     def _move(self, entity: Entity, dt_ms: int) -> None:

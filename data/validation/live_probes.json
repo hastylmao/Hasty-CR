@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-08-20T18:15:39.637532+00:00",
+  "completed": [],
+  "captures": [
+    {
+      "id": "Clash Royale(24)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\data\\recording of cr showcase\\Clash Royale(24).mp4",
+      "sha256": "82c52b7f46c12d45ffbeaaccc6fa612643ae30e2f85f164b70f19c16adde8e61",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 642.316667,
+      "fps": 59.99688627105011,
+      "frames": 38537,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(25)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\data\\recording of cr showcase\\Clash Royale(25).mp4",
+      "sha256": "bcfab187e941fe1effcb8c5672e892269f7a5f3a5ef57e96ccc311a750c0f111",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 245.016667,
+      "fps": 59.991837289980275,
+      "frames": 14699,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(26)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\data\\recording of cr showcase\\Clash Royale(26).mp4",
+      "sha256": "2520954660e236ff6ac4e1593eb1eddd56229ff464c71c03c71957a56afc6f3f",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 141.35,
+      "fps": 59.985850725150335,
+      "frames": 8479,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(11)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(11).mp4",
+      "sha256": "6ef3581f3bdae7b7d29bbe71db9f0592be8213aeee8e92791053097a79f92130",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 109.966667,
+      "fps": 29.981812670506216,
+      "frames": 3297,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(12)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(12).mp4",
+      "sha256": "feac58e9018cce4fe53dc52be8b0b82c14c44578f32a0992b1c35739503e0336",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 78.866667,
+      "fps": 29.987320371935756,
+      "frames": 2365,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(13)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(13).mp4",
+      "sha256": "6eb35576a3386f5c31e612509f1c3e87dfc37800eca9aac99479c7c6ccf474aa",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 143.133333,
+      "fps": 29.98602701443875,
+      "frames": 4292,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(14)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(14).mp4",
+      "sha256": "6a397f5970ae22e312e02f74f3ccd59019ee3a2d42c343fe4df81215ebef3439",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 105.633333,
+      "fps": 29.990533291259073,
+      "frames": 3168,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(15)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(15).mp4",
+      "sha256": "31115fb7fe96dddfc8d72e86f4065df315542ebbf475dd0a6cbc415cb1673ee6",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 146.8,
+      "fps": 29.993188010899182,
+      "frames": 4403,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(16)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(16).mp4",
+      "sha256": "893f6a27e709e8b7dc71ad09da3ace77fd265b62eeb1a4cf93de4b873e0f0f35",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 84.766667,
+      "fps": 29.98820290994888,
+      "frames": 2542,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(17)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(17).mp4",
+      "sha256": "78bb2c340f1e226590baddda5a69bdf66c731ccf6ffcf619104ad28a0c755024",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 115.933333,
+      "fps": 29.99137435307648,
+      "frames": 3477,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(18)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(18).mp4",
+      "sha256": "29a2147c5241b535073321e9354b9efd40278373c6176709f7db5f77cdc3e79a",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 128.966667,
+      "fps": 29.992246058413027,
+      "frames": 3868,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(19)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(19).mp4",
+      "sha256": "f722771c169ad8726dbe1a3707bb6194809f2a9939e86c7ec8bc503c55799e0d",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 129.8,
+      "fps": 29.992295839753467,
+      "frames": 3893,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(20)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(20).mp4",
+      "sha256": "d6c938610a85f1ae97ef6356a34eb24dcaadc3316f088fe8568c47e28e0d5427",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 82.366667,
+      "fps": 29.97573797007683,
+      "frames": 2471,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(21)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(21).mp4",
+      "sha256": "23547e6918a2475b1ae2baa93815e37b64c39cb0cfab1a17cd622e15383db5fa",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 125.533333,
+      "fps": 29.984072205999468,
+      "frames": 3765,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(22)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(22).mp4",
+      "sha256": "61bd67b00521a847078b460dcd845cf5ada05cae36a8343e0d98a5ad0306dc3e",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 84.133333,
+      "fps": 29.98811410459588,
+      "frames": 2523,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(23)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(23).mp4",
+      "sha256": "9d6de7bdb9272b392adf437dd6d4e54218389fd2e6905800e99d2c04b52304d6",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 60.366667,
+      "fps": 29.983434566537824,
+      "frames": 1810,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(3)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(3).mp4",
+      "sha256": "eb3f7893e21648a7e2692a57256b33c18a6d583770ff1836c070e5708b9fbcdf",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 93.366667,
+      "fps": 29.978594363182303,
+      "frames": 2801,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(4)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(4).mp4",
+      "sha256": "7fb8da06c1ffb0ee29255c69e28d9a2a559efcf10eec1e262d41852481d2bd1f",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 151.366667,
+      "fps": 29.993393525655144,
+      "frames": 4540,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(6)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(6).mp4",
+      "sha256": "8ea8a6780e949b8e73c7a2ea614812a945ed4403cffc7382b1f2284e19d4c7b7",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 135.166667,
+      "fps": 29.99260172626387,
+      "frames": 4054,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(7)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(7).mp4",
+      "sha256": "b4746379ac1e57d8e159607e3b66cdd26a8804460eebf24916600284d865be81",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 150.2,
+      "fps": 29.993342210386153,
+      "frames": 4505,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(8)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(8).mp4",
+      "sha256": "192fd63d59e2b980e7fd31125db9c3fdf4413358ea597b8523a02b4fe8f54555",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 165.166667,
+      "fps": 29.987891019172555,
+      "frames": 4953,
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "id": "Clash Royale(9)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(9).mp4",
+      "sha256": "f899bc611c220d47ed6e2dfa7b6a1dbe9003b1283feb7acb20aef5060395f3ef",
+      "classification": "contextual_only",
+      "assessment": "ordinary gameplay; not accepted for calibration until a reviewer adds frame ranges, card levels, deployment points and an isolated observation",
+      "duration_seconds": 142.7,
+      "fps": 29.99299229152067,
+      "frames": 4280,
+      "width": 1080,
+      "height": 1920
+    }
+  ],
+  "probes": {
+    "map_anchors": {
+      "status": "pending",
+      "accepted_evidence": [],
+      "criteria": "same-frame tower/bridge/river anchors with a known arena crop"
+    },
+    "troop_contact": {
+      "status": "pending",
+      "accepted_evidence": [],
+      "criteria": "isolated two-unit King-Tower and open-lane contact at 60 fps"
+    },
+    "building_contact": {
+      "status": "pending",
+      "accepted_evidence": [],
+      "criteria": "isolated troop-to-building route/contact at 60 fps"
+    },
+    "projectile_timing": {
+      "status": "pending",
+      "accepted_evidence": [],
+      "criteria": "known launch frame, target path, hit/miss frame and card levels"
+    },
+    "spell_timing": {
+      "status": "pending",
+      "accepted_evidence": [],
+      "criteria": "known cast frame, aim point, impact frames and affected units"
+    }
+  },
+  "notes": [
+    "A capture being catalogued is not an accepted live measurement.",
+    "Only a controlled clip with recorded frame ranges may be promoted to accepted_evidence."
+  ]
+}

@@ -1,0 +1,658 @@
+{
+  "archer": {
+    "slug": "archers",
+    "Hitpoints": "304",
+    "Damage": "112",
+    "Hit speed": "0.9",
+    "Range": "5",
+    "Speed": "Medium"
+  },
+  "archer_queen": {
+    "slug": "archer-queen",
+    "Hitpoints": "1000",
+    "Damage": "225",
+    "Hit speed": "1.2",
+    "Range": "5",
+    "Speed": "Medium"
+  },
+  "baby_dragon": {
+    "slug": "baby-dragon",
+    "Hitpoints": "1152",
+    "Damage": "168",
+    "Hit speed": "1.5",
+    "Range": "3.5",
+    "Speed": "Fast"
+  },
+  "balloon": {
+    "slug": "balloon",
+    "Hitpoints": "1676",
+    "Damage": "640",
+    "Hit speed": "2",
+    "Speed": "Medium"
+  },
+  "bandit": {
+    "slug": "bandit",
+    "Hitpoints": "906",
+    "Damage": "194",
+    "Hit speed": "1",
+    "Speed": "Fast"
+  },
+  "barbarian": {
+    "slug": "barbarians",
+    "Hitpoints": "716",
+    "Damage": "192",
+    "Hit speed": "1.4",
+    "Speed": "Medium"
+  },
+  "barbarian_hut": {
+    "slug": "barbarian-hut",
+    "Hitpoints": "1164",
+    "Damage": "1484"
+  },
+  "bat": {
+    "slug": "bats",
+    "Hitpoints": "81",
+    "Damage": "81",
+    "Hit speed": "1.2",
+    "Speed": "Very fast"
+  },
+  "battle_healer": {
+    "slug": "battle-healer",
+    "Hitpoints": "1920",
+    "Damage": "268",
+    "Hit speed": "2",
+    "Speed": "Medium"
+  },
+  "battle_ram": {
+    "slug": "battle-ram",
+    "Hitpoints": "967",
+    "Damage": "286",
+    "Speed": "Medium"
+  },
+  "bomb_tower": {
+    "slug": "bomb-tower",
+    "Hitpoints": "1356",
+    "Damage": "222",
+    "Hit speed": "1.8",
+    "Range": "6"
+  },
+  "bomber": {
+    "slug": "bomber",
+    "Hitpoints": "304",
+    "Damage": "225",
+    "Hit speed": "1.8",
+    "Range": "4.5",
+    "Speed": "Medium"
+  },
+  "bowler": {
+    "slug": "bowler",
+    "Hitpoints": "2081",
+    "Damage": "289",
+    "Hit speed": "2.5",
+    "Range": "4",
+    "Speed": "Slow"
+  },
+  "brawler": {
+    "error": "HTTP Error 404: Not Found"
+  },
+  "cannon": {
+    "slug": "cannon",
+    "Hitpoints": "824",
+    "Damage": "202",
+    "Hit speed": "1",
+    "Range": "5.5"
+  },
+  "cannon_cart": {
+    "slug": "cannon-cart",
+    "Hitpoints": "1809",
+    "Damage": "212",
+    "Hit speed": "0.9",
+    "Range": "5.5",
+    "Speed": "Medium"
+  },
+  "dark_prince": {
+    "slug": "dark-prince",
+    "Hitpoints": "1200",
+    "Damage": "266",
+    "Hit speed": "1.4",
+    "Speed": "Medium"
+  },
+  "dart_goblin": {
+    "slug": "dart-goblin",
+    "Hitpoints": "261",
+    "Damage": "151",
+    "Hit speed": "0.8",
+    "Range": "6.5",
+    "Speed": "Very fast"
+  },
+  "electro_dragon": {
+    "slug": "electro-dragon",
+    "Hitpoints": "1049",
+    "Damage": "192",
+    "Hit speed": "2.1",
+    "Range": "3.5",
+    "Speed": "Medium"
+  },
+  "electro_giant": {
+    "slug": "electro-giant",
+    "Hitpoints": "3952",
+    "Damage": "163",
+    "Hit speed": "1.8",
+    "Speed": "Slow"
+  },
+  "electro_spirit": {
+    "slug": "electro-spirit",
+    "Hitpoints": "217",
+    "Damage": "99",
+    "Range": "2.5",
+    "Speed": "Very fast"
+  },
+  "electro_wizard": {
+    "slug": "electro-wizard",
+    "Hitpoints": "714",
+    "Damage": "235",
+    "Hit speed": "1.8",
+    "Range": "5",
+    "Speed": "Fast"
+  },
+  "elite_barbarian": {
+    "slug": "elite-barbarians",
+    "Hitpoints": "1341",
+    "Damage": "384",
+    "Hit speed": "1.4",
+    "Speed": "Fast"
+  },
+  "elixir_collector": {
+    "slug": "elixir-collector",
+    "Hitpoints": "1070"
+  },
+  "elixir_golem_large": {
+    "slug": "elixir-golem",
+    "Hitpoints": "1569",
+    "Damage": "253",
+    "Hit speed": "1.1",
+    "Speed": "Slow"
+  },
+  "elixir_golem_medium": {
+    "error": "HTTP Error 404: Not Found"
+  },
+  "elixir_golem_small": {
+    "error": "HTTP Error 404: Not Found"
+  },
+  "executioner": {
+    "slug": "executioner",
+    "Hitpoints": "1280",
+    "Damage": "179",
+    "Hit speed": "2.4",
+    "Range": "4.5",
+    "Speed": "Medium"
+  },
+  "fire_spirit": {
+    "slug": "fire-spirit",
+    "Hitpoints": "217",
+    "Damage": "207",
+    "Range": "2.5",
+    "Speed": "Very fast"
+  },
+  "firecracker": {
+    "slug": "firecracker",
+    "Hitpoints": "304",
+    "Damage": "320",
+    "Hit speed": "3",
+    "Range": "6",
+    "Speed": "Fast"
+  },
+  "fisherman": {
+    "slug": "fisherman",
+    "Hitpoints": "870",
+    "Damage": "194",
+    "Hit speed": "1.3",
+    "Range": "7",
+    "Speed": "Medium"
+  },
+  "flying_machine": {
+    "slug": "flying-machine",
+    "Hitpoints": "614",
+    "Damage": "171",
+    "Hit speed": "1.1",
+    "Range": "6",
+    "Speed": "Fast"
+  },
+  "furnace": {
+    "slug": "furnace",
+    "Hitpoints": "896",
+    "Damage": "135",
+    "Hit speed": "1.7",
+    "Range": "5.5",
+    "Speed": "Medium"
+  },
+  "giant": {
+    "slug": "giant",
+    "Hitpoints": "3968",
+    "Damage": "253",
+    "Hit speed": "1.5",
+    "Speed": "Slow"
+  },
+  "giant_skeleton": {
+    "slug": "giant-skeleton",
+    "Hitpoints": "3361",
+    "Damage": "276",
+    "Hit speed": "1.3",
+    "Speed": "Medium"
+  },
+  "giant_snowball": {
+    "slug": "giant-snowball",
+    "Damage": "179"
+  },
+  "goblin": {
+    "slug": "goblins",
+    "Hitpoints": "202",
+    "Damage": "125",
+    "Hit speed": "1.1",
+    "Speed": "Very fast"
+  },
+  "goblin_cage": {
+    "slug": "goblin-cage",
+    "Hitpoints": "780",
+    "Damage": "848.07"
+  },
+  "goblin_drill": {
+    "slug": "goblin-drill",
+    "Hitpoints": "1313",
+    "Damage": "84"
+  },
+  "goblin_hut": {
+    "slug": "goblin-hut",
+    "Hitpoints": "1180",
+    "Range": "6",
+    "Damage": "1484"
+  },
+  "golden_knight": {
+    "slug": "golden-knight",
+    "Hitpoints": "1799",
+    "Damage": "161",
+    "Hit speed": "0.9",
+    "Speed": "Medium"
+  },
+  "golem": {
+    "slug": "golem",
+    "Hitpoints": "5120",
+    "Damage": "312",
+    "Hit speed": "2.5",
+    "Speed": "Slow"
+  },
+  "golemite": {
+    "error": "HTTP Error 404: Not Found"
+  },
+  "guard": {
+    "slug": "guards",
+    "Hitpoints": "81",
+    "Damage": "117",
+    "Hit speed": "1",
+    "Speed": "Fast"
+  },
+  "heal_spirit": {
+    "slug": "heal-spirit",
+    "Hitpoints": "217",
+    "Damage": "110",
+    "Range": "2.5",
+    "Speed": "Very fast"
+  },
+  "hog": {
+    "slug": "royal-hogs",
+    "Hitpoints": "837",
+    "Damage": "74",
+    "Hit speed": "1.2",
+    "Speed": "Very fast"
+  },
+  "hog_rider": {
+    "slug": "hog-rider",
+    "Hitpoints": "1697",
+    "Damage": "317",
+    "Hit speed": "1.6",
+    "Speed": "Very fast"
+  },
+  "hunter": {
+    "slug": "hunter",
+    "Hitpoints": "885",
+    "Damage": "832",
+    "Hit speed": "2.2",
+    "Range": "4",
+    "Speed": "Medium"
+  },
+  "ice_golem": {
+    "slug": "ice-golem",
+    "Hitpoints": "1318",
+    "Damage": "84",
+    "Hit speed": "2.5",
+    "Speed": "Slow"
+  },
+  "ice_spirit": {
+    "slug": "ice-spirit",
+    "Hitpoints": "217",
+    "Damage": "110",
+    "Range": "2.5",
+    "Speed": "Very fast"
+  },
+  "ice_wizard": {
+    "slug": "ice-wizard",
+    "Hitpoints": "688",
+    "Damage": "89",
+    "Hit speed": "1.7",
+    "Range": "5.5",
+    "Speed": "Medium"
+  },
+  "inferno_dragon": {
+    "slug": "inferno-dragon",
+    "Hitpoints": "1295",
+    "Damage": "35",
+    "Hit speed": "0.4",
+    "Range": "3.5",
+    "Speed": "Medium"
+  },
+  "inferno_tower": {
+    "slug": "inferno-tower",
+    "Hitpoints": "1748",
+    "Damage": "43",
+    "Hit speed": "0.4",
+    "Range": "6"
+  },
+  "knight": {
+    "slug": "knight",
+    "Hitpoints": "1766",
+    "Damage": "202",
+    "Hit speed": "1.2",
+    "Speed": "Medium"
+  },
+  "lava_hound": {
+    "slug": "lava-hound",
+    "Hitpoints": "3581",
+    "Damage": "53",
+    "Hit speed": "1.3",
+    "Range": "3.5",
+    "Speed": "Slow"
+  },
+  "lava_pup": {
+    "error": "HTTP Error 404: Not Found"
+  },
+  "little_prince": {
+    "slug": "little-prince",
+    "Hitpoints": "698",
+    "Damage": "104",
+    "Hit speed": "1.2",
+    "Range": "5.5",
+    "Speed": "Medium"
+  },
+  "lumberjack": {
+    "slug": "lumberjack",
+    "Hitpoints": "1282",
+    "Damage": "256",
+    "Hit speed": "0.8",
+    "Speed": "Very fast"
+  },
+  "magic_archer": {
+    "slug": "magic-archer",
+    "Hitpoints": "529",
+    "Damage": "135",
+    "Hit speed": "1.1",
+    "Range": "7",
+    "Speed": "Medium"
+  },
+  "mega_knight": {
+    "slug": "mega-knight",
+    "Hitpoints": "3993",
+    "Damage": "268",
+    "Hit speed": "1.7",
+    "Speed": "Medium"
+  },
+  "mega_minion": {
+    "slug": "mega-minion",
+    "Hitpoints": "837",
+    "Damage": "312",
+    "Hit speed": "1.5",
+    "Speed": "Medium"
+  },
+  "mighty_miner": {
+    "slug": "mighty-miner",
+    "Hitpoints": "2250",
+    "Damage": "43",
+    "Hit speed": "0.4",
+    "Speed": "Medium"
+  },
+  "miner": {
+    "slug": "miner",
+    "Hitpoints": "1210",
+    "Damage": "192",
+    "Hit speed": "1.3",
+    "Speed": "Fast"
+  },
+  "minion": {
+    "slug": "minions",
+    "Hitpoints": "230",
+    "Damage": "107",
+    "Hit speed": "1.2",
+    "Range": "2.5",
+    "Speed": "Fast"
+  },
+  "minipekka": {
+    "slug": "mini-pekka",
+    "Hitpoints": "1392",
+    "Damage": "755",
+    "Hit speed": "1.6",
+    "Speed": "Fast"
+  },
+  "monk": {
+    "slug": "monk",
+    "Hitpoints": "2214",
+    "Damage": "140",
+    "Hit speed": "0.8",
+    "Speed": "Medium"
+  },
+  "mortar": {
+    "slug": "mortar",
+    "Hitpoints": "1369",
+    "Damage": "266",
+    "Hit speed": "4.7",
+    "Range": "11.5"
+  },
+  "mother_witch": {
+    "slug": "mother-witch",
+    "Hitpoints": "529",
+    "Damage": "133",
+    "Hit speed": "1",
+    "Range": "5.5",
+    "Speed": "Medium"
+  },
+  "musketeer": {
+    "slug": "musketeer",
+    "Hitpoints": "721",
+    "Damage": "217",
+    "Hit speed": "1",
+    "Range": "6",
+    "Speed": "Medium"
+  },
+  "night_witch": {
+    "slug": "night-witch",
+    "Hitpoints": "906",
+    "Damage": "314",
+    "Hit speed": "1.3",
+    "Speed": "Medium"
+  },
+  "pekka": {
+    "slug": "pekka",
+    "Hitpoints": "3760",
+    "Damage": "842",
+    "Hit speed": "1.8",
+    "Speed": "Slow"
+  },
+  "phoenix_egg": {
+    "error": "HTTP Error 404: Not Found"
+  },
+  "phoenix_large": {
+    "slug": "phoenix",
+    "Hitpoints": "1052",
+    "Damage": "217",
+    "Hit speed": "1",
+    "Speed": "Medium"
+  },
+  "phoenix_small": {
+    "error": "HTTP Error 404: Not Found"
+  },
+  "prince": {
+    "slug": "prince",
+    "Hitpoints": "1920",
+    "Damage": "391",
+    "Hit speed": "1.4",
+    "Speed": "Medium"
+  },
+  "princess": {
+    "slug": "princess",
+    "Hitpoints": "261",
+    "Damage": "168",
+    "Hit speed": "3",
+    "Range": "9",
+    "Speed": "Medium"
+  },
+  "ram_rider": {
+    "slug": "ram-rider",
+    "Hitpoints": "1766",
+    "Damage": "250",
+    "Hit speed": "1.7",
+    "Range": "5.5",
+    "Speed": "Medium"
+  },
+  "rascal_boy": {
+    "slug": "rascals",
+    "Speed": "Medium"
+  },
+  "rascal_girl": {
+    "slug": "rascals",
+    "Speed": "Medium"
+  },
+  "royal_ghost": {
+    "slug": "royal-ghost",
+    "Hitpoints": "1210",
+    "Damage": "261",
+    "Hit speed": "1.8",
+    "Speed": "Fast"
+  },
+  "royal_giant": {
+    "slug": "royal-giant",
+    "Hitpoints": "3164",
+    "Damage": "307",
+    "Hit speed": "1.8",
+    "Range": "5",
+    "Speed": "Slow"
+  },
+  "royal_guardian": {
+    "error": "HTTP Error 404: Not Found"
+  },
+  "royal_hog": {
+    "slug": "royal-hogs",
+    "Hitpoints": "837",
+    "Damage": "74",
+    "Hit speed": "1.2",
+    "Speed": "Very fast"
+  },
+  "royal_recruit": {
+    "slug": "royal-recruits",
+    "Hitpoints": "547",
+    "Damage": "133",
+    "Hit speed": "1.3",
+    "Speed": "Medium"
+  },
+  "skeleton": {
+    "slug": "skeletons",
+    "Hitpoints": "81",
+    "Damage": "81",
+    "Hit speed": "1.1",
+    "Speed": "Fast"
+  },
+  "skeleton_dragon": {
+    "slug": "skeleton-dragons",
+    "Hitpoints": "560",
+    "Damage": "151",
+    "Hit speed": "2",
+    "Range": "3.5",
+    "Speed": "Fast"
+  },
+  "skeleton_king": {
+    "slug": "skeleton-king",
+    "Hitpoints": "2298",
+    "Damage": "204",
+    "Hit speed": "1.6",
+    "Speed": "Medium"
+  },
+  "sparky": {
+    "slug": "sparky",
+    "Hitpoints": "1451",
+    "Damage": "1331",
+    "Hit speed": "4",
+    "Range": "5",
+    "Speed": "Slow"
+  },
+  "spear_goblin": {
+    "slug": "spear-goblins",
+    "Hitpoints": "133",
+    "Damage": "81",
+    "Hit speed": "1.6",
+    "Range": "5",
+    "Speed": "Very fast"
+  },
+  "tesla": {
+    "slug": "tesla",
+    "Hitpoints": "1182",
+    "Damage": "220",
+    "Hit speed": "1.1",
+    "Range": "5.5"
+  },
+  "tombstone": {
+    "slug": "tombstone",
+    "Hitpoints": "529",
+    "Damage": "848.07"
+  },
+  "valkyrie": {
+    "slug": "valkyrie",
+    "Hitpoints": "1907",
+    "Damage": "266",
+    "Hit speed": "1.5",
+    "Speed": "Medium"
+  },
+  "wall_breaker": {
+    "slug": "wall-breakers",
+    "Hitpoints": "330",
+    "Damage": "281",
+    "Speed": "Very fast"
+  },
+  "witch": {
+    "slug": "witch",
+    "Hitpoints": "839",
+    "Damage": "135",
+    "Hit speed": "1.1",
+    "Range": "5.5",
+    "Speed": "Medium"
+  },
+  "wizard": {
+    "slug": "wizard",
+    "Hitpoints": "755",
+    "Damage": "281",
+    "Hit speed": "1.4",
+    "Range": "5.5",
+    "Speed": "Medium"
+  },
+  "x_bow": {
+    "slug": "x-bow",
+    "Hitpoints": "1600",
+    "Damage": "58",
+    "Hit speed": "0.4",
+    "Range": "11.5"
+  },
+  "zappy": {
+    "slug": "zappies",
+    "Hitpoints": "529",
+    "Damage": "117",
+    "Hit speed": "2.2",
+    "Range": "4.5",
+    "Speed": "Medium"
+  }
+}

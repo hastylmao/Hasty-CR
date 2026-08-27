@@ -1,0 +1,7 @@
+step,ckpt,n_vs_brain,brain_win_rate,brain_wilson_lo,brain_wilson_hi,brain_crown_diff,meta_win_rate,simple_win_rate,illegal_rate,source
+1024000,pilot_league/step1024000.pt,100,0.090,0.048,0.162,-0.75,0.770,1.000,0.000,eval_league_1024k_100.json
+1505280,live_candidate/pilot_best_20260824.pt,100,0.240,0.167,0.332,-0.54,0.800,1.000,0.000,eval_live_100.json
+4392960,pilot_best.pt,100,0.420,0.328,0.518,-0.21,0.910,1.000,0.000,eval_pilot_best_100.json
+4392960,pilot_best.pt,300,0.433,0.378,0.490,-0.17,NOT_MEASURED,NOT_MEASURED,0.000,eval_pilot_best_300brain.json
+6000640,pilot_last.pt,100,0.430,0.337,0.528,-0.21,0.850,1.000,0.000,eval_pilot_last_100.json
+6000640,pilot_last.pt,300,0.423,0.369,0.480,-0.21,NOT_MEASURED,NOT_MEASURED,0.000,eval_pilot_last_300brain.json

@@ -1,0 +1,102 @@
+{
+  "actions": [
+    {
+      "action": "deploy",
+      "card": "hog_rider",
+      "position": [
+        9,
+        22
+      ],
+      "side": 1,
+      "time_ms": 0
+    },
+    {
+      "action": "building",
+      "card": "cannon",
+      "metadata": {
+        "map_ready": true,
+        "sweep_role": "hog_cannon_pull_map"
+      },
+      "position": [
+        9,
+        20
+      ],
+      "side": 1,
+      "time_ms": 100
+    }
+  ],
+  "category": "building_pull",
+  "decks": [
+    [
+      "hog_rider",
+      "cannon",
+      "knight",
+      "musketeer",
+      "fireball",
+      "log",
+      "minions",
+      "giant"
+    ],
+    [
+      "giant",
+      "hog_rider",
+      "balloon",
+      "bowler",
+      "fisherman",
+      "tornado",
+      "minions",
+      "cannon"
+    ]
+  ],
+  "dt_ms": 50,
+  "duration_ms": 1000,
+  "evidence_ids": [
+    "SYNTH-S5-037"
+  ],
+  "evidence_status": "synthetic",
+  "measures": [
+    {
+      "category": "position",
+      "evidence_ids": [
+        "SYNTH-S5-037"
+      ],
+      "name": "entity_positions",
+      "tolerance": 0.5
+    },
+    {
+      "category": "building_pull",
+      "evidence_ids": [
+        "SYNTH-S5-037"
+      ],
+      "name": "event_order_candidate",
+      "tolerance": 250.0
+    }
+  ],
+  "metadata": {
+    "candidate_thresholds_only": true,
+    "implementation_locations": [
+      "tools/calibration/core.py"
+    ],
+    "provenance": {
+      "method": "deterministic template",
+      "real_data_claim": false,
+      "source": "generated_synthetic_catalog"
+    }
+  },
+  "observation_windows": [
+    [
+      0,
+      1000
+    ]
+  ],
+  "scenario_id": "sprint5_037_building_pull",
+  "seed": 5037,
+  "split": "train",
+  "tags": [
+    "sprint-5",
+    "building_pull",
+    "hog_rider",
+    "cannon",
+    "hog_cannon_pull_map"
+  ]
+}

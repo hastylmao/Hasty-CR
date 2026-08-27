@@ -1,0 +1,543 @@
+# Code and asset map
+
+Generated: `2026-08-23T20:02:09.659880+00:00`
+
+Static clean-room analysis only. APK code and native libraries were never executed. Raw proprietary bytes remain ignored under `_references/apk_analysis/`.
+
+## clash-royale-mod-15-535-13-an1-com
+
+- Package/version: `nullsroyale.rel.free` / `15.535.13` (`150535013`).
+- Manifest: android-binary-xml, parsed; min/target SDK `21`/`34`.
+- DEX: 1 files, 6,649 declared strings.
+- Native: 16 libraries across arm64-v8a, armeabi-v7a.
+- Assets/resources/data candidates: 9829/55/644.
+- Signing: APK Signature Scheme v2; v1 certificate entries 1.
+
+### DEX
+
+- `classes.dex`: DEX 035, 790.74 KiB, SHA-256 `c781c71b622aaee4c0c1b94f8ae0c9aa639e228d66fb929a0c9c4672a5f81aa6`, strings 6649/6649, parse `parsed`.
+
+### Native library inventory
+
+- `lib/arm64-v8a/libc++_shared.so`: 1.23 MiB, `4397241b4bd20a8e579bfb41d21107857e12985f6a01ca0c2a5f83380d1270b4`, ELF 64/AArch64, dynamic symbols 2498.
+- `lib/arm64-v8a/libfmod.so`: 1.13 MiB, `299d2a6b03ec865cd9234f4f7484fb7e74928d0180dc6c4b455a8d2b5b54dd45`, ELF 64/AArch64, dynamic symbols 1397.
+- `lib/arm64-v8a/libfmodstudio.so`: 1.10 MiB, `592cdc4beba2aea5f177f0ed3c52c7ed018b09734a3fb584a4ec487cd926caf0`, ELF 64/AArch64, dynamic symbols 586.
+- `lib/arm64-v8a/libg.so`: 26.28 MiB, `110aa2b5cac391c498645e072b0d88729428c2c2845e7e2737ca8ee979059783`, ELF 64/AArch64, dynamic symbols None.
+- `lib/arm64-v8a/libscid_sdk.so`: 59.64 KiB, `2a6edcc8fcad301daa946157ea97c6c422067d5ceaab7cb2ed4655654b642319`, ELF 64/AArch64, dynamic symbols 50.
+- `lib/arm64-v8a/libsentry-android.so`: 15.60 KiB, `6769fd03351610e93ca724ccc74c1c82a6caedd8c1d9996267599556545712a1`, ELF 64/AArch64, dynamic symbols 66.
+- `lib/arm64-v8a/libsentry.so`: 1.17 MiB, `bea6725a4122db6e516da9ee4a62b066b05171fddcdf1513c98e33626746acda`, ELF 64/AArch64, dynamic symbols 425.
+- `lib/arm64-v8a/libwildcat.so`: 10.19 MiB, `664ff486f5c89c2f7e188adb60119166c483e7c0cd4d55fef774a1f47db8b442`, ELF 64/AArch64, dynamic symbols 286.
+- `lib/armeabi-v7a/libc++_shared.so`: 852.41 KiB, `91b49f121b3120538faff020fcf535ade1d945e65ccd793fc0b815b5799bbdf0`, ELF 32/ARM, dynamic symbols 2499.
+- `lib/armeabi-v7a/libfmod.so`: 970.76 KiB, `2aa9b0962cc9de96f7104d888c3eed8bd69a9c3fd95e23258a6a21e8983a5b84`, ELF 32/ARM, dynamic symbols 1487.
+- `lib/armeabi-v7a/libfmodstudio.so`: 717.66 KiB, `0075aace9739d9ac52f7be80d8dee1789c44aba5c8274af22a93b653688dc22a`, ELF 32/ARM, dynamic symbols 612.
+- `lib/armeabi-v7a/libg.so`: 22.01 MiB, `42fa11d04a6eb3101515c7dc7ee37633b253e82aeb186ca4b27f9c369d1baeab`, ELF 32/ARM, dynamic symbols None.
+- `lib/armeabi-v7a/libscid_sdk.so`: 32.55 KiB, `310637688f8e35bc5927d5b7ecc1bc9a414e9550d11e49676550fa4b8729a9cc`, ELF 32/ARM, dynamic symbols 45.
+- `lib/armeabi-v7a/libsentry-android.so`: 11.29 KiB, `d046c4260028db0b529c39da88caed53385f3cf42364df0864b27385134edb5a`, ELF 32/ARM, dynamic symbols 66.
+- `lib/armeabi-v7a/libsentry.so`: 696.28 KiB, `4fcbcf7860b511bb53469140577d04ee5cc1448caf2d8ed3e1d09ef06c7529ba`, ELF 32/ARM, dynamic symbols 384.
+- `lib/armeabi-v7a/libwildcat.so`: 8.32 MiB, `601812a30893b2c23febaf2d1f3e55d98ed3c2dc4da6170c0582384968418381`, ELF 32/ARM, dynamic symbols 268.
+
+### Selected data files
+
+- `assets/csv_client/ability_button.toml` (389 B, SHA-256 `ec3a9a72299304583f3a498c9c23472b30a57eec03610a6c985d6aa91b7172c7`).
+- `assets/csv_client/animations.csv` (443 B, SHA-256 `26f12f78b9a6b616abba78ba6098cfc59d841790c12048337ccae770c6d20305`).
+- `assets/csv_client/arena_reward_visuals.csv` (395 B, SHA-256 `fd1e5d432ff4c9d41d3f6b8a5dfb0a8048b8526db923e53fc74c028eabc5fbe0`).
+- `assets/csv_client/background_decos.csv` (58 B, SHA-256 `1a5e6f6a2d8c1631c3d78f924a5548a3bddaa8e5f48c3b3e8597cd0facf3ba88`).
+- `assets/csv_client/battle_page_button_layout.csv` (317 B, SHA-256 `7e5ecfb5f696dc79bc10bf59eb3e3cba055a4a277f8c607591d50514d43cdf60`).
+- `assets/csv_client/billing_packages.csv` (4.91 KiB, SHA-256 `4e6b08012f5b3664788b48aa97fd8762fea5bf59ac1870daf6162a9aed61850b`).
+- `assets/csv_client/billing_packages_china.csv` (2.04 KiB, SHA-256 `d74c8d0b958a505321c3b385d14546bf18eb95a718359fabd6af4d4f6e1375d7`).
+- `assets/csv_client/character_shader_fx.csv` (188 B, SHA-256 `ee971798be65eab6d6787cbd92e1cf7d5f941a04189707ad0e5e8930cc9492ae`).
+- `assets/csv_client/chest_themes.csv` (412 B, SHA-256 `e3efe4827942aa4f30624c9490df7573f44437b2e8ff4e0a08a06c82b90edb71`).
+- `assets/csv_client/client_globals.csv` (6.83 KiB, SHA-256 `b3d0cce06bb784fdb8fbccf796b89dd7387aa6daf230632d9396c1dd46163353`).
+- `assets/csv_client/credits.csv` (1.61 KiB, SHA-256 `7c25292841eca38018173b332e7a33c1607de9842273e1f0606a3ddbecea2fd5`).
+- `assets/csv_client/demo.csv` (8.33 KiB, SHA-256 `d36a8b12b8a0eba58debdfbce2297e6cee451871e170d15cd582aa5516eb5cea`).
+- `assets/csv_client/health_bars.csv` (552 B, SHA-256 `754167f71301a48e37c16d36869155a40ddf48d39815b7a0c000a5e161dd8b70`).
+- `assets/csv_client/healthbars.toml` (731 B, SHA-256 `8cdde5db820cd0e1b7895b2ab770cc34f767d66d5077d931547a2ee4034cb2aa`).
+- `assets/csv_client/helpshift.csv` (122 B, SHA-256 `ac56bdecc3ccf2ed10d0292ae79e98cb7c12e1e2d5f789904fbe00e187b33416`).
+- `assets/csv_client/hints.csv` (2.36 KiB, SHA-256 `b3611c1b868118f012d80f5dc8609a624bf7958be2805d9c1cb995623d814ce5`).
+- `assets/csv_client/locales.csv` (3.09 KiB, SHA-256 `3ecad9c4633dbeb9b9cc75484edcb8a7d2123ebec83c6b300b43187e82d989ed`).
+- `assets/csv_client/music.csv` (786 B, SHA-256 `4a387b70ecbf2d98e9feac93c4d5b799f3f8998bab08c45056c017bfe6912484`).
+- `assets/csv_client/mystery_box_levels.csv` (492 B, SHA-256 `9038af15086f88b834db7abc675ef0ec509c9dbdd1b7b6bc312d5d018cb4378d`).
+- `assets/csv_client/mystery_box_rarity_themes.toml` (579 B, SHA-256 `82d50664d7a915400dab17de3e4adaffc2f103081eb5d07413fe31a3428bf3bb`).
+- `assets/csv_client/mystery_box_themes.toml` (531 B, SHA-256 `ea567f8df39407b4e2b128c2fb835d4dcea9f3dedfd7fff88dfb9ab6254c2f9f`).
+- `assets/csv_client/news.csv` (233 B, SHA-256 `20e8a285a0b63a9af2dc6793a02737c6b678bfa2449cfa0a83949b5a0d0b02f2`).
+- `assets/csv_client/realm_themes.toml` (422 B, SHA-256 `7772465eb9b24a07d5c764748892131dfce4da4ffd5e6b303a82e4af590ee609`).
+- `assets/csv_client/ruler_stands.toml` (352 B, SHA-256 `ee49fd2eaea40894ff81e7c904675ccc55eb57fe2181972c446bc2ed7f1df8bd`).
+- `assets/csv_client/shop_categories.csv` (521 B, SHA-256 `c7afd9650e4a6ad52d49a6c1642647d03bca3a3054275ae65dc9a0b5482b5f03`).
+- `assets/csv_client/sorted_regions/CNT_regions.csv` (422 B, SHA-256 `6a51d2384dcef4f42dd3bf21ebea66765cacfd19ca3ccb015721e31aab560be2`).
+- `assets/csv_client/sorted_regions/CN_regions.csv` (424 B, SHA-256 `f9ae30efc7934d35eeaf59f8204bbd87295e31598cbc97f44cd08be00570af4e`).
+- `assets/csv_client/sorted_regions/JP_regions.csv` (460 B, SHA-256 `013eca385d5e14491cdbb3de4a1baef1b7424edab92a8a03f5957c6ee322da99`).
+- `assets/csv_client/sorted_regions/KR_regions.csv` (403 B, SHA-256 `fdfc604df820a2e18c04dd90f6bce74ee3d0006d94e51ea0ce2442242bba2323`).
+- `assets/csv_client/sounds.csv` (14.67 KiB, SHA-256 `dc794c8d5531e9c15dcc3999133f26786dfc0e7ae736a86842c936a57f5e5463`).
+- `assets/csv_client/texts.csv` (3.02 MiB, SHA-256 `bc4d6369840734ca8ad6a13ab497b45b03691d3bbd6cf79a36493b2fa661e874`).
+- `assets/csv_client/texts_patch.csv` (34.31 KiB, SHA-256 `a1bbde8e10738f5dd38e993f604952e2c43b77c14e64d8f8b3b1313a19c927b1`).
+- `assets/csv_client/tower_skins_ui.csv` (1.64 KiB, SHA-256 `57bb030af0ccfd9af5f133a7bea489e3262b34d067342e75963013ddfae2cacf`).
+- `assets/csv_client/trail_themes.toml` (2.82 KiB, SHA-256 `8b6a8b3fadbeeb7afd9372d0a0db3a26740eadce735b6418f96daf3790097bc3`).
+- `assets/csv_logic/achievement_badges_legacy.csv` (604 B, SHA-256 `1da00d7bb4b8c388169614677151a82810047c31473d9e7207217665c3219d96`).
+- `assets/csv_logic/achievements.csv` (870 B, SHA-256 `adaf61a7f1f8b5ffad335bcf683d9faabc26af8e7118e38d175d006b299f7c39`).
+- `assets/csv_logic/actions.toml` (1.65 KiB, SHA-256 `e243e1439a2abf43033326f1597684f177b28866c4d23426cdc5d1e4f2b756eb`).
+- `assets/csv_logic/album_snippets.csv` (387 B, SHA-256 `4b841fcbdd10b9ca72736d0f154a0d6fba047459b3aef35630873d21cb184410`).
+- `assets/csv_logic/alliance_badges.csv` (942 B, SHA-256 `a1ad36dc7b3371a35e806832bb7fb9e45d67e29d13c2b244aed4860d828e0581`).
+- `assets/csv_logic/alliance_roles.csv` (268 B, SHA-256 `e147d5bc24d45edb83498090bdebe1d488f99d2cda6834b0e1d5d23ce2bd6b2c`).
+- `assets/csv_logic/area_effect_objects.csv` (2.03 KiB, SHA-256 `dc2629c51b51c051b14add20c86aed33920d0ba9bd39cbf89d6160fc4bdb62be`).
+- `assets/csv_logic/area_effect_objects.toml` (1.12 KiB, SHA-256 `194afb17ae2239fc1e225889f4e4dda34dc90c06fed4214ad4e1ac68ecaa0985`).
+- `assets/csv_logic/area_effect_objects_evo.toml` (923 B, SHA-256 `fe1eb652245489876f4e39c6b492143cf2e285d61e451807fba6885737a802a0`).
+- `assets/csv_logic/arenas.csv` (4.80 KiB, SHA-256 `f136eda3cd70f146fcec7d5df3457ce32ef11a61b99277688dd6fa4689cdac53`).
+- `assets/csv_logic/arenas_alt.csv` (3.59 KiB, SHA-256 `944d8ca7e95b4e4c5b951c095e7ade3dbeee02c2d9e7bb069160aed6b421b4ef`).
+- `assets/csv_logic/augment_unlocks.toml` (1.71 KiB, SHA-256 `18e4a38c8a5dab93c48ed3fda36a0e1e022f369aa788084503ae2668db9e45bf`).
+- `assets/csv_logic/autochess_battle_result_config.toml` (108 B, SHA-256 `e7c27d8d24a481d6fcce352efe99d218092d4e46896fc6ab7977e64c4bd34c50`).
+- `assets/csv_logic/badges.csv` (5.84 KiB, SHA-256 `af9c6748aa0b12ab7101d90393ff36a77570fc21fdb1ddaac25d7b5e07f8aa33`).
+- `assets/csv_logic/banners.csv` (17.44 KiB, SHA-256 `dfff739ff509dd9bf65c93a869ca0cef86d83bbeffadb987523f4e2d3fd4a080`).
+- `assets/csv_logic/battle_timelines.csv` (837 B, SHA-256 `175b9d401c5e35e67ce538d781bbe39c0476aa756419431d91765bb151905aae`).
+- `assets/csv_logic/buildings.csv` (6.03 KiB, SHA-256 `ab0b6829aece9dc44fe7a830fa6eae1ab478600aa2089ad99ac5c53bcd871966`).
+- `assets/csv_logic/buildings.toml` (259 B, SHA-256 `be16c3f3b577d1e684b8651855c7a1121bfcd648cf5506684de84aab4fda8fbe`).
+- `assets/csv_logic/buildings_evo.toml` (424 B, SHA-256 `fedaf0634d65714f481ec75c583f1fbfe8ae2ffce52d6610fa589d65ae37b3fb`).
+- `assets/csv_logic/card_delivery_battles.csv` (392 B, SHA-256 `8d755fe8db86cc146f0928f0edc32b35e76abf87a0dd2217854cca29fc0294e7`).
+- `assets/csv_logic/card_delivery_rewards.csv` (283 B, SHA-256 `fd172bdeb75abd335c2afc9cd707e11abac47cb79d70f6751d8abecd76de02a3`).
+- `assets/csv_logic/card_forms.toml` (450 B, SHA-256 `d8cef3eaeef07be7267f84aea87f66477ae2dbf8a52c3152d59c050a16880b8d`).
+- `assets/csv_logic/card_groups.toml` (1.18 KiB, SHA-256 `09dfbeb832fc7fc4dab953151f4edb2a4d27b62f81416841925d8fb9fa49bab6`).
+- `assets/csv_logic/card_masteries.csv` (3.42 KiB, SHA-256 `e793cd977bdcb8472db5486bbef4bd7826c0e26508268800fa7d7a9bc6b9f120`).
+- `assets/csv_logic/character_abilities.csv` (760 B, SHA-256 `6f6121ec93527d425bdcb249474a708c46f967db19059547de0b5666cd411bb7`).
+- `assets/csv_logic/character_buffs.csv` (2.07 KiB, SHA-256 `37020109313694791dcde68257d49e5944b3dbfbda602a0268f3f5ef68464108`).
+- `assets/csv_logic/character_buffs.toml` (480 B, SHA-256 `bf4aaf1b115519fd474e82fc832eb3f3e1c494e9e5ec6c1b36c821d4e9928fcc`).
+- `assets/csv_logic/character_buffs_evo.toml` (733 B, SHA-256 `4d231cb0978939a852785714a87881a8ea9c101f94a81f9521568094484c58ed`).
+- `assets/csv_logic/characters.csv` (5.52 KiB, SHA-256 `952af6078732d5139d1478e7b07e2f476d58166ce994c9c358a020be8cd9bf0f`).
+- `assets/csv_logic/characters.toml` (24 B, SHA-256 `0573b69cc2c4df3d5e5a3f29e7d2929ae2655bfe1e03e2edba4a020c5ba56da8`).
+- `assets/csv_logic/characters/angrybarbarian.toml` (492 B, SHA-256 `9af4bb14810d4016471e9af16e58acdc451a747686284e23c1ff2923b4f9434e`).
+- `assets/csv_logic/characters/archer.toml` (559 B, SHA-256 `199d248da5f1d2fc88a7768d1c1b31308f8de677af00c597688872defb391702`).
+- `assets/csv_logic/characters/archer_queen.toml` (1.15 KiB, SHA-256 `67331d265de9f936bc2231b4412feb315c38560ac6cb5c3ad6fea246e96ba5c0`).
+- `assets/csv_logic/characters/arrows.toml` (535 B, SHA-256 `e4d01c123d67e36870d701bb0784427154e1535bedb3d8cea353c61f26116bb7`).
+- `assets/csv_logic/characters/assassin.toml` (533 B, SHA-256 `70bb1a1ea4daad8cc0f495973655836cf71c8c59aca89e6433d163be2847ee54`).
+- `assets/csv_logic/characters/axeman.toml` (661 B, SHA-256 `e2423e04533068f213c135902a2a83f39d34bbe9f8272ca42c6579f0217e5de6`).
+- `assets/csv_logic/characters/axeman_ev1.toml` (1.35 KiB, SHA-256 `f6190984c1afe1f68b427c74f96b794a5d073423c479f33cae59596647c355dc`).
+- `assets/csv_logic/characters/baby_dragon_ev1.toml` (1.39 KiB, SHA-256 `9f8efa1439b3d371dac982b659195c0db4f5b300b28b69d122ae259f3a886985`).
+- `assets/csv_logic/characters/babydragon.toml` (598 B, SHA-256 `6058804e763c093a320e61f0be6bfeffee1e42f4a495b0d12f22e69067b38b74`).
+- `assets/csv_logic/characters/balloon.toml` (723 B, SHA-256 `b08f28575815cf880db7f74b2c47ddc02c045bdc0698032c59d0c42266b90a6e`).
+- `assets/csv_logic/characters/barbarian.toml` (816 B, SHA-256 `f56854a188a7c7bad5ba9a67177afd02ae22c4d2deb364d69f0d9978d37be42f`).
+- `assets/csv_logic/characters/barbarianhut.toml` (436 B, SHA-256 `1b486911bd04d3a7a1dff188af0d9d09375a57e592ee5c5f3f3c1affdd3f28fa`).
+- `assets/csv_logic/characters/barbarianlauncher.toml` (544 B, SHA-256 `80584e3d353652ec9d75fa526a287b742ad757d05f47fc28c4057b4fd45992fb`).
+- `assets/csv_logic/characters/barblogprojectile.toml` (553 B, SHA-256 `dd5f66793d8c11ffefbffdd8f956641af4d37950be59a81179800a5177a26c45`).
+- `assets/csv_logic/characters/bat.toml` (502 B, SHA-256 `c012e941dddaadfc743cbcd7bc0b6c3c0376ca6aa664276547c7f290b78672fa`).
+- `assets/csv_logic/characters/battlehealer.toml` (1007 B, SHA-256 `7db066d92ca2a27c6337ca7f223d59652ab0ce4e8334084b974ab1031d360651`).
+- `assets/csv_logic/characters/battleram.toml` (643 B, SHA-256 `0608371c6dbd3e230c520dd54a55484d02208979c2b8e67912f8fdc20b06d28d`).
+- `assets/csv_logic/characters/berserker.toml` (835 B, SHA-256 `89577490c7014b61109fbeedfe5ec0692ec905b734cff52a2133d6b4d4615e39`).
+- `assets/csv_logic/characters/blowdart_goblin_evo.toml` (1.34 KiB, SHA-256 `0fbccedfd8dbcb12890b8cc0d682b4e8739e821932b5bfeddf2802eab427cc28`).
+- `assets/csv_logic/characters/blowdartgoblin.toml` (621 B, SHA-256 `b21e2f32213ae8fd8774e0bb2b96b31c42c43858e7b380360fd5e818131abc12`).
+- `assets/csv_logic/characters/bomber.toml` (602 B, SHA-256 `a6948035ae3c862a9f07ab8d4f1c4296f35d9ab1f4bcd8ebd65caf04c8e8d20b`).
+- `assets/csv_logic/characters/bombtower.toml` (769 B, SHA-256 `2d8b01f8335cb1ba8a3d61fb8a6e3b69fad58a46bd54619c9f1dcd2888b40bf3`).
+- `assets/csv_logic/characters/boss_bandit.toml` (2.00 KiB, SHA-256 `84fc7235cab4b854b438682d1960b3f3704448c0d857541be3c3a9ef0c5af6f1`).
+- `assets/csv_logic/characters/bowler.toml` (634 B, SHA-256 `454c99593111e21907e548cc073f5ea952fc3f43baab394edd2a430422516320`).
+- `assets/csv_logic/characters/cannon.toml` (524 B, SHA-256 `4a182bf3838875d3c7bb43f6e52f1cd5c10f10776c70c1823816f67c395b577a`).
+- `assets/csv_logic/characters/cannon_cart.toml` (1.20 KiB, SHA-256 `bc97c78260ab2c1de4fc421526d77fba05bf617b11481d90d54a109062e0cbd3`).
+- `assets/csv_logic/characters/cannon_ev1.toml` (1.37 KiB, SHA-256 `42c65f2a41f04af1122da182ffd0edbc56aa5e06cb5c7d1dc157f792c9d7c29e`).
+- `assets/csv_logic/characters/cannoneer.toml` (884 B, SHA-256 `05ca27ea52c19ba1c7597338287026ab0e324ad8e3ea6d269a5f1734018204aa`).
+- `assets/csv_logic/characters/chef_tower.toml` (2.09 KiB, SHA-256 `cbf29f296f2942edbe18c0433fbd254580d2a070f4dd8d711bcce13193a5f414`).
+- `assets/csv_logic/characters/clone.toml` (578 B, SHA-256 `401c3a7d1c1a672c8a4558b2d4df834da420cad9ccc47b6c9bdcc645b85b4d3f`).
+- `assets/csv_logic/characters/dagger_duchess.toml` (1.42 KiB, SHA-256 `41a8b928d0965216d45b64e01592bca0ee8fee3368a16f86884accda1ad7f2d5`).
+- `assets/csv_logic/characters/dark_magic.toml` (405 B, SHA-256 `9026c4d238aef9a372018d1bf41d458254aa1e1f9a2164a3677b3d625fa7bb2d`).
+- `assets/csv_logic/characters/dark_prince.toml` (679 B, SHA-256 `22cfc8d54259c419bfa72ca6d3cc12312f5dbef12231000c6171f0742fd137d6`).
+- `assets/csv_logic/characters/darkelixir_bottle.toml` (469 B, SHA-256 `dd5703ad4f91cc4ce803d219c40b273495107d4dd5291ab3024d29bd39dd57c1`).
+- `assets/csv_logic/characters/darkwitch.toml` (545 B, SHA-256 `d210705ba48ae74a372cb87a20bfcf9cb1123d3fede02c311a24f44011f7c805`).
+- `assets/csv_logic/characters/dartbarrell.toml` (639 B, SHA-256 `62bdbc0dca68632f385399d5da714d8b5a82a81a3aa2aecd90009fb7dc72ba58`).
+- 544 additional candidates are recorded only in ignored `inventory.json`.
+
+## master-royale-apk-v3-2729-1
+
+- Package/version: `net.master.royale` / `3.2729.1` (`526`).
+- Manifest: android-binary-xml, parsed; min/target SDK `16`/`30`.
+- DEX: 2 files, 66,726 declared strings.
+- Native: 8 libraries across armeabi-v7a.
+- Assets/resources/data candidates: 1669/1415/1461.
+- Signing: APK Signature Scheme v2, APK Signature Scheme v3; v1 certificate entries 1.
+
+### DEX
+
+- `classes.dex`: DEX 035, 8.14 MiB, SHA-256 `cf41813e0d15cc05f87c0c0990419256919de3dbc57b8e83c54bd944a35f47d5`, strings 51019/51019, parse `parsed`.
+- `classes2.dex`: DEX 035, 1.85 MiB, SHA-256 `b15a764404f83a52a4b70ce22ae47adca5f3d8a6b195c56c32858ba5ae36aa31`, strings 15707/15707, parse `parsed`.
+
+### Native library inventory
+
+- `lib/armeabi-v7a/libcrypt-lib.so`: 165.71 KiB, `67b9efe557fef168d2da210fca5582ab01d88026cd75713d3d41f82035d27b2e`, ELF 32/ARM, dynamic symbols 427.
+- `lib/armeabi-v7a/libfmod.so`: 962.30 KiB, `7ac1b9743ce4d03012616a6211a482cf2ee02f104a1cffc0c52847f66dfbd8b4`, ELF 32/ARM, dynamic symbols 1491.
+- `lib/armeabi-v7a/libg.so`: 18.61 MiB, `c3ea433adf9702d0d2ab2c4a8015b179893be9368cd70dba6fc7404f9bfd261f`, ELF 32/ARM, dynamic symbols 2119.
+- `lib/armeabi-v7a/libgg.config.so`: 134 B, `56cb465bbb8df7264122d671f4e588e2af4c5d170ad37df2af3c546dc55ecbcd`, ELF None/None, dynamic symbols None.
+- `lib/armeabi-v7a/libgg.so`: 14.84 MiB, `7bde44c1c3e2322922b2e4c6df6bb2f15474d3f994609aca92f8b3fa634883de`, ELF 32/ARM, dynamic symbols 315.
+- `lib/armeabi-v7a/libgs.so`: 12.60 KiB, `183ea955ecd9cea7ef07d9a21b2a0c1b1ff4aef35b232e2776bc177eec8818a9`, ELF None/None, dynamic symbols None.
+- `lib/armeabi-v7a/libsentry-android.so`: 21.59 KiB, `6125203f569d4a7376e43d792f48a9e417d66c41ea681db7f46951cfc89048e3`, ELF 32/ARM, dynamic symbols 75.
+- `lib/armeabi-v7a/libsentry.so`: 897.73 KiB, `747447a3c864b2352bdd24affff59bfc21d52a6d4d2bd4073ccfc569582109bc`, ELF 32/ARM, dynamic symbols 3545.
+
+### Selected data files
+
+- `res/layout-h560dp/fragment_flow_head.xml` (1.07 KiB, SHA-256 `459e98fa30c5125cabcff12e575f9c9bdadc97bb4c2bdf5273dee4a911e206c2`).
+- `res/layout-h610dp/tab_button.xml` (2.43 KiB, SHA-256 `1a085c95b5b0eada5e5e214c2fe93d243ecc060dcc7f4a4cea2641cde34154b5`).
+- `res/animator-v19/mtrl_btn_state_list_anim.xml` (2.61 KiB, SHA-256 `0598f7f21aee671227e3d729c6345261ea7ab79e08d40740d661a8d3cd849309`).
+- `res/animator-v19/mtrl_card_state_list_anim.xml` (1.19 KiB, SHA-256 `7c7247daaaf836a7812b27a334cf4887552f17a2ccfdd43d69f4a0453317adf1`).
+- `res/animator/mtrl_fab_show_motion_spec.xml` (804 B, SHA-256 `ec43e59ca2949d024f19ed5d54d1184d7498c9b429a442d8bb0f2b28534b2176`).
+- `res/animator/mtrl_fab_hide_motion_spec.xml` (804 B, SHA-256 `45dbd02bc77c67448be06bcbd4884e5411070c9589493f9858c3f45e07c32d6a`).
+- `res/animator/mtrl_fab_transformation_sheet_collapse_spec.xml` (1.85 KiB, SHA-256 `bd2369b327dfdcc78e1d30ad1c74ffb64ae7d3a033a6a3ff9257e8f87d72ffb9`).
+- `res/animator/mtrl_btn_state_list_anim.xml` (2.57 KiB, SHA-256 `59cabf3cfbcb41b202e692e5237ca833610a86512c2d4a90886adc24929c3428`).
+- `res/animator/fragment_fade_exit.xml` (460 B, SHA-256 `73181f87b1d31d675857ef6199b7b8e39eebfd177699d5b6acc1b94520d505ab`).
+- `res/animator/mtrl_extended_fab_change_size_motion_spec.xml` (648 B, SHA-256 `011cf97f8ebae00a3f2b8151ddd874d7c974894b0a8eae3cda2bc69b9afd67b3`).
+- `res/animator/mtrl_fab_transformation_sheet_expand_spec.xml` (1.85 KiB, SHA-256 `b825679712c2e3998d94f04fa120cc797d0828a4c7d81861eabcaeaf5ed24681`).
+- `res/animator/mtrl_extended_fab_hide_motion_spec.xml` (612 B, SHA-256 `60d2916800425b750d800e623c9686ef239016e89ce2e090ec4608961fa0cf89`).
+- `res/animator/fragment_open_enter.xml` (1.11 KiB, SHA-256 `9f39b13aba8df8ca749d5597ca89b10309417a97e94e92be176f76654f6dfa94`).
+- `res/animator/fragment_fade_enter.xml` (460 B, SHA-256 `2118279a350ce240df55c4ad7034959090325f57cf465d5421a7ae03c614e798`).
+- `res/animator/design_fab_show_motion_spec.xml` (804 B, SHA-256 `e7627f91626994514801e3e613ed1c221914aceb6a961585d2f959f1fca5564f`).
+- `res/animator/fragment_close_exit.xml` (1.11 KiB, SHA-256 `c84e82587eca82b66013651f242adfa9da0d5e5557577d2bfa07708f09b52e24`).
+- `res/animator/mtrl_btn_unelevated_state_list_anim.xml` (112 B, SHA-256 `5cfdfa07e2825a0ab3623b8879c93b3ccad43a02e2ed51e60a335e0757335537`).
+- `res/animator/mtrl_extended_fab_state_list_animator.xml` (2.67 KiB, SHA-256 `25b5ff31b9d3932f3aa07df683c1fd7332eafe9d96ccc96a883f5505261ab76b`).
+- `res/animator/mtrl_card_state_list_anim.xml` (1.15 KiB, SHA-256 `0b62cebafefa6fa0b34f898ea611f4d88328ac1097ee13c9d09f240620688d6e`).
+- `res/animator/design_fab_hide_motion_spec.xml` (804 B, SHA-256 `3ec3033432268b9511d2106d15555cdec2e9ef3bf3d05d8ba1d73f515764cc71`).
+- `res/animator/mtrl_chip_state_list_anim.xml` (1.05 KiB, SHA-256 `7505e29c2fc489cdf3201139046d4961aae838ea182baee5bd941d7900ad2018`).
+- `res/animator/mtrl_extended_fab_show_motion_spec.xml` (824 B, SHA-256 `bcf583131a565563222cbbf1ca61b1576cbb8a409b9fe3c1fd8817462f07d955`).
+- `res/animator/fragment_close_enter.xml` (1.11 KiB, SHA-256 `19ddca041bea6e5ee056f4624af006e5788ca6c256e2349518791dc4bebf2108`).
+- `res/animator/fragment_open_exit.xml` (1.11 KiB, SHA-256 `92489b3558db00aa7aa5bb5ad9c3d181d1a70d3bba2af1fed89bb6f352e502be`).
+- `res/interpolator/btn_radio_to_on_mtrl_animation_interpolator_0.xml` (328 B, SHA-256 `f18f59bc76ae3f54e84202437945829fee23b2482574b53aa7f24b4778944de6`).
+- `res/interpolator/mtrl_linear.xml` (124 B, SHA-256 `1a17f65ffe21468210fe5e4adf9a7dcdecfb76301d0b82f7ede7f38b3a5a2b41`).
+- `res/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xml` (328 B, SHA-256 `f18f59bc76ae3f54e84202437945829fee23b2482574b53aa7f24b4778944de6`).
+- `res/interpolator/fast_out_slow_in.xml` (408 B, SHA-256 `dbab0262019c1e6b5804aff0ab1bf98d5a027141921e13393391c708ac922d68`).
+- `res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml` (336 B, SHA-256 `c10c217651d9cd0c04d2a7c1f96e14824a8165719e3e6d7b4ea0e00057f1069d`).
+- `res/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_1.xml` (336 B, SHA-256 `c10c217651d9cd0c04d2a7c1f96e14824a8165719e3e6d7b4ea0e00057f1069d`).
+- `res/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_0.xml` (320 B, SHA-256 `7c54953d4256b19525a8a63e33f792d18ed997312f494c1b2f7544d7103ff36a`).
+- `res/interpolator/mtrl_linear_out_slow_in.xml` (128 B, SHA-256 `ab49e8c52fc45d2b1b03baedb0785f3edd771dabf0f8857c1a5acd4803f027bc`).
+- `res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml` (320 B, SHA-256 `7c54953d4256b19525a8a63e33f792d18ed997312f494c1b2f7544d7103ff36a`).
+- `res/interpolator/mtrl_fast_out_linear_in.xml` (128 B, SHA-256 `0901d14a5f8e5866472c5aaf2228e52c3975f28f1b7648b4daac547ac94e3761`).
+- `res/interpolator/mtrl_fast_out_slow_in.xml` (136 B, SHA-256 `4cba2aa16ca0c8c0815c1307d384f4a5cd95fbaf4a5a894590f57c7fb4dc262e`).
+- `res/menu/hs__support_fragment.xml` (1.25 KiB, SHA-256 `c19bdb4fe395cce2d2df302603fb293ebf7d9117fde773e00152ac1c161e57b4`).
+- `res/drawable-v23/mtrl_popupmenu_background_dark.xml` (1.38 KiB, SHA-256 `d7b942692fc27ed6aafbfcb37e42986c326bda0a3762baf20bd48c4920ad21a4`).
+- `res/drawable-v23/abc_control_background_material.xml` (380 B, SHA-256 `f42e1936dae5187614f5f7d98a109e53966f0bf2d7c2ea05af6930cf6fbb9922`).
+- `res/drawable-ldrtl-v17/profile_shadow.xml` (616 B, SHA-256 `856e7b19613e7e5bf1511e4864e8402a503e0758ddd2523620a846b9b074fef7`).
+- `res/drawable-ldrtl-v17/tab_button_start.xml` (808 B, SHA-256 `78a25dae751c80a7a583242035577ebe0054f04208337d76d2861e5f6b68e50f`).
+- `res/drawable-ldrtl-v17/blur_to_white_gradient_start.xml` (560 B, SHA-256 `94ef9b255e58fffc9f7ba0ef863cacfb2e708b17178f750690c8f918df88a21e`).
+- `res/drawable-ldrtl-v17/tab_button_end.xml` (804 B, SHA-256 `8456a6b0136fb0240871ff7cbe0a180a73b9c3186168043b48097ea452301156`).
+- `res/drawable-ldrtl-v17/tab_button_landscape.xml` (1.97 KiB, SHA-256 `b9d68b55cb49610aa982d26aba25ef50d813e7f7475d59122586383c621892f9`).
+- `res/layout-h360dp-land/fragment_profile_v1_head.xml` (4.09 KiB, SHA-256 `c1c18184627e80a979fdcc7f7ca8cb602d29081011c63a92ce310ff22d184078`).
+- `res/layout-land/fragment_profile_friends.xml` (1.30 KiB, SHA-256 `0f255cfa19002ac9610d74663cd53bbc8e1c48051c600a2082805373417aee21`).
+- `res/layout-land/fragment_young_player_register_intro_page.xml` (2.31 KiB, SHA-256 `d0e4c98d8694709c765dae9ac479ac5e318cb0502302c0350e06b9920445bf20`).
+- `res/layout-land/fragment_onboarding_friends_list_item_divider.xml` (1.07 KiB, SHA-256 `295450f9aa1cca238910514246f233adc66af4055ccaa39d12a435d78205732c`).
+- `res/layout-land/fragment_profile_v1.xml` (616 B, SHA-256 `13db2e7e2c6d76cf4aa922579797720749e2614f135455bc189593a935ad0389`).
+- `res/layout-land/fragment_tutorial_navigation.xml` (1.14 KiB, SHA-256 `fd2613679eedc37dc14eed4dedc2e4c1269a0ceb7858c9493d0f38d9c42183dd`).
+- `res/layout-land/fragment_onboarding_intro_page.xml` (2.68 KiB, SHA-256 `4da52f02f6cadd03af4e8a029b80178ab6f1d64b05abd3ef3828d853d9a1643d`).
+- `res/layout-land/fragment_register_intro_page.xml` (2.10 KiB, SHA-256 `2371dffbe0453926ca9fb7e940223f08109e43e46ac09eb6567311561006a30a`).
+- `res/layout-land/fragment_settings_subscriptions_page.xml` (1.31 KiB, SHA-256 `f326215bfc7b3c4d7fc45d1f4f5bf78e1db44c60cfe1a112abae2a00e5cb4777`).
+- `res/layout-land/fragment_login_game_connected_page.xml` (1.32 KiB, SHA-256 `54f046aa2d30fed3aa7030b99bef242f081197310e6097ba821d274b41310226`).
+- `res/layout-land/fragment_register_enter_email_page.xml` (5.33 KiB, SHA-256 `2d36994f72130cb2a078ff2107dbc45ea586eb27e76111648b3632423aaa0905`).
+- `res/layout-land/fragment_onboarding_invite_friends_page.xml` (4.38 KiB, SHA-256 `03ca035c48a380e55c4e25820ead9c2489f7d24c5c460be5e2f34ca4a164555a`).
+- `res/layout-land/dialog_notification_add_ingame_friends.xml` (3.43 KiB, SHA-256 `dd227a6efbc39d0630964fdfec6e9e41dd3453453ca40ef7588275291a095a19`).
+- `res/layout-land/fragment_login_confirm_page.xml` (1.19 KiB, SHA-256 `d052c446cca67f258c365cb843f8d1aac5d97cae834eab757317c8d33e1b85c9`).
+- `res/layout-land/fragment_register_done_page.xml` (1.82 KiB, SHA-256 `aec9da180898f6b1168d086f69f4df1a8a58622d14852c7e6f840db1483ed61f`).
+- `res/layout-land/fragment_scan_code_navigation.xml` (1.23 KiB, SHA-256 `6542e74db62994015bb1b2da293a748a54175652a114b4fdf04d2af5ce1b7f8a`).
+- `res/layout-land/fragment_shared_account_selector_list_header.xml` (864 B, SHA-256 `2ce07278a3eab6d2e8220c8f7ea058028c883b7c447ad2dc7efc559741d636a1`).
+- `res/layout-land/fragment_body_tabs.xml` (1.56 KiB, SHA-256 `be7965a856ca80c34a0f65ccecbbfae31323153533929ec2cdd4871ab99fca03`).
+- `res/layout-land/fragment_flow.xml` (468 B, SHA-256 `62e8c3a160fbda122dc6dc99cb04664667bbe25c3d30b78915c39b8ac49b047b`).
+- `res/layout-land/fragment_profile_pic_editor_content.xml` (2.36 KiB, SHA-256 `40979522497e9673cf43891eb5dec42dbdb99dc2d541997a519748d9c6c3d3f7`).
+- `res/layout-land/flow_step_titles.xml` (1.35 KiB, SHA-256 `bec6c323d71714013bbbff471ff1ba649ae23d9aec8157be6feb9154b2e33f43`).
+- `res/layout-land/fragment_profile_v1_settings.xml` (1.05 KiB, SHA-256 `094a52c51a2da125aed4d89258f095dd7ff7e09b42814ede1cce7ee4d4c7207b`).
+- `res/layout-land/fragment_shared_account_selector_head.xml` (780 B, SHA-256 `40e0c57ea3a45c9be86919bb9d95d5813abcab7cd4f73c2c1ce8dad9c8f6fc7c`).
+- `res/layout-land/fragment_profile_connected_games.xml` (988 B, SHA-256 `02fed0dc028fe6672591bb2abe55429d05515de1a11e148e0051da4862749432`).
+- `res/layout-land/fragment_maintenance_mode_head.xml` (780 B, SHA-256 `40e0c57ea3a45c9be86919bb9d95d5813abcab7cd4f73c2c1ce8dad9c8f6fc7c`).
+- `res/layout-land/fragment_onboarding_profile_page.xml` (3.25 KiB, SHA-256 `9abf3b69ae7b54e623d2c88b1abb1663724b6428f6675d2230d0565757d235a8`).
+- `res/layout-land/fragment_login_enter_pin_page.xml` (2.41 KiB, SHA-256 `a587820b34d85a3c45fca0064c67a5c32ceead11fbbaecf5844ff62efd77c5b8`).
+- `res/layout-land/fragment_profile.xml` (1.74 KiB, SHA-256 `00f44486addd97137359d2a61b5ecbfa92109881047616418758f8bbd17b5a5c`).
+- `res/layout-land/fragment_ingame_friends.xml` (2.41 KiB, SHA-256 `f95d8fdabd4107431a30984a0132ddbcd572fe4cbabdfa9fd3dc00a34be4571c`).
+- `res/layout-land/fragment_game.xml` (1.08 KiB, SHA-256 `02035ded7f1749f86d36d11597a6ea207d2e6a905694da42994011f3253e3b46`).
+- `res/layout-land/fragment_profile_v1_head.xml` (3.45 KiB, SHA-256 `28f35f82dc8a21e8409f21b3bbdb07acb4849186924c8054a664adc9e7421ef3`).
+- `res/layout-land/fragment_young_player_register_done_page.xml` (1.86 KiB, SHA-256 `d56a25d602a666706d6dfd85b9de3304ee18f16f94900ac47f1a5c724db82e10`).
+- `res/layout-land/fragment_profile_pic_editor.xml` (2.95 KiB, SHA-256 `8ff712ff4ec5b3b006117c40ba10125e5872207af5e4c221c61f4ecc6266f4b6`).
+- `res/layout-land/fragment_login_enter_email_tab_page.xml` (4.11 KiB, SHA-256 `1220ad04a75f14bcd06d80c6113459787072daaccd81804ac4daff7e71432277`).
+- `res/layout-land/fragment_profile_selector_head.xml` (780 B, SHA-256 `40e0c57ea3a45c9be86919bb9d95d5813abcab7cd4f73c2c1ce8dad9c8f6fc7c`).
+- `res/layout-land/fragment_messages_friends_page.xml` (1.32 KiB, SHA-256 `08ab75e81bb3d37f221325f04cd089fd4f855a9855c45e88a1661f7ac150e987`).
+- `res/layout-land/fragment_login_enter_contact_details_page.xml` (1.80 KiB, SHA-256 `4568467e3c345fbbcac67b442c79793c1982f2e4b5f4248d773fb0d12e25673c`).
+- `res/layout-land/fragment_navigation.xml` (844 B, SHA-256 `5d3b20f1eba8cc15afe1c18954edbbfba342fa2f2cf0e68f318bbbfb1ab1fb24`).
+- `res/layout-land/fragment_authentication.xml` (3.57 KiB, SHA-256 `2058f41302efbe6894f66f36cbd52fca00f56f5a06f8270614f4957e0048ed9d`).
+- `res/layout-land/fragment_maintenance_mode.xml` (2.75 KiB, SHA-256 `624a462d9c53a4cb73f63fdb0911ea97301cd624f697204206435ba861250b13`).
+- `res/layout-land/fragment_login_intro_page.xml` (2.09 KiB, SHA-256 `7245752886b225185501285228fce7e9b210114e8c789bdf2933b2a744061bdc`).
+- `res/layout-land/fragment_login_enter_email_page.xml` (4.59 KiB, SHA-256 `f5420a5caf99c79671b196969c7251d871aa24c72c6f211ac2059a0622c63048`).
+- `res/layout-land/fragment_invite_friends.xml` (2.60 KiB, SHA-256 `fb5cff3ca13e1e9737450e8f848a146f1a43e9fd87abd06e6390d6723664968f`).
+- `res/layout-land/fragment_profile_selector_list_header.xml` (856 B, SHA-256 `2179acd1441b7245140e809d1b1360079d57f8356d48a215c57c233da727e27e`).
+- `res/layout-land/fragment_public_profile.xml` (2.29 KiB, SHA-256 `c0ed8a943cbfde798dd498e91da9b29d77206fd5feb24e9cef3b7ed4aa02ddb9`).
+- `res/layout-land/fragment_young_player_register_enter_pin_page.xml` (2.45 KiB, SHA-256 `f082142110ac4b05c4a4d1e641acfb1973f8ed6792dce63db2b40204282653cb`).
+- `res/layout-land/fragment_ingame_invite_to_play.xml` (2.93 KiB, SHA-256 `19006132472ca18390dd4baace7cff9de4fce7180c8b9f7cd504d88ecf6ea67a`).
+- `res/layout-land/mtrl_picker_header_dialog.xml` (1.31 KiB, SHA-256 `8a4332b0f879ab9eac74c9948d63a03246610788324a0ee78bc99ac871806ce7`).
+- `res/layout-land/fragment_public_profile_games.xml` (1.30 KiB, SHA-256 `3158013a2843dde32704959805c7ce7e224e26b23da748b4da294b635218b4a0`).
+- `res/layout-land/fragment_register_enter_contact_details_page.xml` (1.81 KiB, SHA-256 `16282e2158902751bcc6730123514e086ed7807117be560a3098977aefab2ed1`).
+- `res/layout-land/fragment_young_player_login_confirm_page.xml` (1.19 KiB, SHA-256 `a6c47cbd252d878b688ca287d184b9b82df90e4b0881022c5b537f1568e1d079`).
+- `res/layout-land/fragment_region_list_dialog.xml` (3.07 KiB, SHA-256 `fbd874585b9596ce1ce8bb3d3c845d1cf52a64692b80c0c04e914db3a309da02`).
+- `res/layout-land/fragment_young_player_login_intro_page.xml` (2.14 KiB, SHA-256 `8bb98fb656567c90b0c17f4705c47dfedd0733a6b5bab412396f64aee2bbbe06`).
+- `res/layout-land/fragment_ingame_friend_requests.xml` (2.42 KiB, SHA-256 `c2bd75af3d691a7601302748e50b725e62b5ca87d7986e0878b28b0a828c025d`).
+- `res/layout-land/fragment_faq.xml` (2.46 KiB, SHA-256 `1e60b9fdaed885fb046cb1f91bfa68d1cec4339e747c1616caf83793ac5f2c35`).
+- `res/layout-land/fragment_young_player_login_game_connected_page.xml` (1.32 KiB, SHA-256 `54f046aa2d30fed3aa7030b99bef242f081197310e6097ba821d274b41310226`).
+- `res/layout-land/activity_main.xml` (1.68 KiB, SHA-256 `dc5858f08c055e187757c93938378688400a6fc79bb5d3b72c0721ead5d4d883`).
+- 1361 additional candidates are recorded only in ignored `inventory.json`.
+
+## nr-15-535-13-infinity-da5a0dc4-1
+
+- Package/version: `nullsroyale.rel.mods` / `15.535.13` (`150535013`).
+- Manifest: android-binary-xml, parsed; min/target SDK `21`/`34`.
+- DEX: 1 files, 6,645 declared strings.
+- Native: 16 libraries across arm64-v8a, armeabi-v7a.
+- Assets/resources/data candidates: 10356/55/809.
+- Signing: APK Signature Scheme v2; v1 certificate entries 1.
+
+### DEX
+
+- `classes.dex`: DEX 035, 790.15 KiB, SHA-256 `f27b0de4cb013364c764c515fe0332e2a69190f0f184e5c779a0ec94af976047`, strings 6645/6645, parse `parsed`.
+
+### Native library inventory
+
+- `lib/arm64-v8a/libc++_shared.so`: 1.23 MiB, `4397241b4bd20a8e579bfb41d21107857e12985f6a01ca0c2a5f83380d1270b4`, ELF 64/AArch64, dynamic symbols 2498.
+- `lib/arm64-v8a/libfmod.so`: 1.13 MiB, `299d2a6b03ec865cd9234f4f7484fb7e74928d0180dc6c4b455a8d2b5b54dd45`, ELF 64/AArch64, dynamic symbols 1397.
+- `lib/arm64-v8a/libfmodstudio.so`: 1.10 MiB, `592cdc4beba2aea5f177f0ed3c52c7ed018b09734a3fb584a4ec487cd926caf0`, ELF 64/AArch64, dynamic symbols 586.
+- `lib/arm64-v8a/libg.so`: 26.28 MiB, `110aa2b5cac391c498645e072b0d88729428c2c2845e7e2737ca8ee979059783`, ELF 64/AArch64, dynamic symbols None.
+- `lib/arm64-v8a/libscid_sdk.so`: 59.64 KiB, `2a6edcc8fcad301daa946157ea97c6c422067d5ceaab7cb2ed4655654b642319`, ELF 64/AArch64, dynamic symbols 50.
+- `lib/arm64-v8a/libsentry-android.so`: 15.60 KiB, `6769fd03351610e93ca724ccc74c1c82a6caedd8c1d9996267599556545712a1`, ELF 64/AArch64, dynamic symbols 66.
+- `lib/arm64-v8a/libsentry.so`: 1.17 MiB, `bea6725a4122db6e516da9ee4a62b066b05171fddcdf1513c98e33626746acda`, ELF 64/AArch64, dynamic symbols 425.
+- `lib/arm64-v8a/libwildcat.so`: 10.19 MiB, `664ff486f5c89c2f7e188adb60119166c483e7c0cd4d55fef774a1f47db8b442`, ELF 64/AArch64, dynamic symbols 286.
+- `lib/armeabi-v7a/libc++_shared.so`: 852.41 KiB, `91b49f121b3120538faff020fcf535ade1d945e65ccd793fc0b815b5799bbdf0`, ELF 32/ARM, dynamic symbols 2499.
+- `lib/armeabi-v7a/libfmod.so`: 970.76 KiB, `2aa9b0962cc9de96f7104d888c3eed8bd69a9c3fd95e23258a6a21e8983a5b84`, ELF 32/ARM, dynamic symbols 1487.
+- `lib/armeabi-v7a/libfmodstudio.so`: 717.66 KiB, `0075aace9739d9ac52f7be80d8dee1789c44aba5c8274af22a93b653688dc22a`, ELF 32/ARM, dynamic symbols 612.
+- `lib/armeabi-v7a/libg.so`: 22.01 MiB, `42fa11d04a6eb3101515c7dc7ee37633b253e82aeb186ca4b27f9c369d1baeab`, ELF 32/ARM, dynamic symbols None.
+- `lib/armeabi-v7a/libscid_sdk.so`: 32.55 KiB, `310637688f8e35bc5927d5b7ecc1bc9a414e9550d11e49676550fa4b8729a9cc`, ELF 32/ARM, dynamic symbols 45.
+- `lib/armeabi-v7a/libsentry-android.so`: 11.29 KiB, `d046c4260028db0b529c39da88caed53385f3cf42364df0864b27385134edb5a`, ELF 32/ARM, dynamic symbols 66.
+- `lib/armeabi-v7a/libsentry.so`: 696.28 KiB, `4fcbcf7860b511bb53469140577d04ee5cc1448caf2d8ed3e1d09ef06c7529ba`, ELF 32/ARM, dynamic symbols 384.
+- `lib/armeabi-v7a/libwildcat.so`: 8.32 MiB, `601812a30893b2c23febaf2d1f3e55d98ed3c2dc4da6170c0582384968418381`, ELF 32/ARM, dynamic symbols 268.
+
+### Selected data files
+
+- `assets/csv_client/ability_button.toml` (389 B, SHA-256 `ec3a9a72299304583f3a498c9c23472b30a57eec03610a6c985d6aa91b7172c7`).
+- `assets/csv_client/animations.csv` (443 B, SHA-256 `26f12f78b9a6b616abba78ba6098cfc59d841790c12048337ccae770c6d20305`).
+- `assets/csv_client/arena_reward_visuals.csv` (395 B, SHA-256 `fd1e5d432ff4c9d41d3f6b8a5dfb0a8048b8526db923e53fc74c028eabc5fbe0`).
+- `assets/csv_client/background_decos.csv` (58 B, SHA-256 `1a5e6f6a2d8c1631c3d78f924a5548a3bddaa8e5f48c3b3e8597cd0facf3ba88`).
+- `assets/csv_client/battle_page_button_layout.csv` (317 B, SHA-256 `e674ff867ec52970a88e2a303530ea5e1f066afb7c65ff757986ec5600e1871e`).
+- `assets/csv_client/billing_packages.csv` (4.91 KiB, SHA-256 `4e6b08012f5b3664788b48aa97fd8762fea5bf59ac1870daf6162a9aed61850b`).
+- `assets/csv_client/billing_packages_china.csv` (2.04 KiB, SHA-256 `d74c8d0b958a505321c3b385d14546bf18eb95a718359fabd6af4d4f6e1375d7`).
+- `assets/csv_client/character_shader_fx.csv` (188 B, SHA-256 `ee971798be65eab6d6787cbd92e1cf7d5f941a04189707ad0e5e8930cc9492ae`).
+- `assets/csv_client/chest_themes.csv` (412 B, SHA-256 `e3efe4827942aa4f30624c9490df7573f44437b2e8ff4e0a08a06c82b90edb71`).
+- `assets/csv_client/client_globals.csv` (6.83 KiB, SHA-256 `b3d0cce06bb784fdb8fbccf796b89dd7387aa6daf230632d9396c1dd46163353`).
+- `assets/csv_client/credits.csv` (1.61 KiB, SHA-256 `7c25292841eca38018173b332e7a33c1607de9842273e1f0606a3ddbecea2fd5`).
+- `assets/csv_client/demo.csv` (8.70 KiB, SHA-256 `7e9188e57862c98dc4a7693a306cac98797b55c9d8633895e398c961a07de03e`).
+- `assets/csv_client/health_bars.csv` (552 B, SHA-256 `754167f71301a48e37c16d36869155a40ddf48d39815b7a0c000a5e161dd8b70`).
+- `assets/csv_client/healthbars.toml` (731 B, SHA-256 `8cdde5db820cd0e1b7895b2ab770cc34f767d66d5077d931547a2ee4034cb2aa`).
+- `assets/csv_client/helpshift.csv` (122 B, SHA-256 `ac56bdecc3ccf2ed10d0292ae79e98cb7c12e1e2d5f789904fbe00e187b33416`).
+- `assets/csv_client/hints.csv` (2.36 KiB, SHA-256 `b3611c1b868118f012d80f5dc8609a624bf7958be2805d9c1cb995623d814ce5`).
+- `assets/csv_client/locales.csv` (3.10 KiB, SHA-256 `ab8ded0fbab28b8cd099002b39e07720a873f6f1055db3b4442d9368b6fb33bb`).
+- `assets/csv_client/motion_sickness_reduction.toml` (182 B, SHA-256 `b5954770d29b490d2d676ef722d855be09d8fa8c81a1cd68d0c4bed672708bc4`).
+- `assets/csv_client/music.csv` (818 B, SHA-256 `6217efacceb1d22f7faefe846c2d60ed04d72264cae56fc92cb4cb24b646d3b4`).
+- `assets/csv_client/mystery_box_levels.csv` (629 B, SHA-256 `095b276dcb80e9d53a7fd72e1f21cf25891241fd57c49515b3b46133ff42e263`).
+- `assets/csv_client/mystery_box_rarity_themes.toml` (579 B, SHA-256 `82d50664d7a915400dab17de3e4adaffc2f103081eb5d07413fe31a3428bf3bb`).
+- `assets/csv_client/mystery_box_themes.toml` (574 B, SHA-256 `d5ad9a96be960ee0e9df55e95816b32795ba8aee7f9ff1cece698af67ab23423`).
+- `assets/csv_client/news.csv` (233 B, SHA-256 `20e8a285a0b63a9af2dc6793a02737c6b678bfa2449cfa0a83949b5a0d0b02f2`).
+- `assets/csv_client/realm_themes.toml` (422 B, SHA-256 `7772465eb9b24a07d5c764748892131dfce4da4ffd5e6b303a82e4af590ee609`).
+- `assets/csv_client/ruler_stands.toml` (381 B, SHA-256 `129a33cf8d459bf6ff44340b27045d4bf8551f1cb73d97f20a009cb9aa0185f8`).
+- `assets/csv_client/shop_categories.csv` (521 B, SHA-256 `c7afd9650e4a6ad52d49a6c1642647d03bca3a3054275ae65dc9a0b5482b5f03`).
+- `assets/csv_client/sorted_regions/CNT_regions.csv` (422 B, SHA-256 `6a51d2384dcef4f42dd3bf21ebea66765cacfd19ca3ccb015721e31aab560be2`).
+- `assets/csv_client/sorted_regions/CN_regions.csv` (424 B, SHA-256 `f9ae30efc7934d35eeaf59f8204bbd87295e31598cbc97f44cd08be00570af4e`).
+- `assets/csv_client/sorted_regions/JP_regions.csv` (460 B, SHA-256 `013eca385d5e14491cdbb3de4a1baef1b7424edab92a8a03f5957c6ee322da99`).
+- `assets/csv_client/sorted_regions/KR_regions.csv` (403 B, SHA-256 `fdfc604df820a2e18c04dd90f6bce74ee3d0006d94e51ea0ce2442242bba2323`).
+- `assets/csv_client/sounds.csv` (14.98 KiB, SHA-256 `976c893acc36ff7caba677c3c7616ba29ba562cc3957a2d9ac3374f3c8143e83`).
+- `assets/csv_client/texts.csv` (3.02 MiB, SHA-256 `bc4d6369840734ca8ad6a13ab497b45b03691d3bbd6cf79a36493b2fa661e874`).
+- `assets/csv_client/texts_patch.csv` (136.26 KiB, SHA-256 `93fea0598bf94b31f1d66bb10f33e96bae676b5f6f248b511196cd7330fb0478`).
+- `assets/csv_client/tower_skins_ui.csv` (1.68 KiB, SHA-256 `f82eb5d4686ec82c8195002505cb96d0ab939838feedaa2646c6812e29205301`).
+- `assets/csv_client/trail_themes.toml` (3.00 KiB, SHA-256 `5c13230fc408ffdef1f584c9bdc18ed1e746bacb1db3503f269e5b040e510900`).
+- `assets/csv_logic/achievement_badges_legacy.csv` (604 B, SHA-256 `1da00d7bb4b8c388169614677151a82810047c31473d9e7207217665c3219d96`).
+- `assets/csv_logic/achievements.csv` (870 B, SHA-256 `adaf61a7f1f8b5ffad335bcf683d9faabc26af8e7118e38d175d006b299f7c39`).
+- `assets/csv_logic/actions.toml` (1.65 KiB, SHA-256 `e243e1439a2abf43033326f1597684f177b28866c4d23426cdc5d1e4f2b756eb`).
+- `assets/csv_logic/album_snippets.csv` (533 B, SHA-256 `fcc4e4c5e9eda517cbc996771cbe64422ca450eebebd53761bc836ef86804eec`).
+- `assets/csv_logic/alliance_badges.csv` (942 B, SHA-256 `a1ad36dc7b3371a35e806832bb7fb9e45d67e29d13c2b244aed4860d828e0581`).
+- `assets/csv_logic/alliance_roles.csv` (268 B, SHA-256 `e147d5bc24d45edb83498090bdebe1d488f99d2cda6834b0e1d5d23ce2bd6b2c`).
+- `assets/csv_logic/area_effect_objects.csv` (2.03 KiB, SHA-256 `dc2629c51b51c051b14add20c86aed33920d0ba9bd39cbf89d6160fc4bdb62be`).
+- `assets/csv_logic/area_effect_objects.toml` (1.12 KiB, SHA-256 `194afb17ae2239fc1e225889f4e4dda34dc90c06fed4214ad4e1ac68ecaa0985`).
+- `assets/csv_logic/area_effect_objects_evo.toml` (923 B, SHA-256 `fe1eb652245489876f4e39c6b492143cf2e285d61e451807fba6885737a802a0`).
+- `assets/csv_logic/arenas.csv` (4.75 KiB, SHA-256 `245bb2cba3ccd2717a958dd82eff9a09dc42cb5a17a31c3288f4b3fd6eaf75c2`).
+- `assets/csv_logic/arenas_alt.csv` (3.71 KiB, SHA-256 `b79cb11b516b931f30f4f515a12855936e5a1a9f448716ba94033b105b6b53b3`).
+- `assets/csv_logic/augment_unlocks.toml` (1.71 KiB, SHA-256 `18e4a38c8a5dab93c48ed3fda36a0e1e022f369aa788084503ae2668db9e45bf`).
+- `assets/csv_logic/autochess_battle_result_config.toml` (108 B, SHA-256 `e7c27d8d24a481d6fcce352efe99d218092d4e46896fc6ab7977e64c4bd34c50`).
+- `assets/csv_logic/badges.csv` (6.06 KiB, SHA-256 `f36b75c6da8ea7e9cd532b8354d59a6c1899e845a0a95b64da487d2bb53e4034`).
+- `assets/csv_logic/banners.csv` (17.44 KiB, SHA-256 `dfff739ff509dd9bf65c93a869ca0cef86d83bbeffadb987523f4e2d3fd4a080`).
+- `assets/csv_logic/battle_timelines.csv` (837 B, SHA-256 `175b9d401c5e35e67ce538d781bbe39c0476aa756419431d91765bb151905aae`).
+- `assets/csv_logic/buildings.csv` (6.03 KiB, SHA-256 `ab0b6829aece9dc44fe7a830fa6eae1ab478600aa2089ad99ac5c53bcd871966`).
+- `assets/csv_logic/buildings.toml` (259 B, SHA-256 `be16c3f3b577d1e684b8651855c7a1121bfcd648cf5506684de84aab4fda8fbe`).
+- `assets/csv_logic/buildings_evo.toml` (424 B, SHA-256 `fedaf0634d65714f481ec75c583f1fbfe8ae2ffce52d6610fa589d65ae37b3fb`).
+- `assets/csv_logic/card_delivery_battles.csv` (392 B, SHA-256 `8d755fe8db86cc146f0928f0edc32b35e76abf87a0dd2217854cca29fc0294e7`).
+- `assets/csv_logic/card_delivery_rewards.csv` (283 B, SHA-256 `fd172bdeb75abd335c2afc9cd707e11abac47cb79d70f6751d8abecd76de02a3`).
+- `assets/csv_logic/card_forms.toml` (450 B, SHA-256 `d8cef3eaeef07be7267f84aea87f66477ae2dbf8a52c3152d59c050a16880b8d`).
+- `assets/csv_logic/card_groups.toml` (1.18 KiB, SHA-256 `09dfbeb832fc7fc4dab953151f4edb2a4d27b62f81416841925d8fb9fa49bab6`).
+- `assets/csv_logic/card_masteries.csv` (3.43 KiB, SHA-256 `b37b0cb6812869ff2a8690a8d1761fdb48a24509bb6deb782e4cfa87917a732d`).
+- `assets/csv_logic/chaos_s2_starter_decks.toml` (297 B, SHA-256 `9534b49a0c70aa5626a1b205bbbd5582a6a6c306e54850f5e5d77e9b17860174`).
+- `assets/csv_logic/character_abilities.csv` (760 B, SHA-256 `6f6121ec93527d425bdcb249474a708c46f967db19059547de0b5666cd411bb7`).
+- `assets/csv_logic/character_buffs.csv` (2.07 KiB, SHA-256 `37020109313694791dcde68257d49e5944b3dbfbda602a0268f3f5ef68464108`).
+- `assets/csv_logic/character_buffs.toml` (480 B, SHA-256 `bf4aaf1b115519fd474e82fc832eb3f3e1c494e9e5ec6c1b36c821d4e9928fcc`).
+- `assets/csv_logic/character_buffs_evo.toml` (733 B, SHA-256 `4d231cb0978939a852785714a87881a8ea9c101f94a81f9521568094484c58ed`).
+- `assets/csv_logic/characters.csv` (5.52 KiB, SHA-256 `952af6078732d5139d1478e7b07e2f476d58166ce994c9c358a020be8cd9bf0f`).
+- `assets/csv_logic/characters.toml` (24 B, SHA-256 `0573b69cc2c4df3d5e5a3f29e7d2929ae2655bfe1e03e2edba4a020c5ba56da8`).
+- `assets/csv_logic/characters/angrybarbarian.toml` (492 B, SHA-256 `9af4bb14810d4016471e9af16e58acdc451a747686284e23c1ff2923b4f9434e`).
+- `assets/csv_logic/characters/archer.toml` (559 B, SHA-256 `199d248da5f1d2fc88a7768d1c1b31308f8de677af00c597688872defb391702`).
+- `assets/csv_logic/characters/archer_queen.toml` (1.15 KiB, SHA-256 `67331d265de9f936bc2231b4412feb315c38560ac6cb5c3ad6fea246e96ba5c0`).
+- `assets/csv_logic/characters/arrows.toml` (535 B, SHA-256 `e4d01c123d67e36870d701bb0784427154e1535bedb3d8cea353c61f26116bb7`).
+- `assets/csv_logic/characters/assassin.toml` (533 B, SHA-256 `70bb1a1ea4daad8cc0f495973655836cf71c8c59aca89e6433d163be2847ee54`).
+- `assets/csv_logic/characters/axeman.toml` (661 B, SHA-256 `e2423e04533068f213c135902a2a83f39d34bbe9f8272ca42c6579f0217e5de6`).
+- `assets/csv_logic/characters/axeman_ev1.toml` (1.37 KiB, SHA-256 `9b2c28eec5d79fb04e4e9498b1fe69668a41056cb732a4256499aada7fbfac00`).
+- `assets/csv_logic/characters/baby_dragon_ev1.toml` (1.49 KiB, SHA-256 `e7fe49161ee803f260cbb5cf4c8984de75c81eab670af10cb0933364866018a1`).
+- `assets/csv_logic/characters/babydragon.toml` (598 B, SHA-256 `fd756719a9e2553f3cb704a19e5ef1877cbbfd632bd246e57cd58f03243561e5`).
+- `assets/csv_logic/characters/balloon.toml` (723 B, SHA-256 `b08f28575815cf880db7f74b2c47ddc02c045bdc0698032c59d0c42266b90a6e`).
+- `assets/csv_logic/characters/barbarian.toml` (816 B, SHA-256 `f56854a188a7c7bad5ba9a67177afd02ae22c4d2deb364d69f0d9978d37be42f`).
+- `assets/csv_logic/characters/barbarianhut.toml` (436 B, SHA-256 `1b486911bd04d3a7a1dff188af0d9d09375a57e592ee5c5f3f3c1affdd3f28fa`).
+- `assets/csv_logic/characters/barbarianlauncher.toml` (544 B, SHA-256 `80584e3d353652ec9d75fa526a287b742ad757d05f47fc28c4057b4fd45992fb`).
+- `assets/csv_logic/characters/barblogprojectile.toml` (553 B, SHA-256 `dd5f66793d8c11ffefbffdd8f956641af4d37950be59a81179800a5177a26c45`).
+- `assets/csv_logic/characters/bat.toml` (502 B, SHA-256 `c012e941dddaadfc743cbcd7bc0b6c3c0376ca6aa664276547c7f290b78672fa`).
+- `assets/csv_logic/characters/battlehealer.toml` (1007 B, SHA-256 `7db066d92ca2a27c6337ca7f223d59652ab0ce4e8334084b974ab1031d360651`).
+- `assets/csv_logic/characters/battleram.toml` (643 B, SHA-256 `0608371c6dbd3e230c520dd54a55484d02208979c2b8e67912f8fdc20b06d28d`).
+- `assets/csv_logic/characters/berserker.toml` (1.05 KiB, SHA-256 `3dcf2dae602f4c419b470b9cf25677a1b29fbdc9dcfbfacd1ee9fa6ffe1dd9c2`).
+- `assets/csv_logic/characters/blowdart_goblin_evo.toml` (1.27 KiB, SHA-256 `142dfabdc2bbaae26fca01c5f0d1118821a66c8d05dbc0b5b1ec949592bd81a3`).
+- `assets/csv_logic/characters/blowdartgoblin.toml` (621 B, SHA-256 `b21e2f32213ae8fd8774e0bb2b96b31c42c43858e7b380360fd5e818131abc12`).
+- `assets/csv_logic/characters/bomber.toml` (602 B, SHA-256 `a6948035ae3c862a9f07ab8d4f1c4296f35d9ab1f4bcd8ebd65caf04c8e8d20b`).
+- `assets/csv_logic/characters/bombtower.toml` (769 B, SHA-256 `2d8b01f8335cb1ba8a3d61fb8a6e3b69fad58a46bd54619c9f1dcd2888b40bf3`).
+- `assets/csv_logic/characters/boss_bandit.toml` (2.19 KiB, SHA-256 `883cd2fae4f789dde7f888c279a5f56bab1da0fe4c7e4aa7ed07c693257693a8`).
+- `assets/csv_logic/characters/bowler.toml` (634 B, SHA-256 `454c99593111e21907e548cc073f5ea952fc3f43baab394edd2a430422516320`).
+- `assets/csv_logic/characters/cannon.toml` (524 B, SHA-256 `4a182bf3838875d3c7bb43f6e52f1cd5c10f10776c70c1823816f67c395b577a`).
+- `assets/csv_logic/characters/cannon_cart.toml` (1.36 KiB, SHA-256 `5b81fbd69d2d83d719b282b1aa7f56b6fdb83f16dd055b1b5a49d0ed97be5a67`).
+- `assets/csv_logic/characters/cannon_ev1.toml` (1.73 KiB, SHA-256 `add2023eac0bb01e8505ffca3dd617777a72b56aaf58e10185c67ff00c116197`).
+- `assets/csv_logic/characters/cannoneer.toml` (884 B, SHA-256 `05ca27ea52c19ba1c7597338287026ab0e324ad8e3ea6d269a5f1734018204aa`).
+- `assets/csv_logic/characters/chef_tower.toml` (2.09 KiB, SHA-256 `cbf29f296f2942edbe18c0433fbd254580d2a070f4dd8d711bcce13193a5f414`).
+- `assets/csv_logic/characters/clone.toml` (578 B, SHA-256 `401c3a7d1c1a672c8a4558b2d4df834da420cad9ccc47b6c9bdcc645b85b4d3f`).
+- `assets/csv_logic/characters/dagger_duchess.toml` (1.42 KiB, SHA-256 `41a8b928d0965216d45b64e01592bca0ee8fee3368a16f86884accda1ad7f2d5`).
+- `assets/csv_logic/characters/dark_magic.toml` (1.08 KiB, SHA-256 `0c7fdebe7b15f758c82dfbd726d7215bece80597d0c07a7e537b020441d189c1`).
+- `assets/csv_logic/characters/dark_prince.toml` (679 B, SHA-256 `22cfc8d54259c419bfa72ca6d3cc12312f5dbef12231000c6171f0742fd137d6`).
+- `assets/csv_logic/characters/darkelixir_bottle.toml` (469 B, SHA-256 `dd5703ad4f91cc4ce803d219c40b273495107d4dd5291ab3024d29bd39dd57c1`).
+- 709 additional candidates are recorded only in ignored `inventory.json`.
+
+## nr-15-535-13-infinity-da5a0dc4
+
+- Package/version: `nullsroyale.rel.mods` / `15.535.13` (`150535013`).
+- Manifest: android-binary-xml, parsed; min/target SDK `21`/`34`.
+- DEX: 1 files, 6,645 declared strings.
+- Native: 16 libraries across arm64-v8a, armeabi-v7a.
+- Assets/resources/data candidates: 10356/55/809.
+- Signing: APK Signature Scheme v2; v1 certificate entries 1.
+
+### DEX
+
+- `classes.dex`: DEX 035, 790.15 KiB, SHA-256 `f27b0de4cb013364c764c515fe0332e2a69190f0f184e5c779a0ec94af976047`, strings 6645/6645, parse `parsed`.
+
+### Native library inventory
+
+- `lib/arm64-v8a/libc++_shared.so`: 1.23 MiB, `4397241b4bd20a8e579bfb41d21107857e12985f6a01ca0c2a5f83380d1270b4`, ELF 64/AArch64, dynamic symbols 2498.
+- `lib/arm64-v8a/libfmod.so`: 1.13 MiB, `299d2a6b03ec865cd9234f4f7484fb7e74928d0180dc6c4b455a8d2b5b54dd45`, ELF 64/AArch64, dynamic symbols 1397.
+- `lib/arm64-v8a/libfmodstudio.so`: 1.10 MiB, `592cdc4beba2aea5f177f0ed3c52c7ed018b09734a3fb584a4ec487cd926caf0`, ELF 64/AArch64, dynamic symbols 586.
+- `lib/arm64-v8a/libg.so`: 26.28 MiB, `110aa2b5cac391c498645e072b0d88729428c2c2845e7e2737ca8ee979059783`, ELF 64/AArch64, dynamic symbols None.
+- `lib/arm64-v8a/libscid_sdk.so`: 59.64 KiB, `2a6edcc8fcad301daa946157ea97c6c422067d5ceaab7cb2ed4655654b642319`, ELF 64/AArch64, dynamic symbols 50.
+- `lib/arm64-v8a/libsentry-android.so`: 15.60 KiB, `6769fd03351610e93ca724ccc74c1c82a6caedd8c1d9996267599556545712a1`, ELF 64/AArch64, dynamic symbols 66.
+- `lib/arm64-v8a/libsentry.so`: 1.17 MiB, `bea6725a4122db6e516da9ee4a62b066b05171fddcdf1513c98e33626746acda`, ELF 64/AArch64, dynamic symbols 425.
+- `lib/arm64-v8a/libwildcat.so`: 10.19 MiB, `664ff486f5c89c2f7e188adb60119166c483e7c0cd4d55fef774a1f47db8b442`, ELF 64/AArch64, dynamic symbols 286.
+- `lib/armeabi-v7a/libc++_shared.so`: 852.41 KiB, `91b49f121b3120538faff020fcf535ade1d945e65ccd793fc0b815b5799bbdf0`, ELF 32/ARM, dynamic symbols 2499.
+- `lib/armeabi-v7a/libfmod.so`: 970.76 KiB, `2aa9b0962cc9de96f7104d888c3eed8bd69a9c3fd95e23258a6a21e8983a5b84`, ELF 32/ARM, dynamic symbols 1487.
+- `lib/armeabi-v7a/libfmodstudio.so`: 717.66 KiB, `0075aace9739d9ac52f7be80d8dee1789c44aba5c8274af22a93b653688dc22a`, ELF 32/ARM, dynamic symbols 612.
+- `lib/armeabi-v7a/libg.so`: 22.01 MiB, `42fa11d04a6eb3101515c7dc7ee37633b253e82aeb186ca4b27f9c369d1baeab`, ELF 32/ARM, dynamic symbols None.
+- `lib/armeabi-v7a/libscid_sdk.so`: 32.55 KiB, `310637688f8e35bc5927d5b7ecc1bc9a414e9550d11e49676550fa4b8729a9cc`, ELF 32/ARM, dynamic symbols 45.
+- `lib/armeabi-v7a/libsentry-android.so`: 11.29 KiB, `d046c4260028db0b529c39da88caed53385f3cf42364df0864b27385134edb5a`, ELF 32/ARM, dynamic symbols 66.
+- `lib/armeabi-v7a/libsentry.so`: 696.28 KiB, `4fcbcf7860b511bb53469140577d04ee5cc1448caf2d8ed3e1d09ef06c7529ba`, ELF 32/ARM, dynamic symbols 384.
+- `lib/armeabi-v7a/libwildcat.so`: 8.32 MiB, `601812a30893b2c23febaf2d1f3e55d98ed3c2dc4da6170c0582384968418381`, ELF 32/ARM, dynamic symbols 268.
+
+### Selected data files
+
+- `assets/csv_client/ability_button.toml` (389 B, SHA-256 `ec3a9a72299304583f3a498c9c23472b30a57eec03610a6c985d6aa91b7172c7`).
+- `assets/csv_client/animations.csv` (443 B, SHA-256 `26f12f78b9a6b616abba78ba6098cfc59d841790c12048337ccae770c6d20305`).
+- `assets/csv_client/arena_reward_visuals.csv` (395 B, SHA-256 `fd1e5d432ff4c9d41d3f6b8a5dfb0a8048b8526db923e53fc74c028eabc5fbe0`).
+- `assets/csv_client/background_decos.csv` (58 B, SHA-256 `1a5e6f6a2d8c1631c3d78f924a5548a3bddaa8e5f48c3b3e8597cd0facf3ba88`).
+- `assets/csv_client/battle_page_button_layout.csv` (317 B, SHA-256 `e674ff867ec52970a88e2a303530ea5e1f066afb7c65ff757986ec5600e1871e`).
+- `assets/csv_client/billing_packages.csv` (4.91 KiB, SHA-256 `4e6b08012f5b3664788b48aa97fd8762fea5bf59ac1870daf6162a9aed61850b`).
+- `assets/csv_client/billing_packages_china.csv` (2.04 KiB, SHA-256 `d74c8d0b958a505321c3b385d14546bf18eb95a718359fabd6af4d4f6e1375d7`).
+- `assets/csv_client/character_shader_fx.csv` (188 B, SHA-256 `ee971798be65eab6d6787cbd92e1cf7d5f941a04189707ad0e5e8930cc9492ae`).
+- `assets/csv_client/chest_themes.csv` (412 B, SHA-256 `e3efe4827942aa4f30624c9490df7573f44437b2e8ff4e0a08a06c82b90edb71`).
+- `assets/csv_client/client_globals.csv` (6.83 KiB, SHA-256 `b3d0cce06bb784fdb8fbccf796b89dd7387aa6daf230632d9396c1dd46163353`).
+- `assets/csv_client/credits.csv` (1.61 KiB, SHA-256 `7c25292841eca38018173b332e7a33c1607de9842273e1f0606a3ddbecea2fd5`).
+- `assets/csv_client/demo.csv` (8.70 KiB, SHA-256 `7e9188e57862c98dc4a7693a306cac98797b55c9d8633895e398c961a07de03e`).
+- `assets/csv_client/health_bars.csv` (552 B, SHA-256 `754167f71301a48e37c16d36869155a40ddf48d39815b7a0c000a5e161dd8b70`).
+- `assets/csv_client/healthbars.toml` (731 B, SHA-256 `8cdde5db820cd0e1b7895b2ab770cc34f767d66d5077d931547a2ee4034cb2aa`).
+- `assets/csv_client/helpshift.csv` (122 B, SHA-256 `ac56bdecc3ccf2ed10d0292ae79e98cb7c12e1e2d5f789904fbe00e187b33416`).
+- `assets/csv_client/hints.csv` (2.36 KiB, SHA-256 `b3611c1b868118f012d80f5dc8609a624bf7958be2805d9c1cb995623d814ce5`).
+- `assets/csv_client/locales.csv` (3.10 KiB, SHA-256 `ab8ded0fbab28b8cd099002b39e07720a873f6f1055db3b4442d9368b6fb33bb`).
+- `assets/csv_client/motion_sickness_reduction.toml` (182 B, SHA-256 `b5954770d29b490d2d676ef722d855be09d8fa8c81a1cd68d0c4bed672708bc4`).
+- `assets/csv_client/music.csv` (818 B, SHA-256 `6217efacceb1d22f7faefe846c2d60ed04d72264cae56fc92cb4cb24b646d3b4`).
+- `assets/csv_client/mystery_box_levels.csv` (629 B, SHA-256 `095b276dcb80e9d53a7fd72e1f21cf25891241fd57c49515b3b46133ff42e263`).
+- `assets/csv_client/mystery_box_rarity_themes.toml` (579 B, SHA-256 `82d50664d7a915400dab17de3e4adaffc2f103081eb5d07413fe31a3428bf3bb`).
+- `assets/csv_client/mystery_box_themes.toml` (574 B, SHA-256 `d5ad9a96be960ee0e9df55e95816b32795ba8aee7f9ff1cece698af67ab23423`).
+- `assets/csv_client/news.csv` (233 B, SHA-256 `20e8a285a0b63a9af2dc6793a02737c6b678bfa2449cfa0a83949b5a0d0b02f2`).
+- `assets/csv_client/realm_themes.toml` (422 B, SHA-256 `7772465eb9b24a07d5c764748892131dfce4da4ffd5e6b303a82e4af590ee609`).
+- `assets/csv_client/ruler_stands.toml` (381 B, SHA-256 `129a33cf8d459bf6ff44340b27045d4bf8551f1cb73d97f20a009cb9aa0185f8`).
+- `assets/csv_client/shop_categories.csv` (521 B, SHA-256 `c7afd9650e4a6ad52d49a6c1642647d03bca3a3054275ae65dc9a0b5482b5f03`).
+- `assets/csv_client/sorted_regions/CNT_regions.csv` (422 B, SHA-256 `6a51d2384dcef4f42dd3bf21ebea66765cacfd19ca3ccb015721e31aab560be2`).
+- `assets/csv_client/sorted_regions/CN_regions.csv` (424 B, SHA-256 `f9ae30efc7934d35eeaf59f8204bbd87295e31598cbc97f44cd08be00570af4e`).
+- `assets/csv_client/sorted_regions/JP_regions.csv` (460 B, SHA-256 `013eca385d5e14491cdbb3de4a1baef1b7424edab92a8a03f5957c6ee322da99`).
+- `assets/csv_client/sorted_regions/KR_regions.csv` (403 B, SHA-256 `fdfc604df820a2e18c04dd90f6bce74ee3d0006d94e51ea0ce2442242bba2323`).
+- `assets/csv_client/sounds.csv` (14.98 KiB, SHA-256 `976c893acc36ff7caba677c3c7616ba29ba562cc3957a2d9ac3374f3c8143e83`).
+- `assets/csv_client/texts.csv` (3.02 MiB, SHA-256 `bc4d6369840734ca8ad6a13ab497b45b03691d3bbd6cf79a36493b2fa661e874`).
+- `assets/csv_client/texts_patch.csv` (136.26 KiB, SHA-256 `93fea0598bf94b31f1d66bb10f33e96bae676b5f6f248b511196cd7330fb0478`).
+- `assets/csv_client/tower_skins_ui.csv` (1.68 KiB, SHA-256 `f82eb5d4686ec82c8195002505cb96d0ab939838feedaa2646c6812e29205301`).
+- `assets/csv_client/trail_themes.toml` (3.00 KiB, SHA-256 `5c13230fc408ffdef1f584c9bdc18ed1e746bacb1db3503f269e5b040e510900`).
+- `assets/csv_logic/achievement_badges_legacy.csv` (604 B, SHA-256 `1da00d7bb4b8c388169614677151a82810047c31473d9e7207217665c3219d96`).
+- `assets/csv_logic/achievements.csv` (870 B, SHA-256 `adaf61a7f1f8b5ffad335bcf683d9faabc26af8e7118e38d175d006b299f7c39`).
+- `assets/csv_logic/actions.toml` (1.65 KiB, SHA-256 `e243e1439a2abf43033326f1597684f177b28866c4d23426cdc5d1e4f2b756eb`).
+- `assets/csv_logic/album_snippets.csv` (533 B, SHA-256 `fcc4e4c5e9eda517cbc996771cbe64422ca450eebebd53761bc836ef86804eec`).
+- `assets/csv_logic/alliance_badges.csv` (942 B, SHA-256 `a1ad36dc7b3371a35e806832bb7fb9e45d67e29d13c2b244aed4860d828e0581`).
+- `assets/csv_logic/alliance_roles.csv` (268 B, SHA-256 `e147d5bc24d45edb83498090bdebe1d488f99d2cda6834b0e1d5d23ce2bd6b2c`).
+- `assets/csv_logic/area_effect_objects.csv` (2.03 KiB, SHA-256 `dc2629c51b51c051b14add20c86aed33920d0ba9bd39cbf89d6160fc4bdb62be`).
+- `assets/csv_logic/area_effect_objects.toml` (1.12 KiB, SHA-256 `194afb17ae2239fc1e225889f4e4dda34dc90c06fed4214ad4e1ac68ecaa0985`).
+- `assets/csv_logic/area_effect_objects_evo.toml` (923 B, SHA-256 `fe1eb652245489876f4e39c6b492143cf2e285d61e451807fba6885737a802a0`).
+- `assets/csv_logic/arenas.csv` (4.75 KiB, SHA-256 `245bb2cba3ccd2717a958dd82eff9a09dc42cb5a17a31c3288f4b3fd6eaf75c2`).
+- `assets/csv_logic/arenas_alt.csv` (3.71 KiB, SHA-256 `b79cb11b516b931f30f4f515a12855936e5a1a9f448716ba94033b105b6b53b3`).
+- `assets/csv_logic/augment_unlocks.toml` (1.71 KiB, SHA-256 `18e4a38c8a5dab93c48ed3fda36a0e1e022f369aa788084503ae2668db9e45bf`).
+- `assets/csv_logic/autochess_battle_result_config.toml` (108 B, SHA-256 `e7c27d8d24a481d6fcce352efe99d218092d4e46896fc6ab7977e64c4bd34c50`).
+- `assets/csv_logic/badges.csv` (6.06 KiB, SHA-256 `f36b75c6da8ea7e9cd532b8354d59a6c1899e845a0a95b64da487d2bb53e4034`).
+- `assets/csv_logic/banners.csv` (17.44 KiB, SHA-256 `dfff739ff509dd9bf65c93a869ca0cef86d83bbeffadb987523f4e2d3fd4a080`).
+- `assets/csv_logic/battle_timelines.csv` (837 B, SHA-256 `175b9d401c5e35e67ce538d781bbe39c0476aa756419431d91765bb151905aae`).
+- `assets/csv_logic/buildings.csv` (6.03 KiB, SHA-256 `ab0b6829aece9dc44fe7a830fa6eae1ab478600aa2089ad99ac5c53bcd871966`).
+- `assets/csv_logic/buildings.toml` (259 B, SHA-256 `be16c3f3b577d1e684b8651855c7a1121bfcd648cf5506684de84aab4fda8fbe`).
+- `assets/csv_logic/buildings_evo.toml` (424 B, SHA-256 `fedaf0634d65714f481ec75c583f1fbfe8ae2ffce52d6610fa589d65ae37b3fb`).
+- `assets/csv_logic/card_delivery_battles.csv` (392 B, SHA-256 `8d755fe8db86cc146f0928f0edc32b35e76abf87a0dd2217854cca29fc0294e7`).
+- `assets/csv_logic/card_delivery_rewards.csv` (283 B, SHA-256 `fd172bdeb75abd335c2afc9cd707e11abac47cb79d70f6751d8abecd76de02a3`).
+- `assets/csv_logic/card_forms.toml` (450 B, SHA-256 `d8cef3eaeef07be7267f84aea87f66477ae2dbf8a52c3152d59c050a16880b8d`).
+- `assets/csv_logic/card_groups.toml` (1.18 KiB, SHA-256 `09dfbeb832fc7fc4dab953151f4edb2a4d27b62f81416841925d8fb9fa49bab6`).
+- `assets/csv_logic/card_masteries.csv` (3.43 KiB, SHA-256 `b37b0cb6812869ff2a8690a8d1761fdb48a24509bb6deb782e4cfa87917a732d`).
+- `assets/csv_logic/chaos_s2_starter_decks.toml` (297 B, SHA-256 `9534b49a0c70aa5626a1b205bbbd5582a6a6c306e54850f5e5d77e9b17860174`).
+- `assets/csv_logic/character_abilities.csv` (760 B, SHA-256 `6f6121ec93527d425bdcb249474a708c46f967db19059547de0b5666cd411bb7`).
+- `assets/csv_logic/character_buffs.csv` (2.07 KiB, SHA-256 `37020109313694791dcde68257d49e5944b3dbfbda602a0268f3f5ef68464108`).
+- `assets/csv_logic/character_buffs.toml` (480 B, SHA-256 `bf4aaf1b115519fd474e82fc832eb3f3e1c494e9e5ec6c1b36c821d4e9928fcc`).
+- `assets/csv_logic/character_buffs_evo.toml` (733 B, SHA-256 `4d231cb0978939a852785714a87881a8ea9c101f94a81f9521568094484c58ed`).
+- `assets/csv_logic/characters.csv` (5.52 KiB, SHA-256 `952af6078732d5139d1478e7b07e2f476d58166ce994c9c358a020be8cd9bf0f`).
+- `assets/csv_logic/characters.toml` (24 B, SHA-256 `0573b69cc2c4df3d5e5a3f29e7d2929ae2655bfe1e03e2edba4a020c5ba56da8`).
+- `assets/csv_logic/characters/angrybarbarian.toml` (492 B, SHA-256 `9af4bb14810d4016471e9af16e58acdc451a747686284e23c1ff2923b4f9434e`).
+- `assets/csv_logic/characters/archer.toml` (559 B, SHA-256 `199d248da5f1d2fc88a7768d1c1b31308f8de677af00c597688872defb391702`).
+- `assets/csv_logic/characters/archer_queen.toml` (1.15 KiB, SHA-256 `67331d265de9f936bc2231b4412feb315c38560ac6cb5c3ad6fea246e96ba5c0`).
+- `assets/csv_logic/characters/arrows.toml` (535 B, SHA-256 `e4d01c123d67e36870d701bb0784427154e1535bedb3d8cea353c61f26116bb7`).
+- `assets/csv_logic/characters/assassin.toml` (533 B, SHA-256 `70bb1a1ea4daad8cc0f495973655836cf71c8c59aca89e6433d163be2847ee54`).
+- `assets/csv_logic/characters/axeman.toml` (661 B, SHA-256 `e2423e04533068f213c135902a2a83f39d34bbe9f8272ca42c6579f0217e5de6`).
+- `assets/csv_logic/characters/axeman_ev1.toml` (1.37 KiB, SHA-256 `9b2c28eec5d79fb04e4e9498b1fe69668a41056cb732a4256499aada7fbfac00`).
+- `assets/csv_logic/characters/baby_dragon_ev1.toml` (1.49 KiB, SHA-256 `e7fe49161ee803f260cbb5cf4c8984de75c81eab670af10cb0933364866018a1`).
+- `assets/csv_logic/characters/babydragon.toml` (598 B, SHA-256 `fd756719a9e2553f3cb704a19e5ef1877cbbfd632bd246e57cd58f03243561e5`).
+- `assets/csv_logic/characters/balloon.toml` (723 B, SHA-256 `b08f28575815cf880db7f74b2c47ddc02c045bdc0698032c59d0c42266b90a6e`).
+- `assets/csv_logic/characters/barbarian.toml` (816 B, SHA-256 `f56854a188a7c7bad5ba9a67177afd02ae22c4d2deb364d69f0d9978d37be42f`).
+- `assets/csv_logic/characters/barbarianhut.toml` (436 B, SHA-256 `1b486911bd04d3a7a1dff188af0d9d09375a57e592ee5c5f3f3c1affdd3f28fa`).
+- `assets/csv_logic/characters/barbarianlauncher.toml` (544 B, SHA-256 `80584e3d353652ec9d75fa526a287b742ad757d05f47fc28c4057b4fd45992fb`).
+- `assets/csv_logic/characters/barblogprojectile.toml` (553 B, SHA-256 `dd5f66793d8c11ffefbffdd8f956641af4d37950be59a81179800a5177a26c45`).
+- `assets/csv_logic/characters/bat.toml` (502 B, SHA-256 `c012e941dddaadfc743cbcd7bc0b6c3c0376ca6aa664276547c7f290b78672fa`).
+- `assets/csv_logic/characters/battlehealer.toml` (1007 B, SHA-256 `7db066d92ca2a27c6337ca7f223d59652ab0ce4e8334084b974ab1031d360651`).
+- `assets/csv_logic/characters/battleram.toml` (643 B, SHA-256 `0608371c6dbd3e230c520dd54a55484d02208979c2b8e67912f8fdc20b06d28d`).
+- `assets/csv_logic/characters/berserker.toml` (1.05 KiB, SHA-256 `3dcf2dae602f4c419b470b9cf25677a1b29fbdc9dcfbfacd1ee9fa6ffe1dd9c2`).
+- `assets/csv_logic/characters/blowdart_goblin_evo.toml` (1.27 KiB, SHA-256 `142dfabdc2bbaae26fca01c5f0d1118821a66c8d05dbc0b5b1ec949592bd81a3`).
+- `assets/csv_logic/characters/blowdartgoblin.toml` (621 B, SHA-256 `b21e2f32213ae8fd8774e0bb2b96b31c42c43858e7b380360fd5e818131abc12`).
+- `assets/csv_logic/characters/bomber.toml` (602 B, SHA-256 `a6948035ae3c862a9f07ab8d4f1c4296f35d9ab1f4bcd8ebd65caf04c8e8d20b`).
+- `assets/csv_logic/characters/bombtower.toml` (769 B, SHA-256 `2d8b01f8335cb1ba8a3d61fb8a6e3b69fad58a46bd54619c9f1dcd2888b40bf3`).
+- `assets/csv_logic/characters/boss_bandit.toml` (2.19 KiB, SHA-256 `883cd2fae4f789dde7f888c279a5f56bab1da0fe4c7e4aa7ed07c693257693a8`).
+- `assets/csv_logic/characters/bowler.toml` (634 B, SHA-256 `454c99593111e21907e548cc073f5ea952fc3f43baab394edd2a430422516320`).
+- `assets/csv_logic/characters/cannon.toml` (524 B, SHA-256 `4a182bf3838875d3c7bb43f6e52f1cd5c10f10776c70c1823816f67c395b577a`).
+- `assets/csv_logic/characters/cannon_cart.toml` (1.36 KiB, SHA-256 `5b81fbd69d2d83d719b282b1aa7f56b6fdb83f16dd055b1b5a49d0ed97be5a67`).
+- `assets/csv_logic/characters/cannon_ev1.toml` (1.73 KiB, SHA-256 `add2023eac0bb01e8505ffca3dd617777a72b56aaf58e10185c67ff00c116197`).
+- `assets/csv_logic/characters/cannoneer.toml` (884 B, SHA-256 `05ca27ea52c19ba1c7597338287026ab0e324ad8e3ea6d269a5f1734018204aa`).
+- `assets/csv_logic/characters/chef_tower.toml` (2.09 KiB, SHA-256 `cbf29f296f2942edbe18c0433fbd254580d2a070f4dd8d711bcce13193a5f414`).
+- `assets/csv_logic/characters/clone.toml` (578 B, SHA-256 `401c3a7d1c1a672c8a4558b2d4df834da420cad9ccc47b6c9bdcc645b85b4d3f`).
+- `assets/csv_logic/characters/dagger_duchess.toml` (1.42 KiB, SHA-256 `41a8b928d0965216d45b64e01592bca0ee8fee3368a16f86884accda1ad7f2d5`).
+- `assets/csv_logic/characters/dark_magic.toml` (1.08 KiB, SHA-256 `0c7fdebe7b15f758c82dfbd726d7215bece80597d0c07a7e537b020441d189c1`).
+- `assets/csv_logic/characters/dark_prince.toml` (679 B, SHA-256 `22cfc8d54259c419bfa72ca6d3cc12312f5dbef12231000c6171f0742fd137d6`).
+- `assets/csv_logic/characters/darkelixir_bottle.toml` (469 B, SHA-256 `dd5703ad4f91cc4ce803d219c40b273495107d4dd5291ab3024d29bd39dd57c1`).
+- 709 additional candidates are recorded only in ignored `inventory.json`.
+

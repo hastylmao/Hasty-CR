@@ -1,0 +1,2557 @@
+{
+ "musketeer vs archer": {
+  "n": 16.0,
+  "killed": 14.0,
+  "reward": 57.42999999999999
+ },
+ "skeletons vs spear_goblin": {
+  "n": 36.0,
+  "killed": 33.0,
+  "reward": -91.40500000000002
+ },
+ "skeletons vs goblin": {
+  "n": 471.0,
+  "killed": 450.0,
+  "reward": -1873.3349999999996
+ },
+ "skeletons vs fire_spirit": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": 13.769999999999989
+ },
+ "the_log vs spear_goblin": {
+  "n": 97.0,
+  "killed": 97.0,
+  "reward": -588.3
+ },
+ "the_log vs fire_spirit": {
+  "n": 4.0,
+  "killed": 3.0,
+  "reward": 6.639999999999985
+ },
+ "cannon vs goblin": {
+  "n": 669.0,
+  "killed": 629.0,
+  "reward": -4180.250000000007
+ },
+ "ice_spirit vs spear_goblin": {
+  "n": 42.0,
+  "killed": 36.0,
+  "reward": -83.61500000000001
+ },
+ "ice_spirit vs fire_spirit": {
+  "n": 9.0,
+  "killed": 8.0,
+  "reward": -42.135000000000005
+ },
+ "ice_golem vs cannon": {
+  "n": 9.0,
+  "killed": 8.0,
+  "reward": 12.665
+ },
+ "ice_golem vs musketeer": {
+  "n": 102.0,
+  "killed": 90.0,
+  "reward": -266.3200000000001
+ },
+ "ice_golem vs spear_goblin": {
+  "n": 34.0,
+  "killed": 28.0,
+  "reward": -78.24000000000001
+ },
+ "skeletons vs valkyrie": {
+  "n": 16.0,
+  "killed": 14.0,
+  "reward": -79.995
+ },
+ "musketeer vs spear_goblin": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": 3.2699999999999996
+ },
+ "musketeer vs musketeer": {
+  "n": 51.0,
+  "killed": 50.0,
+  "reward": -113.61999999999996
+ },
+ "musketeer vs fire_spirit": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 4.97
+ },
+ "cannon vs golden_knight": {
+  "n": 27.0,
+  "killed": 25.0,
+  "reward": 48.875
+ },
+ "cannon vs rascal_boy": {
+  "n": 25.0,
+  "killed": 18.0,
+  "reward": -158.09500000000006
+ },
+ "the_log vs archer": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": -14.404999999999998
+ },
+ "cannon vs baby_dragon": {
+  "n": 6.0,
+  "killed": 5.0,
+  "reward": 20.235
+ },
+ "ice_spirit vs knight": {
+  "n": 105.0,
+  "killed": 98.0,
+  "reward": 13.030000000000037
+ },
+ "ice_golem vs giant": {
+  "n": 78.0,
+  "killed": 63.0,
+  "reward": -23.12499999999997
+ },
+ "ice_golem vs baby_dragon": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": 0.375000000000016
+ },
+ "skeletons vs mega_knight": {
+  "n": 42.0,
+  "killed": 42.0,
+  "reward": 175.33
+ },
+ "cannon vs spear_goblin": {
+  "n": 58.0,
+  "killed": 58.0,
+  "reward": -277.66999999999996
+ },
+ "ice_spirit vs royal_recruit": {
+  "n": 236.0,
+  "killed": 210.0,
+  "reward": -478.7100000000002
+ },
+ "ice_spirit vs minion": {
+  "n": 114.0,
+  "killed": 105.0,
+  "reward": -314.0950000000001
+ },
+ "skeletons vs ice_golem": {
+  "n": 129.0,
+  "killed": 110.0,
+  "reward": -29.82999999999997
+ },
+ "skeletons vs electro_giant": {
+  "n": 8.0,
+  "killed": 5.0,
+  "reward": 33.234999999999985
+ },
+ "cannon vs cannon_cart": {
+  "n": 9.0,
+  "killed": 8.0,
+  "reward": 40.275000000000006
+ },
+ "ice_spirit vs cannon": {
+  "n": 5.0,
+  "killed": 3.0,
+  "reward": -22.82500000000001
+ },
+ "ice_spirit vs princess": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 8.0
+ },
+ "ice_spirit vs bat": {
+  "n": 88.0,
+  "killed": 87.0,
+  "reward": -182.99500000000006
+ },
+ "ice_spirit vs little_prince": {
+  "n": 132.0,
+  "killed": 117.0,
+  "reward": -39.07999999999997
+ },
+ "ice_golem vs cannon_cart": {
+  "n": 8.0,
+  "killed": 6.0,
+  "reward": 14.919999999999998
+ },
+ "ice_golem vs princess": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 7.205
+ },
+ "ice_golem vs golden_knight": {
+  "n": 11.0,
+  "killed": 11.0,
+  "reward": 44.575
+ },
+ "ice_golem vs minion": {
+  "n": 62.0,
+  "killed": 60.0,
+  "reward": 113.77
+ },
+ "ice_golem vs fire_spirit": {
+  "n": 14.0,
+  "killed": 14.0,
+  "reward": -10.510000000000012
+ },
+ "ice_golem vs little_prince": {
+  "n": 131.0,
+  "killed": 118.0,
+  "reward": -20.42000000000001
+ },
+ "skeletons vs cannon_cart": {
+  "n": 11.0,
+  "killed": 9.0,
+  "reward": 8.269999999999989
+ },
+ "skeletons vs knight": {
+  "n": 143.0,
+  "killed": 139.0,
+  "reward": 251.8999999999999
+ },
+ "skeletons vs golden_knight": {
+  "n": 20.0,
+  "killed": 18.0,
+  "reward": 57.55499999999997
+ },
+ "musketeer vs phoenix_large": {
+  "n": 3.0,
+  "killed": 2.0,
+  "reward": -35.985
+ },
+ "musketeer vs skeleton": {
+  "n": 186.0,
+  "killed": 178.0,
+  "reward": -497.7699999999999
+ },
+ "the_log vs skeleton": {
+  "n": 2468.0,
+  "killed": 2462.0,
+  "reward": -11373.295000000015
+ },
+ "skeletons vs dart_goblin": {
+  "n": 9.0,
+  "killed": 9.0,
+  "reward": -27.550000000000004
+ },
+ "cannon vs musketeer": {
+  "n": 53.0,
+  "killed": 44.0,
+  "reward": -82.905
+ },
+ "skeletons vs musketeer": {
+  "n": 163.0,
+  "killed": 155.0,
+  "reward": 123.12000000000003
+ },
+ "the_log vs witch": {
+  "n": 10.0,
+  "killed": 9.0,
+  "reward": -23.06
+ },
+ "skeletons vs giant": {
+  "n": 147.0,
+  "killed": 124.0,
+  "reward": 94.93499999999992
+ },
+ "skeletons vs skeleton": {
+  "n": 738.0,
+  "killed": 712.0,
+  "reward": -3128.1450000000086
+ },
+ "ice_spirit vs phoenix_large": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 16.88
+ },
+ "the_log vs pekka": {
+  "n": 5.0,
+  "killed": 3.0,
+  "reward": 8.645000000000001
+ },
+ "the_log vs giant": {
+  "n": 12.0,
+  "killed": 9.0,
+  "reward": -17.814999999999998
+ },
+ "musketeer vs pekka": {
+  "n": 11.0,
+  "killed": 9.0,
+  "reward": -44.24000000000001
+ },
+ "ice_golem vs pekka": {
+  "n": 45.0,
+  "killed": 35.0,
+  "reward": 109.52000000000002
+ },
+ "ice_spirit vs witch": {
+  "n": 15.0,
+  "killed": 13.0,
+  "reward": -106.77000000000001
+ },
+ "ice_spirit vs pekka": {
+  "n": 50.0,
+  "killed": 33.0,
+  "reward": 41.01499999999997
+ },
+ "ice_spirit vs musketeer": {
+  "n": 138.0,
+  "killed": 123.0,
+  "reward": -99.23000000000002
+ },
+ "ice_spirit vs minipekka": {
+  "n": 26.0,
+  "killed": 25.0,
+  "reward": 53.370000000000005
+ },
+ "skeletons vs ram_rider": {
+  "n": 10.0,
+  "killed": 10.0,
+  "reward": 40.25
+ },
+ "ice_golem vs hog_rider": {
+  "n": 50.0,
+  "killed": 46.0,
+  "reward": 247.9299999999999
+ },
+ "ice_spirit vs ice_golem": {
+  "n": 117.0,
+  "killed": 98.0,
+  "reward": -47.15000000000004
+ },
+ "ice_spirit vs baby_dragon": {
+  "n": 24.0,
+  "killed": 22.0,
+  "reward": 7.845000000000013
+ },
+ "ice_spirit vs golden_knight": {
+  "n": 21.0,
+  "killed": 19.0,
+  "reward": 77.71
+ },
+ "musketeer vs golden_knight": {
+  "n": 9.0,
+  "killed": 9.0,
+  "reward": -6.255000000000002
+ },
+ "the_log vs ice_golem": {
+  "n": 16.0,
+  "killed": 14.0,
+  "reward": -27.89499999999999
+ },
+ "cannon vs pekka": {
+  "n": 65.0,
+  "killed": 56.0,
+  "reward": 113.67999999999996
+ },
+ "cannon vs valkyrie": {
+  "n": 21.0,
+  "killed": 20.0,
+  "reward": -66.06000000000002
+ },
+ "ice_spirit vs skeleton": {
+  "n": 1296.0,
+  "killed": 1260.0,
+  "reward": -3621.260000000002
+ },
+ "skeletons vs pekka": {
+  "n": 73.0,
+  "killed": 62.0,
+  "reward": 405.78999999999996
+ },
+ "skeletons vs lumberjack": {
+  "n": 17.0,
+  "killed": 17.0,
+  "reward": 35.175000000000004
+ },
+ "ice_spirit vs bowler": {
+  "n": 26.0,
+  "killed": 20.0,
+  "reward": 79.345
+ },
+ "cannon vs giant": {
+  "n": 167.0,
+  "killed": 143.0,
+  "reward": 97.75999999999979
+ },
+ "cannon vs minipekka": {
+  "n": 45.0,
+  "killed": 42.0,
+  "reward": -28.040000000000006
+ },
+ "musketeer vs baby_dragon": {
+  "n": 9.0,
+  "killed": 9.0,
+  "reward": -2.7750000000000075
+ },
+ "skeletons vs phoenix_large": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 8.0
+ },
+ "ice_spirit vs valkyrie": {
+  "n": 14.0,
+  "killed": 12.0,
+  "reward": -3.184999999999988
+ },
+ "cannon vs ram_rider": {
+  "n": 11.0,
+  "killed": 11.0,
+  "reward": 1.5449999999999875
+ },
+ "ice_golem vs phoenix_large": {
+  "n": 1.0,
+  "killed": 0.0,
+  "reward": -24.384999999999998
+ },
+ "skeletons vs bomber": {
+  "n": 40.0,
+  "killed": 37.0,
+  "reward": -60.469999999999985
+ },
+ "ice_golem vs prince": {
+  "n": 84.0,
+  "killed": 77.0,
+  "reward": -26.17499999999999
+ },
+ "cannon vs ice_golem": {
+  "n": 142.0,
+  "killed": 115.0,
+  "reward": -200.74499999999983
+ },
+ "cannon vs knight": {
+  "n": 131.0,
+  "killed": 125.0,
+  "reward": -214.665
+ },
+ "ice_spirit vs lumberjack": {
+  "n": 8.0,
+  "killed": 7.0,
+  "reward": -27.885000000000005
+ },
+ "ice_golem vs knight": {
+  "n": 96.0,
+  "killed": 92.0,
+  "reward": -167.02
+ },
+ "ice_golem vs skeleton": {
+  "n": 895.0,
+  "killed": 854.0,
+  "reward": -3346.9149999999936
+ },
+ "skeletons vs minion": {
+  "n": 50.0,
+  "killed": 49.0,
+  "reward": -101.03500000000001
+ },
+ "ice_golem vs royal_ghost": {
+  "n": 24.0,
+  "killed": 20.0,
+  "reward": -58.72500000000003
+ },
+ "cannon vs witch": {
+  "n": 23.0,
+  "killed": 19.0,
+  "reward": -162.935
+ },
+ "cannon vs skeleton": {
+  "n": 1128.0,
+  "killed": 1068.0,
+  "reward": -5293.775000000003
+ },
+ "cannon vs archer": {
+  "n": 64.0,
+  "killed": 55.0,
+  "reward": -144.55
+ },
+ "cannon vs mother_witch": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": -1.4599999999999862
+ },
+ "skeletons vs hog_rider": {
+  "n": 532.0,
+  "killed": 510.0,
+  "reward": 2404.5599999999986
+ },
+ "ice_golem vs bat": {
+  "n": 47.0,
+  "killed": 47.0,
+  "reward": -135.915
+ },
+ "cannon vs royal_ghost": {
+  "n": 47.0,
+  "killed": 44.0,
+  "reward": -88.77499999999998
+ },
+ "skeletons vs royal_ghost": {
+  "n": 45.0,
+  "killed": 44.0,
+  "reward": 51.454999999999984
+ },
+ "skeletons vs witch": {
+  "n": 11.0,
+  "killed": 8.0,
+  "reward": -50.40499999999999
+ },
+ "ice_spirit vs royal_ghost": {
+  "n": 27.0,
+  "killed": 26.0,
+  "reward": -74.87999999999997
+ },
+ "musketeer vs knight": {
+  "n": 33.0,
+  "killed": 29.0,
+  "reward": -82.62000000000002
+ },
+ "the_log vs knight": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 20.09499999999999
+ },
+ "ice_golem vs balloon": {
+  "n": 37.0,
+  "killed": 25.0,
+  "reward": 2.2449999999999903
+ },
+ "skeletons vs balloon": {
+  "n": 37.0,
+  "killed": 27.0,
+  "reward": -31.490000000000006
+ },
+ "cannon vs mega_knight": {
+  "n": 69.0,
+  "killed": 60.0,
+  "reward": 134.01499999999996
+ },
+ "ice_golem vs minipekka": {
+  "n": 42.0,
+  "killed": 38.0,
+  "reward": 14.66500000000001
+ },
+ "ice_spirit vs mega_knight": {
+  "n": 48.0,
+  "killed": 47.0,
+  "reward": 178.61999999999995
+ },
+ "ice_spirit vs giant": {
+  "n": 98.0,
+  "killed": 79.0,
+  "reward": 249.3199999999999
+ },
+ "musketeer vs bowler": {
+  "n": 6.0,
+  "killed": 3.0,
+  "reward": -56.215
+ },
+ "skeletons vs skeleton_king": {
+  "n": 29.0,
+  "killed": 29.0,
+  "reward": 72.73000000000002
+ },
+ "ice_spirit vs balloon": {
+  "n": 52.0,
+  "killed": 37.0,
+  "reward": -83.6
+ },
+ "cannon vs balloon": {
+  "n": 52.0,
+  "killed": 35.0,
+  "reward": -63.28999999999998
+ },
+ "ice_golem vs goblin_cage": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 12.89
+ },
+ "skeletons vs prince": {
+  "n": 84.0,
+  "killed": 78.0,
+  "reward": 17.609999999999978
+ },
+ "cannon vs hog_rider": {
+  "n": 500.0,
+  "killed": 474.0,
+  "reward": 1321.765000000002
+ },
+ "ice_golem vs archer": {
+  "n": 61.0,
+  "killed": 52.0,
+  "reward": 110.44000000000001
+ },
+ "skeletons vs bowler": {
+  "n": 28.0,
+  "killed": 26.0,
+  "reward": 53.00500000000001
+ },
+ "skeletons vs cannon": {
+  "n": 10.0,
+  "killed": 10.0,
+  "reward": -2.6649999999999956
+ },
+ "cannon vs bowler": {
+  "n": 28.0,
+  "killed": 25.0,
+  "reward": -26.499999999999986
+ },
+ "ice_spirit vs inferno_dragon": {
+  "n": 8.0,
+  "killed": 7.0,
+  "reward": 15.345000000000006
+ },
+ "ice_golem vs valkyrie": {
+  "n": 15.0,
+  "killed": 14.0,
+  "reward": -10.61
+ },
+ "ice_golem vs giant_snowball": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 11.089999999999998
+ },
+ "ice_golem vs royal_guardian": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 13.089999999999998
+ },
+ "cannon vs prince": {
+  "n": 116.0,
+  "killed": 110.0,
+  "reward": -57.5599999999999
+ },
+ "ice_golem vs bowler": {
+  "n": 19.0,
+  "killed": 15.0,
+  "reward": -0.53000000000001
+ },
+ "ice_golem vs mega_knight": {
+  "n": 38.0,
+  "killed": 35.0,
+  "reward": 26.280000000000022
+ },
+ "musketeer vs giant": {
+  "n": 53.0,
+  "killed": 41.0,
+  "reward": -45.38000000000002
+ },
+ "skeletons vs elite_barbarian": {
+  "n": 15.0,
+  "killed": 13.0,
+  "reward": 22.755000000000006
+ },
+ "the_log vs hunter": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 1.6749999999999978
+ },
+ "cannon vs sparky": {
+  "n": 62.0,
+  "killed": 41.0,
+  "reward": -114.03500000000001
+ },
+ "the_log vs executioner": {
+  "n": 1.0,
+  "killed": 0.0,
+  "reward": -6.549999999999994
+ },
+ "musketeer vs prince": {
+  "n": 16.0,
+  "killed": 15.0,
+  "reward": -108.81499999999997
+ },
+ "ice_spirit vs prince": {
+  "n": 83.0,
+  "killed": 82.0,
+  "reward": 213.38000000000002
+ },
+ "ice_golem vs ice_spirit": {
+  "n": 23.0,
+  "killed": 21.0,
+  "reward": -22.58500000000002
+ },
+ "ice_spirit vs miner": {
+  "n": 308.0,
+  "killed": 293.0,
+  "reward": 263.36000000000007
+ },
+ "ice_spirit vs goblin_hut": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 18.135000000000005
+ },
+ "cannon vs royal_giant": {
+  "n": 121.0,
+  "killed": 99.0,
+  "reward": 179.42499999999998
+ },
+ "cannon vs bat": {
+  "n": 28.0,
+  "killed": 28.0,
+  "reward": -55.44499999999999
+ },
+ "skeletons vs baby_dragon": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": 38.56999999999999
+ },
+ "the_log vs heal_spirit": {
+  "n": 9.0,
+  "killed": 9.0,
+  "reward": -4.104999999999995
+ },
+ "the_log vs prince": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 2.485000000000004
+ },
+ "the_log vs baby_dragon": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 4.0
+ },
+ "cannon vs executioner": {
+  "n": 9.0,
+  "killed": 8.0,
+  "reward": 41.349999999999994
+ },
+ "musketeer vs royal_ghost": {
+  "n": 18.0,
+  "killed": 16.0,
+  "reward": -115.28500000000001
+ },
+ "cannon vs hunter": {
+  "n": 25.0,
+  "killed": 24.0,
+  "reward": 7.955000000000006
+ },
+ "the_log vs barbarian": {
+  "n": 272.0,
+  "killed": 256.0,
+  "reward": -149.92499999999993
+ },
+ "skeletons vs barbarian": {
+  "n": 329.0,
+  "killed": 298.0,
+  "reward": -189.76999999999995
+ },
+ "musketeer vs royal_giant": {
+  "n": 17.0,
+  "killed": 11.0,
+  "reward": -49.91000000000001
+ },
+ "musketeer vs little_prince": {
+  "n": 24.0,
+  "killed": 24.0,
+  "reward": -30.654999999999994
+ },
+ "ice_golem vs barbarian": {
+  "n": 370.0,
+  "killed": 300.0,
+  "reward": -743.7349999999993
+ },
+ "ice_spirit vs elite_barbarian": {
+  "n": 17.0,
+  "killed": 16.0,
+  "reward": 25.03000000000001
+ },
+ "cannon vs zappy": {
+  "n": 45.0,
+  "killed": 42.0,
+  "reward": 67.535
+ },
+ "the_log vs zappy": {
+  "n": 42.0,
+  "killed": 38.0,
+  "reward": 252.95499999999998
+ },
+ "cannon vs royal_recruit": {
+  "n": 212.0,
+  "killed": 185.0,
+  "reward": -712.3700000000001
+ },
+ "skeletons vs battle_healer": {
+  "n": 16.0,
+  "killed": 14.0,
+  "reward": 55.649999999999984
+ },
+ "ice_golem vs dart_goblin": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 9.0
+ },
+ "skeletons vs electro_wizard": {
+  "n": 20.0,
+  "killed": 20.0,
+  "reward": 58.14
+ },
+ "musketeer vs electro_wizard": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 2.1100000000000008
+ },
+ "cannon vs little_prince": {
+  "n": 171.0,
+  "killed": 164.0,
+  "reward": -481.08500000000015
+ },
+ "cannon vs battle_ram": {
+  "n": 145.0,
+  "killed": 143.0,
+  "reward": -262.44
+ },
+ "the_log vs elite_barbarian": {
+  "n": 31.0,
+  "killed": 29.0,
+  "reward": 121.31500000000004
+ },
+ "ice_spirit vs barbarian": {
+  "n": 441.0,
+  "killed": 375.0,
+  "reward": -496.9799999999995
+ },
+ "musketeer vs mega_minion": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -1.0
+ },
+ "musketeer vs royal_recruit": {
+  "n": 20.0,
+  "killed": 16.0,
+  "reward": -82.46499999999999
+ },
+ "skeletons vs little_prince": {
+  "n": 167.0,
+  "killed": 158.0,
+  "reward": -88.83999999999992
+ },
+ "musketeer vs wall_breaker": {
+  "n": 6.0,
+  "killed": 6.0,
+  "reward": -18.49499999999999
+ },
+ "cannon vs miner": {
+  "n": 166.0,
+  "killed": 149.0,
+  "reward": -326.9
+ },
+ "skeletons vs miner": {
+  "n": 417.0,
+  "killed": 400.0,
+  "reward": 252.3
+ },
+ "musketeer vs miner": {
+  "n": 62.0,
+  "killed": 62.0,
+  "reward": -170.475
+ },
+ "musketeer vs hunter": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 3.464999999999999
+ },
+ "the_log vs goblin": {
+  "n": 707.0,
+  "killed": 705.0,
+  "reward": -3313.230000000004
+ },
+ "the_log vs skeleton_king": {
+  "n": 6.0,
+  "killed": 2.0,
+  "reward": 12.010000000000002
+ },
+ "the_log vs royal_hog": {
+  "n": 143.0,
+  "killed": 143.0,
+  "reward": 175.92499999999987
+ },
+ "skeletons vs royal_hog": {
+  "n": 84.0,
+  "killed": 77.0,
+  "reward": -245.8699999999999
+ },
+ "skeletons vs firecracker": {
+  "n": 70.0,
+  "killed": 66.0,
+  "reward": 6.020000000000044
+ },
+ "ice_spirit vs royal_hog": {
+  "n": 142.0,
+  "killed": 131.0,
+  "reward": 132.25999999999996
+ },
+ "cannon vs royal_hog": {
+  "n": 151.0,
+  "killed": 144.0,
+  "reward": -409.02499999999986
+ },
+ "musketeer vs guard": {
+  "n": 8.0,
+  "killed": 8.0,
+  "reward": -32.075
+ },
+ "skeletons vs royal_giant": {
+  "n": 111.0,
+  "killed": 93.0,
+  "reward": 236.32999999999996
+ },
+ "ice_spirit vs electro_dragon": {
+  "n": 8.0,
+  "killed": 5.0,
+  "reward": 30.925
+ },
+ "cannon vs barbarian": {
+  "n": 514.0,
+  "killed": 455.0,
+  "reward": -1291.4949999999988
+ },
+ "ice_golem vs royal_giant": {
+  "n": 37.0,
+  "killed": 36.0,
+  "reward": 61.01499999999999
+ },
+ "the_log vs hog_rider": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": 17.104999999999993
+ },
+ "cannon vs dark_prince": {
+  "n": 88.0,
+  "killed": 80.0,
+  "reward": 48.61999999999996
+ },
+ "ice_golem vs golemite": {
+  "n": 12.0,
+  "killed": 12.0,
+  "reward": -8.539999999999992
+ },
+ "musketeer vs minipekka": {
+  "n": 8.0,
+  "killed": 8.0,
+  "reward": -34.800000000000004
+ },
+ "ice_golem vs firecracker": {
+  "n": 49.0,
+  "killed": 43.0,
+  "reward": -13.474999999999989
+ },
+ "ice_spirit vs dark_prince": {
+  "n": 95.0,
+  "killed": 86.0,
+  "reward": 174.685
+ },
+ "fireball vs skeleton": {
+  "n": 125.0,
+  "killed": 117.0,
+  "reward": -926.0449999999996
+ },
+ "skeletons vs dark_prince": {
+  "n": 110.0,
+  "killed": 97.0,
+  "reward": 119.43000000000002
+ },
+ "musketeer vs firecracker": {
+  "n": 23.0,
+  "killed": 22.0,
+  "reward": 2.0649999999999915
+ },
+ "cannon vs guard": {
+  "n": 73.0,
+  "killed": 73.0,
+  "reward": -42.37000000000004
+ },
+ "musketeer vs royal_hog": {
+  "n": 35.0,
+  "killed": 35.0,
+  "reward": -139.775
+ },
+ "skeletons vs battle_ram": {
+  "n": 74.0,
+  "killed": 70.0,
+  "reward": -33.75500000000001
+ },
+ "musketeer vs barbarian": {
+  "n": 117.0,
+  "killed": 105.0,
+  "reward": -574.1050000000001
+ },
+ "musketeer vs rascal_girl": {
+  "n": 6.0,
+  "killed": 6.0,
+  "reward": -56.455
+ },
+ "skeletons vs skeleton_dragon": {
+  "n": 40.0,
+  "killed": 29.0,
+  "reward": 152.51999999999998
+ },
+ "cannon vs ice_wizard": {
+  "n": 5.0,
+  "killed": 4.0,
+  "reward": -3.039999999999999
+ },
+ "ice_golem vs bandit": {
+  "n": 4.0,
+  "killed": 3.0,
+  "reward": 17.854999999999993
+ },
+ "fireball vs barbarian": {
+  "n": 49.0,
+  "killed": 48.0,
+  "reward": -206.20999999999998
+ },
+ "ice_spirit vs goblin": {
+  "n": 552.0,
+  "killed": 520.0,
+  "reward": -2047.194999999999
+ },
+ "ice_golem vs goblin": {
+  "n": 386.0,
+  "killed": 363.0,
+  "reward": -2351.170000000002
+ },
+ "ice_spirit vs battle_ram": {
+  "n": 66.0,
+  "killed": 65.0,
+  "reward": -42.08000000000002
+ },
+ "skeletons vs royal_recruit": {
+  "n": 149.0,
+  "killed": 125.0,
+  "reward": -460.9399999999997
+ },
+ "cannon vs mighty_miner": {
+  "n": 30.0,
+  "killed": 28.0,
+  "reward": -11.285000000000007
+ },
+ "musketeer vs ice_golem": {
+  "n": 29.0,
+  "killed": 27.0,
+  "reward": -99.51000000000003
+ },
+ "musketeer vs hog_rider": {
+  "n": 59.0,
+  "killed": 59.0,
+  "reward": -109.78000000000003
+ },
+ "cannon vs electro_wizard": {
+  "n": 12.0,
+  "killed": 12.0,
+  "reward": -43.914999999999985
+ },
+ "cannon vs electro_giant": {
+  "n": 15.0,
+  "killed": 10.0,
+  "reward": 69.63499999999999
+ },
+ "musketeer vs electro_giant": {
+  "n": 6.0,
+  "killed": 4.0,
+  "reward": 28.225
+ },
+ "ice_spirit vs royal_giant": {
+  "n": 127.0,
+  "killed": 117.0,
+  "reward": 126.17999999999995
+ },
+ "fireball vs zappy": {
+  "n": 15.0,
+  "killed": 15.0,
+  "reward": 32.599999999999994
+ },
+ "skeletons vs sparky": {
+  "n": 45.0,
+  "killed": 33.0,
+  "reward": 9.054999999999982
+ },
+ "fireball vs sparky": {
+  "n": 2.0,
+  "killed": 1.0,
+  "reward": -16.664999999999992
+ },
+ "cannon vs minion": {
+  "n": 33.0,
+  "killed": 31.0,
+  "reward": -27.974999999999998
+ },
+ "the_log vs minion": {
+  "n": 68.0,
+  "killed": 66.0,
+  "reward": -202.04000000000002
+ },
+ "cannon vs wall_breaker": {
+  "n": 133.0,
+  "killed": 133.0,
+  "reward": -377.83000000000004
+ },
+ "fireball vs bat": {
+  "n": 43.0,
+  "killed": 43.0,
+  "reward": -182.05
+ },
+ "ice_golem vs royal_recruit": {
+  "n": 173.0,
+  "killed": 169.0,
+  "reward": -901.3099999999998
+ },
+ "fireball vs hog_rider": {
+  "n": 14.0,
+  "killed": 13.0,
+  "reward": -10.59500000000003
+ },
+ "ice_spirit vs bomber": {
+  "n": 35.0,
+  "killed": 33.0,
+  "reward": 12.180000000000003
+ },
+ "cannon vs bomber": {
+  "n": 29.0,
+  "killed": 28.0,
+  "reward": 12.040000000000013
+ },
+ "cannon vs bandit": {
+  "n": 14.0,
+  "killed": 12.0,
+  "reward": -21.300000000000004
+ },
+ "musketeer vs golem": {
+  "n": 25.0,
+  "killed": 21.0,
+  "reward": 42.96000000000001
+ },
+ "ice_golem vs golem": {
+  "n": 47.0,
+  "killed": 35.0,
+  "reward": 147.24
+ },
+ "ice_golem vs battle_ram": {
+  "n": 22.0,
+  "killed": 21.0,
+  "reward": 23.939999999999998
+ },
+ "ice_golem vs bomber": {
+  "n": 28.0,
+  "killed": 27.0,
+  "reward": -5.864999999999998
+ },
+ "skeletons vs hog": {
+  "n": 15.0,
+  "killed": 15.0,
+  "reward": -138.40000000000003
+ },
+ "the_log vs rascal_girl": {
+  "n": 9.0,
+  "killed": 8.0,
+  "reward": -2.129999999999999
+ },
+ "the_log vs rascal_boy": {
+  "n": 5.0,
+  "killed": 4.0,
+  "reward": 3.5599999999999996
+ },
+ "cannon vs rascal_girl": {
+  "n": 30.0,
+  "killed": 30.0,
+  "reward": -265.89500000000004
+ },
+ "ice_spirit vs mighty_miner": {
+  "n": 16.0,
+  "killed": 15.0,
+  "reward": 39.22999999999999
+ },
+ "the_log vs bat": {
+  "n": 29.0,
+  "killed": 29.0,
+  "reward": -129.91000000000003
+ },
+ "cannon vs night_witch": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": -65.91999999999999
+ },
+ "skeletons vs night_witch": {
+  "n": 9.0,
+  "killed": 9.0,
+  "reward": -43.655
+ },
+ "ice_spirit vs rascal_boy": {
+  "n": 16.0,
+  "killed": 11.0,
+  "reward": -77.45500000000001
+ },
+ "skeletons vs rascal_boy": {
+  "n": 10.0,
+  "killed": 10.0,
+  "reward": -9.110000000000008
+ },
+ "skeletons vs electro_spirit": {
+  "n": 14.0,
+  "killed": 10.0,
+  "reward": -57.620000000000005
+ },
+ "the_log vs musketeer": {
+  "n": 9.0,
+  "killed": 8.0,
+  "reward": -38.03
+ },
+ "ice_spirit vs skeleton_dragon": {
+  "n": 70.0,
+  "killed": 62.0,
+  "reward": -165.30500000000004
+ },
+ "fireball vs ice_golem": {
+  "n": 19.0,
+  "killed": 13.0,
+  "reward": -60.83999999999997
+ },
+ "ice_golem vs ice_golem": {
+  "n": 81.0,
+  "killed": 59.0,
+  "reward": -146.585
+ },
+ "ice_golem vs inferno_dragon": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": -13.624999999999995
+ },
+ "musketeer vs balloon": {
+  "n": 27.0,
+  "killed": 24.0,
+  "reward": -14.040000000000003
+ },
+ "cannon vs firecracker": {
+  "n": 30.0,
+  "killed": 25.0,
+  "reward": -78.31000000000006
+ },
+ "skeletons vs bat": {
+  "n": 23.0,
+  "killed": 22.0,
+  "reward": -153.125
+ },
+ "the_log vs guard": {
+  "n": 33.0,
+  "killed": 33.0,
+  "reward": 50.069999999999986
+ },
+ "ice_golem vs fisherman": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 8.094999999999999
+ },
+ "musketeer vs dark_prince": {
+  "n": 32.0,
+  "killed": 29.0,
+  "reward": -63.129999999999995
+ },
+ "the_log vs miner": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": -16.699999999999992
+ },
+ "skeletons vs bandit": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": 23.275000000000006
+ },
+ "skeletons vs golem": {
+  "n": 65.0,
+  "killed": 51.0,
+  "reward": 277.45500000000004
+ },
+ "ice_golem vs giant_skeleton": {
+  "n": 18.0,
+  "killed": 16.0,
+  "reward": 82.37
+ },
+ "ice_spirit vs golem": {
+  "n": 52.0,
+  "killed": 36.0,
+  "reward": 307.7
+ },
+ "cannon vs golem": {
+  "n": 60.0,
+  "killed": 41.0,
+  "reward": 195.16499999999994
+ },
+ "musketeer vs giant_skeleton": {
+  "n": 14.0,
+  "killed": 12.0,
+  "reward": 5.524999999999995
+ },
+ "ice_golem vs hunter": {
+  "n": 25.0,
+  "killed": 25.0,
+  "reward": 45.214999999999996
+ },
+ "ice_golem vs battle_healer": {
+  "n": 13.0,
+  "killed": 11.0,
+  "reward": 34.859999999999985
+ },
+ "ice_golem vs miner": {
+  "n": 253.0,
+  "killed": 247.0,
+  "reward": 19.169999999999966
+ },
+ "ice_spirit vs rascal_girl": {
+  "n": 17.0,
+  "killed": 14.0,
+  "reward": -185.65500000000003
+ },
+ "musketeer vs rascal_boy": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": -19.754999999999995
+ },
+ "the_log vs wall_breaker": {
+  "n": 17.0,
+  "killed": 17.0,
+  "reward": -145.31500000000003
+ },
+ "musketeer vs bandit": {
+  "n": 6.0,
+  "killed": 5.0,
+  "reward": -12.334999999999997
+ },
+ "musketeer vs battle_ram": {
+  "n": 15.0,
+  "killed": 15.0,
+  "reward": -92.75500000000001
+ },
+ "ice_golem vs archer_queen": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 27.349999999999998
+ },
+ "musketeer vs lumberjack": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 0.0
+ },
+ "fireball vs bomber": {
+  "n": 9.0,
+  "killed": 9.0,
+  "reward": -31.690000000000005
+ },
+ "fireball vs musketeer": {
+  "n": 57.0,
+  "killed": 56.0,
+  "reward": -148.06500000000005
+ },
+ "cannon vs wizard": {
+  "n": 16.0,
+  "killed": 16.0,
+  "reward": -57.67500000000001
+ },
+ "fireball vs guard": {
+  "n": 23.0,
+  "killed": 23.0,
+  "reward": -105.73500000000003
+ },
+ "the_log vs royal_recruit": {
+  "n": 193.0,
+  "killed": 168.0,
+  "reward": -726.845
+ },
+ "fireball vs royal_recruit": {
+  "n": 61.0,
+  "killed": 48.0,
+  "reward": -442.08999999999986
+ },
+ "the_log vs dark_prince": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 15.940000000000001
+ },
+ "cannon vs electro_spirit": {
+  "n": 10.0,
+  "killed": 7.0,
+  "reward": -48.45500000000001
+ },
+ "musketeer vs mighty_miner": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": -27.89
+ },
+ "musketeer vs mega_knight": {
+  "n": 13.0,
+  "killed": 13.0,
+  "reward": 53.754999999999995
+ },
+ "musketeer vs wizard": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 3.94
+ },
+ "ice_spirit vs hog_rider": {
+  "n": 347.0,
+  "killed": 332.0,
+  "reward": 1626.0550000000014
+ },
+ "fireball vs ice_spirit": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": -56.995000000000005
+ },
+ "fireball vs firecracker": {
+  "n": 14.0,
+  "killed": 13.0,
+  "reward": -73.78999999999999
+ },
+ "musketeer vs bomber": {
+  "n": 8.0,
+  "killed": 6.0,
+  "reward": -18.520000000000003
+ },
+ "ice_golem vs sparky": {
+  "n": 48.0,
+  "killed": 26.0,
+  "reward": -48.56000000000004
+ },
+ "fireball vs elite_barbarian": {
+  "n": 6.0,
+  "killed": 6.0,
+  "reward": 14.139999999999993
+ },
+ "skeletons vs rascal_girl": {
+  "n": 14.0,
+  "killed": 13.0,
+  "reward": -29.244999999999997
+ },
+ "fireball vs goblin": {
+  "n": 140.0,
+  "killed": 139.0,
+  "reward": -767.3049999999998
+ },
+ "musketeer vs golemite": {
+  "n": 7.0,
+  "killed": 5.0,
+  "reward": -49.66
+ },
+ "fireball vs royal_hog": {
+  "n": 11.0,
+  "killed": 11.0,
+  "reward": 21.82499999999998
+ },
+ "cannon vs battle_healer": {
+  "n": 16.0,
+  "killed": 14.0,
+  "reward": 33.81
+ },
+ "ice_golem vs royal_hog": {
+  "n": 82.0,
+  "killed": 81.0,
+  "reward": -382.9300000000001
+ },
+ "musketeer vs goblin": {
+  "n": 144.0,
+  "killed": 139.0,
+  "reward": -1097.8599999999997
+ },
+ "skeletons vs executioner": {
+  "n": 10.0,
+  "killed": 10.0,
+  "reward": 49.33
+ },
+ "ice_golem vs wizard": {
+  "n": 18.0,
+  "killed": 17.0,
+  "reward": 20.909999999999982
+ },
+ "skeletons vs hunter": {
+  "n": 15.0,
+  "killed": 14.0,
+  "reward": -16.454999999999995
+ },
+ "ice_golem vs skeleton_dragon": {
+  "n": 44.0,
+  "killed": 37.0,
+  "reward": -37.955
+ },
+ "ice_spirit vs electro_spirit": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": 40.90500000000001
+ },
+ "fireball vs archer": {
+  "n": 34.0,
+  "killed": 33.0,
+  "reward": -7.699999999999996
+ },
+ "fireball vs minion": {
+  "n": 39.0,
+  "killed": 39.0,
+  "reward": -67.45000000000003
+ },
+ "ice_golem vs executioner": {
+  "n": 5.0,
+  "killed": 4.0,
+  "reward": 28.725
+ },
+ "cannon vs giant_skeleton": {
+  "n": 23.0,
+  "killed": 19.0,
+  "reward": 75.355
+ },
+ "ice_spirit vs giant_skeleton": {
+  "n": 11.0,
+  "killed": 8.0,
+  "reward": 9.280000000000005
+ },
+ "cannon vs mortar": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -4.574999999999999
+ },
+ "skeletons vs mortar": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 3.0
+ },
+ "cannon vs x_bow": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 18.435000000000002
+ },
+ "ice_golem vs mighty_miner": {
+  "n": 45.0,
+  "killed": 44.0,
+  "reward": 5.795000000000009
+ },
+ "ice_spirit vs bandit": {
+  "n": 3.0,
+  "killed": 2.0,
+  "reward": 1.1550000000000047
+ },
+ "ice_golem vs lava_hound": {
+  "n": 8.0,
+  "killed": 7.0,
+  "reward": 62.949999999999996
+ },
+ "skeletons vs fisherman": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": 19.809999999999995
+ },
+ "fireball vs hunter": {
+  "n": 8.0,
+  "killed": 7.0,
+  "reward": -1.310000000000005
+ },
+ "cannon vs elite_barbarian": {
+  "n": 22.0,
+  "killed": 20.0,
+  "reward": -16.39000000000002
+ },
+ "ice_spirit vs heal_spirit": {
+  "n": 9.0,
+  "killed": 8.0,
+  "reward": -0.8400000000000212
+ },
+ "musketeer vs skeleton_king": {
+  "n": 6.0,
+  "killed": 6.0,
+  "reward": -47.35499999999999
+ },
+ "ice_golem vs witch": {
+  "n": 20.0,
+  "killed": 19.0,
+  "reward": -99.9
+ },
+ "ice_spirit vs battle_healer": {
+  "n": 22.0,
+  "killed": 20.0,
+  "reward": 118.55000000000001
+ },
+ "the_log vs skeleton_dragon": {
+  "n": 18.0,
+  "killed": 14.0,
+  "reward": -69.58
+ },
+ "skeletons vs mighty_miner": {
+  "n": 13.0,
+  "killed": 13.0,
+  "reward": 2.1950000000000145
+ },
+ "ice_spirit vs ram_rider": {
+  "n": 12.0,
+  "killed": 11.0,
+  "reward": 31.589999999999996
+ },
+ "musketeer vs valkyrie": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 4.5850000000000035
+ },
+ "ice_spirit vs firecracker": {
+  "n": 54.0,
+  "killed": 49.0,
+  "reward": 100.85000000000001
+ },
+ "fireball vs goblin_cage": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -7.5600000000000005
+ },
+ "ice_spirit vs ice_spirit": {
+  "n": 9.0,
+  "killed": 6.0,
+  "reward": -27.584999999999997
+ },
+ "ice_golem vs lumberjack": {
+  "n": 19.0,
+  "killed": 19.0,
+  "reward": -42.13499999999999
+ },
+ "ice_spirit vs sparky": {
+  "n": 38.0,
+  "killed": 23.0,
+  "reward": 38.719999999999985
+ },
+ "ice_spirit vs elixir_golem_small": {
+  "n": 10.0,
+  "killed": 10.0,
+  "reward": -55.48500000000003
+ },
+ "ice_golem vs elixir_golem_small": {
+  "n": 9.0,
+  "killed": 9.0,
+  "reward": -83.49499999999999
+ },
+ "ice_golem vs elite_barbarian": {
+  "n": 20.0,
+  "killed": 17.0,
+  "reward": -84.605
+ },
+ "ice_spirit vs wizard": {
+  "n": 15.0,
+  "killed": 14.0,
+  "reward": 21.435000000000024
+ },
+ "fireball vs giant": {
+  "n": 2.0,
+  "killed": 1.0,
+  "reward": 9.0
+ },
+ "ice_spirit vs hunter": {
+  "n": 27.0,
+  "killed": 27.0,
+  "reward": 47.290000000000006
+ },
+ "skeletons vs lava_hound": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": 51.970000000000006
+ },
+ "ice_spirit vs archer": {
+  "n": 84.0,
+  "killed": 75.0,
+  "reward": -41.06500000000004
+ },
+ "ice_spirit vs guard": {
+  "n": 39.0,
+  "killed": 37.0,
+  "reward": -10.834999999999996
+ },
+ "the_log vs firecracker": {
+  "n": 9.0,
+  "killed": 8.0,
+  "reward": -23.764999999999986
+ },
+ "skeletons vs minipekka": {
+  "n": 39.0,
+  "killed": 39.0,
+  "reward": 107.76500000000004
+ },
+ "ice_golem vs skeleton_king": {
+  "n": 19.0,
+  "killed": 18.0,
+  "reward": -71.27500000000002
+ },
+ "ice_golem vs dark_prince": {
+  "n": 54.0,
+  "killed": 48.0,
+  "reward": 103.84499999999998
+ },
+ "fireball vs electro_wizard": {
+  "n": 19.0,
+  "killed": 19.0,
+  "reward": -9.955000000000004
+ },
+ "skeletons vs guard": {
+  "n": 33.0,
+  "killed": 31.0,
+  "reward": 26.279999999999987
+ },
+ "skeletons vs ice_wizard": {
+  "n": 12.0,
+  "killed": 11.0,
+  "reward": -15.29
+ },
+ "skeletons vs wizard": {
+  "n": 25.0,
+  "killed": 23.0,
+  "reward": -64.80500000000004
+ },
+ "ice_spirit vs wall_breaker": {
+  "n": 38.0,
+  "killed": 38.0,
+  "reward": -28.914999999999917
+ },
+ "skeletons vs ice_spirit": {
+  "n": 38.0,
+  "killed": 36.0,
+  "reward": -64.80499999999996
+ },
+ "skeletons vs heal_spirit": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 26.004999999999995
+ },
+ "skeletons vs archer": {
+  "n": 77.0,
+  "killed": 66.0,
+  "reward": 261.78999999999996
+ },
+ "ice_golem vs guard": {
+  "n": 18.0,
+  "killed": 18.0,
+  "reward": 0.3799999999999928
+ },
+ "skeletons vs monk": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": -26.774999999999995
+ },
+ "the_log vs battle_ram": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": -63.99000000000001
+ },
+ "fireball vs little_prince": {
+  "n": 10.0,
+  "killed": 8.0,
+  "reward": 27.299999999999994
+ },
+ "cannon vs skeleton_dragon": {
+  "n": 34.0,
+  "killed": 32.0,
+  "reward": 62.88000000000002
+ },
+ "cannon vs lumberjack": {
+  "n": 26.0,
+  "killed": 26.0,
+  "reward": -25.904999999999998
+ },
+ "ice_golem vs bomb_tower": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -6.399999999999999
+ },
+ "skeletons vs magic_archer": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": 19.624999999999993
+ },
+ "the_log vs ice_spirit": {
+  "n": 15.0,
+  "killed": 15.0,
+  "reward": -26.039999999999996
+ },
+ "ice_golem vs heal_spirit": {
+  "n": 8.0,
+  "killed": 8.0,
+  "reward": 15.719999999999999
+ },
+ "ice_golem vs night_witch": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -3.8099999999999987
+ },
+ "cannon vs hog": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": -3.425000000000016
+ },
+ "musketeer vs fisherman": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": 2.155000000000001
+ },
+ "fireball vs night_witch": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 0.0
+ },
+ "fireball vs fisherman": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 10.384999999999998
+ },
+ "skeletons vs mother_witch": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 3.0
+ },
+ "ice_spirit vs skeleton_king": {
+  "n": 14.0,
+  "killed": 10.0,
+  "reward": -51.01
+ },
+ "ice_spirit vs executioner": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": 6.800000000000002
+ },
+ "ice_golem vs electro_giant": {
+  "n": 6.0,
+  "killed": 5.0,
+  "reward": 5.209999999999994
+ },
+ "the_log vs electro_giant": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 0.20500000000000007
+ },
+ "cannon vs skeleton_king": {
+  "n": 27.0,
+  "killed": 27.0,
+  "reward": -2.170000000000016
+ },
+ "the_log vs cannon": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 17.759999999999994
+ },
+ "cannon vs monk": {
+  "n": 6.0,
+  "killed": 6.0,
+  "reward": -26.689999999999994
+ },
+ "the_log vs bomber": {
+  "n": 6.0,
+  "killed": 6.0,
+  "reward": 3.6200000000000045
+ },
+ "fireball vs baby_dragon": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": 15.229999999999993
+ },
+ "cannon vs fire_spirit": {
+  "n": 12.0,
+  "killed": 12.0,
+  "reward": -22.190000000000005
+ },
+ "ice_spirit vs electro_giant": {
+  "n": 9.0,
+  "killed": 8.0,
+  "reward": 64.33500000000001
+ },
+ "musketeer vs ice_spirit": {
+  "n": 16.0,
+  "killed": 15.0,
+  "reward": -48.635000000000005
+ },
+ "the_log vs golem": {
+  "n": 6.0,
+  "killed": 5.0,
+  "reward": 61.13999999999998
+ },
+ "skeletons vs golemite": {
+  "n": 6.0,
+  "killed": 6.0,
+  "reward": -5.139999999999999
+ },
+ "cannon vs heal_spirit": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": 26.865
+ },
+ "skeletons vs giant_skeleton": {
+  "n": 21.0,
+  "killed": 17.0,
+  "reward": 86.85499999999999
+ },
+ "ice_spirit vs cannon_cart": {
+  "n": 5.0,
+  "killed": 3.0,
+  "reward": -8.899999999999995
+ },
+ "ice_golem vs ice_wizard": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 9.094999999999999
+ },
+ "the_log vs balloon": {
+  "n": 2.0,
+  "killed": 1.0,
+  "reward": -11.394999999999996
+ },
+ "ice_spirit vs hog": {
+  "n": 13.0,
+  "killed": 12.0,
+  "reward": 8.444999999999983
+ },
+ "ice_golem vs hog": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": -50.434999999999995
+ },
+ "fireball vs bomb_tower": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 3.535
+ },
+ "fireball vs fire_spirit": {
+  "n": 1.0,
+  "killed": 0.0,
+  "reward": 10.644999999999996
+ },
+ "fireball vs electro_dragon": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": 8.809999999999999
+ },
+ "ice_spirit vs mega_minion": {
+  "n": 6.0,
+  "killed": 6.0,
+  "reward": 17.990000000000002
+ },
+ "fireball vs mega_minion": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 2.0
+ },
+ "ice_golem vs mega_minion": {
+  "n": 5.0,
+  "killed": 4.0,
+  "reward": 14.085000000000004
+ },
+ "skeletons vs elixir_golem_small": {
+  "n": 9.0,
+  "killed": 9.0,
+  "reward": -64.53999999999999
+ },
+ "ice_spirit vs dart_goblin": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": 5.180000000000003
+ },
+ "musketeer vs skeleton_dragon": {
+  "n": 28.0,
+  "killed": 25.0,
+  "reward": -73.06500000000001
+ },
+ "fireball vs skeleton_dragon": {
+  "n": 19.0,
+  "killed": 17.0,
+  "reward": -30.96499999999999
+ },
+ "ice_golem vs ram_rider": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": 17.339999999999996
+ },
+ "the_log vs royal_giant": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 7.970000000000004
+ },
+ "musketeer vs minion": {
+  "n": 18.0,
+  "killed": 18.0,
+  "reward": -10.755
+ },
+ "cannon vs ice_spirit": {
+  "n": 12.0,
+  "killed": 11.0,
+  "reward": -35.615
+ },
+ "fireball vs spear_goblin": {
+  "n": 23.0,
+  "killed": 23.0,
+  "reward": -137.15000000000003
+ },
+ "the_log vs mighty_miner": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 2.0
+ },
+ "the_log vs hog": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 3.5500000000000025
+ },
+ "the_log vs electro_spirit": {
+  "n": 8.0,
+  "killed": 6.0,
+  "reward": 12.480000000000004
+ },
+ "the_log vs valkyrie": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 0.11000000000000076
+ },
+ "fireball vs heal_spirit": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -12.034999999999997
+ },
+ "skeletons vs phoenix_egg": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -3.014999999999998
+ },
+ "fireball vs wall_breaker": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -3.7650000000000006
+ },
+ "musketeer vs bat": {
+  "n": 21.0,
+  "killed": 21.0,
+  "reward": -192.735
+ },
+ "skeletons vs wall_breaker": {
+  "n": 15.0,
+  "killed": 15.0,
+  "reward": -42.33
+ },
+ "ice_golem vs wall_breaker": {
+  "n": 21.0,
+  "killed": 20.0,
+  "reward": -87.02
+ },
+ "fireball vs knight": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -18.025
+ },
+ "musketeer vs electro_spirit": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -3.0
+ },
+ "ice_golem vs rascal_girl": {
+  "n": 15.0,
+  "killed": 14.0,
+  "reward": -33.544999999999995
+ },
+ "ice_golem vs rascal_boy": {
+  "n": 16.0,
+  "killed": 12.0,
+  "reward": -49.93999999999998
+ },
+ "ice_golem vs electro_dragon": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 10.419999999999995
+ },
+ "the_log vs mega_minion": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 1.0
+ },
+ "cannon vs magic_archer": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -13.764999999999997
+ },
+ "ice_spirit vs magic_archer": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -0.2550000000000008
+ },
+ "cannon vs lava_hound": {
+  "n": 9.0,
+  "killed": 8.0,
+  "reward": -13.365000000000009
+ },
+ "musketeer vs sparky": {
+  "n": 8.0,
+  "killed": 5.0,
+  "reward": -14.74
+ },
+ "the_log vs sparky": {
+  "n": 3.0,
+  "killed": 2.0,
+  "reward": -13.045
+ },
+ "ice_spirit vs zappy": {
+  "n": 34.0,
+  "killed": 30.0,
+  "reward": 103.89500000000001
+ },
+ "ice_golem vs zappy": {
+  "n": 26.0,
+  "killed": 17.0,
+  "reward": -6.8149999999999835
+ },
+ "skeletons vs flying_machine": {
+  "n": 3.0,
+  "killed": 2.0,
+  "reward": -3.040000000000007
+ },
+ "skeletons vs zappy": {
+  "n": 37.0,
+  "killed": 26.0,
+  "reward": 61.035000000000004
+ },
+ "musketeer vs zappy": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 8.0
+ },
+ "skeletons vs inferno_dragon": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": -19.950000000000003
+ },
+ "cannon vs mega_minion": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 12.225
+ },
+ "the_log vs minipekka": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 2.0
+ },
+ "fireball vs electro_spirit": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -3.0
+ },
+ "ice_spirit vs flying_machine": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -0.45000000000000373
+ },
+ "cannon vs tesla": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 11.035
+ },
+ "the_log vs battle_healer": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": -15.004999999999999
+ },
+ "musketeer vs elite_barbarian": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": 6.795000000000003
+ },
+ "skeletons vs tesla": {
+  "n": 4.0,
+  "killed": 2.0,
+  "reward": 15.495000000000001
+ },
+ "skeletons vs lava_pup": {
+  "n": 11.0,
+  "killed": 11.0,
+  "reward": -39.66
+ },
+ "ice_spirit vs lava_pup": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": -14.564999999999998
+ },
+ "fireball vs dark_prince": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 1.0
+ },
+ "ice_spirit vs lava_hound": {
+  "n": 7.0,
+  "killed": 6.0,
+  "reward": 37.49000000000001
+ },
+ "cannon vs lava_pup": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 0.4399999999999906
+ },
+ "cannon vs cannon": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 2.3099999999999987
+ },
+ "musketeer vs battle_healer": {
+  "n": 13.0,
+  "killed": 13.0,
+  "reward": -14.234999999999998
+ },
+ "the_log vs monk": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -3.200000000000001
+ },
+ "fireball vs ice_wizard": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -5.015000000000008
+ },
+ "ice_spirit vs night_witch": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 20.22
+ },
+ "ice_golem vs monk": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": -1.269999999999996
+ },
+ "ice_spirit vs electro_wizard": {
+  "n": 6.0,
+  "killed": 6.0,
+  "reward": 15.355000000000004
+ },
+ "ice_golem vs electro_spirit": {
+  "n": 7.0,
+  "killed": 6.0,
+  "reward": 5.285000000000007
+ },
+ "fireball vs minipekka": {
+  "n": 7.0,
+  "killed": 7.0,
+  "reward": -21.244999999999997
+ },
+ "ice_spirit vs golemite": {
+  "n": 6.0,
+  "killed": 5.0,
+  "reward": -27.974999999999998
+ },
+ "fireball vs lumberjack": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": -18.48000000000001
+ },
+ "cannon vs royal_guardian": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": -13.825000000000006
+ },
+ "fireball vs royal_giant": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 6.0
+ },
+ "skeletons vs royal_guardian": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": -25.455
+ },
+ "the_log vs giant_skeleton": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 4.0
+ },
+ "cannon vs bomb_tower": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 5.0
+ },
+ "the_log vs electro_wizard": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 2.0
+ },
+ "ice_spirit vs mortar": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 3.880000000000001
+ },
+ "ice_golem vs flying_machine": {
+  "n": 1.0,
+  "killed": 0.0,
+  "reward": -16.650000000000006
+ },
+ "the_log vs little_prince": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -10.715000000000009
+ },
+ "fireball vs rascal_boy": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": 2.82
+ },
+ "fireball vs rascal_girl": {
+  "n": 9.0,
+  "killed": 9.0,
+  "reward": -92.715
+ },
+ "fireball vs wizard": {
+  "n": 5.0,
+  "killed": 5.0,
+  "reward": -20.474999999999998
+ },
+ "musketeer vs executioner": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -6.3249999999999975
+ },
+ "musketeer vs dart_goblin": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": -6.070000000000002
+ },
+ "the_log vs lumberjack": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 6.0
+ },
+ "fireball vs electro_giant": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -22.92
+ },
+ "ice_spirit vs ice_wizard": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -8.650000000000006
+ },
+ "cannon vs fisherman": {
+  "n": 3.0,
+  "killed": 3.0,
+  "reward": -9.81
+ },
+ "fireball vs witch": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 1.0
+ },
+ "ice_spirit vs fisherman": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 9.065000000000001
+ },
+ "musketeer vs electro_dragon": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 1.0
+ },
+ "the_log vs elixir_golem_small": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -7.669999999999995
+ },
+ "cannon vs golemite": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": -16.14
+ },
+ "the_log vs flying_machine": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 15.0
+ },
+ "ice_golem vs mother_witch": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 2.0
+ },
+ "fireball vs magic_archer": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -17.765000000000008
+ },
+ "musketeer vs inferno_dragon": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 0.0
+ },
+ "musketeer vs ram_rider": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -10.34
+ },
+ "musketeer vs cannon": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -10.069999999999997
+ },
+ "skeletons vs electro_dragon": {
+  "n": 2.0,
+  "killed": 1.0,
+  "reward": 9.0
+ },
+ "ice_spirit vs royal_guardian": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -1.0
+ },
+ "ice_golem vs electro_wizard": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": 42.175000000000004
+ },
+ "ice_spirit vs tesla": {
+  "n": 4.0,
+  "killed": 3.0,
+  "reward": 1.6400000000000023
+ },
+ "the_log vs dart_goblin": {
+  "n": 8.0,
+  "killed": 8.0,
+  "reward": -31.220000000000006
+ },
+ "musketeer vs elixir_golem_small": {
+  "n": 4.0,
+  "killed": 4.0,
+  "reward": -18.36500000000001
+ },
+ "fireball vs pekka": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 7.0
+ },
+ "ice_golem vs magic_archer": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 2.0
+ },
+ "musketeer vs lava_hound": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 6.0
+ },
+ "musketeer vs princess": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -1.0
+ },
+ "ice_golem vs tesla": {
+  "n": 2.0,
+  "killed": 1.0,
+  "reward": 1.2049999999999992
+ },
+ "musketeer vs hog": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -15.650000000000006
+ },
+ "ice_spirit vs monk": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 6.009999999999995
+ },
+ "ice_spirit vs archer_queen": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 4.0
+ },
+ "ice_golem vs mortar": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 2.0
+ },
+ "skeletons vs mega_minion": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 5.0
+ },
+ "the_log vs wizard": {
+  "n": 1.0,
+  "killed": 0.0,
+  "reward": 3.0
+ },
+ "fireball vs mega_knight": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 13.0
+ },
+ "cannon vs elixir_golem_small": {
+  "n": 4.0,
+  "killed": 3.0,
+  "reward": -46.25
+ },
+ "cannon vs electro_dragon": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 17.259999999999998
+ },
+ "cannon vs archer_queen": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 11.974999999999998
+ },
+ "the_log vs lava_pup": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 6.0
+ },
+ "skeletons vs archer_queen": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 2.874999999999999
+ },
+ "ice_golem vs x_bow": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 4.0
+ },
+ "skeletons vs goblin_cage": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 16.0
+ },
+ "musketeer vs cannon_cart": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -7.324999999999999
+ },
+ "cannon vs goblin_cage": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 1.0
+ },
+ "fireball vs dart_goblin": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -1.0
+ },
+ "fireball vs miner": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -25.475
+ },
+ "the_log vs tesla": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": 1.7850000000000001
+ },
+ "fireball vs tesla": {
+  "n": 2.0,
+  "killed": 2.0,
+  "reward": -0.42000000000000304
+ },
+ "the_log vs barbarian_hut": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 10.0
+ },
+ "ice_spirit vs giant_snowball": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 2.005000000000002
+ },
+ "musketeer vs ice_wizard": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -1.0
+ },
+ "the_log vs ice_wizard": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": 2.0
+ },
+ "the_log vs golemite": {
+  "n": 1.0,
+  "killed": 1.0,
+  "reward": -2.0
+ }
+}

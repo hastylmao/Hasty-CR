@@ -1,0 +1,570 @@
+{
+  "schema_version": 1,
+  "status": "UNMEASURED",
+  "scenarios": [
+    "diff_fireball",
+    "diff_hog_cannon",
+    "diff_knight_musketeer"
+  ],
+  "adapters": [
+    "hastycr",
+    "crforge",
+    "clash-royale-suite"
+  ],
+  "adapter_results": [
+    {
+      "adapter": "hastycr",
+      "status": "READY",
+      "capabilities": [
+        "normalized_trace",
+        "deterministic_seed",
+        "fixed_tick_sampling",
+        "deploy",
+        "spell",
+        "building",
+        "ability",
+        "spawn_events",
+        "damage_events",
+        "simulator_only"
+      ],
+      "unsupported_states": [],
+      "diagnostics": [],
+      "provenance": {
+        "source": "simulator",
+        "evidence_ids": [],
+        "method": "HastyCRDifferentialAdapter",
+        "details": {
+          "real_measurements": 0
+        }
+      },
+      "frames": 16,
+      "trace_digest": "4ce871a54793bb8fd839cf293f8c532a83ae1a154012ac07500e3697a7b37cba"
+    },
+    {
+      "adapter": "crforge",
+      "status": "UNAVAILABLE",
+      "capabilities": [
+        "normalized_trace",
+        "deterministic_seed",
+        "deploy"
+      ],
+      "unsupported_states": [
+        {
+          "capability": "normalized_trace",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deterministic_seed",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "fixed_tick_sampling",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deploy",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "damage_events",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        }
+      ],
+      "diagnostics": [
+        "fail-closed external adapter",
+        "Java 17 required; Gradle/JPype bridge required; bridge startup is not automatic"
+      ],
+      "provenance": {
+        "source": "external-simulator",
+        "evidence_ids": [],
+        "method": "descriptor-only",
+        "details": {
+          "execution": "not-started",
+          "real_measurements": 0
+        }
+      }
+    },
+    {
+      "adapter": "clash-royale-suite",
+      "status": "UNAVAILABLE",
+      "capabilities": [
+        "normalized_trace",
+        "deterministic_seed",
+        "deploy",
+        "spell",
+        "building"
+      ],
+      "unsupported_states": [
+        {
+          "capability": "normalized_trace",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deterministic_seed",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "fixed_tick_sampling",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deploy",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "damage_events",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        }
+      ],
+      "diagnostics": [
+        "fail-closed external adapter",
+        "maturin-built cr_engine extension required; suite data files required; extension execution is not automatic"
+      ],
+      "provenance": {
+        "source": "external-simulator",
+        "evidence_ids": [],
+        "method": "descriptor-only",
+        "details": {
+          "execution": "not-started",
+          "real_measurements": 0
+        }
+      }
+    },
+    {
+      "adapter": "hastycr",
+      "status": "READY",
+      "capabilities": [
+        "normalized_trace",
+        "deterministic_seed",
+        "fixed_tick_sampling",
+        "deploy",
+        "spell",
+        "building",
+        "ability",
+        "spawn_events",
+        "damage_events",
+        "simulator_only"
+      ],
+      "unsupported_states": [],
+      "diagnostics": [],
+      "provenance": {
+        "source": "simulator",
+        "evidence_ids": [],
+        "method": "HastyCRDifferentialAdapter",
+        "details": {
+          "real_measurements": 0
+        }
+      },
+      "frames": 16,
+      "trace_digest": "da577f3f1fd8ca2e72b21955216cc06eb4473d8b659b119906bc436e120bfaa2"
+    },
+    {
+      "adapter": "crforge",
+      "status": "UNAVAILABLE",
+      "capabilities": [
+        "normalized_trace",
+        "deterministic_seed",
+        "deploy"
+      ],
+      "unsupported_states": [
+        {
+          "capability": "normalized_trace",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deterministic_seed",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "fixed_tick_sampling",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deploy",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "damage_events",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        }
+      ],
+      "diagnostics": [
+        "fail-closed external adapter",
+        "Java 17 required; Gradle/JPype bridge required; bridge startup is not automatic"
+      ],
+      "provenance": {
+        "source": "external-simulator",
+        "evidence_ids": [],
+        "method": "descriptor-only",
+        "details": {
+          "execution": "not-started",
+          "real_measurements": 0
+        }
+      }
+    },
+    {
+      "adapter": "clash-royale-suite",
+      "status": "UNAVAILABLE",
+      "capabilities": [
+        "normalized_trace",
+        "deterministic_seed",
+        "deploy",
+        "spell",
+        "building"
+      ],
+      "unsupported_states": [
+        {
+          "capability": "normalized_trace",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deterministic_seed",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "fixed_tick_sampling",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deploy",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "damage_events",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        }
+      ],
+      "diagnostics": [
+        "fail-closed external adapter",
+        "maturin-built cr_engine extension required; suite data files required; extension execution is not automatic"
+      ],
+      "provenance": {
+        "source": "external-simulator",
+        "evidence_ids": [],
+        "method": "descriptor-only",
+        "details": {
+          "execution": "not-started",
+          "real_measurements": 0
+        }
+      }
+    },
+    {
+      "adapter": "hastycr",
+      "status": "READY",
+      "capabilities": [
+        "normalized_trace",
+        "deterministic_seed",
+        "fixed_tick_sampling",
+        "deploy",
+        "spell",
+        "building",
+        "ability",
+        "spawn_events",
+        "damage_events",
+        "simulator_only"
+      ],
+      "unsupported_states": [],
+      "diagnostics": [],
+      "provenance": {
+        "source": "simulator",
+        "evidence_ids": [],
+        "method": "HastyCRDifferentialAdapter",
+        "details": {
+          "real_measurements": 0
+        }
+      },
+      "frames": 16,
+      "trace_digest": "04743b92519afe4ee25b53aae9ed5271db5d3e46cf4c46de4a173dea719c453f"
+    },
+    {
+      "adapter": "crforge",
+      "status": "UNAVAILABLE",
+      "capabilities": [
+        "normalized_trace",
+        "deterministic_seed",
+        "deploy"
+      ],
+      "unsupported_states": [
+        {
+          "capability": "normalized_trace",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deterministic_seed",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "fixed_tick_sampling",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deploy",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "damage_events",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        }
+      ],
+      "diagnostics": [
+        "fail-closed external adapter",
+        "Java 17 required; Gradle/JPype bridge required; bridge startup is not automatic"
+      ],
+      "provenance": {
+        "source": "external-simulator",
+        "evidence_ids": [],
+        "method": "descriptor-only",
+        "details": {
+          "execution": "not-started",
+          "real_measurements": 0
+        }
+      }
+    },
+    {
+      "adapter": "clash-royale-suite",
+      "status": "UNAVAILABLE",
+      "capabilities": [
+        "normalized_trace",
+        "deterministic_seed",
+        "deploy",
+        "spell",
+        "building"
+      ],
+      "unsupported_states": [
+        {
+          "capability": "normalized_trace",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deterministic_seed",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "fixed_tick_sampling",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "deploy",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        },
+        {
+          "capability": "damage_events",
+          "status": "UNAVAILABLE",
+          "reason": "external execution is disabled; no bridge or extension was started",
+          "action": "fail-closed"
+        }
+      ],
+      "diagnostics": [
+        "fail-closed external adapter",
+        "maturin-built cr_engine extension required; suite data files required; extension execution is not automatic"
+      ],
+      "provenance": {
+        "source": "external-simulator",
+        "evidence_ids": [],
+        "method": "descriptor-only",
+        "details": {
+          "execution": "not-started",
+          "real_measurements": 0
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "scenario_id": "diff_fireball",
+      "left_adapter": "hastycr",
+      "right_adapter": "crforge",
+      "status": "UNMEASURED",
+      "comparable": false,
+      "first_divergence": null,
+      "category_counts": {},
+      "compared_frames": 0,
+      "diagnostics": [
+        "left=READY",
+        "right=UNAVAILABLE"
+      ],
+      "note": "Agreement is not live-ground-truth accuracy; no scalar accuracy is computed."
+    },
+    {
+      "scenario_id": "diff_fireball",
+      "left_adapter": "hastycr",
+      "right_adapter": "clash-royale-suite",
+      "status": "UNMEASURED",
+      "comparable": false,
+      "first_divergence": null,
+      "category_counts": {},
+      "compared_frames": 0,
+      "diagnostics": [
+        "left=READY",
+        "right=UNAVAILABLE"
+      ],
+      "note": "Agreement is not live-ground-truth accuracy; no scalar accuracy is computed."
+    },
+    {
+      "scenario_id": "diff_fireball",
+      "left_adapter": "crforge",
+      "right_adapter": "clash-royale-suite",
+      "status": "UNMEASURED",
+      "comparable": false,
+      "first_divergence": null,
+      "category_counts": {},
+      "compared_frames": 0,
+      "diagnostics": [
+        "left=UNAVAILABLE",
+        "right=UNAVAILABLE"
+      ],
+      "note": "Agreement is not live-ground-truth accuracy; no scalar accuracy is computed."
+    },
+    {
+      "scenario_id": "diff_hog_cannon",
+      "left_adapter": "hastycr",
+      "right_adapter": "crforge",
+      "status": "UNMEASURED",
+      "comparable": false,
+      "first_divergence": null,
+      "category_counts": {},
+      "compared_frames": 0,
+      "diagnostics": [
+        "left=READY",
+        "right=UNAVAILABLE"
+      ],
+      "note": "Agreement is not live-ground-truth accuracy; no scalar accuracy is computed."
+    },
+    {
+      "scenario_id": "diff_hog_cannon",
+      "left_adapter": "hastycr",
+      "right_adapter": "clash-royale-suite",
+      "status": "UNMEASURED",
+      "comparable": false,
+      "first_divergence": null,
+      "category_counts": {},
+      "compared_frames": 0,
+      "diagnostics": [
+        "left=READY",
+        "right=UNAVAILABLE"
+      ],
+      "note": "Agreement is not live-ground-truth accuracy; no scalar accuracy is computed."
+    },
+    {
+      "scenario_id": "diff_hog_cannon",
+      "left_adapter": "crforge",
+      "right_adapter": "clash-royale-suite",
+      "status": "UNMEASURED",
+      "comparable": false,
+      "first_divergence": null,
+      "category_counts": {},
+      "compared_frames": 0,
+      "diagnostics": [
+        "left=UNAVAILABLE",
+        "right=UNAVAILABLE"
+      ],
+      "note": "Agreement is not live-ground-truth accuracy; no scalar accuracy is computed."
+    },
+    {
+      "scenario_id": "diff_knight_musketeer",
+      "left_adapter": "hastycr",
+      "right_adapter": "crforge",
+      "status": "UNMEASURED",
+      "comparable": false,
+      "first_divergence": null,
+      "category_counts": {},
+      "compared_frames": 0,
+      "diagnostics": [
+        "left=READY",
+        "right=UNAVAILABLE"
+      ],
+      "note": "Agreement is not live-ground-truth accuracy; no scalar accuracy is computed."
+    },
+    {
+      "scenario_id": "diff_knight_musketeer",
+      "left_adapter": "hastycr",
+      "right_adapter": "clash-royale-suite",
+      "status": "UNMEASURED",
+      "comparable": false,
+      "first_divergence": null,
+      "category_counts": {},
+      "compared_frames": 0,
+      "diagnostics": [
+        "left=READY",
+        "right=UNAVAILABLE"
+      ],
+      "note": "Agreement is not live-ground-truth accuracy; no scalar accuracy is computed."
+    },
+    {
+      "scenario_id": "diff_knight_musketeer",
+      "left_adapter": "crforge",
+      "right_adapter": "clash-royale-suite",
+      "status": "UNMEASURED",
+      "comparable": false,
+      "first_divergence": null,
+      "category_counts": {},
+      "compared_frames": 0,
+      "diagnostics": [
+        "left=UNAVAILABLE",
+        "right=UNAVAILABLE"
+      ],
+      "note": "Agreement is not live-ground-truth accuracy; no scalar accuracy is computed."
+    }
+  ],
+  "real_measurements": 0,
+  "claim_class": "SYNTHETIC_ONLY",
+  "note": "External adapters are descriptor-only and never build, import, or start simulator runtimes."
+}

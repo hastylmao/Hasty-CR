@@ -1,0 +1,446 @@
+# Model Advice: DeepSeek_3_2
+# Model ID: deepseek.v3.2
+# Response Time: 45.05s
+# Output Characters: 16649
+
+# HastyCR Technical Advisory Document
+**Principal AI/RL Architect & Game Bot Engineer**
+
+## Executive Summary
+HastyCR faces a classic "sim-to-real" gap exacerbated by brittle perception, suboptimal actuation, and insufficient tactical knowledge. The 0-168 record reveals not just a model mismatch but fundamental gaps in defensive micro-mechanics. This document provides exhaustive technical solutions across perception, actuation, tactical AI, and RL roadmap.
+
+---
+
+## 1. Immediate Computer Vision/Perception Fixes
+
+### 1.1 Dynamic Tower HP Bar Localization
+**Root Cause**: HP bar vertical position varies ±34 pixels depending on match type (1v1, 2v2, special event) and UI scaling. Fixed ROI (y=1160-1177) fails.
+
+**Solution**: Multi-stage landmark detection with adaptive ROI:
+
+```python
+class DynamicHPDetector:
+    def __init__(self):
+        self.landmark_templates = {
+            'ally_crown_tower': cv2.imread('templates/ally_crown.png'),
+            'enemy_crown_tower': cv2.imread('templates/enemy_crown.png'),
+            'level_badge': cv2.imread('templates/level_badge.png')
+        }
+        
+    def locate_tower_hp(self, frame):
+        # Stage 1: Crown tower detection via template matching
+        crown_matches = self._template_match(frame, 'ally_crown_tower')
+        if len(crown_matches) < 2:
+            # Stage 2: Fallback to level badge detection
+            badge_matches = self._template_match(frame, 'level_badge')
+            if len(badge_matches) >= 2:
+                return self._infer_hp_bars_from_badges(badge_matches)
+            # Stage 3: Color segmentation for HP bar green/red
+            return self._color_segmentation_fallback(frame)
+        
+        # Anchor HP bars relative to crown positions
+        crown_y = np.mean([match['y'] for match in crown_matches])
+        hp_roi_y = crown_y + 85  # Pixel offset from crown to HP bar
+        return (int(hp_roi_y), int(hp_roi_y + 17))  # 17px bar height
+    
+    def _template_match(self, frame, template_key):
+        """Multi-scale template matching with confidence thresholding"""
+        template = self.landmark_templates[template_key]
+        result = cv2.matchTemplate(frame, template, cv2.TM_CCOEFF_NORMED)
+        locations = np.where(result >= 0.85)
+        return [{'x': x, 'y': y} for y, x in zip(*locations)]
+    
+    def _color_segmentation_fallback(self, frame):
+        """HP bars have unique HSV ranges: Green(ally): H60-90, Red(enemy): H0-10|170-180"""
+        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        
+        # Green HP bar (ally)
+        green_lower = np.array([60, 100, 100])
+        green_upper = np.array([90, 255, 255])
+        green_mask = cv2.inRange(hsv, green_lower, green_upper)
+        
+        # Find largest green contour in top half
+        contours, _ = cv2.findContours(green_mask, cv2.RETR_EXTERNAL, 
+                                       cv2.CHAIN_APPROX_SIMPLE)
+        if contours:
+            largest = max(contours, key=cv2.contourArea)
+            y_pos = cv2.boundingRect(largest)[1]
+            return (y_pos, y_pos + 17)
+        
+        return (1160, 1177)  # Ultimate fallback
+```
+
+**Implementation Priority**: Immediate (Day 1-2). Create template images from 50+ diverse screenshots covering all match types.
+
+### 1.2 Swarm Unit Disambiguation
+**Problem**: Overlapping swarm units (Skeleton Army, Minion Horde) merge into single bounding boxes.
+
+**Solution**: Multi-modal detection fusion:
+1. **Bounding Box Density Analysis**:
+   ```python
+   def disambiguate_swarm(bboxes, frame):
+       density_threshold = 0.3  # Area overlap ratio
+       merged_units = []
+       
+       for bbox in bboxes:
+           overlap_count = 0
+           for other in bboxes:
+               if bbox != other and self._iou(bbox, other) > density_threshold:
+                   overlap_count += 1
+           
+           if overlap_count >= 3:  # Likely swarm
+               # Extract sub-region and run fine-grained detection
+               sub_img = frame[bbox.y:bbox.y+bbox.h, bbox.x:bbox.x+bbox.w]
+               
+               # Method A: Texture analysis (swarms have repetitive patterns)
+               if self._texture_entropy(sub_img) > 4.5:
+                   # Split into probable individual units
+                   individual_units = self._grid_split_swarm(bbox, overlap_count)
+                   merged_units.extend(individual_units)
+               else:
+                   merged_units.append(bbox)
+           else:
+               merged_units.append(bbox)
+       
+       return merged_units
+   ```
+
+2. **Temporal Consistency Filter**: Maintain unit tracking across frames:
+   ```python
+   class UnitTracker:
+       def __init__(self, max_age=30):  # ~3 seconds at 10 FPS
+           self.tracks = {}
+           self.next_id = 0
+           
+       def update(self, detections):
+           # Hungarian algorithm for detection-track association
+           cost_matrix = self._compute_association_cost(detections)
+           matches = linear_sum_assignment(cost_matrix)
+           
+           for det_idx, track_idx in zip(*matches):
+               if cost_matrix[det_idx, track_idx] < 0.5:  # Match threshold
+                   self.tracks[track_idx].update(detections[det_idx])
+                   
+           # Handle new detections and expired tracks
+           # ...
+   ```
+
+---
+
+## 2. Latency Reduction & Actuation Architecture
+
+### 2.1 High-Performance Frame Capture
+**Current Bottleneck**: `adb exec-out screencap` incurs 200-400ms serialization overhead.
+
+**Solution Matrix**:
+
+| Method | Latency | Implementation Complexity | Stability |
+|--------|---------|--------------------------|-----------|
+| **Scrcpy** | 10-30ms | Medium | High |
+| **Minicap** | 15-40ms | High | Medium |
+| **ADB Raw Socket** | 50-100ms | Low | High |
+| **Shared Memory** | 5-20ms | Very High | Medium |
+
+**Recommended**: Scrcpy with custom extraction:
+```python
+import subprocess
+import numpy as np
+import cv2
+
+class ScrcpyFrameGrabber:
+    def __init__(self, resolution=(1080, 1920)):
+        self.resolution = resolution
+        self.process = None
+        
+    def start(self):
+        # Start scrcpy with raw H.264 stream
+        cmd = [
+            'scrcpy', 
+            '--no-audio',
+            '--no-control',
+            '--max-fps=30',
+            '--max-size=1080',
+            '--raw-video-stream=h264'
+        ]
+        self.process = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+        
+    def get_frame(self):
+        # Parse raw H.264 NAL units, decode with OpenCV
+        raw_data = self.process.stdout.read(4096)
+        # Decode frame (simplified)
+        return self._decode_h264(raw_data)
+```
+
+**Fallback**: Optimized ADB with pipelining:
+```python
+class PipelinedADBCapture:
+    def __init__(self):
+        self.buffer = multiprocessing.Queue(maxsize=3)
+        self.capture_process = Process(target=self._capture_worker)
+        
+    def _capture_worker(self):
+        while True:
+            # Use raw protocol to avoid PNG compression
+            subprocess.run(['adb', 'shell', 'screencap -p | gzip -1'], 
+                          capture_output=True)
+            # Parallel decompression while next frame captures
+            self.buffer.put(decompressed_frame)
+```
+
+### 2.2 Predictive State Estimation
+**Problem**: 800-1200ms latency causes hand state changes before action execution.
+
+**Solution**: Markov Decision Process with Partial Observability (POMDP):
+```python
+class PredictiveStateEstimator:
+    def __init__(self):
+        self.elixir_model = HiddenMarkovModel(n_components=11)  # 0-10 elixir
+        self.hand_state = None
+        self.last_observation_time = 0
+        
+    def predict_hand_state(self, current_obs, action_delay_ms=800):
+        """
+        Predict hand state at time t+delay given current observation
+        """
+        # 1. Elixir prediction: +0.2 elixir per second (CR regeneration rate)
+        predicted_elixir = min(10, current_obs['elixir'] + 
+                              (action_delay_ms / 1000) * 0.2)
+        
+        # 2. Card cycling prediction based on deck cycle time
+        cycle_progress = self._estimate_cycle_progress(current_obs)
+        predicted_slots = self._simulate_cycle(cycle_progress, action_delay_ms)
+        
+        # 3. Enemy action anticipation (if enemy elixir permits counter)
+        enemy_elixir = current_obs.get('enemy_elixir', 5)  # Default estimate
+        if enemy_elixir >= 4 and action_delay_ms > 500:
+            # High probability of enemy placing card during our delay
+            return self._adjust_for_enemy_counter(predicted_slots)
+        
+        return predicted_slots
+    
+    def _simulate_cycle(self, cycle_progress, delay_ms):
+        """Simulate deck cycling using known 2.6 cycle times"""
+        # Hog 2.6 average cycle time: 7.2 seconds for 4 cards
+        cycle_time_per_card = 7200 / 4  # 1800ms per card
+        
+        cards_to_cycle = delay_ms / cycle_time_per_card
+        slots_shifted = int(cards_to_cycle)
+        
+        # Rotate hand slots
+        predicted_hand = np.roll(current_hand, -slots_shifted)
+        return predicted_hand
+```
+
+**Action Queue with Pre-validation**:
+```python
+class ActionQueueManager:
+    def __init__(self):
+        self.queue = deque(maxlen=3)
+        self.lock = threading.Lock()
+        
+    def submit_action(self, action, confidence=0.0):
+        """Submit action with confidence score"""
+        with self.lock:
+            self.queue.append({
+                'action': action,
+                'timestamp': time.time(),
+                'confidence': confidence,
+                'prevalidated': False
+            })
+            
+    def execute_next(self, current_state):
+        """Execute next action if still valid"""
+        if not self.queue:
+            return False
+            
+        next_action = self.queue[0]
+        
+        # Revalidate against current state
+        if self._validate_action(next_action['action'], current_state):
+            execute_action(next_action['action'])
+            self.queue.popleft()
+            return True
+        else:
+            # Action invalidated by state change
+            self.queue.popleft()
+            return False
+    
+    def _validate_action(self, action, state):
+        """Check if action prerequisites still hold"""
+        card_slot, target_x, target_y, delay = action
+        
+        # Check card still in expected slot
+        expected_card = self._get_expected_card(card_slot)
+        actual_card = state['hand'][card_slot]
+        
+        if expected_card != actual_card:
+            return False
+        
+        # Check elixir sufficient
+        card_cost = self._card_cost(actual_card)
+        if state['elixir'] < card_cost:
+            return False
+            
+        # Check placement area not blocked
+        if not self._placement_available(target_x, target_y, state):
+            return False
+            
+        return True
+```
+
+---
+
+## 3. Tactical Hog 2.6 Micro-Defense Formulation
+
+### 3.1 Defensive Geometry Engine
+Hog 2.6 defense relies on precise geometric interactions. Formalize as constraint satisfaction problem:
+
+```python
+class Hog26DefenseEngine:
+    def __init__(self):
+        self.tile_grid = self._create_tile_grid()  # 18x32 grid
+        self.defensive_patterns = self._load_defensive_patterns()
+        
+    def compute_optimal_placement(self, threat_units, elixir, hand_cards):
+        """
+        Returns: (card_type, tile_x, tile_y, delay)
+        """
+        # Classify threat type
+        threat_type = self._classify_threat(threat_units)
+        
+        if threat_type == 'BEATDOWN_PUSH':
+            return self._defend_beatdown(threat_units, elixir, hand_cards)
+        elif threat_type == 'BRIDGE_SPAM':
+            return self._defend_bridge_spam(threat_units, elixir, hand_cards)
+        elif threat_type == 'SWARM':
+            return self._defend_swarm(threat_units, elixir, hand_cards)
+        else:
+            return self._default_defense(threat_units, elixir, hand_cards)
+    
+    def _defend_beatdown(self, threats, elixir, hand):
+        """
+        Beatdown defense: Golem, Giant, Royal Giant, etc.
+        Core principle: Kite to opposite lane, Cannon pocket placement
+        """
+        # Identify main tank
+        main_tank = self._find_main_tank(threats)
+        
+        if main_tank['type'] in ['GOLEM', 'LAVA_HOUND']:
+            # Heavy beatdown: Full opposite lane kite
+            if 'Ice Golem' in hand and elixir >= 2:
+                # Ice Golem opposite lane kite pattern
+                kite_tiles = self._compute_kite_path(
+                    start_tile=main_tank['tile'],
+                    target_lane='OPPOSITE',
+                    unit_speed=main_tank['speed']
+                )
+                
+                # Place Ice Golem at calculated intercept point
+                intercept_tile = kite_tiles[2]  # Third tile in path
+                return ('Ice Golem', intercept_tile[0], intercept_tile[1], 0)
+            
+            # Cannon placement: 4-3 or 2-3 pocket
+            if 'Cannon' in hand and elixir >= 3:
+                pocket_tile = self._select_cannon_pocket(main_tank['lane'])
+                return ('Cannon', pocket_tile[0], pocket_tile[1], 100)
+                
+        elif main_tank['type'] == 'ROYAL_GIANT':
+            # Royal Giant defense: Cannon at river edge
+            rg_tile = main_tank['tile']
+            if rg_tile[1] >= 16:  # Enemy side
+                # RG targets buildings from distance
+                cannon_x = 8 if rg_tile[0] < 9 else 10  # Left or right pocket
+                cannon_y = 21  # One tile forward from king
+                return ('Cannon', cannon_x, cannon_y, 0)
+        
+        return None  # No optimal defense found
+    
+    def _compute_kite_path(self, start_tile, target_lane, unit_speed):
+        """
+        Calculate optimal kite path using vector fields
+        """
+        # Create attraction vector to target lane
+        target_x = 9 if target_lane == 'LEFT' else 13
+        target_y = 28  # Deep in opposite lane
+        
+        # Path calculation using potential fields
+        path = []
+        current = start_tile
+        
+        for step in range(10):  # Max 10 tiles
+            # Calculate gradient toward target
+            dx = target_x - current[0]
+            dy = target_y - current[1]
+            
+            # Normalize and apply unit speed
+            norm = np.sqrt(dx**2 + dy**2)
+            if norm > 0:
+                dx, dy = dx/norm, dy/norm
+            
+            next_tile = (
+                current[0] + dx * unit_speed,
+                current[1] + dy * unit_speed
+            )
+            
+            # Clamp to valid tiles
+            next_tile = (
+                max(0, min(17, int(next_tile[0]))),
+                max(0, min(31, int(next_tile[1])))
+            )
+            
+            path.append(next_tile)
+            current = next_tile
+            
+            if current[1] >= 28:  # Reached deep opposite lane
+                break
+        
+        return path
+    
+    def _select_cannon_pocket(self, push_lane):
+        """
+        4-3 or 2-3 Cannon placement based on push lane
+        """
+        if push_lane == 'LEFT':
+            # 4-3 placement: x=8, y=21
+            return (8, 21)
+        else:
+            # 2-3 placement: x=10, y=21
+            return (10, 21)
+```
+
+### 3.2 Elixir Trade Calculator
+```python
+class ElixirTradeCalculator:
+    def __init__(self):
+        self.card_costs = {
+            'Hog Rider': 4, 'Musketeer': 4, 'Cannon': 3,
+            'Fireball': 4, 'The Log': 2, 'Ice Golem': 2,
+            'Ice Spirit': 1, 'Skeletons': 1
+        }
+        
+    def calculate_trade(self, defense_cards, threat_cards, 
+                       remaining_threat_hp=0):
+        """
+        Returns: net elixir advantage
+        """
+        defense_cost = sum(self.card_costs[card] for card in defense_cards)
+        threat_cost = sum(self.card_costs[card] for card in threat_cards)
+        
+        # Account for leftover threat HP (negative value)
+        hp_penalty = remaining_threat_hp / 1000  # Approximate elixir value
+        
+        return threat_cost - defense_cost - hp_penalty
+    
+    def optimize_defense_combo(self, threats, elixir, hand):
+        """
+        Find defense combo with highest positive expected trade
+        """
+        possible_defenses = self._generate_defense_combos(threats, elixir, hand)
+        
+        best_defense = None
+        best_score = -float('inf')
+        
+        for defense in possible_defenses:
+            # Simulate defense outcome
+            outcome = self._simulate_defense(defense, threats)
+           

@@ -1,0 +1,151 @@
+{
+  "_comment": "Hard limits on config.json, enforced by review.py after every review. These encode findings that cost real matches to learn, so an agent with no memory of the run cannot quietly undo them. Widen a bound only with block evidence, and record why in docs/RUN_JOURNAL.md.",
+  "_defend_elixir_ratio": "Two independent lines of evidence agree that a tight defence budget loses. LIVE: tightening it took the record from 2W-0L-1D (5 crowns for, 1 against) to 1W-6L-3D (3 for, 10 against) with cards per match falling 41.7 -> 30.4. SIM: 200 matches per value against a frozen baseline gave 1.2 -> 46.5% (crowns 26-37), 2.0 -> 58.9% (36-19), 2.5 -> 59.9% (38-20), a +2.8 sigma effect that saturates around 2.0. Do not go below 1.6.",
+  "defend_elixir_ratio": [
+    1.6,
+    2.6
+  ],
+  "_defend_min_budget": "Same finding as defend_elixir_ratio: a budget under 5 cannot answer a two-card push. But note it is INERT UPWARD. The budget is max(defend_min_budget, threat_elixir * defend_elixir_ratio, threat_score * defend_threat_to_elixir), so raising this only changes a decision when it is the largest of the three, and it usually is not: swept at 300 matches, 6.0 and 8.0 returned byte-identical records (142/156/2 both). Only the lower limit does any work. Do not spend a review tuning it upward.",
+  "defend_min_budget": [
+    5.0,
+    10.0
+  ],
+  "_defend_max_cards_per_push": "Three was observed leaving big pushes unanswered at the tower.",
+  "defend_max_cards_per_push": [
+    3,
+    6
+  ],
+  "_cycle_to_hog_elixir": "LIVE EVIDENCE OVERRULES THE SWEEP HERE. The simulator likes high values and is monotone about it - 400 matches per value gave 4.0 -> 32.4%, 6.5 -> 47.8%, 9.0 -> 62.5%, and it held up even against a pool of jittered opponents (9.0 -> 51.0%, 6.5 -> 38.6%, 4.0 -> 26.7%). Shipping 9.0 on that evidence froze the bot: combined with two gates other agents had raised, it left a band around 4-8 elixir where no generator fires at all, measured at 278 idle ticks and a 13-23 second silent stretch in EVERY match, and noticed by the user as the bot randomly stopping. At 6.5 the last-resort idle floor was still doing 29% of all plays.\nThe reason the sweep is wrong is now understood: nothing in the simulator punishes passivity, because the only opponent is our own policy, which does not out-cycle us. A ladder opponent does. 4.0 is also what 2.6 doctrine says - you cycle cheap cards at low elixir to reach the Hog.\nThe reviewer complaint that produced the first increase (the bot dumping Ice Spirit, Skeletons and Ice Golem back to back and going defenceless) is real, but it is a *rate* problem: fix it with cycle_min_gap_seconds, not by making cycling impossible. Do not raise this above 5 without live evidence of idling being harmless.",
+  "cycle_to_hog_elixir": [
+    3.5,
+    5.0
+  ],
+  "_defend_min_threat": "Swept in the simulator over 80 matches per value against a frozen baseline: 4 -> 53.2% win, 6.5 -> 40.5%, 9 -> 9.1% (7W 70L, 0-15 on crowns). Ignoring real threats is catastrophic; do not raise this above 6. Re-swept 2026-08-18 post-yolo, 200 and 400 matches per value on two seeds: 6 beat 4 by +9.4 and +6.7 points (crowns 40-28 in the 400-match run), so 6.0 is now the applied value - but the surface above it is steep and the old 6.5 collapse stands, so the cap stays.",
+  "defend_min_threat": [
+    3.0,
+    6.0
+  ],
+  "_hog_min_elixir_single": "Hog costs 4. Above 7 the win condition effectively stops being played.",
+  "hog_min_elixir_single": [
+    4.0,
+    7.0
+  ],
+  "_hog_min_elixir_defending": "Above 8 the bot never counter-pushes.",
+  "hog_min_elixir_defending": [
+    5.0,
+    8.0
+  ],
+  "_emergency_depth": "Units this deep must always be answerable regardless of budget.",
+  "emergency_depth": [
+    19,
+    24
+  ],
+  "_cannon_from_river": "The 4-3 placement is web-verified 2.6 doctrine; drifting off it needs evidence.",
+  "cannon_from_river": [
+    3,
+    5
+  ],
+  "_cannon_from_centre": "Second half of the 4-3 placement.",
+  "cannon_from_centre": [
+    2,
+    4
+  ],
+  "_min_seconds_between_plays": "Bounded at its current value rather than changed: no evidence yet that 0.4 is harmful, but below it the bot can empty its hand in under two seconds, which is the opposite of cycling.",
+  "min_seconds_between_plays": [
+    0.4,
+    2.0
+  ],
+  "_learning_limit": "The learned bias must stay small enough that a handful of episodes cannot overrule a hand-written rule taken from the 2.6 guides.",
+  "learning_limit": [
+    5.0,
+    25.0
+  ],
+  "_learning_scale": "Same reason. Above 3 a single strong situation dominates every score.",
+  "learning_scale": [
+    0.5,
+    3.0
+  ],
+  "_weights": "Weight bounds are dotted keys and are enforced by config_guard. The invariant they protect: defensive weights must not out-rank the Hog weights, because defensive scores additionally gain threat_scale * threat while Hog plays do not - so a defensive weight equal to a Hog weight already wins at any live threat. The review loop drifted exactly here, adding defend_single and defend_air_weak until every defensive tag beat every Hog tag and the win condition could not be chosen. These bounds lock the relationship that exists today; widen only with sweep evidence.",
+  "weights.hog_push": [
+    40.0,
+    70.0
+  ],
+  "weights.hog_punish": [
+    40.0,
+    70.0
+  ],
+  "weights.hog_counterpush": [
+    48.0,
+    75.0
+  ],
+  "weights.defend_air": [
+    40.0,
+    62.0
+  ],
+  "weights.defend_ranged": [
+    40.0,
+    62.0
+  ],
+  "weights.defend_cannon": [
+    40.0,
+    62.0
+  ],
+  "weights.defend_spell": [
+    40.0,
+    62.0
+  ],
+  "weights.defend_kite": [
+    40.0,
+    60.0
+  ],
+  "weights.defend_swarm": [
+    34.0,
+    56.0
+  ],
+  "weights.defend_single": [
+    26.0,
+    46.0
+  ],
+  "weights.defend_air_weak": [
+    30.0,
+    52.0
+  ],
+  "weights.defend_fallback": [
+    3.0,
+    12.0
+  ],
+  "_ice_spirit_max_air_threat": "Raised 4 -> 15 by a block review with no measurement. Bounded at the current value so it cannot climb further unmeasured.",
+  "ice_spirit_max_air_threat": [
+    4.0,
+    15.0
+  ],
+  "_probe_min_elixir": "The gate on sending a lone Hog. Capped at 8.0 deliberately. A sweep preferred 10.0 (56.7% against a 46.8% control, 400 matches per value) but that result is discounted on two grounds: the control arm was 3.2 points off 50, and the curve is non-monotone (6.0 -> 51.0%, 8.0 -> 46.8%, 10.0 -> 56.7%), which usually means noise. Decisively, raising this reduces Hog pressure, and the simulator is known to over-reward defence: its only opponents are a mirror that defends exactly as well as we attack and a weak bot we beat 99.7% of the time, while the ladder beats us 118-14. An RL agent given the same world independently learned to never attack at all. Do not raise this on simulator evidence; live Hog share and crowns are the test.",
+  "probe_min_elixir": [
+    5.0,
+    8.0
+  ],
+  "_max_idle_seconds": "How long the bot may propose nothing at all before a last-resort card is played. This exists because three elixir gates raised independently by three agents left a band around 4-8 elixir where no generator fires: measured live at 278 idle ticks and a 13-23 second silent stretch in every match, reported by the user as the bot randomly stopping. The floor only runs when the legal set is empty, so it cannot outbid a real play. Above about 10 it stops being a floor; below about 3 it starts dumping the hand.",
+  "max_idle_seconds": [
+    3.0,
+    10.0
+  ],
+  "_predict_seconds": "How far ahead threats are extrapolated when choosing where to answer them. It is not a free parameter: 67 of 69 units in the extracted card data deploy in exactly 1.0s, and the bot needs roughly another 0.4s to capture, decide and tap, so 1.4 is deploy time plus latency. Below 1.0 the answer lands where the push already was; well above 2 it leads into empty ground. Change it only with a reason of that kind.",
+  "predict_seconds": [
+    1.0,
+    2.2
+  ],
+  "_cannon_deploy_clearance": "Tiles the Cannon is pulled back from the nearest ground unit before being placed. A Cannon takes a full second to activate, so one dropped in contact absorbs free hits while doing nothing - reported from live play. Zero disables the protection.",
+  "cannon_deploy_clearance": [
+    1.5,
+    4.0
+  ],
+  "_weights.defend_outranged": "Answering a push of units that outrange our short answers. Measured in the simulator: an attacking Musketeer leaks 880 tower damage past a Cannon, Skeletons, an Ice Spirit or an Ice Golem alike and zero past our Musketeer; a Wizard leaks 284 past everything else. It sits above defend_air (62) on purpose - the cheap answers are not weaker here, they are irrelevant. Below about 65 it stops winning the comparison and the bot goes back to feeding Skeletons into a Musketeer.",
+  "weights.defend_outranged": [
+    65.0,
+    90.0
+  ],
+  "emergency_min_threat": [
+    2.0,
+    5.0
+  ]
+}

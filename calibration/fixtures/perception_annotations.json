@@ -1,0 +1,1160 @@
+{
+  "schema_version": 1,
+  "document_id": "synthetic-perception-workflow",
+  "revision": 8,
+  "source_trace_id": "sprint5_001_arena:synthetic",
+  "source_trace_sha256": "ffba7d093e93f4608aca2f542a78853c7e6c61f9ea437afc17abd77615545ccf",
+  "metadata": {
+    "source_provenance": {
+      "source": "synthetic",
+      "evidence_ids": [
+        "SYNTH-CORRUPTION"
+      ],
+      "method": "corrupt_trace",
+      "details": {}
+    },
+    "real_data_claim": false
+  },
+  "frames": [
+    {
+      "frame_id": "0",
+      "time_ms": 100,
+      "source_frame": null,
+      "battle_time_ms": 0,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "1",
+      "time_ms": 150,
+      "source_frame": null,
+      "battle_time_ms": 50,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "2",
+      "time_ms": 200,
+      "source_frame": null,
+      "battle_time_ms": 100,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "3",
+      "time_ms": 250,
+      "source_frame": null,
+      "battle_time_ms": 150,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "4",
+      "time_ms": 300,
+      "source_frame": null,
+      "battle_time_ms": 200,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "5",
+      "time_ms": 350,
+      "source_frame": null,
+      "battle_time_ms": 250,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "6",
+      "time_ms": 400,
+      "source_frame": null,
+      "battle_time_ms": 300,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "7",
+      "time_ms": 450,
+      "source_frame": null,
+      "battle_time_ms": 350,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "8",
+      "time_ms": 500,
+      "source_frame": null,
+      "battle_time_ms": 400,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "9",
+      "time_ms": 550,
+      "source_frame": null,
+      "battle_time_ms": 450,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "10",
+      "time_ms": 600,
+      "source_frame": null,
+      "battle_time_ms": 500,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "11",
+      "time_ms": 650,
+      "source_frame": null,
+      "battle_time_ms": 550,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "12",
+      "time_ms": 700,
+      "source_frame": null,
+      "battle_time_ms": 600,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "13",
+      "time_ms": 750,
+      "source_frame": null,
+      "battle_time_ms": 650,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "14",
+      "time_ms": 800,
+      "source_frame": null,
+      "battle_time_ms": 700,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "15",
+      "time_ms": 850,
+      "source_frame": null,
+      "battle_time_ms": 750,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "16",
+      "time_ms": 900,
+      "source_frame": null,
+      "battle_time_ms": 800,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "17",
+      "time_ms": 950,
+      "source_frame": null,
+      "battle_time_ms": 850,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "18",
+      "time_ms": 1000,
+      "source_frame": null,
+      "battle_time_ms": 900,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "19",
+      "time_ms": 1050,
+      "source_frame": null,
+      "battle_time_ms": 950,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    },
+    {
+      "frame_id": "20",
+      "time_ms": 1100,
+      "source_frame": null,
+      "battle_time_ms": 1000,
+      "metadata": {
+        "source_observability": "simulator-only"
+      }
+    }
+  ],
+  "records": [
+    {
+      "annotation_id": "7",
+      "frame_id": "1",
+      "time_ms": 150,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.24855909670422,
+      "y": 21.848270963996686,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "2",
+      "time_ms": 200,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.248886841384323,
+      "y": 21.857019837250988,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "3",
+      "time_ms": 250,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.24872411716217,
+      "y": 21.83502646585659,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "4",
+      "time_ms": 300,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.253323183440678,
+      "y": 21.84732662521503,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "4",
+      "time_ms": 300,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.247830413158548,
+      "y": 8.851158847867008,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "5",
+      "time_ms": 350,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.252322977369067,
+      "y": 21.86163558686599,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "5",
+      "time_ms": 350,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.256566365067986,
+      "y": 8.851105071774438,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "6",
+      "time_ms": 400,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.242616783976551,
+      "y": 21.839853376325124,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "6",
+      "time_ms": 400,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.252463421952111,
+      "y": 8.86311080827204,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "7",
+      "time_ms": 450,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.250416568639034,
+      "y": 21.84893676706229,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "7",
+      "time_ms": 450,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.255317762204008,
+      "y": 8.835464547019914,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "8",
+      "time_ms": 500,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.246877226828554,
+      "y": 21.854903625325935,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "8",
+      "time_ms": 500,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.258734043853794,
+      "y": 8.847593703273448,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "9",
+      "time_ms": 550,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.253765998586879,
+      "y": 21.852482134493282,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "9",
+      "time_ms": 550,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.257823268087037,
+      "y": 8.838867777857518,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "10",
+      "time_ms": 600,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.255682506875853,
+      "y": 21.834854796082748,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "10",
+      "time_ms": 600,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.223800545777811,
+      "y": 8.843931092718005,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "11",
+      "time_ms": 650,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.240841899536541,
+      "y": 21.858760122430564,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "11",
+      "time_ms": 650,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.256642658996128,
+      "y": 8.837809252587043,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "12",
+      "time_ms": 700,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.25847361423348,
+      "y": 21.839977971757577,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "12",
+      "time_ms": 700,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.249137561536637,
+      "y": 8.847061002220435,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "13",
+      "time_ms": 750,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.25114419857461,
+      "y": 21.858186363115436,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "13",
+      "time_ms": 750,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.256384137907924,
+      "y": 8.853498851018692,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "14",
+      "time_ms": 800,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.256499480978063,
+      "y": 21.854784920376503,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "14",
+      "time_ms": 800,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.243730145347804,
+      "y": 8.842826289061835,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "15",
+      "time_ms": 850,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.24530031725864,
+      "y": 21.85499326400477,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "15",
+      "time_ms": 850,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.247498844290027,
+      "y": 8.873357542224806,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "16",
+      "time_ms": 900,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.241807074578135,
+      "y": 21.83901125400098,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "16",
+      "time_ms": 900,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.257684735154697,
+      "y": 8.864218499813434,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "17",
+      "time_ms": 950,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.255056926908393,
+      "y": 21.858358173459678,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "17",
+      "time_ms": 950,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.264263449774422,
+      "y": 8.849059725239837,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "18",
+      "time_ms": 1000,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.23577041066861,
+      "y": 21.844679234516814,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "18",
+      "time_ms": 1000,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.259528957573165,
+      "y": 8.835563215939217,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "19",
+      "time_ms": 1050,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.250335313207872,
+      "y": 21.85253237359342,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "19",
+      "time_ms": 1050,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.246844078351863,
+      "y": 8.85723631986368,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "7",
+      "frame_id": "20",
+      "time_ms": 1100,
+      "class_name": "knight",
+      "team": 1,
+      "x": 9.290807797415265,
+      "y": 21.837214085169006,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    },
+    {
+      "annotation_id": "8",
+      "frame_id": "20",
+      "time_ms": 1100,
+      "class_name": "musketeer",
+      "team": -1,
+      "x": 9.256199677677731,
+      "y": 8.843905965413569,
+      "confidence": 0.99,
+      "observability": "simulator-only",
+      "uncertainty": {
+        "sigma": 0.01,
+        "lower": null,
+        "upper": null,
+        "reason": "synthetic corruption"
+      },
+      "alive": true,
+      "metadata": {
+        "source_metadata": {}
+      }
+    }
+  ],
+  "operations": [
+    {
+      "sequence": 1,
+      "operation_id": "op-9496801969116e33",
+      "kind": "point",
+      "payload": {
+        "annotation_id": "7",
+        "frame_id": "1",
+        "x": 9.125,
+        "y": 22.25
+      },
+      "author": "manual",
+      "reason": "synthetic point correction",
+      "confidence": 0.9,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      }
+    },
+    {
+      "sequence": 2,
+      "operation_id": "op-f7bf29725fbeb70f",
+      "kind": "relabel",
+      "payload": {
+        "annotation_id": "7",
+        "class_name": "knight-corrected",
+        "from_time_ms": 200
+      },
+      "author": "manual",
+      "reason": "synthetic relabel",
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      }
+    },
+    {
+      "sequence": 3,
+      "operation_id": "op-7494c6ec201a78c6",
+      "kind": "split",
+      "payload": {
+        "source_id": "8",
+        "target_id": "8b",
+        "at_time_ms": 600
+      },
+      "author": "manual",
+      "reason": "synthetic track split",
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      }
+    },
+    {
+      "sequence": 4,
+      "operation_id": "op-5d3c61c04a2f10ac",
+      "kind": "merge",
+      "payload": {
+        "source_ids": [
+          "8",
+          "8b"
+        ],
+        "target_id": "8-merged"
+      },
+      "author": "manual",
+      "reason": "synthetic merge replay",
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      }
+    },
+    {
+      "sequence": 5,
+      "operation_id": "op-c9f405ce7105baae",
+      "kind": "spawn",
+      "payload": {
+        "record": {
+          "annotation_id": "manual-1",
+          "frame_id": "2",
+          "time_ms": 200,
+          "class_name": "synthetic-unit",
+          "team": 1,
+          "x": 4.5,
+          "y": 8.5,
+          "confidence": 0.75,
+          "observability": "simulator-only",
+          "uncertainty": {
+            "sigma": 0.2,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic label"
+          },
+          "alive": true,
+          "metadata": {
+            "synthetic": true
+          }
+        }
+      },
+      "author": "manual",
+      "reason": "synthetic spawn correction",
+      "confidence": 0.75,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      }
+    },
+    {
+      "sequence": 6,
+      "operation_id": "op-81aade7a14c1be7d",
+      "kind": "queue",
+      "payload": {
+        "frame_id": "0",
+        "status": "reviewed"
+      },
+      "author": "manual",
+      "reason": "synthetic queue exercise",
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      }
+    },
+    {
+      "sequence": 7,
+      "operation_id": "op-f4882e7e5f79323b",
+      "kind": "death",
+      "payload": {
+        "annotation_id": "7",
+        "time_ms": 900
+      },
+      "author": "manual",
+      "reason": "synthetic death boundary",
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      }
+    },
+    {
+      "sequence": 8,
+      "operation_id": "op-a02e80fe5f4da3f3",
+      "kind": "queue",
+      "payload": {
+        "frame_id": "0",
+        "status": "reviewed"
+      },
+      "author": "manual",
+      "reason": "synthetic queue exercise",
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      }
+    }
+  ]
+}

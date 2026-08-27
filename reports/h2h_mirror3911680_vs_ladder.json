@@ -1,0 +1,17 @@
+{
+  "a": "checkpoints\\mirror_stages\\mirror_3911680.pt",
+  "b": "checkpoints\\ladder\\ladder_best.pt",
+  "step_a": 3911680,
+  "step_b": 1656832,
+  "seed": 21000,
+  "games": 140,
+  "wins": 101,
+  "losses": 38,
+  "draws": 1,
+  "win_rate": 0.7214285714285714,
+  "wilson_lo": 0.6420145523361234,
+  "wilson_hi": 0.7890151358764661,
+  "crowns_for": 23,
+  "crowns_against": 2,
+  "crown_diff": 0.15
+}

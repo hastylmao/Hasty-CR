@@ -1,0 +1,10 @@
+{
+  "dropped_observations": [],
+  "real_data_claim": false,
+  "seed": 42,
+  "time_shift_ms": 100,
+  "translation": [
+    0.25,
+    -0.15
+  ]
+}

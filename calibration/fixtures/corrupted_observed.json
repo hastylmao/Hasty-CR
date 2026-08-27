@@ -1,0 +1,5409 @@
+{
+  "schema_version": 2,
+  "trace_id": "sprint5_001_arena:synthetic",
+  "source": {
+    "source": "synthetic",
+    "evidence_ids": [
+      "SYNTH-CORRUPTION"
+    ],
+    "method": "corrupt_trace",
+    "details": {}
+  },
+  "metadata": {
+    "scenario_id": "sprint5_001_arena",
+    "seed": 5001,
+    "duration_ms": 1000,
+    "dt_ms": 50,
+    "synthetic_corruption": {
+      "time_shift_ms": 100,
+      "translation": [
+        0.25,
+        -0.15
+      ],
+      "position_noise_sigma": 0.01,
+      "drop_probability": 0.0,
+      "gap_tracks": [],
+      "seed": 42
+    },
+    "real_data_claim": false
+  },
+  "frames": [
+    {
+      "time_ms": 100,
+      "frame_id": "0",
+      "entities": [],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [
+        {
+          "event_type": "spawn",
+          "time_ms": 100,
+          "actor_id": "1",
+          "target_id": null,
+          "actor_class": "princess_tower",
+          "target_class": null,
+          "team": 1,
+          "x": 3.5,
+          "y": 24.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 100,
+          "actor_id": "2",
+          "target_id": null,
+          "actor_class": "princess_tower",
+          "target_class": null,
+          "team": 1,
+          "x": 14.5,
+          "y": 24.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 100,
+          "actor_id": "3",
+          "target_id": null,
+          "actor_class": "king_tower",
+          "target_class": null,
+          "team": 1,
+          "x": 9.5,
+          "y": 28.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 100,
+          "actor_id": "4",
+          "target_id": null,
+          "actor_class": "princess_tower",
+          "target_class": null,
+          "team": -1,
+          "x": 3.5,
+          "y": 7.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 100,
+          "actor_id": "5",
+          "target_id": null,
+          "actor_class": "princess_tower",
+          "target_class": null,
+          "team": -1,
+          "x": 14.5,
+          "y": 7.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 100,
+          "actor_id": "6",
+          "target_id": null,
+          "actor_class": "king_tower",
+          "target_class": null,
+          "team": -1,
+          "x": 9.5,
+          "y": 3.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 0,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 150,
+      "frame_id": "1",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.24855909670422,
+          "y": 21.848270963996686,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [
+        {
+          "event_type": "spawn",
+          "time_ms": 150,
+          "actor_id": "1",
+          "target_id": null,
+          "actor_class": "princess_tower",
+          "target_class": null,
+          "team": 1,
+          "x": 3.5,
+          "y": 24.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 150,
+          "actor_id": "2",
+          "target_id": null,
+          "actor_class": "princess_tower",
+          "target_class": null,
+          "team": 1,
+          "x": 14.5,
+          "y": 24.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 150,
+          "actor_id": "3",
+          "target_id": null,
+          "actor_class": "king_tower",
+          "target_class": null,
+          "team": 1,
+          "x": 9.5,
+          "y": 28.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 150,
+          "actor_id": "4",
+          "target_id": null,
+          "actor_class": "princess_tower",
+          "target_class": null,
+          "team": -1,
+          "x": 3.5,
+          "y": 7.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 150,
+          "actor_id": "5",
+          "target_id": null,
+          "actor_class": "princess_tower",
+          "target_class": null,
+          "team": -1,
+          "x": 14.5,
+          "y": 7.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 150,
+          "actor_id": "6",
+          "target_id": null,
+          "actor_class": "king_tower",
+          "target_class": null,
+          "team": -1,
+          "x": 9.5,
+          "y": 3.5,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 150,
+          "actor_id": "7",
+          "target_id": null,
+          "actor_class": "knight",
+          "target_class": null,
+          "team": 1,
+          "x": 9.0,
+          "y": 22.0,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 50,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 200,
+      "frame_id": "2",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.248886841384323,
+          "y": 21.857019837250988,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 100,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 250,
+      "frame_id": "3",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.24872411716217,
+          "y": 21.83502646585659,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 150,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 300,
+      "frame_id": "4",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.253323183440678,
+          "y": 21.84732662521503,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.247830413158548,
+          "y": 8.851158847867008,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [
+        {
+          "event_type": "spawn",
+          "time_ms": 300,
+          "actor_id": "8",
+          "target_id": null,
+          "actor_class": "musketeer",
+          "target_class": null,
+          "team": -1,
+          "x": 9.0,
+          "y": 9.0,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 200,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 350,
+      "frame_id": "5",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.252322977369067,
+          "y": 21.86163558686599,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.256566365067986,
+          "y": 8.851105071774438,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 250,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 400,
+      "frame_id": "6",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.242616783976551,
+          "y": 21.839853376325124,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.252463421952111,
+          "y": 8.86311080827204,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 300,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 450,
+      "frame_id": "7",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.250416568639034,
+          "y": 21.84893676706229,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.255317762204008,
+          "y": 8.835464547019914,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 350,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 500,
+      "frame_id": "8",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.246877226828554,
+          "y": 21.854903625325935,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.258734043853794,
+          "y": 8.847593703273448,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 400,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 550,
+      "frame_id": "9",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.253765998586879,
+          "y": 21.852482134493282,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.257823268087037,
+          "y": 8.838867777857518,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 450,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 600,
+      "frame_id": "10",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.255682506875853,
+          "y": 21.834854796082748,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.223800545777811,
+          "y": 8.843931092718005,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 500,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 650,
+      "frame_id": "11",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.240841899536541,
+          "y": 21.858760122430564,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.256642658996128,
+          "y": 8.837809252587043,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 550,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 700,
+      "frame_id": "12",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.25847361423348,
+          "y": 21.839977971757577,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.249137561536637,
+          "y": 8.847061002220435,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 600,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 750,
+      "frame_id": "13",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.25114419857461,
+          "y": 21.858186363115436,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.256384137907924,
+          "y": 8.853498851018692,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 650,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 800,
+      "frame_id": "14",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.256499480978063,
+          "y": 21.854784920376503,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.243730145347804,
+          "y": 8.842826289061835,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 700,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 850,
+      "frame_id": "15",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.24530031725864,
+          "y": 21.85499326400477,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.247498844290027,
+          "y": 8.873357542224806,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 750,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 900,
+      "frame_id": "16",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.241807074578135,
+          "y": 21.83901125400098,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.257684735154697,
+          "y": 8.864218499813434,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 800,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 950,
+      "frame_id": "17",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.255056926908393,
+          "y": 21.858358173459678,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.264263449774422,
+          "y": 8.849059725239837,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 850,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 1000,
+      "frame_id": "18",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.23577041066861,
+          "y": 21.844679234516814,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.259528957573165,
+          "y": 8.835563215939217,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 900,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 1050,
+      "frame_id": "19",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.250335313207872,
+          "y": 21.85253237359342,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.246844078351863,
+          "y": 8.85723631986368,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 950,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    },
+    {
+      "time_ms": 1100,
+      "frame_id": "20",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.290807797415265,
+          "y": 21.837214085169006,
+          "z": null,
+          "hitpoints": 1766.0,
+          "max_hitpoints": 1766.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        },
+        {
+          "track_id": "8",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.256199677677731,
+          "y": 8.843905965413569,
+          "z": null,
+          "hitpoints": 722.0,
+          "max_hitpoints": 722.0,
+          "alive": true,
+          "flying": false,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "synthetic",
+            "evidence_ids": [
+              "SYNTH-CORRUPTION"
+            ],
+            "method": "corrupt_trace",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [
+        {
+          "tower_id": "1",
+          "team": 1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "2",
+          "team": 1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 24.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "3",
+          "team": 1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 28.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "4",
+          "team": -1,
+          "lane": "left",
+          "x": 3.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "5",
+          "team": -1,
+          "lane": "right",
+          "x": 14.5,
+          "y": 7.5,
+          "hitpoints": 3584.0,
+          "max_hitpoints": 3584.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        },
+        {
+          "tower_id": "6",
+          "team": -1,
+          "lane": "king",
+          "x": 9.5,
+          "y": 3.5,
+          "hitpoints": 6144.0,
+          "max_hitpoints": 6144.0,
+          "alive": true,
+          "confidence": 1.0,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "simulator",
+            "evidence_ids": [],
+            "method": "Match.towers",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {}
+        }
+      ],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "synthetic",
+        "evidence_ids": [
+          "SYNTH-CORRUPTION"
+        ],
+        "method": "corrupt_trace",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 1000,
+      "source_frame": null,
+      "metadata": {
+        "finished": false,
+        "result": null,
+        "synthetic_corruption": true
+      }
+    }
+  ]
+}

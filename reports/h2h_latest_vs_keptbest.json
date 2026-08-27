@@ -1,0 +1,17 @@
+{
+  "a": "checkpoints\\mirror_stages\\mirror_latest.pt",
+  "b": "checkpoints\\mirror_stages\\mirror_3911680.pt",
+  "step_a": 9924608,
+  "step_b": 3911680,
+  "seed": 31000,
+  "games": 140,
+  "wins": 69,
+  "losses": 64,
+  "draws": 7,
+  "win_rate": 0.4928571428571429,
+  "wilson_lo": 0.4113444034723884,
+  "wilson_hi": 0.5747514130368829,
+  "crowns_for": 64,
+  "crowns_against": 40,
+  "crown_diff": 0.17142857142857143
+}

@@ -1,0 +1,55 @@
+{
+  "seed": 8000,
+  "episodes": 60,
+  "compare_seed": 8000,
+  "final_seed": 9000,
+  "eval_mode": "eval no_grad greedy argmax deterministic",
+  "results": {
+    "tmp\\rl\\clone_pilot.pt": [
+      {
+        "opponent": "brain",
+        "episodes": 60,
+        "seed": 8000,
+        "wins": 11,
+        "losses": 47,
+        "draws": 2,
+        "win_rate": 0.18333333333333332,
+        "wilson_lo": 0.1055768903713613,
+        "wilson_hi": 0.29919993226466285,
+        "crowns_for": 12,
+        "crowns_against": 49,
+        "crown_diff": -0.6166666666666667,
+        "tower_for": 0.8451729910714286,
+        "tower_against": 1.1687686011904763,
+        "tower_diff": -0.3235956101190478,
+        "hog_share": 0.16731266149870802,
+        "plays_per_match": 51.6,
+        "illegal_total": 0,
+        "illegal_rate": 0.0,
+        "duration_s": 215.05333333333334
+      },
+      {
+        "opponent": "meta",
+        "episodes": 60,
+        "seed": 8000,
+        "wins": 47,
+        "losses": 13,
+        "draws": 0,
+        "win_rate": 0.7833333333333333,
+        "wilson_lo": 0.6637973165265748,
+        "wilson_hi": 0.8687707895359299,
+        "crowns_for": 44,
+        "crowns_against": 16,
+        "crown_diff": 0.4666666666666667,
+        "tower_for": 1.1521112351190477,
+        "tower_against": 0.6921688988095237,
+        "tower_diff": 0.45994233630952397,
+        "hog_share": 0.14735099337748345,
+        "plays_per_match": 50.333333333333336,
+        "illegal_total": 0,
+        "illegal_rate": 0.0,
+        "duration_s": 212.8175
+      }
+    ]
+  }
+}

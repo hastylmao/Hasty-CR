@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HastyCR — Agent Handoff</title>
+<style>
+  @page { size: A4; margin: 16mm 14mm; }
+  * { box-sizing: border-box; }
+  body { font: 10.5pt/1.5 "Segoe UI", system-ui, sans-serif; color: #1a1a1a; margin: 0; }
+  h1 { font-size: 21pt; margin: 0 0 2mm; letter-spacing: -0.4pt; }
+  h2 { font-size: 13pt; margin: 7mm 0 2mm; padding-bottom: 1mm;
+       border-bottom: 1.5pt solid #1a1a1a; page-break-after: avoid; }
+  h3 { font-size: 11pt; margin: 4mm 0 1.5mm; page-break-after: avoid; }
+  p, li { margin: 0 0 2mm; }
+  ul, ol { margin: 0 0 2.5mm; padding-left: 5mm; }
+  code { font: 9pt "Consolas", monospace; background: #f2f2f2; padding: 0.4mm 1mm; border-radius: 2px; }
+  pre { font: 8.6pt/1.45 "Consolas", monospace; background: #f7f7f7; border-left: 2.5pt solid #999;
+        padding: 2.5mm 3mm; overflow-x: auto; white-space: pre-wrap; margin: 0 0 3mm; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 3mm; font-size: 9.4pt; page-break-inside: avoid; }
+  th { text-align: left; background: #1a1a1a; color: #fff; padding: 1.4mm 2mm; font-weight: 600; }
+  td { padding: 1.3mm 2mm; border-bottom: 0.5pt solid #ddd; vertical-align: top; }
+  tr:nth-child(even) td { background: #fafafa; }
+  .lead { font-size: 11pt; color: #444; margin-bottom: 4mm; }
+  .alert { border: 1.5pt solid #a11; background: #fdf3f3; padding: 3mm 3.5mm; margin: 0 0 4mm; }
+  .alert h3 { margin-top: 0; color: #a11; }
+  .ok { border-left: 2.5pt solid #1a7f37; background: #f3faf5; padding: 2.5mm 3.5mm; margin: 0 0 3mm; }
+  .warn { border-left: 2.5pt solid #b58100; background: #fffdf2; padding: 2.5mm 3.5mm; margin: 0 0 3mm; }
+  .meta { color: #666; font-size: 9pt; }
+  .trust-yes { color: #1a7f37; font-weight: 600; }
+  .trust-no { color: #a11; font-weight: 600; }
+  .pagebreak { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<h1>HastyCR — Clash Royale Bot</h1>
+<p class="lead">Agent handoff after an unattended overnight run.<br>
+<span class="meta">Run window: 2026-08-16, 02:51 → 11:15 · 36 blocks · 168 matches · 3,719 cards played · 9,796 frames captured</span></p>
+
+<div class="alert">
+  <h3>The record: 0 wins, 168 losses</h3>
+  <p>Read from 168 end-of-match result screenshots by <code>scripts/results.py</code>, which is independent
+  of tower-HP detection and was validated against three visually confirmed screens. The bot plays
+  autonomously and competently by several behavioural measures, and it has <strong>never won a match</strong>.</p>
+  <p style="margin-bottom:0"><strong>Do not trust any crown/tower statistic in the older logs.</strong> <code>towers=</code> on
+  <code>MATCH_RESULT</code> is sampled from the final in-game frame, which lands inside the end-of-match
+  sequence when HP bars vanish, so towers read <code>0.00</code> whether or not they fell. A match logged as
+  "enemy 0.00/0.00, 2 crowns for us" was in fact a 3-0 defeat.</p>
+</div>
+
+<h2>What to trust</h2>
+<table>
+  <tr><th>Signal</th><th>Source</th><th>Status</th></tr>
+  <tr><td>Win / loss outcome</td><td><code>scripts/results.py</code> (result screen banner position)</td><td class="trust-yes">RELIABLE — validated on 3 screens</td></tr>
+  <tr><td>Push conversion</td><td><code>scripts/conversion.py</code> (mid-match enemy HP from PLAY lines)</td><td class="trust-yes">RELIABLE — mid-match HP validated same-frame</td></tr>
+  <tr><td>Card usage, hog share, shim counts</td><td><code>scripts/analyze_run.py</code>, block logs</td><td class="trust-yes">RELIABLE — hundreds of events/block</td></tr>
+  <tr><td>Crowns for / against</td><td><code>scripts/trend.py</code> (MATCH_RESULT towers)</td><td class="trust-no">VOID — see alert above</td></tr>
+  <tr><td>Ally tower HP</td><td>vendored detector, and <code>scripts/tower_hp.py</code></td><td class="trust-no">BROKEN in both — see Known bugs</td></tr>
+</table>
+
+<h2>Verified results from the run</h2>
+<div class="ok">
+  <p style="margin-bottom:1.5mm"><strong>Attacking improved measurably and did not produce a single win.</strong></p>
+  <ul style="margin-bottom:0">
+    <li>Hog Rider plays: <strong>0 in the first 30 cards → 3.7 per match</strong> (the elixir ceiling is ~3–4/match)</li>
+    <li>Push conversion: <strong>60% → 76%</strong> pooled over 119 pushes; recent blocks 76–83%</li>
+    <li>Damage output: <strong>~0.75 → ~1.0 enemy tower per match</strong></li>
+    <li>Cannon placement tightened from x 8–13 into the x 8–10, y 20–22 pocket</li>
+    <li>Spells stopped being thrown at empty tiles (retarget onto densest cluster; 33 wasted casts → ~7/block)</li>
+  </ul>
+</div>
+<p><strong>Conclusion: defence is the entire remaining gap</strong> — and defence is exactly what cannot be measured
+until ally tower HP detection is fixed.</p>
+
+<h2>Architecture</h2>
+<table>
+  <tr><th>Component</th><th>Role</th></tr>
+  <tr><td><code>vendor/ClashRoyaleBuildABot</code></td><td>Perception. <code>Detector.run(frame)</code> → screen name, elixir, hand cards, tower HP, unit positions.</td></tr>
+  <tr><td><code>vendor/KataCR</code></td><td>Policy. StARformer_3L offline-RL checkpoint (<code>epoch 003</code>), wrapped by <code>src/hastycr/adapters/katacr.py</code>.</td></tr>
+  <tr><td><code>scripts/mumu_katacr.py</code></td><td>The runner: perception → policy → shims → guarded ADB taps. All flags live here.</td></tr>
+  <tr><td><code>scripts/policy_shims.py</code></td><td>Hand-written corrections layered on the model's output (the active strategy layer).</td></tr>
+  <tr><td><code>scripts/heuristic_policy.py</code></td><td>Full hand-written 2.6 policy. Available via <code>--heuristic</code>; <strong>currently OFF</strong> (performed worse).</td></tr>
+  <tr><td>Control path</td><td>Raw ADB against MuMu at <code>127.0.0.1:7555</code>, 1080×1920. <code>exec-out screencap</code> in, <code>input tap</code> out.</td></tr>
+</table>
+<p>The model emits <code>(slot, x, y, delay)</code> on an 18×32 top-down grid (y &lt; 16 enemy half, y ≥ 16 ours);
+<code>grid_to_mumu()</code> maps that to pixels.</p>
+
+<h2>Running it</h2>
+<pre>cd C:\Users\aksha\Downloads\HastyCR
+&amp; "C:\Program Files\Netease\MuMuPlayer\nx_device\15.0\shell\adb.exe" connect 127.0.0.1:7555
+
+# single supervised run (5 matches, then exits)
+.\.venvs\buildabot\Scripts\python.exe .\scripts\mumu_katacr.py `
+  --adb "C:\Program Files\Netease\MuMuPlayer\nx_device\15.0\shell\adb.exe" `
+  --serial 127.0.0.1:7555 --epoch 3 --hours 1 --auto-queue --shims --max-matches 5
+
+# unattended: 5-match blocks forever, auto-analysis, capture daemon, self-restart
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\overnight_supervisor.ps1</pre>
+<div class="warn">
+  <p style="margin-bottom:0"><strong>Two traps that cost hours during this run.</strong>
+  (1) PowerShell parses <code>overnight_supervisor.ps1</code> at launch — editing it does nothing until the
+  supervisor is restarted, and the running bot will silently keep the old flags. Verify with the process
+  command line, not the file. (2) <code>.py</code> files reload per block, so Python edits take effect at the
+  next block without a restart.</p>
+</div>
+
+<h2>Analysis tools</h2>
+<pre>.\.venvs\buildabot\Scripts\python.exe scripts\results.py tmp\live\blocks\katacr_results   # true W/L
+.\.venvs\buildabot\Scripts\python.exe scripts\conversion.py --per-block                   # push conversion
+.\.venvs\buildabot\Scripts\python.exe scripts\trend.py                                    # per-block behaviour
+.\.venvs\buildabot\Scripts\python.exe scripts\analyze_run.py tmp\live\blocks\block_NNN.log</pre>
+<p class="meta">Result screenshots live in <code>tmp/live/blocks/katacr_results/</code> (the runner derives the folder from
+<code>--log</code>'s parent). <code>tmp/live/katacr_results/</code> holds a previous session.</p>
+
+<div class="pagebreak"></div>
+<h2>Known bugs — day-2 priorities</h2>
+<ol>
+  <li><strong>Ally tower HP detection is broken (highest priority).</strong> The vendored detector reports our
+  right princess tower at <code>0.00</code> while it sits at full 3346 HP — reproduced on multiple identical frames.
+  A replacement bar reader (<code>scripts/tower_hp.py</code>) matched ground truth on two frames and failed on a
+  third because <em>the HP bar's vertical position shifts between matches</em> (y 1177–1194 vs y 1160–1177).
+  Widening the search band made it worse (read 0.966 for a true 0.369) by catching other blue UI.
+  <em>Suggested fix: anchor the ROI to a detected landmark — the tower sprite or level badge — instead of
+  absolute pixels.</em> Until this is fixed, defensive performance cannot be measured at all.</li>
+  <li><strong>End-of-match tower sampling.</strong> <code>last_towers</code> is captured on the final in-game frame,
+  inside the end-of-match animation. Sample it a second or two earlier, or take the value from the last frame
+  where <code>battle_guard</code> passed with bars present.</li>
+  <li><strong><code>pre_card_guard</code> rejects ~149 decisions/night.</strong> The hand shifts between the model's
+  decision frame (~1s stale) and the tap. The guard is correct and must not be weakened — it prevents playing the
+  wrong card — but decision latency is the underlying cost.</li>
+  <li><strong>Model emits out-of-arena coordinates</strong> (observed <code>(-2,28)</code>, <code>(-2,33)</code>).
+  Now clamped and logged as <code>CLAMP_OOB</code> rather than raising.</li>
+</ol>
+
+<h2>Strategy layer (<code>policy_shims.py</code>)</h2>
+<table>
+  <tr><th>Shim</th><th>What it does</th><th>Evidence</th></tr>
+  <tr><td><code>force_hog</code></td><td>Plays Hog at the bridge when affordable and nothing serious is on our half</td><td>Model played it 0 times in 30 cards; now 3.7/match</td></tr>
+  <tr><td><code>hog_lane</code></td><td>Alternates lanes when enemy towers are equal, commits when one is ≥0.10 weaker</td><td>Fixed a bias that sent every Hog left and fed our left tower to counter-pushes</td></tr>
+  <tr><td><code>defend_*</code></td><td>Swaps chip cards for Musketeer/Cannon/Ice Golem under real pressure</td><td>Triggers on ≥2 units or any unit at y ≥ 20</td></tr>
+  <tr><td><code>clamp_building</code></td><td>Snaps Cannon into x 8–10, y 20–22</td><td>Placement spread was x 8–13</td></tr>
+  <tr><td><code>retarget_*</code></td><td>Moves a spell onto the densest enemy cluster; vetoes if none</td><td>Wasted casts 33/block → ~7/block</td></tr>
+  <tr><td><code>finish_*</code></td><td>Fireballs an enemy tower already ≤0.18 HP</td><td>Converted a 0.18 tower into a kill</td></tr>
+  <tr><td><code>support_*</code>, <code>tank_first</code></td><td>Escorts the Hog (tank ahead, support behind)</td><td><code>tank_first</code> rarely fires — Ice Golem is usually spent on defence first</td></tr>
+</table>
+
+<h2>Safety layer — do not weaken</h2>
+<ul>
+  <li><code>battle_guard</code> / <code>validate_battle</code> gate every card tap on a confirmed live battle (two live tower bars, ≥3 real cards in hand), re-checked before selecting a card <em>and</em> before placing it.</li>
+  <li>The runner never taps an unrecognised screen except a positively identified popup close button
+  (<code>popup_guard.py</code>: colour + geometry + shape, validated against 172 archived screens).</li>
+  <li>Nothing taps shop, gem, or purchase controls. A Pass Royale offer popup was dismissed via its X during the
+  run and the gem balance was verified unchanged at 990.</li>
+  <li><code>RECOVER</code> relaunches Clash Royale if the screen stays unknown for 3 minutes (rate-limited to once per 5 minutes).</li>
+</ul>
+
+<h2>Methodology warnings</h2>
+<div class="warn">
+  <p><strong>Outcomes are statistically underpowered at this cadence.</strong> Crowns arrived at ~0.7 per 5-match
+  block; detecting even a 50% improvement needs roughly <strong>80–95 blocks (400–475 matches) per configuration</strong>.
+  The entire run was 36 blocks. Behaviour metrics (card counts, placement spread, conversion) are reliable because
+  they count hundreds of events per block; win-rate comparisons across a few blocks are not.</p>
+  <p style="margin-bottom:0"><strong>Things that looked true and were not, during this run:</strong> that the
+  hand-written policy beat the model (3 blocks of data, noise); that enemy tower HP was unreliable (compared two
+  captures taken seconds apart — it is accurate mid-match); that a fast match was an opponent walkover (it was a
+  52-second 3-0 defeat). Validate on identical frames, and prefer <code>results.py</code> over derived metrics.</p>
+</div>
+
+<h2>What was already tried</h2>
+<ul>
+  <li><strong>Hand-written policy driving decisions</strong> (<code>--heuristic</code>): scored worse than model+shims and
+  turtled badly (194 defends vs 9 pushes in one block) before the gates were corrected. Left in the tree, disabled.</li>
+  <li><strong>Raising Hog frequency:</strong> done and capped. ~64 elixir/match at 2.6 avg cost ≈ 24–32 cards; Hog is
+  1 of 8 and only reachable by playing the other three, so ~3–4/match is the physical ceiling. The bot is at it.
+  <em>More Hog is not available.</em></li>
+  <li><strong>Replacing tower-HP perception:</strong> attempted and reverted (see Known bugs #1).</li>
+</ul>
+
+<h2>Suggested starting point</h2>
+<ol>
+  <li>Fix ally tower HP (landmark-anchored ROI), then re-measure defence — it is the only unmeasured half of the game.</li>
+  <li>Use <code>results.py</code> as the sole success metric. Target: <strong>a first win</strong>, not crown counts.</li>
+  <li>If the policy is the ceiling, note the checkpoint (<code>StARformer_3L_v0.8_golem_ai</code>) was trained against
+  KataCR's scripted golem bot, not 5500-trophy ladder opponents — it is off-distribution by construction.</li>
+</ol>
+
+<p class="meta" style="margin-top:6mm">Full chronological iteration log, including every wrong turn and its correction:
+<code>docs/OVERNIGHT_HANDOFF.md</code>.</p>
+
+</body>
+</html>

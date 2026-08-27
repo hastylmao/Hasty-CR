@@ -1,0 +1,97 @@
+{
+  "actions": [
+    {
+      "action": "deploy",
+      "card": "giant",
+      "position": [
+        9,
+        9
+      ],
+      "side": -1,
+      "time_ms": 0
+    },
+    {
+      "action": "deploy",
+      "card": "hog_rider",
+      "position": [
+        9,
+        22
+      ],
+      "side": 1,
+      "time_ms": 150
+    }
+  ],
+  "category": "pathing",
+  "decks": [
+    [
+      "giant",
+      "hog_rider",
+      "knight",
+      "musketeer",
+      "cannon",
+      "fireball",
+      "log",
+      "minions"
+    ],
+    [
+      "giant",
+      "hog_rider",
+      "balloon",
+      "bowler",
+      "fisherman",
+      "tornado",
+      "minions",
+      "cannon"
+    ]
+  ],
+  "dt_ms": 50,
+  "duration_ms": 1000,
+  "evidence_ids": [
+    "SYNTH-S5-034"
+  ],
+  "evidence_status": "synthetic",
+  "measures": [
+    {
+      "category": "position",
+      "evidence_ids": [
+        "SYNTH-S5-034"
+      ],
+      "name": "entity_positions",
+      "tolerance": 0.5
+    },
+    {
+      "category": "pathing",
+      "evidence_ids": [
+        "SYNTH-S5-034"
+      ],
+      "name": "event_order_candidate",
+      "tolerance": 250.0
+    }
+  ],
+  "metadata": {
+    "candidate_thresholds_only": true,
+    "implementation_locations": [
+      "tools/calibration/core.py"
+    ],
+    "provenance": {
+      "method": "deterministic template",
+      "real_data_claim": false,
+      "source": "generated_synthetic_catalog"
+    }
+  },
+  "observation_windows": [
+    [
+      0,
+      1000
+    ]
+  ],
+  "scenario_id": "sprint5_034_pathing",
+  "seed": 5034,
+  "split": "train",
+  "tags": [
+    "sprint-5",
+    "pathing",
+    "giant",
+    "hog_rider"
+  ]
+}

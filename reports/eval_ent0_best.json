@@ -1,0 +1,59 @@
+{
+  "seed": 8000,
+  "episodes": 60,
+  "results": {
+    "tmp\\rl\\ent0_best.pt": [
+      {
+        "opponent": "brain",
+        "episodes": 60,
+        "wins": 15,
+        "losses": 45,
+        "draws": 0,
+        "win_rate": 0.25,
+        "crowns_for": 16,
+        "crowns_against": 39,
+        "crown_diff": -0.38333333333333336,
+        "tower_for": 0.957049851190476,
+        "tower_against": 1.1339564732142857,
+        "tower_diff": -0.1769066220238096,
+        "hog_share": 0.16042944785276073,
+        "plays_per_match": 54.333333333333336,
+        "illegal_total": 0
+      },
+      {
+        "opponent": "meta",
+        "episodes": 60,
+        "wins": 40,
+        "losses": 20,
+        "draws": 0,
+        "win_rate": 0.6666666666666666,
+        "crowns_for": 31,
+        "crowns_against": 20,
+        "crown_diff": 0.18333333333333332,
+        "tower_for": 1.1622767857142857,
+        "tower_against": 0.885825892857143,
+        "tower_diff": 0.2764508928571427,
+        "hog_share": 0.14226738647189585,
+        "plays_per_match": 52.483333333333334,
+        "illegal_total": 0
+      },
+      {
+        "opponent": "simple",
+        "episodes": 60,
+        "wins": 60,
+        "losses": 0,
+        "draws": 0,
+        "win_rate": 1.0,
+        "crowns_for": 56,
+        "crowns_against": 0,
+        "crown_diff": 0.9333333333333333,
+        "tower_for": 1.8389322916666666,
+        "tower_against": 0.6727585565476187,
+        "tower_diff": 1.166173735119048,
+        "hog_share": 0.1621425986246833,
+        "plays_per_match": 46.05,
+        "illegal_total": 0
+      }
+    ]
+  }
+}

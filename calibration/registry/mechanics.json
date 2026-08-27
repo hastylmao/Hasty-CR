@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "registry": "mechanics",
+  "game_version": "local-data-2026-08",
+  "entries": [
+    {"id":"movement.fixed_timestep","status":"implemented-hypothesis","confidence":"low","provenance":"implementation","evidence_ids":["SYNTH-S5-007"],"tested_range":{"dt_ms":[25,100]},"implementation_locations":["sim/arena.py:TICK_MS","sim/match.py:Match.step"],"legacy_default":"50ms","promotion_rules":"Require repeated measured traces across arena and movement categories; no promotion from synthetic evidence."},
+    {"id":"collision.ground_pair_separation","status":"unmeasured","confidence":"none","provenance":"implementation-review","evidence_ids":["SYNTH-S5-019"],"tested_range":{"overlap_tiles":[0,2]},"implementation_locations":["sim/engine.py:Battle"],"legacy_default":"current simulator behavior","promotion_rules":"Promote only after measured collision traces and held-out regression health."},
+    {"id":"targeting.priority","status":"reference-hypothesis","confidence":"low","provenance":"reference-comparison","evidence_ids":["SYNTH-S5-013"],"tested_range":{"distance_tiles":[0,12]},"implementation_locations":["sim/engine.py:targeting"],"legacy_default":"current simulator behavior","promotion_rules":"Require direct observed target-choice evidence; synthetic traces cannot promote."},
+    {"id":"projectile.travel_and_impact","status":"unmeasured","confidence":"none","provenance":"implementation-review","evidence_ids":["SYNTH-S5-047"],"tested_range":{"distance_tiles":[0,20]},"implementation_locations":["sim/projectiles.py"],"legacy_default":"current simulator behavior","promotion_rules":"Require launch/impact timestamp pairs from recorded matches."},
+    {"id":"building_pull.placement_map","status":"unmeasured","confidence":"none","provenance":"measurement-plan","evidence_ids":["SYNTH-S5-037","SYNTH-S5-038","SYNTH-S5-039","SYNTH-S5-040"],"tested_range":{"x_tiles":[1,17],"y_tiles":[16,31]},"implementation_locations":["sim/arena.py:deploy_area_ok","sim/engine.py:targeting"],"legacy_default":"current simulator behavior","promotion_rules":"Require accepted/rejected placement grid plus path/target trace for each requested win condition."}
+  ]
+}

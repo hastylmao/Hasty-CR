@@ -1,0 +1,2042 @@
+{
+  "schema_version": 2,
+  "trace_id": "sprint5_001_arena:synthetic:annotated:r8",
+  "source": {
+    "source": "manual-annotation",
+    "evidence_ids": [
+      "synthetic-perception-workflow"
+    ],
+    "method": "deterministic replay",
+    "details": {}
+  },
+  "metadata": {
+    "source_provenance": {
+      "source": "synthetic",
+      "evidence_ids": [
+        "SYNTH-CORRUPTION"
+      ],
+      "method": "corrupt_trace",
+      "details": {}
+    },
+    "real_data_claim": false,
+    "annotation_document": "synthetic-perception-workflow",
+    "annotation_revision": 8
+  },
+  "frames": [
+    {
+      "time_ms": 100,
+      "frame_id": "0",
+      "entities": [],
+      "towers": [],
+      "events": [],
+      "observability": "unknown",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 0,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "reviewed",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 150,
+      "frame_id": "1",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.125,
+          "y": 22.25,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.9,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {
+            "source_metadata": {},
+            "point_operation": "op-9496801969116e33"
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.9,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 50,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 200,
+      "frame_id": "2",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.248886841384323,
+          "y": 21.857019837250988,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "manual-1",
+          "class_name": "synthetic-unit",
+          "team": 1,
+          "x": 4.5,
+          "y": 8.5,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.75,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.2,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic label"
+          },
+          "metadata": {
+            "synthetic": true
+          }
+        }
+      ],
+      "towers": [],
+      "events": [
+        {
+          "event_type": "annotation_relabel",
+          "time_ms": 200,
+          "actor_id": "7",
+          "target_id": null,
+          "actor_class": null,
+          "target_class": null,
+          "team": null,
+          "x": null,
+          "y": null,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "inferred",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "op-f7bf29725fbeb70f"
+            ],
+            "method": "relabel",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {
+            "annotation_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "event_type": "spawn",
+          "time_ms": 0,
+          "actor_id": "manual-1",
+          "target_id": null,
+          "actor_class": "synthetic-unit",
+          "target_class": null,
+          "team": 1,
+          "x": 4.5,
+          "y": 8.5,
+          "value": null,
+          "confidence": 0.75,
+          "observability": "inferred",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "op-c9f405ce7105baae"
+            ],
+            "method": "spawn",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {
+            "annotation_operation": "op-c9f405ce7105baae"
+          }
+        }
+      ],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.75,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 100,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 250,
+      "frame_id": "3",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.24872411716217,
+          "y": 21.83502646585659,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 150,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 300,
+      "frame_id": "4",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.253323183440678,
+          "y": 21.84732662521503,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.247830413158548,
+          "y": 8.851158847867008,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 200,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 350,
+      "frame_id": "5",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.252322977369067,
+          "y": 21.86163558686599,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.256566365067986,
+          "y": 8.851105071774438,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 250,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 400,
+      "frame_id": "6",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.242616783976551,
+          "y": 21.839853376325124,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.252463421952111,
+          "y": 8.86311080827204,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 300,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 450,
+      "frame_id": "7",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.250416568639034,
+          "y": 21.84893676706229,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.255317762204008,
+          "y": 8.835464547019914,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 350,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 500,
+      "frame_id": "8",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.246877226828554,
+          "y": 21.854903625325935,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.258734043853794,
+          "y": 8.847593703273448,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 400,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 550,
+      "frame_id": "9",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.253765998586879,
+          "y": 21.852482134493282,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.257823268087037,
+          "y": 8.838867777857518,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 450,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 600,
+      "frame_id": "10",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.255682506875853,
+          "y": 21.834854796082748,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.223800545777811,
+          "y": 8.843931092718005,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "split_from": "8",
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 500,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 650,
+      "frame_id": "11",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.240841899536541,
+          "y": 21.858760122430564,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.256642658996128,
+          "y": 8.837809252587043,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "split_from": "8",
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 550,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 700,
+      "frame_id": "12",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.25847361423348,
+          "y": 21.839977971757577,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.249137561536637,
+          "y": 8.847061002220435,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "split_from": "8",
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 600,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 750,
+      "frame_id": "13",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.25114419857461,
+          "y": 21.858186363115436,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.256384137907924,
+          "y": 8.853498851018692,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "split_from": "8",
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 650,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 800,
+      "frame_id": "14",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.256499480978063,
+          "y": 21.854784920376503,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.243730145347804,
+          "y": 8.842826289061835,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "split_from": "8",
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 700,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 850,
+      "frame_id": "15",
+      "entities": [
+        {
+          "track_id": "7",
+          "class_name": "knight-corrected",
+          "team": 1,
+          "x": 9.24530031725864,
+          "y": 21.85499326400477,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "relabel_operation": "op-f7bf29725fbeb70f"
+          }
+        },
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.247498844290027,
+          "y": 8.873357542224806,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "split_from": "8",
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 750,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 900,
+      "frame_id": "16",
+      "entities": [
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.257684735154697,
+          "y": 8.864218499813434,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "split_from": "8",
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [
+        {
+          "event_type": "death",
+          "time_ms": 900,
+          "actor_id": "7",
+          "target_id": null,
+          "actor_class": null,
+          "target_class": null,
+          "team": null,
+          "x": null,
+          "y": null,
+          "value": null,
+          "confidence": 1.0,
+          "observability": "inferred",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "op-f4882e7e5f79323b"
+            ],
+            "method": "death",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": null,
+            "lower": null,
+            "upper": null,
+            "reason": ""
+          },
+          "metadata": {
+            "annotation_operation": "op-f4882e7e5f79323b"
+          }
+        }
+      ],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 800,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 950,
+      "frame_id": "17",
+      "entities": [
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.264263449774422,
+          "y": 8.849059725239837,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "split_from": "8",
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 850,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 1000,
+      "frame_id": "18",
+      "entities": [
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.259528957573165,
+          "y": 8.835563215939217,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "split_from": "8",
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 900,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 1050,
+      "frame_id": "19",
+      "entities": [
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.246844078351863,
+          "y": 8.85723631986368,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "split_from": "8",
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 950,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    },
+    {
+      "time_ms": 1100,
+      "frame_id": "20",
+      "entities": [
+        {
+          "track_id": "8-merged",
+          "class_name": "musketeer",
+          "team": -1,
+          "x": 9.256199677677731,
+          "y": 8.843905965413569,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": null,
+          "velocity_y": null,
+          "confidence": 0.99,
+          "observability": "simulator-only",
+          "provenance": {
+            "source": "manual-annotation",
+            "evidence_ids": [
+              "synthetic-perception-workflow"
+            ],
+            "method": "append-only correction replay",
+            "details": {
+              "revision": 8
+            }
+          },
+          "uncertainty": {
+            "sigma": 0.01,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic corruption"
+          },
+          "metadata": {
+            "source_metadata": {},
+            "split_from": "8",
+            "merged_from": [
+              "8",
+              "8b"
+            ]
+          }
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "simulator-only",
+      "source": {
+        "source": "manual-annotation",
+        "evidence_ids": [
+          "synthetic-perception-workflow"
+        ],
+        "method": "append-only correction replay",
+        "details": {}
+      },
+      "confidence": 0.99,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": 1000,
+      "source_frame": null,
+      "metadata": {
+        "source_observability": "simulator-only",
+        "annotation_revision": 8,
+        "annotation_queue_status": "pending",
+        "real_data_claim": false
+      }
+    }
+  ]
+}

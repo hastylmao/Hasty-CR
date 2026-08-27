@@ -1,0 +1,237 @@
+{
+  "schema_version": 2,
+  "trace_id": "synthetic-perception",
+  "source": {
+    "source": "perception",
+    "evidence_ids": [],
+    "method": "PerceptionTraceBuilder",
+    "details": {}
+  },
+  "metadata": {
+    "frame_packet_schema": 1
+  },
+  "frames": [
+    {
+      "time_ms": 0,
+      "frame_id": "frame-000000",
+      "entities": [],
+      "towers": [],
+      "events": [],
+      "observability": "unknown",
+      "source": {
+        "source": "synthetic-fixture",
+        "evidence_ids": [],
+        "method": "IterableFrameSource",
+        "details": {}
+      },
+      "confidence": 1.0,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": null,
+      "source_frame": 0,
+      "metadata": {
+        "detections": 0
+      }
+    },
+    {
+      "time_ms": 100,
+      "frame_id": "frame-000001",
+      "entities": [
+        {
+          "track_id": "track-1",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.0,
+          "y": 22.0,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": 0.0,
+          "velocity_y": 0.0,
+          "confidence": 0.95,
+          "observability": "measured",
+          "provenance": {
+            "source": "detector",
+            "evidence_ids": [],
+            "method": "SimpleGameAwareTracker",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.1,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic detector"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [],
+      "events": [
+        {
+          "event_type": "spawn",
+          "time_ms": 100,
+          "actor_id": "track-1",
+          "target_id": null,
+          "actor_class": "knight",
+          "target_class": null,
+          "team": 1,
+          "x": 9.0,
+          "y": 22.0,
+          "value": null,
+          "confidence": 0.95,
+          "observability": "measured",
+          "provenance": {
+            "source": "detector",
+            "evidence_ids": [],
+            "method": "SimpleGameAwareTracker",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.1,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic detector"
+          },
+          "metadata": {}
+        }
+      ],
+      "observability": "measured",
+      "source": {
+        "source": "synthetic-fixture",
+        "evidence_ids": [],
+        "method": "IterableFrameSource",
+        "details": {}
+      },
+      "confidence": 0.95,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": null,
+      "source_frame": 1,
+      "metadata": {
+        "detections": 1
+      }
+    },
+    {
+      "time_ms": 200,
+      "frame_id": "frame-000002",
+      "entities": [
+        {
+          "track_id": "track-1",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.1,
+          "y": 21.8,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": 0.9999999999999964,
+          "velocity_y": -1.999999999999993,
+          "confidence": 0.9,
+          "observability": "measured",
+          "provenance": {
+            "source": "detector",
+            "evidence_ids": [],
+            "method": "SimpleGameAwareTracker",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.1,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic detector"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "measured",
+      "source": {
+        "source": "synthetic-fixture",
+        "evidence_ids": [],
+        "method": "IterableFrameSource",
+        "details": {}
+      },
+      "confidence": 0.9,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": null,
+      "source_frame": 2,
+      "metadata": {
+        "detections": 1
+      }
+    },
+    {
+      "time_ms": 300,
+      "frame_id": "frame-000003",
+      "entities": [
+        {
+          "track_id": "track-1",
+          "class_name": "knight",
+          "team": 1,
+          "x": 9.3,
+          "y": 21.6,
+          "z": null,
+          "hitpoints": null,
+          "max_hitpoints": null,
+          "alive": true,
+          "flying": null,
+          "velocity_x": 2.0000000000000107,
+          "velocity_y": -1.999999999999993,
+          "confidence": 0.88,
+          "observability": "measured",
+          "provenance": {
+            "source": "detector",
+            "evidence_ids": [],
+            "method": "SimpleGameAwareTracker",
+            "details": {}
+          },
+          "uncertainty": {
+            "sigma": 0.15,
+            "lower": null,
+            "upper": null,
+            "reason": "synthetic detector"
+          },
+          "metadata": {}
+        }
+      ],
+      "towers": [],
+      "events": [],
+      "observability": "measured",
+      "source": {
+        "source": "synthetic-fixture",
+        "evidence_ids": [],
+        "method": "IterableFrameSource",
+        "details": {}
+      },
+      "confidence": 0.88,
+      "uncertainty": {
+        "sigma": null,
+        "lower": null,
+        "upper": null,
+        "reason": ""
+      },
+      "battle_time_ms": null,
+      "source_frame": 3,
+      "metadata": {
+        "detections": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "source": "https://royaleapi.github.io/cr-api-data/json/",
+  "retrieved_at": "2026-08-20T14:25:55.246222+00:00",
+  "datasets": [
+    {
+      "dataset": "cards",
+      "url": "https://royaleapi.github.io/cr-api-data/json/cards.json",
+      "sha256": "c23faae5a5d2397f9adf36cc2dae87e5074d13cd8afe57a1de89006629a988b5",
+      "bytes": 52777,
+      "shape": "list[120]"
+    },
+    {
+      "dataset": "cards_evo",
+      "url": "https://royaleapi.github.io/cr-api-data/json/cards_evo.json",
+      "sha256": "6a99248d0c390c462afec1ccbe24e08303ee9d02805ca55c4118ec0b07e85e58",
+      "bytes": 56568,
+      "shape": "list[128]"
+    },
+    {
+      "dataset": "cards_stats_troop",
+      "url": "https://royaleapi.github.io/cr-api-data/json/cards_stats_troop.json",
+      "sha256": "0f2fd5eeac355b4a3072e0ef0b87a56883c4b32be868012cddf1992f048f2bae",
+      "bytes": 270499,
+      "shape": "list[93]"
+    },
+    {
+      "dataset": "cards_stats_building",
+      "url": "https://royaleapi.github.io/cr-api-data/json/cards_stats_building.json",
+      "sha256": "84b1287e64253aa3e3d813d4c71c13b24d5057292d0f23fcd474fdba9c7d91a9",
+      "bytes": 934695,
+      "shape": "list[89]"
+    },
+    {
+      "dataset": "cards_stats_spell",
+      "url": "https://royaleapi.github.io/cr-api-data/json/cards_stats_spell.json",
+      "sha256": "4c2a3e8cb2c27f507bc07a12052749dedcca273a32c9e8e1a8837ba0c59bbed7",
+      "bytes": 320139,
+      "shape": "list[71]"
+    },
+    {
+      "dataset": "cards_stats_projectile",
+      "url": "https://royaleapi.github.io/cr-api-data/json/cards_stats_projectile.json",
+      "sha256": "6c145a5145fe5641f1192a932605a9d892645b0ab9e80daa5828a12b3379bc1e",
+      "bytes": 161802,
+      "shape": "list[92]"
+    },
+    {
+      "dataset": "cards_stats_characters",
+      "url": "https://royaleapi.github.io/cr-api-data/json/cards_stats_characters.json",
+      "sha256": "bef4711885db88403bac160e2fde052133161e8413873f6d21cce594fcd9241f",
+      "bytes": 1302904,
+      "shape": "list[125]"
+    },
+    {
+      "dataset": "cards_stats_character_buff",
+      "url": "https://royaleapi.github.io/cr-api-data/json/cards_stats_character_buff.json",
+      "sha256": "44886305e66bbdfbce04bb8c55ce2348040cbc3b89ae81f7357c1ad6171b76a2",
+      "bytes": 132910,
+      "shape": "list[62]"
+    },
+    {
+      "dataset": "buildings_evo",
+      "url": "https://royaleapi.github.io/cr-api-data/json/buildings_evo.json",
+      "sha256": "d9ee27f6956feac738974eeade6fbc62c5fd9d43ea1e549281cf9b9395866b72",
+      "bytes": 1932,
+      "shape": "dict(buildings_evo:13)"
+    },
+    {
+      "dataset": "projectiles_evo",
+      "url": "https://royaleapi.github.io/cr-api-data/json/projectiles_evo.json",
+      "sha256": "212afc7c8d6ae4bab27eabb84a47a135c1d091d7158e78ec6d5badcc0d41ebca",
+      "bytes": 3189,
+      "shape": "dict(projectiles_evo:4)"
+    },
+    {
+      "dataset": "rarities",
+      "url": "https://royaleapi.github.io/cr-api-data/json/rarities.json",
+      "sha256": "ed71f6bef50f009d517830f80330efc5bcf45aa37382ef3d19d17147b7433c9b",
+      "bytes": 18344,
+      "shape": "list[6]"
+    },
+    {
+      "dataset": "exp_levels",
+      "url": "https://royaleapi.github.io/cr-api-data/json/exp_levels.json",
+      "sha256": "d997b82b952111b8c70498e225c77863bfc6ed2829a88d19383b07aaa62a6ff8",
+      "bytes": 18635,
+      "shape": "list[70]"
+    },
+    {
+      "dataset": "arenas",
+      "url": "https://royaleapi.github.io/cr-api-data/json/arenas.json",
+      "sha256": "897b0aa40b144e3d77f1e4b68eb07b7f5809ba7a83c471d6c43f21973b18135c",
+      "bytes": 127375,
+      "shape": "list[79]"
+    }
+  ]
+}

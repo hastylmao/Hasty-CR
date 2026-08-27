@@ -1,0 +1,76 @@
+{
+    "buildings_evo": [
+        {
+            "sc_key": "Cannon_EV1",
+            "base": "Cannon"
+        },
+        {
+            "sc_key": "GoblinHut_EV1",
+            "base": "Cannon"
+        },
+        {
+            "sc_key": "Mortar_EV1",
+            "base": "Mortar",
+            "hitpoints": [
+                "%",
+                120
+            ],
+            "hitSpeed": [
+                "=",
+                4000
+            ],
+            "projectile": "MortarProjectile_EV1",
+            "prestigeSWF": "",
+            "prestigeExportName2": "",
+            "prestigeExportName3": "",
+            "healthBar": "_EV1",
+            "deathEffect": "Death_card_evolution_M",
+            "spawnEffect": "Deploy_Mortar_Evolution",
+            "customSpawnFilter": "filter_card_evolution",
+            "fileName": "sc/building_mortar_evolution.sc",
+            "blueExportName": "mortar_evolution",
+            "redExportName": "enemy_mortar_evolution",
+            "projectileEffect": "evo_mortar_attack"
+        },
+        {
+            "sc_key": "InfernoTower_EV1",
+            "base": "Cannon"
+        },
+        {
+            "sc_key": "BombTower_EV1",
+            "base": "Cannon"
+        },
+        {
+            "sc_key": "BarbarianHut_EV1",
+            "base": "Cannon"
+        },
+        {
+            "sc_key": "Tesla_EV1",
+            "base": "Tesla"
+        },
+        {
+            "sc_key": "Elixir_Collector_EV1",
+            "base": "Cannon"
+        },
+        {
+            "sc_key": "Xbow_EV1",
+            "base": "Cannon"
+        },
+        {
+            "sc_key": "Tombstone_EV1",
+            "base": "Cannon"
+        },
+        {
+            "sc_key": "FirespiritHut_EV1",
+            "base": "Cannon"
+        },
+        {
+            "sc_key": "GoblinCage_EV1",
+            "base": "Cannon"
+        },
+        {
+            "sc_key": "GoblinDrill_EV1",
+            "base": "Cannon"
+        }
+    ]
+}

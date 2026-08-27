@@ -1,0 +1,3170 @@
+{
+  "schema_version": 1,
+  "purpose": "triage only; candidates are not accepted calibration evidence",
+  "sample_fps": 10.0,
+  "clips": [
+    {
+      "capture_id": "Clash Royale(11)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(11).mp4",
+      "source_sha256": "6ef3581f3bdae7b7d29bbe71db9f0592be8213aeee8e92791053097a79f92130",
+      "fps": 29.981812670506216,
+      "frames": 3297,
+      "events": [
+        {
+          "start_frame": 1562,
+          "end_frame": 1661,
+          "peak_frame": 1592,
+          "peak_motion": 14.0545,
+          "mean_motion": 7.8341,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2773,
+          "end_frame": 2905,
+          "peak_frame": 2821,
+          "peak_motion": 13.6418,
+          "mean_motion": 3.9035,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3088,
+          "end_frame": 3169,
+          "peak_frame": 3124,
+          "peak_motion": 10.1293,
+          "mean_motion": 6.4645,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 645,
+          "end_frame": 747,
+          "peak_frame": 678,
+          "peak_motion": 9.0549,
+          "mean_motion": 4.249,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 890,
+          "end_frame": 980,
+          "peak_frame": 950,
+          "peak_motion": 6.5503,
+          "mean_motion": 2.9997,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2695,
+          "end_frame": 2758,
+          "peak_frame": 2725,
+          "peak_motion": 6.3311,
+          "mean_motion": 5.4586,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1880,
+          "end_frame": 1943,
+          "peak_frame": 1913,
+          "peak_motion": 6.2198,
+          "mean_motion": 5.3334,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 513,
+          "end_frame": 588,
+          "peak_frame": 546,
+          "peak_motion": 5.9391,
+          "mean_motion": 3.7336,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 120,
+          "end_frame": 180,
+          "peak_frame": 150,
+          "peak_motion": 5.8934,
+          "mean_motion": 5.8934,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3025,
+          "end_frame": 3094,
+          "peak_frame": 3064,
+          "peak_motion": 5.6788,
+          "mean_motion": 3.1505,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 72,
+          "end_frame": 135,
+          "peak_frame": 105,
+          "peak_motion": 5.5642,
+          "mean_motion": 4.6552,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2366,
+          "end_frame": 2486,
+          "peak_frame": 2453,
+          "peak_motion": 5.4478,
+          "mean_motion": 1.8448,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2947,
+          "end_frame": 3043,
+          "peak_frame": 3013,
+          "peak_motion": 5.4169,
+          "mean_motion": 2.1672,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 564,
+          "end_frame": 633,
+          "peak_frame": 600,
+          "peak_motion": 5.4038,
+          "mean_motion": 3.5,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1925,
+          "end_frame": 1994,
+          "peak_frame": 1961,
+          "peak_motion": 5.2043,
+          "mean_motion": 3.1285,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 953,
+          "end_frame": 1013,
+          "peak_frame": 983,
+          "peak_motion": 3.7065,
+          "mean_motion": 3.7065,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1424,
+          "end_frame": 1484,
+          "peak_frame": 1454,
+          "peak_motion": 2.7584,
+          "mean_motion": 2.7584,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2590,
+          "end_frame": 2650,
+          "peak_frame": 2620,
+          "peak_motion": 2.3002,
+          "mean_motion": 2.3002,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1478,
+          "end_frame": 1559,
+          "peak_frame": 1523,
+          "peak_motion": 2.1043,
+          "mean_motion": 1.9956,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2186,
+          "end_frame": 2246,
+          "peak_frame": 2216,
+          "peak_motion": 1.9117,
+          "mean_motion": 1.9117,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(12)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(12).mp4",
+      "source_sha256": "feac58e9018cce4fe53dc52be8b0b82c14c44578f32a0992b1c35739503e0336",
+      "fps": 29.987320371935756,
+      "frames": 2365,
+      "events": [
+        {
+          "start_frame": 957,
+          "end_frame": 1089,
+          "peak_frame": 1017,
+          "peak_motion": 14.992,
+          "mean_motion": 4.5485,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2228,
+          "end_frame": 2364,
+          "peak_frame": 2336,
+          "peak_motion": 14.1843,
+          "mean_motion": 5.0262,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1226,
+          "end_frame": 1334,
+          "peak_frame": 1286,
+          "peak_motion": 12.7307,
+          "mean_motion": 4.7424,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 567,
+          "end_frame": 633,
+          "peak_frame": 600,
+          "peak_motion": 6.5356,
+          "mean_motion": 4.9498,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1122,
+          "end_frame": 1238,
+          "peak_frame": 1152,
+          "peak_motion": 6.2515,
+          "mean_motion": 2.588,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2111,
+          "end_frame": 2180,
+          "peak_frame": 2141,
+          "peak_motion": 6.1649,
+          "mean_motion": 4.0591,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 0,
+          "end_frame": 81,
+          "peak_frame": 21,
+          "peak_motion": 6.0801,
+          "mean_motion": 1.6778,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 201,
+          "end_frame": 270,
+          "peak_frame": 231,
+          "peak_motion": 5.7496,
+          "mean_motion": 5.1904,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1622,
+          "end_frame": 1721,
+          "peak_frame": 1652,
+          "peak_motion": 5.5612,
+          "mean_motion": 2.2198,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 390,
+          "end_frame": 456,
+          "peak_frame": 420,
+          "peak_motion": 5.391,
+          "mean_motion": 3.8012,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1409,
+          "end_frame": 1493,
+          "peak_frame": 1463,
+          "peak_motion": 5.387,
+          "mean_motion": 3.0633,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 615,
+          "end_frame": 702,
+          "peak_frame": 669,
+          "peak_motion": 5.2964,
+          "mean_motion": 2.5861,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 525,
+          "end_frame": 588,
+          "peak_frame": 555,
+          "peak_motion": 5.0957,
+          "mean_motion": 4.8787,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 336,
+          "end_frame": 411,
+          "peak_frame": 366,
+          "peak_motion": 4.8155,
+          "mean_motion": 2.7192,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 876,
+          "end_frame": 963,
+          "peak_frame": 930,
+          "peak_motion": 4.7796,
+          "mean_motion": 2.303,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1883,
+          "end_frame": 1946,
+          "peak_frame": 1913,
+          "peak_motion": 4.4681,
+          "mean_motion": 3.5632,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 837,
+          "end_frame": 900,
+          "peak_frame": 867,
+          "peak_motion": 3.4692,
+          "mean_motion": 3.3862,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1352,
+          "end_frame": 1415,
+          "peak_frame": 1385,
+          "peak_motion": 3.2497,
+          "mean_motion": 3.1643,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(13)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(13).mp4",
+      "source_sha256": "6eb35576a3386f5c31e612509f1c3e87dfc37800eca9aac99479c7c6ccf474aa",
+      "fps": 29.98602701443875,
+      "frames": 4292,
+      "events": [
+        {
+          "start_frame": 4168,
+          "end_frame": 4291,
+          "peak_frame": 4231,
+          "peak_motion": 12.051,
+          "mean_motion": 3.6551,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2366,
+          "end_frame": 2462,
+          "peak_frame": 2405,
+          "peak_motion": 10.9493,
+          "mean_motion": 4.6514,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 930,
+          "end_frame": 1011,
+          "peak_frame": 963,
+          "peak_motion": 8.9483,
+          "mean_motion": 5.8574,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3436,
+          "end_frame": 3664,
+          "peak_frame": 3469,
+          "peak_motion": 7.5789,
+          "mean_motion": 1.9101,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3128,
+          "end_frame": 3191,
+          "peak_frame": 3158,
+          "peak_motion": 7.3225,
+          "mean_motion": 4.8696,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1202,
+          "end_frame": 1286,
+          "peak_frame": 1232,
+          "peak_motion": 7.2484,
+          "mean_motion": 2.6536,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1520,
+          "end_frame": 1604,
+          "peak_frame": 1553,
+          "peak_motion": 6.8066,
+          "mean_motion": 2.4099,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3086,
+          "end_frame": 3152,
+          "peak_frame": 3119,
+          "peak_motion": 6.6589,
+          "mean_motion": 3.801,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2990,
+          "end_frame": 3074,
+          "peak_frame": 3044,
+          "peak_motion": 6.5711,
+          "mean_motion": 2.1817,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 4057,
+          "end_frame": 4150,
+          "peak_frame": 4117,
+          "peak_motion": 6.4924,
+          "mean_motion": 2.1927,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 69,
+          "end_frame": 165,
+          "peak_frame": 135,
+          "peak_motion": 6.4084,
+          "mean_motion": 1.5276,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2009,
+          "end_frame": 2072,
+          "peak_frame": 2039,
+          "peak_motion": 6.2943,
+          "mean_motion": 5.0084,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3295,
+          "end_frame": 3361,
+          "peak_frame": 3328,
+          "peak_motion": 6.1423,
+          "mean_motion": 3.8111,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 186,
+          "end_frame": 270,
+          "peak_frame": 237,
+          "peak_motion": 6.0261,
+          "mean_motion": 2.6652,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3370,
+          "end_frame": 3460,
+          "peak_frame": 3427,
+          "peak_motion": 5.8095,
+          "mean_motion": 2.3792,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1925,
+          "end_frame": 1988,
+          "peak_frame": 1958,
+          "peak_motion": 5.6582,
+          "mean_motion": 4.6736,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3646,
+          "end_frame": 3709,
+          "peak_frame": 3676,
+          "peak_motion": 4.0694,
+          "mean_motion": 3.225,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3745,
+          "end_frame": 3835,
+          "peak_frame": 3802,
+          "peak_motion": 3.8361,
+          "mean_motion": 1.8414,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 561,
+          "end_frame": 630,
+          "peak_frame": 591,
+          "peak_motion": 3.6738,
+          "mean_motion": 2.4026,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 504,
+          "end_frame": 585,
+          "peak_frame": 552,
+          "peak_motion": 3.4933,
+          "mean_motion": 2.1146,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(14)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(14).mp4",
+      "source_sha256": "6a397f5970ae22e312e02f74f3ccd59019ee3a2d42c343fe4df81215ebef3439",
+      "fps": 29.990533291259073,
+      "frames": 3168,
+      "events": [
+        {
+          "start_frame": 2186,
+          "end_frame": 2345,
+          "peak_frame": 2264,
+          "peak_motion": 12.8059,
+          "mean_motion": 3.6616,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2501,
+          "end_frame": 2612,
+          "peak_frame": 2564,
+          "peak_motion": 11.6104,
+          "mean_motion": 3.6473,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 537,
+          "end_frame": 618,
+          "peak_frame": 570,
+          "peak_motion": 11.03,
+          "mean_motion": 6.3117,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1832,
+          "end_frame": 1937,
+          "peak_frame": 1868,
+          "peak_motion": 9.6918,
+          "mean_motion": 3.6106,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1410,
+          "end_frame": 1494,
+          "peak_frame": 1461,
+          "peak_motion": 6.1338,
+          "mean_motion": 2.4055,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 621,
+          "end_frame": 684,
+          "peak_frame": 654,
+          "peak_motion": 6.124,
+          "mean_motion": 4.8722,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 663,
+          "end_frame": 726,
+          "peak_frame": 696,
+          "peak_motion": 6.0413,
+          "mean_motion": 4.5074,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 258,
+          "end_frame": 348,
+          "peak_frame": 318,
+          "peak_motion": 5.7503,
+          "mean_motion": 1.4499,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 333,
+          "end_frame": 396,
+          "peak_frame": 366,
+          "peak_motion": 5.6945,
+          "mean_motion": 4.8392,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1931,
+          "end_frame": 2024,
+          "peak_frame": 1967,
+          "peak_motion": 5.4729,
+          "mean_motion": 2.2073,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2603,
+          "end_frame": 2666,
+          "peak_frame": 2636,
+          "peak_motion": 5.2978,
+          "mean_motion": 4.3623,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 981,
+          "end_frame": 1071,
+          "peak_frame": 1038,
+          "peak_motion": 5.2182,
+          "mean_motion": 2.1077,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1736,
+          "end_frame": 1805,
+          "peak_frame": 1769,
+          "peak_motion": 5.1743,
+          "mean_motion": 3.7925,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3023,
+          "end_frame": 3134,
+          "peak_frame": 3071,
+          "peak_motion": 5.0897,
+          "mean_motion": 1.9524,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 123,
+          "end_frame": 186,
+          "peak_frame": 153,
+          "peak_motion": 4.8853,
+          "mean_motion": 4.4314,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 69,
+          "end_frame": 132,
+          "peak_frame": 99,
+          "peak_motion": 4.5807,
+          "mean_motion": 3.9164,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2387,
+          "end_frame": 2453,
+          "peak_frame": 2417,
+          "peak_motion": 3.7355,
+          "mean_motion": 3.2142,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 378,
+          "end_frame": 447,
+          "peak_frame": 408,
+          "peak_motion": 3.6077,
+          "mean_motion": 2.7284,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 765,
+          "end_frame": 828,
+          "peak_frame": 798,
+          "peak_motion": 2.6787,
+          "mean_motion": 2.4355,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2099,
+          "end_frame": 2168,
+          "peak_frame": 2129,
+          "peak_motion": 2.568,
+          "mean_motion": 2.2448,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(15)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(15).mp4",
+      "source_sha256": "31115fb7fe96dddfc8d72e86f4065df315542ebbf475dd0a6cbc415cb1673ee6",
+      "fps": 29.993188010899182,
+      "frames": 4403,
+      "events": [
+        {
+          "start_frame": 3368,
+          "end_frame": 3515,
+          "peak_frame": 3452,
+          "peak_motion": 16.8299,
+          "mean_motion": 5.5124,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3662,
+          "end_frame": 3794,
+          "peak_frame": 3731,
+          "peak_motion": 12.6685,
+          "mean_motion": 7.1507,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 4226,
+          "end_frame": 4402,
+          "peak_frame": 4352,
+          "peak_motion": 12.6668,
+          "mean_motion": 4.5246,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 4097,
+          "end_frame": 4211,
+          "peak_frame": 4130,
+          "peak_motion": 12.5581,
+          "mean_motion": 5.4529,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1491,
+          "end_frame": 1593,
+          "peak_frame": 1539,
+          "peak_motion": 12.3478,
+          "mean_motion": 5.9447,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2333,
+          "end_frame": 2528,
+          "peak_frame": 2489,
+          "peak_motion": 12.0455,
+          "mean_motion": 4.0983,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2612,
+          "end_frame": 2693,
+          "peak_frame": 2648,
+          "peak_motion": 9.6709,
+          "mean_motion": 5.5877,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3890,
+          "end_frame": 3992,
+          "peak_frame": 3923,
+          "peak_motion": 6.4206,
+          "mean_motion": 2.3717,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3974,
+          "end_frame": 4043,
+          "peak_frame": 4007,
+          "peak_motion": 6.4104,
+          "mean_motion": 4.7431,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2741,
+          "end_frame": 2804,
+          "peak_frame": 2771,
+          "peak_motion": 6.0639,
+          "mean_motion": 4.4068,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 504,
+          "end_frame": 573,
+          "peak_frame": 540,
+          "peak_motion": 5.855,
+          "mean_motion": 3.4076,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1890,
+          "end_frame": 1980,
+          "peak_frame": 1950,
+          "peak_motion": 5.4546,
+          "mean_motion": 1.9297,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 849,
+          "end_frame": 1008,
+          "peak_frame": 909,
+          "peak_motion": 5.405,
+          "mean_motion": 2.1807,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 0,
+          "end_frame": 57,
+          "peak_frame": 3,
+          "peak_motion": 5.148,
+          "mean_motion": 1.9106,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 435,
+          "end_frame": 501,
+          "peak_frame": 468,
+          "peak_motion": 5.0696,
+          "mean_motion": 3.6814,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2804,
+          "end_frame": 2867,
+          "peak_frame": 2837,
+          "peak_motion": 4.4044,
+          "mean_motion": 3.7128,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 4034,
+          "end_frame": 4103,
+          "peak_frame": 4064,
+          "peak_motion": 3.6321,
+          "mean_motion": 2.9083,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2507,
+          "end_frame": 2573,
+          "peak_frame": 2540,
+          "peak_motion": 3.582,
+          "mean_motion": 3.1743,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3626,
+          "end_frame": 3686,
+          "peak_frame": 3656,
+          "peak_motion": 3.099,
+          "mean_motion": 3.099,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1953,
+          "end_frame": 2013,
+          "peak_frame": 1983,
+          "peak_motion": 2.9283,
+          "mean_motion": 2.9283,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(16)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(16).mp4",
+      "source_sha256": "893f6a27e709e8b7dc71ad09da3ace77fd265b62eeb1a4cf93de4b873e0f0f35",
+      "fps": 29.98820290994888,
+      "frames": 2542,
+      "events": [
+        {
+          "start_frame": 1247,
+          "end_frame": 1427,
+          "peak_frame": 1283,
+          "peak_motion": 11.8871,
+          "mean_motion": 3.4773,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1418,
+          "end_frame": 1556,
+          "peak_frame": 1451,
+          "peak_motion": 9.7419,
+          "mean_motion": 3.4052,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 960,
+          "end_frame": 1038,
+          "peak_frame": 990,
+          "peak_motion": 9.0673,
+          "mean_motion": 4.9232,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1032,
+          "end_frame": 1116,
+          "peak_frame": 1065,
+          "peak_motion": 6.8307,
+          "mean_motion": 3.0824,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2381,
+          "end_frame": 2486,
+          "peak_frame": 2432,
+          "peak_motion": 6.7866,
+          "mean_motion": 2.1603,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 96,
+          "end_frame": 159,
+          "peak_frame": 126,
+          "peak_motion": 6.3626,
+          "mean_motion": 4.4239,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 783,
+          "end_frame": 849,
+          "peak_frame": 816,
+          "peak_motion": 6.259,
+          "mean_motion": 3.5562,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 423,
+          "end_frame": 495,
+          "peak_frame": 456,
+          "peak_motion": 6.1571,
+          "mean_motion": 4.5595,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 582,
+          "end_frame": 738,
+          "peak_frame": 627,
+          "peak_motion": 6.1473,
+          "mean_motion": 1.8407,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1841,
+          "end_frame": 1910,
+          "peak_frame": 1874,
+          "peak_motion": 6.0271,
+          "mean_motion": 3.6315,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 282,
+          "end_frame": 345,
+          "peak_frame": 315,
+          "peak_motion": 5.8192,
+          "mean_motion": 4.8655,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 246,
+          "end_frame": 309,
+          "peak_frame": 276,
+          "peak_motion": 5.6615,
+          "mean_motion": 4.7829,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1943,
+          "end_frame": 2006,
+          "peak_frame": 1976,
+          "peak_motion": 5.561,
+          "mean_motion": 4.4297,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2213,
+          "end_frame": 2312,
+          "peak_frame": 2249,
+          "peak_motion": 5.4391,
+          "mean_motion": 1.8498,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 162,
+          "end_frame": 225,
+          "peak_frame": 192,
+          "peak_motion": 5.4217,
+          "mean_motion": 4.6508,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 726,
+          "end_frame": 792,
+          "peak_frame": 759,
+          "peak_motion": 5.3164,
+          "mean_motion": 3.7914,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2021,
+          "end_frame": 2084,
+          "peak_frame": 2054,
+          "peak_motion": 5.245,
+          "mean_motion": 4.5161,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1200,
+          "end_frame": 1266,
+          "peak_frame": 1233,
+          "peak_motion": 5.099,
+          "mean_motion": 3.5366,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1652,
+          "end_frame": 1733,
+          "peak_frame": 1682,
+          "peak_motion": 5.0273,
+          "mean_motion": 2.6144,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2123,
+          "end_frame": 2189,
+          "peak_frame": 2156,
+          "peak_motion": 4.9743,
+          "mean_motion": 3.479,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(17)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(17).mp4",
+      "source_sha256": "78bb2c340f1e226590baddda5a69bdf66c731ccf6ffcf619104ad28a0c755024",
+      "fps": 29.99137435307648,
+      "frames": 3477,
+      "events": [
+        {
+          "start_frame": 2702,
+          "end_frame": 2792,
+          "peak_frame": 2738,
+          "peak_motion": 13.4181,
+          "mean_motion": 5.6346,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2918,
+          "end_frame": 2999,
+          "peak_frame": 2951,
+          "peak_motion": 11.1717,
+          "mean_motion": 6.5156,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1071,
+          "end_frame": 1161,
+          "peak_frame": 1116,
+          "peak_motion": 8.5297,
+          "mean_motion": 5.6869,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 864,
+          "end_frame": 972,
+          "peak_frame": 897,
+          "peak_motion": 8.1641,
+          "mean_motion": 2.8608,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 690,
+          "end_frame": 798,
+          "peak_frame": 720,
+          "peak_motion": 7.3918,
+          "mean_motion": 2.3227,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3305,
+          "end_frame": 3398,
+          "peak_frame": 3368,
+          "peak_motion": 6.8749,
+          "mean_motion": 1.893,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2477,
+          "end_frame": 2540,
+          "peak_frame": 2507,
+          "peak_motion": 6.5819,
+          "mean_motion": 4.9791,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2864,
+          "end_frame": 2927,
+          "peak_frame": 2894,
+          "peak_motion": 6.4235,
+          "mean_motion": 5.1478,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2246,
+          "end_frame": 2324,
+          "peak_frame": 2294,
+          "peak_motion": 6.3871,
+          "mean_motion": 3.3805,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2828,
+          "end_frame": 2891,
+          "peak_frame": 2858,
+          "peak_motion": 6.297,
+          "mean_motion": 6.022,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 306,
+          "end_frame": 426,
+          "peak_frame": 339,
+          "peak_motion": 6.2853,
+          "mean_motion": 1.7066,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 96,
+          "end_frame": 186,
+          "peak_frame": 156,
+          "peak_motion": 6.2482,
+          "mean_motion": 1.8125,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 414,
+          "end_frame": 498,
+          "peak_frame": 444,
+          "peak_motion": 5.4406,
+          "mean_motion": 3.1399,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1847,
+          "end_frame": 1940,
+          "peak_frame": 1907,
+          "peak_motion": 5.4015,
+          "mean_motion": 2.0159,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 471,
+          "end_frame": 540,
+          "peak_frame": 501,
+          "peak_motion": 5.1075,
+          "mean_motion": 3.8019,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2513,
+          "end_frame": 2636,
+          "peak_frame": 2591,
+          "peak_motion": 4.9773,
+          "mean_motion": 1.777,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1350,
+          "end_frame": 1422,
+          "peak_frame": 1380,
+          "peak_motion": 4.9143,
+          "mean_motion": 3.9044,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 957,
+          "end_frame": 1047,
+          "peak_frame": 993,
+          "peak_motion": 4.049,
+          "mean_motion": 1.7477,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2123,
+          "end_frame": 2189,
+          "peak_frame": 2153,
+          "peak_motion": 4.0198,
+          "mean_motion": 3.7066,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2645,
+          "end_frame": 2711,
+          "peak_frame": 2678,
+          "peak_motion": 3.4714,
+          "mean_motion": 3.1632,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(18)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(18).mp4",
+      "source_sha256": "29a2147c5241b535073321e9354b9efd40278373c6176709f7db5f77cdc3e79a",
+      "fps": 29.992246058413027,
+      "frames": 3868,
+      "events": [
+        {
+          "start_frame": 3572,
+          "end_frame": 3857,
+          "peak_frame": 3824,
+          "peak_motion": 85.3499,
+          "mean_motion": 7.3938,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2924,
+          "end_frame": 3029,
+          "peak_frame": 2975,
+          "peak_motion": 13.7741,
+          "mean_motion": 6.0337,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1928,
+          "end_frame": 2018,
+          "peak_frame": 1967,
+          "peak_motion": 12.2777,
+          "mean_motion": 6.4187,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2306,
+          "end_frame": 2531,
+          "peak_frame": 2441,
+          "peak_motion": 11.0935,
+          "mean_motion": 3.1308,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 819,
+          "end_frame": 915,
+          "peak_frame": 852,
+          "peak_motion": 10.4308,
+          "mean_motion": 3.0923,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2771,
+          "end_frame": 2873,
+          "peak_frame": 2834,
+          "peak_motion": 9.8921,
+          "mean_motion": 4.2049,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 924,
+          "end_frame": 1002,
+          "peak_frame": 954,
+          "peak_motion": 8.4209,
+          "mean_motion": 5.187,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1761,
+          "end_frame": 1842,
+          "peak_frame": 1791,
+          "peak_motion": 7.0134,
+          "mean_motion": 3.1094,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3401,
+          "end_frame": 3476,
+          "peak_frame": 3446,
+          "peak_motion": 6.6832,
+          "mean_motion": 4.3303,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 276,
+          "end_frame": 366,
+          "peak_frame": 309,
+          "peak_motion": 6.5439,
+          "mean_motion": 2.2003,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 15,
+          "end_frame": 96,
+          "peak_frame": 63,
+          "peak_motion": 6.2693,
+          "mean_motion": 2.4681,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 480,
+          "end_frame": 612,
+          "peak_frame": 543,
+          "peak_motion": 5.7526,
+          "mean_motion": 2.5003,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3305,
+          "end_frame": 3377,
+          "peak_frame": 3335,
+          "peak_motion": 5.6489,
+          "mean_motion": 4.4082,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2090,
+          "end_frame": 2156,
+          "peak_frame": 2120,
+          "peak_motion": 5.6436,
+          "mean_motion": 3.7081,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2702,
+          "end_frame": 2771,
+          "peak_frame": 2735,
+          "peak_motion": 5.4799,
+          "mean_motion": 4.0747,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1320,
+          "end_frame": 1407,
+          "peak_frame": 1350,
+          "peak_motion": 5.4573,
+          "mean_motion": 1.8617,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 360,
+          "end_frame": 432,
+          "peak_frame": 390,
+          "peak_motion": 5.3119,
+          "mean_motion": 4.1213,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3032,
+          "end_frame": 3095,
+          "peak_frame": 3062,
+          "peak_motion": 5.2454,
+          "mean_motion": 4.9802,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 699,
+          "end_frame": 828,
+          "peak_frame": 765,
+          "peak_motion": 5.1048,
+          "mean_motion": 1.9485,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2582,
+          "end_frame": 2648,
+          "peak_frame": 2618,
+          "peak_motion": 3.9153,
+          "mean_motion": 3.6776,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(19)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(19).mp4",
+      "source_sha256": "f722771c169ad8726dbe1a3707bb6194809f2a9939e86c7ec8bc503c55799e0d",
+      "fps": 29.992295839753467,
+      "frames": 3893,
+      "events": [
+        {
+          "start_frame": 2933,
+          "end_frame": 2993,
+          "peak_frame": 2963,
+          "peak_motion": 86.7273,
+          "mean_motion": 86.7273,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2804,
+          "end_frame": 2936,
+          "peak_frame": 2903,
+          "peak_motion": 86.3431,
+          "mean_motion": 6.6167,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 747,
+          "end_frame": 1065,
+          "peak_frame": 798,
+          "peak_motion": 12.8391,
+          "mean_motion": 2.5905,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3704,
+          "end_frame": 3892,
+          "peak_frame": 3773,
+          "peak_motion": 11.2428,
+          "mean_motion": 3.1946,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2129,
+          "end_frame": 2213,
+          "peak_frame": 2168,
+          "peak_motion": 10.1518,
+          "mean_motion": 4.9026,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2573,
+          "end_frame": 2654,
+          "peak_frame": 2606,
+          "peak_motion": 9.248,
+          "mean_motion": 5.105,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2636,
+          "end_frame": 2699,
+          "peak_frame": 2666,
+          "peak_motion": 7.3048,
+          "mean_motion": 4.8467,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3650,
+          "end_frame": 3728,
+          "peak_frame": 3698,
+          "peak_motion": 6.8688,
+          "mean_motion": 3.3048,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1842,
+          "end_frame": 1944,
+          "peak_frame": 1875,
+          "peak_motion": 6.6978,
+          "mean_motion": 2.2054,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1680,
+          "end_frame": 1761,
+          "peak_frame": 1731,
+          "peak_motion": 6.4574,
+          "mean_motion": 2.8306,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2300,
+          "end_frame": 2417,
+          "peak_frame": 2360,
+          "peak_motion": 6.197,
+          "mean_motion": 2.4427,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 600,
+          "end_frame": 765,
+          "peak_frame": 735,
+          "peak_motion": 5.6215,
+          "mean_motion": 1.952,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1985,
+          "end_frame": 2051,
+          "peak_frame": 2018,
+          "peak_motion": 5.5002,
+          "mean_motion": 4.1808,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 87,
+          "end_frame": 183,
+          "peak_frame": 117,
+          "peak_motion": 5.3194,
+          "mean_motion": 1.3359,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 408,
+          "end_frame": 471,
+          "peak_frame": 438,
+          "peak_motion": 5.109,
+          "mean_motion": 4.672,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 480,
+          "end_frame": 615,
+          "peak_frame": 573,
+          "peak_motion": 5.0029,
+          "mean_motion": 1.7777,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 306,
+          "end_frame": 372,
+          "peak_frame": 339,
+          "peak_motion": 4.8075,
+          "mean_motion": 3.2495,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1065,
+          "end_frame": 1197,
+          "peak_frame": 1098,
+          "peak_motion": 4.8012,
+          "mean_motion": 1.393,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2204,
+          "end_frame": 2267,
+          "peak_frame": 2237,
+          "peak_motion": 2.4089,
+          "mean_motion": 2.168,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3266,
+          "end_frame": 3326,
+          "peak_frame": 3296,
+          "peak_motion": 2.1298,
+          "mean_motion": 2.1298,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(20)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(20).mp4",
+      "source_sha256": "d6c938610a85f1ae97ef6356a34eb24dcaadc3316f088fe8568c47e28e0d5427",
+      "fps": 29.97573797007683,
+      "frames": 2471,
+      "events": [
+        {
+          "start_frame": 1169,
+          "end_frame": 1250,
+          "peak_frame": 1202,
+          "peak_motion": 11.5646,
+          "mean_motion": 5.9433,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 953,
+          "end_frame": 1040,
+          "peak_frame": 986,
+          "peak_motion": 11.1278,
+          "mean_motion": 6.6183,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2314,
+          "end_frame": 2458,
+          "peak_frame": 2347,
+          "peak_motion": 7.5497,
+          "mean_motion": 2.4914,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1930,
+          "end_frame": 2008,
+          "peak_frame": 1975,
+          "peak_motion": 7.3437,
+          "mean_motion": 3.9138,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 417,
+          "end_frame": 483,
+          "peak_frame": 450,
+          "peak_motion": 6.8543,
+          "mean_motion": 5.5921,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 0,
+          "end_frame": 90,
+          "peak_frame": 54,
+          "peak_motion": 6.8268,
+          "mean_motion": 2.031,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2098,
+          "end_frame": 2209,
+          "peak_frame": 2167,
+          "peak_motion": 6.7486,
+          "mean_motion": 3.1649,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1448,
+          "end_frame": 1520,
+          "peak_frame": 1478,
+          "peak_motion": 6.3612,
+          "mean_motion": 4.3633,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 605,
+          "end_frame": 668,
+          "peak_frame": 635,
+          "peak_motion": 6.0795,
+          "mean_motion": 5.1681,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2248,
+          "end_frame": 2341,
+          "peak_frame": 2278,
+          "peak_motion": 6.049,
+          "mean_motion": 2.4629,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1394,
+          "end_frame": 1475,
+          "peak_frame": 1445,
+          "peak_motion": 5.9994,
+          "mean_motion": 2.3803,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2047,
+          "end_frame": 2110,
+          "peak_frame": 2077,
+          "peak_motion": 5.8199,
+          "mean_motion": 5.4412,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 647,
+          "end_frame": 710,
+          "peak_frame": 677,
+          "peak_motion": 5.6516,
+          "mean_motion": 5.1986,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 369,
+          "end_frame": 432,
+          "peak_frame": 399,
+          "peak_motion": 5.2199,
+          "mean_motion": 4.5059,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 773,
+          "end_frame": 836,
+          "peak_frame": 806,
+          "peak_motion": 5.1219,
+          "mean_motion": 4.454,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 893,
+          "end_frame": 959,
+          "peak_frame": 923,
+          "peak_motion": 3.861,
+          "mean_motion": 3.6352,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 833,
+          "end_frame": 902,
+          "peak_frame": 869,
+          "peak_motion": 3.8549,
+          "mean_motion": 2.8171,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1981,
+          "end_frame": 2041,
+          "peak_frame": 2011,
+          "peak_motion": 3.38,
+          "mean_motion": 3.38,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1843,
+          "end_frame": 1906,
+          "peak_frame": 1873,
+          "peak_motion": 2.9941,
+          "mean_motion": 2.7774,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 336,
+          "end_frame": 396,
+          "peak_frame": 366,
+          "peak_motion": 2.9356,
+          "mean_motion": 2.9356,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(21)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(21).mp4",
+      "source_sha256": "23547e6918a2475b1ae2baa93815e37b64c39cb0cfab1a17cd622e15383db5fa",
+      "fps": 29.984072205999468,
+      "frames": 3765,
+      "events": [
+        {
+          "start_frame": 1193,
+          "end_frame": 1328,
+          "peak_frame": 1277,
+          "peak_motion": 13.2405,
+          "mean_motion": 3.4952,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1547,
+          "end_frame": 1643,
+          "peak_frame": 1592,
+          "peak_motion": 10.4852,
+          "mean_motion": 4.8404,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3172,
+          "end_frame": 3253,
+          "peak_frame": 3205,
+          "peak_motion": 10.1722,
+          "mean_motion": 5.5668,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 816,
+          "end_frame": 948,
+          "peak_frame": 882,
+          "peak_motion": 9.0087,
+          "mean_motion": 2.8914,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1949,
+          "end_frame": 2084,
+          "peak_frame": 1997,
+          "peak_motion": 8.2902,
+          "mean_motion": 2.319,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2893,
+          "end_frame": 3007,
+          "peak_frame": 2956,
+          "peak_motion": 8.233,
+          "mean_motion": 4.1162,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 947,
+          "end_frame": 1034,
+          "peak_frame": 989,
+          "peak_motion": 8.0211,
+          "mean_motion": 5.4572,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2741,
+          "end_frame": 2825,
+          "peak_frame": 2771,
+          "peak_motion": 7.7737,
+          "mean_motion": 3.1941,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1463,
+          "end_frame": 1538,
+          "peak_frame": 1508,
+          "peak_motion": 7.2349,
+          "mean_motion": 4.1035,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 264,
+          "end_frame": 378,
+          "peak_frame": 339,
+          "peak_motion": 6.8434,
+          "mean_motion": 2.6431,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 732,
+          "end_frame": 795,
+          "peak_frame": 765,
+          "peak_motion": 6.6244,
+          "mean_motion": 5.3158,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3649,
+          "end_frame": 3730,
+          "peak_frame": 3700,
+          "peak_motion": 6.4297,
+          "mean_motion": 3.1038,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3379,
+          "end_frame": 3475,
+          "peak_frame": 3445,
+          "peak_motion": 6.3341,
+          "mean_motion": 2.1515,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1511,
+          "end_frame": 1574,
+          "peak_frame": 1544,
+          "peak_motion": 6.2526,
+          "mean_motion": 4.5261,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1139,
+          "end_frame": 1220,
+          "peak_frame": 1187,
+          "peak_motion": 6.1192,
+          "mean_motion": 4.385,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 192,
+          "end_frame": 255,
+          "peak_frame": 225,
+          "peak_motion": 5.8859,
+          "mean_motion": 4.4042,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 549,
+          "end_frame": 648,
+          "peak_frame": 582,
+          "peak_motion": 5.8095,
+          "mean_motion": 2.7121,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2417,
+          "end_frame": 2480,
+          "peak_frame": 2447,
+          "peak_motion": 5.6635,
+          "mean_motion": 4.7933,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2540,
+          "end_frame": 2609,
+          "peak_frame": 2570,
+          "peak_motion": 5.6447,
+          "mean_motion": 3.8845,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3115,
+          "end_frame": 3178,
+          "peak_frame": 3148,
+          "peak_motion": 5.5179,
+          "mean_motion": 4.8334,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(22)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(22).mp4",
+      "source_sha256": "61bd67b00521a847078b460dcd845cf5ada05cae36a8343e0d98a5ad0306dc3e",
+      "fps": 29.98811410459588,
+      "frames": 2523,
+      "events": [
+        {
+          "start_frame": 1619,
+          "end_frame": 1718,
+          "peak_frame": 1664,
+          "peak_motion": 10.906,
+          "mean_motion": 5.3854,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 642,
+          "end_frame": 726,
+          "peak_frame": 696,
+          "peak_motion": 7.7207,
+          "mean_motion": 2.7599,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2204,
+          "end_frame": 2279,
+          "peak_frame": 2237,
+          "peak_motion": 6.7665,
+          "mean_motion": 4.5678,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 522,
+          "end_frame": 615,
+          "peak_frame": 585,
+          "peak_motion": 6.7171,
+          "mean_motion": 2.2337,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1164,
+          "end_frame": 1298,
+          "peak_frame": 1257,
+          "peak_motion": 6.6733,
+          "mean_motion": 2.1534,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2339,
+          "end_frame": 2411,
+          "peak_frame": 2372,
+          "peak_motion": 6.5346,
+          "mean_motion": 3.8325,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 210,
+          "end_frame": 309,
+          "peak_frame": 276,
+          "peak_motion": 6.5108,
+          "mean_motion": 1.9335,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 699,
+          "end_frame": 774,
+          "peak_frame": 732,
+          "peak_motion": 6.4748,
+          "mean_motion": 3.7264,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 936,
+          "end_frame": 1041,
+          "peak_frame": 999,
+          "peak_motion": 6.3446,
+          "mean_motion": 3.1481,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1511,
+          "end_frame": 1646,
+          "peak_frame": 1583,
+          "peak_motion": 6.1737,
+          "mean_motion": 1.9135,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1445,
+          "end_frame": 1529,
+          "peak_frame": 1499,
+          "peak_motion": 6.1022,
+          "mean_motion": 3.2338,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 834,
+          "end_frame": 903,
+          "peak_frame": 870,
+          "peak_motion": 6.0951,
+          "mean_motion": 5.3872,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2438,
+          "end_frame": 2510,
+          "peak_frame": 2474,
+          "peak_motion": 6.0867,
+          "mean_motion": 3.9865,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 0,
+          "end_frame": 39,
+          "peak_frame": 9,
+          "peak_motion": 5.8884,
+          "mean_motion": 4.0379,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2120,
+          "end_frame": 2183,
+          "peak_frame": 2153,
+          "peak_motion": 5.8677,
+          "mean_motion": 4.0309,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 60,
+          "end_frame": 132,
+          "peak_frame": 90,
+          "peak_motion": 5.4711,
+          "mean_motion": 3.6494,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 300,
+          "end_frame": 393,
+          "peak_frame": 330,
+          "peak_motion": 5.3119,
+          "mean_motion": 1.8014,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2168,
+          "end_frame": 2231,
+          "peak_frame": 2198,
+          "peak_motion": 5.2734,
+          "mean_motion": 4.391,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 24,
+          "end_frame": 87,
+          "peak_frame": 57,
+          "peak_motion": 5.2131,
+          "mean_motion": 4.3054,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 174,
+          "end_frame": 237,
+          "peak_frame": 207,
+          "peak_motion": 4.6666,
+          "mean_motion": 4.5695,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(23)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(23).mp4",
+      "source_sha256": "9d6de7bdb9272b392adf437dd6d4e54218389fd2e6905800e99d2c04b52304d6",
+      "fps": 29.983434566537824,
+      "frames": 1810,
+      "events": [
+        {
+          "start_frame": 1445,
+          "end_frame": 1809,
+          "peak_frame": 1736,
+          "peak_motion": 12.7654,
+          "mean_motion": 4.1186,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 426,
+          "end_frame": 540,
+          "peak_frame": 492,
+          "peak_motion": 11.2957,
+          "mean_motion": 4.7866,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1325,
+          "end_frame": 1406,
+          "peak_frame": 1355,
+          "peak_motion": 10.6033,
+          "mean_motion": 7.0354,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1124,
+          "end_frame": 1214,
+          "peak_frame": 1184,
+          "peak_motion": 7.8508,
+          "mean_motion": 2.5288,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 986,
+          "end_frame": 1067,
+          "peak_frame": 1019,
+          "peak_motion": 7.0167,
+          "mean_motion": 3.1585,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1199,
+          "end_frame": 1280,
+          "peak_frame": 1250,
+          "peak_motion": 6.9423,
+          "mean_motion": 3.0956,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 45,
+          "end_frame": 108,
+          "peak_frame": 75,
+          "peak_motion": 6.3662,
+          "mean_motion": 4.6606,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 744,
+          "end_frame": 858,
+          "peak_frame": 777,
+          "peak_motion": 6.3404,
+          "mean_motion": 2.6159,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 678,
+          "end_frame": 741,
+          "peak_frame": 708,
+          "peak_motion": 6.0385,
+          "mean_motion": 4.4793,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 0,
+          "end_frame": 57,
+          "peak_frame": 27,
+          "peak_motion": 6.0308,
+          "mean_motion": 3.417,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 105,
+          "end_frame": 165,
+          "peak_frame": 135,
+          "peak_motion": 5.8408,
+          "mean_motion": 5.8408,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 237,
+          "end_frame": 327,
+          "peak_frame": 270,
+          "peak_motion": 5.7272,
+          "mean_motion": 2.0233,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1253,
+          "end_frame": 1346,
+          "peak_frame": 1283,
+          "peak_motion": 3.4415,
+          "mean_motion": 2.3217,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 378,
+          "end_frame": 438,
+          "peak_frame": 408,
+          "peak_motion": 2.9901,
+          "mean_motion": 2.9901,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1397,
+          "end_frame": 1457,
+          "peak_frame": 1427,
+          "peak_motion": 2.8562,
+          "mean_motion": 2.8562,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 138,
+          "end_frame": 198,
+          "peak_frame": 168,
+          "peak_motion": 2.7016,
+          "mean_motion": 2.7016,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(3)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(3).mp4",
+      "source_sha256": "eb3f7893e21648a7e2692a57256b33c18a6d583770ff1836c070e5708b9fbcdf",
+      "fps": 29.978594363182303,
+      "frames": 2801,
+      "events": [
+        {
+          "start_frame": 591,
+          "end_frame": 726,
+          "peak_frame": 672,
+          "peak_motion": 11.8372,
+          "mean_motion": 4.0935,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 899,
+          "end_frame": 1034,
+          "peak_frame": 932,
+          "peak_motion": 9.7496,
+          "mean_motion": 3.1095,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 504,
+          "end_frame": 612,
+          "peak_frame": 579,
+          "peak_motion": 8.1217,
+          "mean_motion": 2.8099,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 698,
+          "end_frame": 896,
+          "peak_frame": 845,
+          "peak_motion": 8.0304,
+          "mean_motion": 2.565,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1742,
+          "end_frame": 1931,
+          "peak_frame": 1868,
+          "peak_motion": 7.1603,
+          "mean_motion": 2.5619,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1910,
+          "end_frame": 2084,
+          "peak_frame": 2051,
+          "peak_motion": 7.0498,
+          "mean_motion": 2.4976,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 228,
+          "end_frame": 315,
+          "peak_frame": 285,
+          "peak_motion": 6.9296,
+          "mean_motion": 2.6634,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1361,
+          "end_frame": 1445,
+          "peak_frame": 1415,
+          "peak_motion": 6.8309,
+          "mean_motion": 2.6669,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 303,
+          "end_frame": 366,
+          "peak_frame": 336,
+          "peak_motion": 6.8279,
+          "mean_motion": 5.1214,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1667,
+          "end_frame": 1730,
+          "peak_frame": 1697,
+          "peak_motion": 6.8072,
+          "mean_motion": 5.1594,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2443,
+          "end_frame": 2527,
+          "peak_frame": 2494,
+          "peak_motion": 6.7275,
+          "mean_motion": 3.1811,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 39,
+          "end_frame": 126,
+          "peak_frame": 93,
+          "peak_motion": 6.5463,
+          "mean_motion": 2.5755,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1706,
+          "end_frame": 1769,
+          "peak_frame": 1736,
+          "peak_motion": 6.5213,
+          "mean_motion": 4.7454,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1475,
+          "end_frame": 1538,
+          "peak_frame": 1505,
+          "peak_motion": 6.4696,
+          "mean_motion": 4.5091,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1274,
+          "end_frame": 1364,
+          "peak_frame": 1331,
+          "peak_motion": 6.3624,
+          "mean_motion": 2.5772,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1043,
+          "end_frame": 1106,
+          "peak_frame": 1076,
+          "peak_motion": 6.2427,
+          "mean_motion": 5.7666,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1103,
+          "end_frame": 1199,
+          "peak_frame": 1166,
+          "peak_motion": 6.2162,
+          "mean_motion": 2.3671,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 405,
+          "end_frame": 468,
+          "peak_frame": 435,
+          "peak_motion": 6.0603,
+          "mean_motion": 5.0907,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2518,
+          "end_frame": 2599,
+          "peak_frame": 2566,
+          "peak_motion": 5.9429,
+          "mean_motion": 3.0686,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1190,
+          "end_frame": 1274,
+          "peak_frame": 1244,
+          "peak_motion": 5.9108,
+          "mean_motion": 2.991,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(4)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(4).mp4",
+      "source_sha256": "7fb8da06c1ffb0ee29255c69e28d9a2a559efcf10eec1e262d41852481d2bd1f",
+      "fps": 29.993393525655144,
+      "frames": 4540,
+      "events": [
+        {
+          "start_frame": 1647,
+          "end_frame": 1737,
+          "peak_frame": 1680,
+          "peak_motion": 19.5147,
+          "mean_motion": 8.8365,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 111,
+          "end_frame": 228,
+          "peak_frame": 141,
+          "peak_motion": 6.9119,
+          "mean_motion": 2.025,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 330,
+          "end_frame": 474,
+          "peak_frame": 411,
+          "peak_motion": 6.8786,
+          "mean_motion": 1.9695,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 4088,
+          "end_frame": 4208,
+          "peak_frame": 4178,
+          "peak_motion": 6.5426,
+          "mean_motion": 2.6986,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3734,
+          "end_frame": 3821,
+          "peak_frame": 3788,
+          "peak_motion": 6.4092,
+          "mean_motion": 2.6259,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3977,
+          "end_frame": 4061,
+          "peak_frame": 4007,
+          "peak_motion": 6.2286,
+          "mean_motion": 3.0856,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3257,
+          "end_frame": 3320,
+          "peak_frame": 3287,
+          "peak_motion": 5.8226,
+          "mean_motion": 4.3285,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2402,
+          "end_frame": 2486,
+          "peak_frame": 2432,
+          "peak_motion": 5.7291,
+          "mean_motion": 2.4774,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3611,
+          "end_frame": 3698,
+          "peak_frame": 3644,
+          "peak_motion": 5.7114,
+          "mean_motion": 2.3798,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 0,
+          "end_frame": 69,
+          "peak_frame": 39,
+          "peak_motion": 5.628,
+          "mean_motion": 2.3018,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1437,
+          "end_frame": 1521,
+          "peak_frame": 1470,
+          "peak_motion": 5.5205,
+          "mean_motion": 2.2403,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3794,
+          "end_frame": 3989,
+          "peak_frame": 3899,
+          "peak_motion": 5.5144,
+          "mean_motion": 1.6134,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 816,
+          "end_frame": 918,
+          "peak_frame": 846,
+          "peak_motion": 5.4648,
+          "mean_motion": 1.9696,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2672,
+          "end_frame": 2735,
+          "peak_frame": 2705,
+          "peak_motion": 5.438,
+          "mean_motion": 4.9178,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1944,
+          "end_frame": 2007,
+          "peak_frame": 1977,
+          "peak_motion": 5.4069,
+          "mean_motion": 4.4146,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 537,
+          "end_frame": 630,
+          "peak_frame": 597,
+          "peak_motion": 5.383,
+          "mean_motion": 2.3813,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1131,
+          "end_frame": 1239,
+          "peak_frame": 1200,
+          "peak_motion": 5.3328,
+          "mean_motion": 2.1374,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1797,
+          "end_frame": 1860,
+          "peak_frame": 1830,
+          "peak_motion": 5.1984,
+          "mean_motion": 4.3816,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 276,
+          "end_frame": 357,
+          "peak_frame": 324,
+          "peak_motion": 5.1793,
+          "mean_motion": 2.3809,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3071,
+          "end_frame": 3134,
+          "peak_frame": 3101,
+          "peak_motion": 5.1477,
+          "mean_motion": 4.3141,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(6)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(6).mp4",
+      "source_sha256": "8ea8a6780e949b8e73c7a2ea614812a945ed4403cffc7382b1f2284e19d4c7b7",
+      "fps": 29.99260172626387,
+      "frames": 4054,
+      "events": [
+        {
+          "start_frame": 3800,
+          "end_frame": 3899,
+          "peak_frame": 3833,
+          "peak_motion": 14.0839,
+          "mean_motion": 5.4358,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2612,
+          "end_frame": 2750,
+          "peak_frame": 2669,
+          "peak_motion": 13.1078,
+          "mean_motion": 3.8266,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1866,
+          "end_frame": 1947,
+          "peak_frame": 1899,
+          "peak_motion": 10.2999,
+          "mean_motion": 5.9293,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 747,
+          "end_frame": 822,
+          "peak_frame": 780,
+          "peak_motion": 8.0081,
+          "mean_motion": 5.837,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3161,
+          "end_frame": 3251,
+          "peak_frame": 3212,
+          "peak_motion": 7.7452,
+          "mean_motion": 3.2603,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 384,
+          "end_frame": 519,
+          "peak_frame": 426,
+          "peak_motion": 7.133,
+          "mean_motion": 2.5569,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2543,
+          "end_frame": 2639,
+          "peak_frame": 2606,
+          "peak_motion": 6.954,
+          "mean_motion": 2.942,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 594,
+          "end_frame": 663,
+          "peak_frame": 627,
+          "peak_motion": 6.7858,
+          "mean_motion": 4.9938,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1536,
+          "end_frame": 1599,
+          "peak_frame": 1566,
+          "peak_motion": 6.6333,
+          "mean_motion": 4.7096,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2975,
+          "end_frame": 3038,
+          "peak_frame": 3008,
+          "peak_motion": 6.5686,
+          "mean_motion": 4.9493,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 996,
+          "end_frame": 1059,
+          "peak_frame": 1029,
+          "peak_motion": 6.4149,
+          "mean_motion": 4.7704,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 51,
+          "end_frame": 114,
+          "peak_frame": 84,
+          "peak_motion": 6.3423,
+          "mean_motion": 4.6134,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3011,
+          "end_frame": 3074,
+          "peak_frame": 3044,
+          "peak_motion": 6.3058,
+          "mean_motion": 4.73,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 318,
+          "end_frame": 393,
+          "peak_frame": 363,
+          "peak_motion": 6.2951,
+          "mean_motion": 3.0789,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 240,
+          "end_frame": 345,
+          "peak_frame": 315,
+          "peak_motion": 6.2799,
+          "mean_motion": 1.5724,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1929,
+          "end_frame": 2016,
+          "peak_frame": 1986,
+          "peak_motion": 6.2689,
+          "mean_motion": 2.3067,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2255,
+          "end_frame": 2387,
+          "peak_frame": 2285,
+          "peak_motion": 6.2121,
+          "mean_motion": 1.5843,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1170,
+          "end_frame": 1254,
+          "peak_frame": 1221,
+          "peak_motion": 6.1195,
+          "mean_motion": 2.3077,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3341,
+          "end_frame": 3434,
+          "peak_frame": 3401,
+          "peak_motion": 6.1046,
+          "mean_motion": 2.0807,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3761,
+          "end_frame": 3824,
+          "peak_frame": 3794,
+          "peak_motion": 6.0807,
+          "mean_motion": 4.5634,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(7)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(7).mp4",
+      "source_sha256": "b4746379ac1e57d8e159607e3b66cdd26a8804460eebf24916600284d865be81",
+      "fps": 29.993342210386153,
+      "frames": 4505,
+      "events": [
+        {
+          "start_frame": 4073,
+          "end_frame": 4504,
+          "peak_frame": 4424,
+          "peak_motion": 14.4182,
+          "mean_motion": 3.6762,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 636,
+          "end_frame": 810,
+          "peak_frame": 714,
+          "peak_motion": 9.9529,
+          "mean_motion": 3.2487,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3242,
+          "end_frame": 3335,
+          "peak_frame": 3293,
+          "peak_motion": 9.8626,
+          "mean_motion": 5.8032,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1428,
+          "end_frame": 1536,
+          "peak_frame": 1503,
+          "peak_motion": 7.9002,
+          "mean_motion": 2.8142,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1575,
+          "end_frame": 1644,
+          "peak_frame": 1611,
+          "peak_motion": 7.3739,
+          "mean_motion": 4.0491,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3386,
+          "end_frame": 3593,
+          "peak_frame": 3494,
+          "peak_motion": 7.3271,
+          "mean_motion": 2.3653,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3596,
+          "end_frame": 3680,
+          "peak_frame": 3647,
+          "peak_motion": 6.9145,
+          "mean_motion": 2.9995,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 426,
+          "end_frame": 489,
+          "peak_frame": 456,
+          "peak_motion": 6.6308,
+          "mean_motion": 4.7299,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2747,
+          "end_frame": 2810,
+          "peak_frame": 2777,
+          "peak_motion": 6.6009,
+          "mean_motion": 4.5499,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1530,
+          "end_frame": 1593,
+          "peak_frame": 1563,
+          "peak_motion": 6.5374,
+          "mean_motion": 5.5159,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3677,
+          "end_frame": 3758,
+          "peak_frame": 3728,
+          "peak_motion": 6.5041,
+          "mean_motion": 2.9734,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 306,
+          "end_frame": 447,
+          "peak_frame": 366,
+          "peak_motion": 6.4459,
+          "mean_motion": 2.0003,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2360,
+          "end_frame": 2447,
+          "peak_frame": 2390,
+          "peak_motion": 6.3693,
+          "mean_motion": 2.3976,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1983,
+          "end_frame": 2067,
+          "peak_frame": 2016,
+          "peak_motion": 6.2401,
+          "mean_motion": 2.6611,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3137,
+          "end_frame": 3224,
+          "peak_frame": 3194,
+          "peak_motion": 6.0847,
+          "mean_motion": 3.4663,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3089,
+          "end_frame": 3158,
+          "peak_frame": 3122,
+          "peak_motion": 6.0494,
+          "mean_motion": 4.2212,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2097,
+          "end_frame": 2190,
+          "peak_frame": 2160,
+          "peak_motion": 5.8543,
+          "mean_motion": 2.433,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 75,
+          "end_frame": 168,
+          "peak_frame": 135,
+          "peak_motion": 5.6896,
+          "mean_motion": 1.9001,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1281,
+          "end_frame": 1344,
+          "peak_frame": 1314,
+          "peak_motion": 5.5796,
+          "mean_motion": 5.3257,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1359,
+          "end_frame": 1422,
+          "peak_frame": 1389,
+          "peak_motion": 5.5624,
+          "mean_motion": 4.8629,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(8)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(8).mp4",
+      "source_sha256": "192fd63d59e2b980e7fd31125db9c3fdf4413358ea597b8523a02b4fe8f54555",
+      "fps": 29.987891019172555,
+      "frames": 4953,
+      "events": [
+        {
+          "start_frame": 4675,
+          "end_frame": 4855,
+          "peak_frame": 4753,
+          "peak_motion": 12.2924,
+          "mean_motion": 3.2448,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1781,
+          "end_frame": 1994,
+          "peak_frame": 1835,
+          "peak_motion": 11.0498,
+          "mean_motion": 3.8648,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3356,
+          "end_frame": 3470,
+          "peak_frame": 3392,
+          "peak_motion": 10.637,
+          "mean_motion": 4.4004,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2789,
+          "end_frame": 2870,
+          "peak_frame": 2822,
+          "peak_motion": 10.5582,
+          "mean_motion": 6.8468,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3575,
+          "end_frame": 3689,
+          "peak_frame": 3611,
+          "peak_motion": 10.5531,
+          "mean_motion": 3.0637,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3922,
+          "end_frame": 4024,
+          "peak_frame": 3970,
+          "peak_motion": 9.4155,
+          "mean_motion": 5.0646,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 678,
+          "end_frame": 786,
+          "peak_frame": 735,
+          "peak_motion": 9.0677,
+          "mean_motion": 3.659,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3694,
+          "end_frame": 3838,
+          "peak_frame": 3793,
+          "peak_motion": 7.9625,
+          "mean_motion": 4.3404,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 4525,
+          "end_frame": 4690,
+          "peak_frame": 4585,
+          "peak_motion": 7.0234,
+          "mean_motion": 2.2711,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3221,
+          "end_frame": 3284,
+          "peak_frame": 3254,
+          "peak_motion": 6.6144,
+          "mean_motion": 5.0045,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 93,
+          "end_frame": 186,
+          "peak_frame": 156,
+          "peak_motion": 6.4702,
+          "mean_motion": 1.7803,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 348,
+          "end_frame": 411,
+          "peak_frame": 378,
+          "peak_motion": 6.4659,
+          "mean_motion": 4.6757,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 4105,
+          "end_frame": 4222,
+          "peak_frame": 4135,
+          "peak_motion": 6.4434,
+          "mean_motion": 1.5303,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 852,
+          "end_frame": 936,
+          "peak_frame": 906,
+          "peak_motion": 6.1437,
+          "mean_motion": 2.3863,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 4396,
+          "end_frame": 4522,
+          "peak_frame": 4426,
+          "peak_motion": 6.0848,
+          "mean_motion": 1.7835,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3479,
+          "end_frame": 3599,
+          "peak_frame": 3536,
+          "peak_motion": 5.9196,
+          "mean_motion": 1.8592,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3263,
+          "end_frame": 3350,
+          "peak_frame": 3296,
+          "peak_motion": 5.8689,
+          "mean_motion": 1.9831,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 4273,
+          "end_frame": 4363,
+          "peak_frame": 4303,
+          "peak_motion": 5.6711,
+          "mean_motion": 2.1974,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 504,
+          "end_frame": 591,
+          "peak_frame": 561,
+          "peak_motion": 5.5835,
+          "mean_motion": 2.2828,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 303,
+          "end_frame": 366,
+          "peak_frame": 336,
+          "peak_motion": 5.5325,
+          "mean_motion": 4.2036,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    },
+    {
+      "capture_id": "Clash Royale(9)",
+      "source_path": "C:\\Users\\aksha\\Documents\\MuMuSharedFolder\\VideoRecords\\recordings\\Clash Royale(9).mp4",
+      "source_sha256": "f899bc611c220d47ed6e2dfa7b6a1dbe9003b1283feb7acb20aef5060395f3ef",
+      "fps": 29.99299229152067,
+      "frames": 4280,
+      "events": [
+        {
+          "start_frame": 1827,
+          "end_frame": 1935,
+          "peak_frame": 1878,
+          "peak_motion": 12.1398,
+          "mean_motion": 4.8774,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2396,
+          "end_frame": 2573,
+          "peak_frame": 2429,
+          "peak_motion": 11.8119,
+          "mean_motion": 3.1662,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 861,
+          "end_frame": 978,
+          "peak_frame": 897,
+          "peak_motion": 10.2666,
+          "mean_motion": 4.8944,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3020,
+          "end_frame": 3095,
+          "peak_frame": 3056,
+          "peak_motion": 8.7942,
+          "mean_motion": 5.71,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 4061,
+          "end_frame": 4160,
+          "peak_frame": 4091,
+          "peak_motion": 7.333,
+          "mean_motion": 2.9169,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 705,
+          "end_frame": 840,
+          "peak_frame": 804,
+          "peak_motion": 7.1554,
+          "mean_motion": 3.5843,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3986,
+          "end_frame": 4067,
+          "peak_frame": 4025,
+          "peak_motion": 6.8915,
+          "mean_motion": 3.8429,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2660,
+          "end_frame": 2801,
+          "peak_frame": 2690,
+          "peak_motion": 6.5661,
+          "mean_motion": 2.3632,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 483,
+          "end_frame": 546,
+          "peak_frame": 513,
+          "peak_motion": 6.3929,
+          "mean_motion": 4.4451,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2046,
+          "end_frame": 2109,
+          "peak_frame": 2076,
+          "peak_motion": 6.312,
+          "mean_motion": 4.3776,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3605,
+          "end_frame": 3731,
+          "peak_frame": 3638,
+          "peak_motion": 6.2648,
+          "mean_motion": 1.8313,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2234,
+          "end_frame": 2294,
+          "peak_frame": 2264,
+          "peak_motion": 6.1731,
+          "mean_motion": 6.1731,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1395,
+          "end_frame": 1542,
+          "peak_frame": 1425,
+          "peak_motion": 6.147,
+          "mean_motion": 1.4856,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1104,
+          "end_frame": 1170,
+          "peak_frame": 1137,
+          "peak_motion": 5.8716,
+          "mean_motion": 3.8463,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3344,
+          "end_frame": 3407,
+          "peak_frame": 3377,
+          "peak_motion": 5.7869,
+          "mean_motion": 4.7781,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 3743,
+          "end_frame": 3866,
+          "peak_frame": 3788,
+          "peak_motion": 5.7852,
+          "mean_motion": 2.2529,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 2306,
+          "end_frame": 2375,
+          "peak_frame": 2339,
+          "peak_motion": 5.7618,
+          "mean_motion": 4.6314,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 1770,
+          "end_frame": 1854,
+          "peak_frame": 1803,
+          "peak_motion": 5.7552,
+          "mean_motion": 2.8729,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 126,
+          "end_frame": 192,
+          "peak_frame": 162,
+          "peak_motion": 5.3894,
+          "mean_motion": 4.1144,
+          "classification": "unreviewed_motion_candidate"
+        },
+        {
+          "start_frame": 84,
+          "end_frame": 147,
+          "peak_frame": 114,
+          "peak_motion": 5.3112,
+          "mean_motion": 4.6182,
+          "classification": "unreviewed_motion_candidate"
+        }
+      ]
+    }
+  ]
+}

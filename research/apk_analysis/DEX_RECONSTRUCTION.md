@@ -1,0 +1,42 @@
+# DEX Reconstruction
+
+Static byte-container analysis only; no APK or native payload was executed, loaded, installed, launched, debugged, emulated, rebuilt, or decompiled. Counts and references do not establish runtime behavior.
+
+This is bounded structural parsing and instruction-reference traversal, not source reconstruction or decompilation.
+
+## clash-royale-mod-15-535-13-an1-com
+
+| Path | Header/map | Strings | Types | Protos | Fields | Methods | Classes | Code items | Code units | Invokes | JNI candidates |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `classes.dex` | integrity+bounded structure | 6649 | 1418 | 1655 | 2717 | 6206 | 827 | 3997 | 183975 | 3812 | 176 |
+
+Traversal status: complete; malformed code items: 0. Bounded identifiers: `La/a;`, `La0/a;`, `La0/a;->a:La0/a;`, `La0/b;`, `La0/c;`, `La0/c;->a:Ljava/util/Map;`, `La0/d;`, `La0/e;`, `La0/e;->a:[Ljava/lang/Object;`, `La0/f;`, `La0/g;`, `La0/g;->a:La0/g;`, `La0/g;->b:Ljava/lang/String;`, `La0/g;->c:Ljava/lang/String;`, `La0/g;->d:Z`, `La0/h;`, `La0/i;`, `La0/i;->a:Z`, `La0/j;`, `La0/j;->a:Ljava/io/Serializable;`, `La0/k;`, `La0/k;->a:La0/l;`, `La0/l;`, `Landroid/app/ActivityManager$MemoryInfo;->availMem:J`, `Landroid/app/ActivityManager$MemoryInfo;->lowMemory:Z`, `Landroid/app/ActivityManager$MemoryInfo;->totalMem:J`, `Landroid/app/ActivityManager$ProcessErrorStateInfo;->condition:I`, `Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I`, `Landroid/content/pm/ApplicationInfo;->dataDir:Ljava/lang/String;`, `Landroid/content/pm/ApplicationInfo;->labelRes:I`, `Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;`, `Landroid/content/pm/ApplicationInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;`, `Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;`, `Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;`, `Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;`, `Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;`, `Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;`, `Landroid/content/pm/PackageInfo;->requestedPermissionsFlags:[I`, `Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;`, `Landroid/content/pm/PackageInfo;->versionCode:I`.
+
+## master-royale-apk-v3-2729-1
+
+| Path | Header/map | Strings | Types | Protos | Fields | Methods | Classes | Code items | Code units | Invokes | JNI candidates |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `classes.dex` | integrity+bounded structure | 51019 | 11160 | 12006 | 65271 | 54377 | 8913 | 43917 | 1603686 | 33959 | 120 |
+
+Traversal status: complete; malformed code items: 0. Bounded identifiers: `La/a;`, `La/a;->a:Ljava/util/Set;`, `La/a;->b:Landroid/content/Context;`, `La/b;`, `La0/a;`, `La0/b;`, `La0/b;->a:F`, `La1/a;`, `La1/a;->a:I`, `La2/a;`, `La2/a;->a:Ljava/lang/String;`, `La2/a;->b:Ljava/util/concurrent/ThreadFactory;`, `La2/b;`, `La2/b;->a:Ljava/lang/Runnable;`, `La3/a;`, `La3/a;->a:I`, `La4/a$a;`, `La4/a;`, `La4/a;->a:Landroid/graphics/Typeface;`, `La4/a;->b:La4/a$a;`, `La4/a;->h:Z`, `La4/b;`, `La4/c;`, `La4/d$a;`, `La4/d$a;->a:Lc2/a;`, `La4/d$a;->b:La4/d;`, `La4/d;`, `La4/d;->a:F`, `La4/d;->b:Landroid/content/res/ColorStateList;`, `La4/d;->c:I`, `La4/d;->d:I`, `La4/d;->e:Ljava/lang/String;`, `La4/d;->f:Landroid/content/res/ColorStateList;`, `La4/d;->g:F`, `La4/d;->h:F`, `La4/d;->i:F`, `La4/d;->j:I`, `La4/d;->k:Z`, `La4/d;->l:Landroid/graphics/Typeface;`, `La4/e;`.
+
+| `classes2.dex` | integrity+bounded structure | 15707 | 3909 | 3290 | 11275 | 12700 | 2587 | 8833 | 354997 | 7751 | 14 |
+
+Traversal status: complete; malformed code items: 0. Bounded identifiers: `La0/b;->a:F`, `La7/a;->d:Lsa/a;`, `La7/a;->e:Ljava/util/List;`, `La7/a;->f:Ly7/b;`, `La7/a;->g:Ljava/text/DecimalFormat;`, `La8/a;`, `La8/a;->a:Z`, `La8/a;->b:Z`, `La8/a;->c:Ljava/lang/String;`, `La8/a;->d:Z`, `La8/a;->e:Ljava/lang/String;`, `La8/a;->f:Ljava/lang/String;`, `La8/a;->g:Ljava/lang/String;`, `La8/a;->h:J`, `La8/b;`, `La8/b;->A:I`, `La8/b;->B:Z`, `La8/b;->C:Ljava/lang/String;`, `La8/b;->D:Ljava/lang/String;`, `La8/b;->E:La8/a;`, `La8/b;->F:Z`, `La8/b;->G:J`, `La8/b;->a:Z`, `La8/b;->b:Z`, `La8/b;->c:Z`, `La8/b;->d:Z`, `La8/b;->e:Z`, `La8/b;->f:Z`, `La8/b;->g:I`, `La8/b;->h:I`, `La8/b;->i:Ljava/lang/String;`, `La8/b;->j:Lx3/b;`, `La8/b;->k:Z`, `La8/b;->l:Ljava/lang/String;`, `La8/b;->m:Z`, `La8/b;->n:Z`, `La8/b;->o:Z`, `La8/b;->p:Ljava/lang/Long;`, `La8/b;->q:Ljava/lang/Long;`, `La8/b;->r:Z`.
+
+## nr-15-535-13-infinity-da5a0dc4
+
+| Path | Header/map | Strings | Types | Protos | Fields | Methods | Classes | Code items | Code units | Invokes | JNI candidates |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `classes.dex` | integrity+bounded structure | 6645 | 1418 | 1655 | 2715 | 6204 | 827 | 3996 | 183794 | 3810 | 176 |
+
+Traversal status: complete; malformed code items: 0. Bounded identifiers: `La/a;`, `La0/a;`, `La0/a;->a:La0/a;`, `La0/b;`, `La0/c;`, `La0/c;->a:Ljava/util/Map;`, `La0/d;`, `La0/e;`, `La0/e;->a:[Ljava/lang/Object;`, `La0/f;`, `La0/g;`, `La0/g;->a:La0/g;`, `La0/g;->b:Ljava/lang/String;`, `La0/g;->c:Ljava/lang/String;`, `La0/g;->d:Z`, `La0/h;`, `La0/i;`, `La0/i;->a:Z`, `La0/j;`, `La0/j;->a:Ljava/io/Serializable;`, `La0/k;`, `La0/k;->a:La0/l;`, `La0/l;`, `Landroid/app/ActivityManager$MemoryInfo;->availMem:J`, `Landroid/app/ActivityManager$MemoryInfo;->lowMemory:Z`, `Landroid/app/ActivityManager$MemoryInfo;->totalMem:J`, `Landroid/app/ActivityManager$ProcessErrorStateInfo;->condition:I`, `Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I`, `Landroid/content/pm/ApplicationInfo;->dataDir:Ljava/lang/String;`, `Landroid/content/pm/ApplicationInfo;->labelRes:I`, `Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;`, `Landroid/content/pm/ApplicationInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;`, `Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;`, `Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;`, `Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;`, `Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;`, `Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;`, `Landroid/content/pm/PackageInfo;->requestedPermissionsFlags:[I`, `Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;`, `Landroid/content/pm/PackageInfo;->versionCode:I`.
+
+## nr-15-535-13-infinity-da5a0dc4-1
+
+| Path | Header/map | Strings | Types | Protos | Fields | Methods | Classes | Code items | Code units | Invokes | JNI candidates |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `classes.dex` | integrity+bounded structure | 6645 | 1418 | 1655 | 2715 | 6204 | 827 | 3996 | 183794 | 3810 | 176 |
+
+Traversal status: complete; malformed code items: 0. Bounded identifiers: `La/a;`, `La0/a;`, `La0/a;->a:La0/a;`, `La0/b;`, `La0/c;`, `La0/c;->a:Ljava/util/Map;`, `La0/d;`, `La0/e;`, `La0/e;->a:[Ljava/lang/Object;`, `La0/f;`, `La0/g;`, `La0/g;->a:La0/g;`, `La0/g;->b:Ljava/lang/String;`, `La0/g;->c:Ljava/lang/String;`, `La0/g;->d:Z`, `La0/h;`, `La0/i;`, `La0/i;->a:Z`, `La0/j;`, `La0/j;->a:Ljava/io/Serializable;`, `La0/k;`, `La0/k;->a:La0/l;`, `La0/l;`, `Landroid/app/ActivityManager$MemoryInfo;->availMem:J`, `Landroid/app/ActivityManager$MemoryInfo;->lowMemory:Z`, `Landroid/app/ActivityManager$MemoryInfo;->totalMem:J`, `Landroid/app/ActivityManager$ProcessErrorStateInfo;->condition:I`, `Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I`, `Landroid/content/pm/ApplicationInfo;->dataDir:Ljava/lang/String;`, `Landroid/content/pm/ApplicationInfo;->labelRes:I`, `Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;`, `Landroid/content/pm/ApplicationInfo;->nonLocalizedLabel:Ljava/lang/CharSequence;`, `Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;`, `Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;`, `Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;`, `Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;`, `Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;`, `Landroid/content/pm/PackageInfo;->requestedPermissionsFlags:[I`, `Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;`, `Landroid/content/pm/PackageInfo;->versionCode:I`.
+

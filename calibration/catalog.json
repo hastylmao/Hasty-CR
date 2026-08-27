@@ -1,0 +1,447 @@
+{
+  "catalog": "sprint-5",
+  "categories": {
+    "arena": 6,
+    "building_pull": 10,
+    "collisions": 6,
+    "combat_timing": 6,
+    "knockback": 6,
+    "movement": 6,
+    "pathing": 6,
+    "projectiles": 6,
+    "spawning": 6,
+    "special_mechanics": 6,
+    "targeting": 6
+  },
+  "count": 70,
+  "errors": [],
+  "scenarios": [
+    {
+      "category": "arena",
+      "path": "calibration/scenarios/sprint5_001_arena.json",
+      "scenario_id": "sprint5_001_arena",
+      "split": "train"
+    },
+    {
+      "category": "arena",
+      "path": "calibration/scenarios/sprint5_002_arena.json",
+      "scenario_id": "sprint5_002_arena",
+      "split": "train"
+    },
+    {
+      "category": "arena",
+      "path": "calibration/scenarios/sprint5_003_arena.json",
+      "scenario_id": "sprint5_003_arena",
+      "split": "train"
+    },
+    {
+      "category": "arena",
+      "path": "calibration/scenarios/sprint5_004_arena.json",
+      "scenario_id": "sprint5_004_arena",
+      "split": "train"
+    },
+    {
+      "category": "arena",
+      "path": "calibration/scenarios/sprint5_005_arena.json",
+      "scenario_id": "sprint5_005_arena",
+      "split": "validation"
+    },
+    {
+      "category": "arena",
+      "path": "calibration/scenarios/sprint5_006_arena.json",
+      "scenario_id": "sprint5_006_arena",
+      "split": "train"
+    },
+    {
+      "category": "movement",
+      "path": "calibration/scenarios/sprint5_007_movement.json",
+      "scenario_id": "sprint5_007_movement",
+      "split": "train"
+    },
+    {
+      "category": "movement",
+      "path": "calibration/scenarios/sprint5_008_movement.json",
+      "scenario_id": "sprint5_008_movement",
+      "split": "train"
+    },
+    {
+      "category": "movement",
+      "path": "calibration/scenarios/sprint5_009_movement.json",
+      "scenario_id": "sprint5_009_movement",
+      "split": "train"
+    },
+    {
+      "category": "movement",
+      "path": "calibration/scenarios/sprint5_010_movement.json",
+      "scenario_id": "sprint5_010_movement",
+      "split": "validation"
+    },
+    {
+      "category": "movement",
+      "path": "calibration/scenarios/sprint5_011_movement.json",
+      "scenario_id": "sprint5_011_movement",
+      "split": "train"
+    },
+    {
+      "category": "movement",
+      "path": "calibration/scenarios/sprint5_012_movement.json",
+      "scenario_id": "sprint5_012_movement",
+      "split": "train"
+    },
+    {
+      "category": "targeting",
+      "path": "calibration/scenarios/sprint5_013_targeting.json",
+      "scenario_id": "sprint5_013_targeting",
+      "split": "train"
+    },
+    {
+      "category": "targeting",
+      "path": "calibration/scenarios/sprint5_014_targeting.json",
+      "scenario_id": "sprint5_014_targeting",
+      "split": "train"
+    },
+    {
+      "category": "targeting",
+      "path": "calibration/scenarios/sprint5_015_targeting.json",
+      "scenario_id": "sprint5_015_targeting",
+      "split": "validation"
+    },
+    {
+      "category": "targeting",
+      "path": "calibration/scenarios/sprint5_016_targeting.json",
+      "scenario_id": "sprint5_016_targeting",
+      "split": "train"
+    },
+    {
+      "category": "targeting",
+      "path": "calibration/scenarios/sprint5_017_targeting.json",
+      "scenario_id": "sprint5_017_targeting",
+      "split": "train"
+    },
+    {
+      "category": "targeting",
+      "path": "calibration/scenarios/sprint5_018_targeting.json",
+      "scenario_id": "sprint5_018_targeting",
+      "split": "train"
+    },
+    {
+      "category": "collisions",
+      "path": "calibration/scenarios/sprint5_019_collisions.json",
+      "scenario_id": "sprint5_019_collisions",
+      "split": "train"
+    },
+    {
+      "category": "collisions",
+      "path": "calibration/scenarios/sprint5_020_collisions.json",
+      "scenario_id": "sprint5_020_collisions",
+      "split": "validation"
+    },
+    {
+      "category": "collisions",
+      "path": "calibration/scenarios/sprint5_021_collisions.json",
+      "scenario_id": "sprint5_021_collisions",
+      "split": "train"
+    },
+    {
+      "category": "collisions",
+      "path": "calibration/scenarios/sprint5_022_collisions.json",
+      "scenario_id": "sprint5_022_collisions",
+      "split": "train"
+    },
+    {
+      "category": "collisions",
+      "path": "calibration/scenarios/sprint5_023_collisions.json",
+      "scenario_id": "sprint5_023_collisions",
+      "split": "train"
+    },
+    {
+      "category": "collisions",
+      "path": "calibration/scenarios/sprint5_024_collisions.json",
+      "scenario_id": "sprint5_024_collisions",
+      "split": "train"
+    },
+    {
+      "category": "combat_timing",
+      "path": "calibration/scenarios/sprint5_025_combat_timing.json",
+      "scenario_id": "sprint5_025_combat_timing",
+      "split": "validation"
+    },
+    {
+      "category": "combat_timing",
+      "path": "calibration/scenarios/sprint5_026_combat_timing.json",
+      "scenario_id": "sprint5_026_combat_timing",
+      "split": "train"
+    },
+    {
+      "category": "combat_timing",
+      "path": "calibration/scenarios/sprint5_027_combat_timing.json",
+      "scenario_id": "sprint5_027_combat_timing",
+      "split": "train"
+    },
+    {
+      "category": "combat_timing",
+      "path": "calibration/scenarios/sprint5_028_combat_timing.json",
+      "scenario_id": "sprint5_028_combat_timing",
+      "split": "train"
+    },
+    {
+      "category": "combat_timing",
+      "path": "calibration/scenarios/sprint5_029_combat_timing.json",
+      "scenario_id": "sprint5_029_combat_timing",
+      "split": "train"
+    },
+    {
+      "category": "combat_timing",
+      "path": "calibration/scenarios/sprint5_030_combat_timing.json",
+      "scenario_id": "sprint5_030_combat_timing",
+      "split": "validation"
+    },
+    {
+      "category": "pathing",
+      "path": "calibration/scenarios/sprint5_031_pathing.json",
+      "scenario_id": "sprint5_031_pathing",
+      "split": "train"
+    },
+    {
+      "category": "pathing",
+      "path": "calibration/scenarios/sprint5_032_pathing.json",
+      "scenario_id": "sprint5_032_pathing",
+      "split": "train"
+    },
+    {
+      "category": "pathing",
+      "path": "calibration/scenarios/sprint5_033_pathing.json",
+      "scenario_id": "sprint5_033_pathing",
+      "split": "train"
+    },
+    {
+      "category": "pathing",
+      "path": "calibration/scenarios/sprint5_034_pathing.json",
+      "scenario_id": "sprint5_034_pathing",
+      "split": "train"
+    },
+    {
+      "category": "pathing",
+      "path": "calibration/scenarios/sprint5_035_pathing.json",
+      "scenario_id": "sprint5_035_pathing",
+      "split": "validation"
+    },
+    {
+      "category": "pathing",
+      "path": "calibration/scenarios/sprint5_036_pathing.json",
+      "scenario_id": "sprint5_036_pathing",
+      "split": "train"
+    },
+    {
+      "category": "building_pull",
+      "path": "calibration/scenarios/sprint5_037_building_pull.json",
+      "scenario_id": "sprint5_037_building_pull",
+      "split": "train"
+    },
+    {
+      "category": "building_pull",
+      "path": "calibration/scenarios/sprint5_038_building_pull.json",
+      "scenario_id": "sprint5_038_building_pull",
+      "split": "train"
+    },
+    {
+      "category": "building_pull",
+      "path": "calibration/scenarios/sprint5_039_building_pull.json",
+      "scenario_id": "sprint5_039_building_pull",
+      "split": "train"
+    },
+    {
+      "category": "building_pull",
+      "path": "calibration/scenarios/sprint5_040_building_pull.json",
+      "scenario_id": "sprint5_040_building_pull",
+      "split": "validation"
+    },
+    {
+      "category": "building_pull",
+      "path": "calibration/scenarios/sprint5_041_building_pull.json",
+      "scenario_id": "sprint5_041_building_pull",
+      "split": "train"
+    },
+    {
+      "category": "building_pull",
+      "path": "calibration/scenarios/sprint5_042_building_pull.json",
+      "scenario_id": "sprint5_042_building_pull",
+      "split": "train"
+    },
+    {
+      "category": "building_pull",
+      "path": "calibration/scenarios/sprint5_043_building_pull.json",
+      "scenario_id": "sprint5_043_building_pull",
+      "split": "train"
+    },
+    {
+      "category": "building_pull",
+      "path": "calibration/scenarios/sprint5_044_building_pull.json",
+      "scenario_id": "sprint5_044_building_pull",
+      "split": "train"
+    },
+    {
+      "category": "building_pull",
+      "path": "calibration/scenarios/sprint5_045_building_pull.json",
+      "scenario_id": "sprint5_045_building_pull",
+      "split": "validation"
+    },
+    {
+      "category": "building_pull",
+      "path": "calibration/scenarios/sprint5_046_building_pull.json",
+      "scenario_id": "sprint5_046_building_pull",
+      "split": "train"
+    },
+    {
+      "category": "projectiles",
+      "path": "calibration/scenarios/sprint5_047_projectiles.json",
+      "scenario_id": "sprint5_047_projectiles",
+      "split": "train"
+    },
+    {
+      "category": "projectiles",
+      "path": "calibration/scenarios/sprint5_048_projectiles.json",
+      "scenario_id": "sprint5_048_projectiles",
+      "split": "train"
+    },
+    {
+      "category": "projectiles",
+      "path": "calibration/scenarios/sprint5_049_projectiles.json",
+      "scenario_id": "sprint5_049_projectiles",
+      "split": "train"
+    },
+    {
+      "category": "projectiles",
+      "path": "calibration/scenarios/sprint5_050_projectiles.json",
+      "scenario_id": "sprint5_050_projectiles",
+      "split": "validation"
+    },
+    {
+      "category": "projectiles",
+      "path": "calibration/scenarios/sprint5_051_projectiles.json",
+      "scenario_id": "sprint5_051_projectiles",
+      "split": "train"
+    },
+    {
+      "category": "projectiles",
+      "path": "calibration/scenarios/sprint5_052_projectiles.json",
+      "scenario_id": "sprint5_052_projectiles",
+      "split": "train"
+    },
+    {
+      "category": "knockback",
+      "path": "calibration/scenarios/sprint5_053_knockback.json",
+      "scenario_id": "sprint5_053_knockback",
+      "split": "train"
+    },
+    {
+      "category": "knockback",
+      "path": "calibration/scenarios/sprint5_054_knockback.json",
+      "scenario_id": "sprint5_054_knockback",
+      "split": "train"
+    },
+    {
+      "category": "knockback",
+      "path": "calibration/scenarios/sprint5_055_knockback.json",
+      "scenario_id": "sprint5_055_knockback",
+      "split": "validation"
+    },
+    {
+      "category": "knockback",
+      "path": "calibration/scenarios/sprint5_056_knockback.json",
+      "scenario_id": "sprint5_056_knockback",
+      "split": "train"
+    },
+    {
+      "category": "knockback",
+      "path": "calibration/scenarios/sprint5_057_knockback.json",
+      "scenario_id": "sprint5_057_knockback",
+      "split": "train"
+    },
+    {
+      "category": "knockback",
+      "path": "calibration/scenarios/sprint5_058_knockback.json",
+      "scenario_id": "sprint5_058_knockback",
+      "split": "train"
+    },
+    {
+      "category": "spawning",
+      "path": "calibration/scenarios/sprint5_059_spawning.json",
+      "scenario_id": "sprint5_059_spawning",
+      "split": "train"
+    },
+    {
+      "category": "spawning",
+      "path": "calibration/scenarios/sprint5_060_spawning.json",
+      "scenario_id": "sprint5_060_spawning",
+      "split": "validation"
+    },
+    {
+      "category": "spawning",
+      "path": "calibration/scenarios/sprint5_061_spawning.json",
+      "scenario_id": "sprint5_061_spawning",
+      "split": "train"
+    },
+    {
+      "category": "spawning",
+      "path": "calibration/scenarios/sprint5_062_spawning.json",
+      "scenario_id": "sprint5_062_spawning",
+      "split": "train"
+    },
+    {
+      "category": "spawning",
+      "path": "calibration/scenarios/sprint5_063_spawning.json",
+      "scenario_id": "sprint5_063_spawning",
+      "split": "train"
+    },
+    {
+      "category": "spawning",
+      "path": "calibration/scenarios/sprint5_064_spawning.json",
+      "scenario_id": "sprint5_064_spawning",
+      "split": "train"
+    },
+    {
+      "category": "special_mechanics",
+      "path": "calibration/scenarios/sprint5_065_special_mechanics.json",
+      "scenario_id": "sprint5_065_special_mechanics",
+      "split": "validation"
+    },
+    {
+      "category": "special_mechanics",
+      "path": "calibration/scenarios/sprint5_066_special_mechanics.json",
+      "scenario_id": "sprint5_066_special_mechanics",
+      "split": "train"
+    },
+    {
+      "category": "special_mechanics",
+      "path": "calibration/scenarios/sprint5_067_special_mechanics.json",
+      "scenario_id": "sprint5_067_special_mechanics",
+      "split": "train"
+    },
+    {
+      "category": "special_mechanics",
+      "path": "calibration/scenarios/sprint5_068_special_mechanics.json",
+      "scenario_id": "sprint5_068_special_mechanics",
+      "split": "train"
+    },
+    {
+      "category": "special_mechanics",
+      "path": "calibration/scenarios/sprint5_069_special_mechanics.json",
+      "scenario_id": "sprint5_069_special_mechanics",
+      "split": "train"
+    },
+    {
+      "category": "special_mechanics",
+      "path": "calibration/scenarios/sprint5_070_special_mechanics.json",
+      "scenario_id": "sprint5_070_special_mechanics",
+      "split": "validation"
+    }
+  ],
+  "schema_version": 1,
+  "splits": {
+    "test": 0,
+    "train": 56,
+    "validation": 14
+  },
+  "status": "PASS"
+}

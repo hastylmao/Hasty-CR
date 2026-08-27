@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-08-05",
+  "repositories": {
+    "ClashAI": {
+      "url": "https://github.com/vegetableleaf/ClashAI.git",
+      "commit": "b2b098be9323ab326aa88b8a8e535367e39fcace",
+      "license": "UNLICENSED"
+    },
+    "ClashRoyaleBuildABot": {
+      "url": "https://github.com/Pbatch/ClashRoyaleBuildABot.git",
+      "commit": "f89ecbf309e698cb9fccdfb64a6ff2a930e6541e",
+      "license": "MIT"
+    },
+    "py-clash-bot": {
+      "url": "https://github.com/pyclashbot/py-clash-bot.git",
+      "commit": "34d11e577689510a75f3e5fac0104214102b664d",
+      "license": "NC-CL-1.0 AND CC-BY-NC-SA-4.0"
+    },
+    "KataCR": {
+      "url": "https://github.com/wty-yy/KataCR.git",
+      "commit": "36ceb9fcfbd117c2ce3d97eacee435c1898eb7b8",
+      "license": "MIT"
+    },
+    "CRBot-public": {
+      "url": "https://github.com/krazyness/CRBot-public.git",
+      "commit": "d5579c395f3ef2c1869e9d25f83917325e2e0865",
+      "license": "MIT"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "seed": 8000,
+  "episodes": 300,
+  "compare_seed": 8000,
+  "final_seed": 9000,
+  "eval_mode": "eval no_grad greedy argmax deterministic",
+  "results": {
+    "tmp\\rl\\pilot_last.pt": [
+      {
+        "opponent": "brain",
+        "episodes": 300,
+        "seed": 8000,
+        "wins": 127,
+        "losses": 173,
+        "draws": 0,
+        "win_rate": 0.42333333333333334,
+        "wilson_lo": 0.3687375495634228,
+        "wilson_hi": 0.4798677763695633,
+        "crowns_for": 115,
+        "crowns_against": 178,
+        "crown_diff": -0.21,
+        "tower_for": 1.0375688244047618,
+        "tower_against": 0.7732142857142853,
+        "tower_diff": 0.2643545386904766,
+        "hog_share": 0.19714406217991204,
+        "plays_per_match": 55.32333333333333,
+        "illegal_total": 0,
+        "illegal_rate": 0.0,
+        "duration_s": 221.33183333333335
+      }
+    ]
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "claim_class": "SIMULATOR_ONLY",
+  "level": 11,
+  "limitations": [
+    "Results describe only the current HastyCR implementation.",
+    "No live game trace, external simulator, or controlled observation is used.",
+    "A passing invariant such as non-overlap does not verify the real game's solver."
+  ],
+  "measurement_status": "UNMEASURED_LIVE",
+  "probe_count": 6,
+  "probes": [
+    {
+      "category": "targeting",
+      "claim_class": "CURRENT_IMPLEMENTATION_ONLY",
+      "evidence": "_acquire_target scans valid visible candidates and chooses the smallest edge gap with UID tie-breaking.",
+      "id": "TARGET-001",
+      "observed": {
+        "acquisition": {
+          "event_type": "target_acquired",
+          "metadata": {
+            "previous_target_uid": null,
+            "sight_mt": 5500,
+            "windup_ms": 0
+          },
+          "order": 4,
+          "phase": "targeting",
+          "reason": "visible_nearest",
+          "source_uid": 1,
+          "target_uid": 2,
+          "tick": 1,
+          "time_ms": 50,
+          "value": 1000
+        },
+        "candidate_positions": {
+          "2": [
+            9500,
+            19500
+          ],
+          "3": [
+            11500,
+            20500
+          ]
+        },
+        "target_name": null,
+        "target_uid": 2
+      },
+      "setup": {
+        "candidate_uids": [
+          2,
+          3
+        ],
+        "source": "knight"
+      }
+    },
+    {
+      "category": "pathing",
+      "claim_class": "CURRENT_IMPLEMENTATION_ONLY",
+      "evidence": "_waypoint uses cached eight-way BFS bridge terrain for ground cross-river movement; _avoid_buildings handles dynamic blockers locally.",
+      "id": "PATH-001",
+      "observed": {
+        "bridge_contact_samples": [],
+        "crossed_river": true,
+        "final_position": [
+          10085,
+          9194
+        ],
+        "first_waypoint": [
+          9500,
+          23500
+        ],
+        "movement_events": 461,
+        "river_y_end": 7500,
+        "river_y_start": 24500,
+        "unique_position_samples": [
+          [
+            0,
+            9500,
+            24500
+          ],
+          [
+            50,
+            9500,
+            24463
+          ],
+          [
+            100,
+            9500,
+            24426
+          ],
+          [
+            150,
+            9500,
+            24389
+          ],
+          [
+            200,
+            9500,
+            24352
+          ],
+          [
+            22850,
+            10137,
+            9334
+          ],
+          [
+            22900,
+            10124,
+            9299
+          ],
+          [
+            22950,
+            10111,
+            9264
+          ],
+          [
+            23000,
+            10098,
+            9229
+          ],
+          [
+            23050,
+            10085,
+            9194
+          ]
+        ]
+      },
+      "setup": {
+        "destination": "cannon",
+        "duration_ms": 35000,
+        "source": "giant"
+      }
+    },
+    {
+      "category": "collision",
+      "claim_class": "CURRENT_IMPLEMENTATION_ONLY",
+      "evidence": "_separate applies four full-strength pairwise passes and distributes overlap inversely by mass.",
+      "id": "COLLISION-001",
+      "observed": {
+        "contact_events": 1,
+        "final_gap_mt": 1250,
+        "final_positions": {
+          "1": [
+            9435,
+            20500
+          ],
+          "2": [
+            10685,
+            20500
+          ]
+        },
+        "first_contact": {
+          "first_after": [
+            9435,
+            20500
+          ],
+          "first_before": [
+            9500,
+            20500
+          ],
+          "first_uid": 1,
+          "gap_mt": 0,
+          "kind": "troop_contact",
+          "required_gap_mt": 1250,
+          "resolved_overlap_mt": 1250,
+          "second_after": [
+            10685,
+            20500
+          ],
+          "second_before": [
+            9500,
+            20500
+          ],
+          "second_uid": 2,
+          "time_ms": 50
+        },
+        "nonoverlap": true,
+        "required_gap_mt": 1250
+      },
+      "setup": {
+        "initial_gap_mt": 0,
+        "source": "giant",
+        "target": "skeleton"
+      }
+    },
+    {
+      "category": "event_order",
+      "claim_class": "CURRENT_IMPLEMENTATION_ONLY",
+      "evidence": "Battle.step emits scheduled effects, deploy, targeting, attack, movement, collision, cleanup; lethal death effects resolve before parent cleanup.",
+      "id": "TIMING-001",
+      "observed": {
+        "key_events": [
+          {
+            "event_type": "attack",
+            "metadata": {
+              "gap_mt": 0,
+              "reach_mt": 1700
+            },
+            "order": 6,
+            "phase": "attack",
+            "reason": "hit_cycle",
+            "source_uid": 1,
+            "target_uid": 2,
+            "tick": 1,
+            "time_ms": 50,
+            "value": 1200
+          },
+          {
+            "event_type": "damage",
+            "order": 7,
+            "phase": "attack",
+            "reason": "damage_log",
+            "source_uid": 1,
+            "target_uid": 2,
+            "tick": 1,
+            "time_ms": 50,
+            "value": 1
+          },
+          {
+            "event_type": "death",
+            "metadata": {
+              "name": "skeleton",
+              "spawn_character": "",
+              "spawn_count": 0
+            },
+            "order": 11,
+            "phase": "cleanup",
+            "reason": "lethal_or_expired",
+            "source_uid": 2,
+            "tick": 1,
+            "time_ms": 50,
+            "value": 0
+          },
+          {
+            "event_type": "cleanup",
+            "metadata": {
+              "name": "skeleton"
+            },
+            "order": 12,
+            "phase": "cleanup",
+            "reason": "dead_entity_removed",
+            "source_uid": 2,
+            "tick": 1,
+            "time_ms": 50
+          }
+        ],
+        "phase_order": [
+          "tick",
+          "scheduled_effects",
+          "deploy",
+          "targeting",
+          "attack",
+          "movement",
+          "collision",
+          "cleanup"
+        ],
+        "target_removed": true
+      },
+      "setup": {
+        "source": "knight",
+        "target": "skeleton",
+        "target_hp": 1
+      }
+    },
+    {
+      "category": "attack_timing",
+      "claim_class": "CURRENT_IMPLEMENTATION_ONLY",
+      "evidence": "_attack schedules projectile flight from target-edge distance; _resolve_projectiles emits impact/damage on later ticks.",
+      "id": "PROJECTILE-001",
+      "observed": {
+        "damage_count": 2,
+        "first_damage": {
+          "event_type": "damage",
+          "order": 3,
+          "phase": "scheduled_effects",
+          "reason": "damage_log",
+          "source_uid": 1,
+          "target_uid": 2,
+          "tick": 9,
+          "time_ms": 450,
+          "value": 218
+        },
+        "first_launch": {
+          "event_type": "projectile_launch",
+          "metadata": {
+            "aim": [
+              15500,
+              20500
+            ],
+            "arrival_ms": 410,
+            "speed_mt_per_sec": 16666,
+            "start": [
+              9500,
+              20500
+            ]
+          },
+          "order": 7,
+          "phase": "attack",
+          "reason": "homing",
+          "source_uid": 1,
+          "target_uid": 2,
+          "tick": 1,
+          "time_ms": 50,
+          "value": 218
+        },
+        "launch_count": 2
+      },
+      "setup": {
+        "duration_ms": 1750,
+        "source": "musketeer",
+        "target": "giant"
+      }
+    },
+    {
+      "category": "death_spawn",
+      "claim_class": "CURRENT_IMPLEMENTATION_ONLY",
+      "evidence": "_reap invokes _resolve_death before cleanup; child Battle.add spawn events occur during cleanup processing.",
+      "id": "SPAWN-001",
+      "observed": {
+        "event_sequence": [
+          {
+            "event_type": "spawn",
+            "metadata": {
+              "group_uid": 1,
+              "name": "golem",
+              "owner_uid": 0,
+              "side": 1
+            },
+            "order": 0,
+            "phase": "external",
+            "reason": "battle_add",
+            "source_uid": 1,
+            "tick": 0,
+            "time_ms": 0
+          },
+          {
+            "event_type": "death",
+            "metadata": {
+              "name": "golem",
+              "spawn_character": "Golemite",
+              "spawn_count": 2
+            },
+            "order": 8,
+            "phase": "cleanup",
+            "reason": "lethal_or_expired",
+            "source_uid": 1,
+            "tick": 1,
+            "time_ms": 50,
+            "value": 0
+          },
+          {
+            "event_type": "spawn",
+            "metadata": {
+              "group_uid": 1,
+              "name": "golemite",
+              "owner_uid": 1,
+              "side": 1
+            },
+            "order": 9,
+            "phase": "cleanup",
+            "reason": "battle_add",
+            "source_uid": 2,
+            "tick": 1,
+            "time_ms": 50
+          },
+          {
+            "event_type": "spawn",
+            "metadata": {
+              "group_uid": 1,
+              "name": "golemite",
+              "owner_uid": 1,
+              "side": 1
+            },
+            "order": 10,
+            "phase": "cleanup",
+            "reason": "battle_add",
+            "source_uid": 3,
+            "tick": 1,
+            "time_ms": 50
+          },
+          {
+            "event_type": "cleanup",
+            "metadata": {
+              "name": "golem"
+            },
+            "order": 11,
+            "phase": "cleanup",
+            "reason": "dead_entity_removed",
+            "source_uid": 1,
+            "tick": 1,
+            "time_ms": 50
+          }
+        ],
+        "living_names_after": [
+          "golemite",
+          "golemite"
+        ],
+        "parent_removed": true
+      },
+      "setup": {
+        "declared_spawn": "Golemite",
+        "source": "golem"
+      }
+    }
+  ],
+  "real_measurements": 0,
+  "schema_version": "mechanics-characterization-v1",
+  "sha256": "cbb5dc71ccee595c738f86951f439c3b8c5a5f859e35d7a390efdb0c7c622601",
+  "status": "PASS",
+  "tick_ms": 50
+}

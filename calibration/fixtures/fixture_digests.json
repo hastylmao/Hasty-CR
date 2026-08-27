@@ -1,0 +1,8 @@
+{
+  "corrupted_observed.json": "08bad36741d31ca00bf6993751ea6132781cba61f1da11c0ee587123784572da",
+  "corruption_config.json": "19d3161a4710f59ea874eff3fd0c58c3f488e343c5933663c1fef4a2ed7eb3c1",
+  "corruption_ground_truth.json": "4fdf273b5ec69b311942f10f02373ffe36aa72cce74cd76c7deefd3f29b276a9",
+  "expected_metric_bands.json": "5c00b93d1223b987972966425fa80044cef06a8373d3207baee1ce0e5d61d42a",
+  "pristine_observed.json": "d1fb06cd1cd7ce290de2a1a557f483590f5d512d5018e419fcc12aa20f21d59c",
+  "simulator_trace.json": "ba827f8828c78ec97d5e3806e7367a6a12a66607f9f39d840bac57d9ffa6c4d8"
+}

@@ -1,0 +1,64 @@
+{
+  "nominal": {
+    "speed_scale": 1.0,
+    "radius_scale": 1.0,
+    "episodes": 40,
+    "wins": 12,
+    "losses": 28,
+    "draws": 0,
+    "win_rate": 0.3,
+    "crowns_for": 8,
+    "crowns_against": 27,
+    "crown_diff": -0.475
+  },
+  "perturbations": [
+    {
+      "speed_scale": 0.98,
+      "radius_scale": 1.0,
+      "episodes": 40,
+      "wins": 10,
+      "losses": 30,
+      "draws": 0,
+      "win_rate": 0.25,
+      "crowns_for": 8,
+      "crowns_against": 29,
+      "crown_diff": -0.525
+    },
+    {
+      "speed_scale": 0.99,
+      "radius_scale": 1.0,
+      "episodes": 40,
+      "wins": 10,
+      "losses": 30,
+      "draws": 0,
+      "win_rate": 0.25,
+      "crowns_for": 8,
+      "crowns_against": 29,
+      "crown_diff": -0.525
+    },
+    {
+      "speed_scale": 1.01,
+      "radius_scale": 1.0,
+      "episodes": 40,
+      "wins": 10,
+      "losses": 30,
+      "draws": 0,
+      "win_rate": 0.25,
+      "crowns_for": 8,
+      "crowns_against": 29,
+      "crown_diff": -0.525
+    },
+    {
+      "speed_scale": 1.02,
+      "radius_scale": 1.0,
+      "episodes": 40,
+      "wins": 10,
+      "losses": 30,
+      "draws": 0,
+      "win_rate": 0.25,
+      "crowns_for": 8,
+      "crowns_against": 29,
+      "crown_diff": -0.525
+    }
+  ]
+}

@@ -1,0 +1,598 @@
+Technical Survey of Automated Algorithmic Gameplay and Decision Paradigms in Clash Royale
+Automating real-time strategy (RTS) mobile games presents complex challenges in artificial intelligence, software engineering, and computer vision. Clash Royale requires continuous decision-making under imperfect information, strict real-time constraints, continuous-discrete state-action spaces, and variable execution latencies. Over the last four years, open-source automation frameworks have evolved from simplistic heuristic bots to sophisticated paradigms, including deep reinforcement learning (RL), offline trajectory transformers, vision-language multi-agent systems, and dynamic memory instrumentation.   
+
+Architectural Paradigms in Modern Clash Royale Automation
+Contemporary Clash Royale automation strategies are categorized into five core operational methodologies based on their perception models, decision engines, and control systems:
+
+Non-Embedded Visual RL and Offline Sequence Modeling: Systems that process raw visual pixels using object detection models (such as YOLOv8) and convolutional neural networks (CNNs), feeding extracted state features into off-policy reinforcement learning algorithms or spatial-temporal decision transformers. Frameworks adopting this methodology operate without modifying game binaries, achieving high adaptation and decision accuracy at the cost of rendering and inference latency.   
+
+On-Policy Deep Reinforcement Learning with State Abstraction: Frameworks operating directly within simulated environments or wrapped Gymnasium interfaces. These systems use algorithms like Proximal Policy Optimization (PPO) alongside multi-agent action-space factoring to master spatial card placement, elixir management, and micro-positioning.   
+
+Multi-Agent Vision-Language Model (VLM) Orchestration: High-level agentic pipelines that leverage multimodal Large Language Models (LLMs) to observe game screens and coordinate actions. To overcome API inference delays, these architectures deploy parallel, staggered sub-agent pipelines that interleave decision cycles to maintain continuous playing pressure.   
+
+Deterministic Visual State Machines and Heuristic Automation: Production-grade non-invasive automation tools relying on classical computer vision, optical character recognition (OCR), and deterministic state machine transitions. These systems prioritize operational stability, anti-detection protocols, account management, and multi-emulator control over complex tactical adaptation.   
+
+Dynamic Runtime Instrumentation and Memory Interception: Low-level reverse-engineering frameworks using dynamic binary instrumentation tools (e.g., Frida) to hook directly into the game client's process memory. This approach extracts internal state vectors and injects execution hooks directly at the native code level, bypassing visual perception layers entirely.   
+
+Perception Systems, Visual Feature Extraction, and Real-Time Pipeline Optimization
+In non-embedded game automation, the agent receives no direct state information from server APIs or local memory frames. Instead, it relies on real-time screen capture feeds. Parsing a Clash Royale arena frame—which may contain dozens of concurrent troops, spells, health bars, evolution indicators, and real-time elixir counters—requires a high-throughput, multi-stage computer vision pipeline.   
+
+The KataCR framework demonstrates a multi-model approach to visual perception. Standard object detectors struggle when tasked with identifying over 150 target classes (including 116 unique card types, evolution states, spell areas, and structural health bars) within a single neural network forward pass due to multi-class scale imbalance and inference latency constraints. KataCR addresses this by deploying a dual/triple YOLOv8 combination detector structure. The arena image is cropped into specific spatial sub-regions based on expected entity aspect ratios, enabling targeted detection models to run concurrently:   
+
+Detection Ensemble={D 
+1
+​
+ (Arena Field),D 
+2
+​
+ (Bridge/River Area),D 
+3
+​
+ (Unit Segments)}
+Complementing this object detection ensemble, dedicated deep learning sub-models handle fine-grained state extraction:   
+
+Card Classification: ResNet convolutional networks process the four available hand slots plus the upcoming card queue, distinguishing visually similar card sprites and evolutionary forms.   
+
+Elixir Parsing: Optical character recognition interfaces, implemented via PaddleOCR or JAX-based CRNN pipelines, read numerical elixir values and match status text.   
+
+Bar and Entity State Tracking: Bounding-box regressors continuously track health indicators (tower-bar, king-tower-bar) alongside deployment markers (evolution-symbol, spell radiuses).   
+
+Perception Component	Model Architecture / Framework	Input Sub-Region / Task	Average Inference Latency
+Arena Unit Detection
+
+[cite: 3, 5]
+
+Dual/Triple YOLOv8 Ensemble	
+Bounding box, position (X,Y), unit class identification
+
+~120 ms
+
+Hand Card Classifier
+
+[cite: 3, 11]
+
+ResNet / Custom CNN	
+Classification of 4 active hand slots + next slot
+
+~30 ms
+Elixir & Text Reader
+
+[cite: 3, 5]
+
+PaddleOCR / Custom CRNN	
+Numerical elixir reading (1−10) and match timers
+
+~90 ms
+Containerized Inference Service
+
+[cite: 13]
+
+Roboflow Inference CLI (Docker)	
+Microservice-based troop and card detection
+
+~150 ms
+  
+To maintain real-time performance, KataCR executes feature fusion on Linux systems using NVIDIA RTX GPUs paired with HarmonyOS screen capture inputs via kernel video interfaces (V4L2), achieving an average feature fusion time of 240 ms and a model decision latency of 120 ms.   
+
+Reinforcement Learning Formulations and Offline Trajectory Transformers
+Training an autonomous RL agent in Clash Royale presents structural challenges. Unlike static step-based games, Clash Royale features continuous time flow—where elixir generates at 0.357 units per second (doubling during double-elixir phases)—incurring physical unit deployment delays and requiring continuous spatial target placement.   
+
+On-Policy Deep RL and Action Factoring
+The Real-Time-Strategy-RL-Clash-Royale framework models decision-making using Proximal Policy Optimization (PPO) combined with multi-agent reinforcement learning. To manage the large continuous-discrete action space, the architecture factors choices across three separate actor-critic neural networks working in parallel:   
+
+A 
+total
+​
+ =A 
+card
+​
+ ×A 
+origin_tile
+​
+ ×A 
+sub_tile
+​
+ 
+In this design, the first agent selects 1 of the 4 active hand cards, the second agent chooses 1 of 48 primary origin tiles on the arena grid, and the third agent applies micro-positioning by selecting 1 of 9 offset tiles surrounding the chosen origin. State inputs are constructed using spatial downscaling: top field (51×33), bottom field (51×32), bridge sectors (4×6), estimated opponent elixir values, and one-hot encoded hand vectors.   
+
+To prevent reward signal instability during long matches, the environment uses a non-linear logarithmic reward function based on crown differentials, combined with step-based and game-outcome scalars:   
+
+R 
+step
+​
+ =+1,R 
+win
+​
+ =+300,R 
+loss
+​
+ =−200
+R 
+crown
+​
+ =(4.9log(4.8⋅C 
+won
+​
+ +0.75)+1.4)−(4.9log(4.8⋅C 
+lost
+​
+ +0.75)+1.4)
+This formulation scales crown differential rewards smoothly, keeping maximum outcome modifiers bounded within the range [−15,+15].   
+
+Gymnasium Standardization
+The clash-royale-gym package standardizes these environment bindings into a standard Gymnasium interface:   
+
+Action Space∈Discrete(2304)⟹x⋅y⋅z
+Here, x and y represent discrete spatial tile coordinates across the arena grid, while z represents the card slot index. Visual observations are returned as raw RGB arrays of shape (128,128,3), offering a standardized platform for model-free RL research.   
+
+Hybrid Latent-Explicit State Embeddings
+The ClashRoyale-AI project uses a hybrid observation architecture that pairs learned visual embeddings with explicit card attribute vectors. Game frames are compressed using a Variational Autoencoder (VAE) to produce a low-dimensional visual latent representation z 
+dim
+​
+ . This vector is concatenated with a 166-dimensional feature vector containing explicit game state attributes:   
+
+O 
+t
+​
+ =z 
+VAE
+​
+ ⊕v 
+game_state
+​
+ 
+v 
+game_state
+​
+ =[t 
+match
+​
+ ,E 
+current
+​
+ ,I 
+2x
+​
+ ,HP 
+towers
+​
+ ,DPS 
+towers
+​
+ ,{(X 
+i
+​
+ ,Y 
+i
+​
+ )} 
+i=1
+50
+​
+ ,{Card_Stats 
+k
+​
+ } 
+k=1
+5
+​
+ ]
+Explicit attributes capture match timers, current elixir, double-elixir status flags, tower health points, tower DPS, spatial coordinates for up to 50 active units, and detailed stats for hand cards (e.g., card type, DPS, hitpoints, attack speed, targeting rules, movement speed, range, unit count, and elixir cost).   
+
+Offline Sequence Modeling (Decision Transformers and StARformer)
+Online RL faces practical challenges in live environments, including sparse reward signals, action latency penalties, and anti-cheat ban risks. KataCR addresses these issues by modeling game control as an Offline Sequence Modeling problem. Using recorded expert match datasets (e.g., golem_ai, fast_hog_2.6), KataCR trains sequence models offline on game trajectories:   
+
+τ=(r 
+1
+​
+ ,s 
+1
+​
+ ,a 
+1
+​
+ ,r 
+2
+​
+ ,s 
+2
+​
+ ,a 
+2
+​
+ ,…,r 
+T
+​
+ ,s 
+T
+​
+ ,a 
+T
+​
+ )
+KataCR evaluates both standard Decision Transformers (DT) and Spatio-Temporal Action Reasoning Transformers (StARformer). Visual inputs are processed through convolutional backbones, comparing ResNet, CSPDarkNet, and custom CNNBlocks architectures.   
+
+To address action sparsity—since human players deploy cards at discrete intervals rather than every video frame—KataCR projects continuous action targets across a 50-frame prediction horizon (∼1.6−2.0 seconds). This continuous multi-frame modeling helps absorb screen capture rendering and touch injection delays.   
+
+Model Variant	Architecture Configuration	Offline Dataset	Continuous Action Model (With Delay) Total Reward (20 Rounds)	Discrete Action Model (No Delay) Total Reward (20 Rounds)
+StARformer 3L
+
+[cite: 3]
+
+3 Transformer Layers, CNNBlocks
+
+Golem AI Expert Replays
+
+−4.7±3.1
+
+[cite: 3]
+
+−5.6±2.1
+
+[cite: 3]
+
+Decision Transformer (DT 4L)
+
+[cite: 3]
+
+4 Transformer Layers, CNNBlocks
+
+Golem AI Expert Replays
+
+−5.7±2.5
+
+[cite: 3]
+
+N/A
+StARformer No-Delay 2L
+
+[cite: 3]
+
+2 Transformer Layers
+
+Fast Hog 2.6 Dataset
+
+N/A	
+−7.5±0.8
+
+[cite: 3]
+
+  
+In live performance evaluations, KataCR's offline RL policies reached an 8000+ trophy rating, securing 12 consecutive wins in broadcasted benchmark matches.   
+
+Multi-Agent Vision-Language Model (VLM) Orchestration and Latency Mitigation
+The integration of multimodal Vision-Language Models (VLMs) allows autonomous agents to perform zero-shot visual reasoning directly from raw screen inputs without requiring domain-specific object detector training. However, relying on external VLM APIs introduces a significant operational constraint: inference latency.   
+
+Latency Bottleneck in Real-Time Decision Making
+The Claude Royale project uses Anthropic's Claude Code framework to drive autonomous gameplay via screen capture and coordinate mapping. Empirical profiling revealed a total round-trip latency of approximately 7 seconds per decision cycle:   
+
+Δt 
+total
+​
+ =Δt 
+capture
+​
+ +Δt 
+vision_analysis
+​
+ +Δt 
+llm_reasoning
+​
+ +Δt 
+tool_execution
+​
+ ≈7.0 seconds
+In a fast-paced environment where elixir regenerates every 2.8 seconds, a single-agent system operating with a 7-second latency loop routinely overflows elixir capacity and fails to defend against rapid troop pushes.   
+
+Asynchronous Multi-Agent Architecture
+To reduce effective control latency, Claude Royale uses an asynchronous multi-agent design featuring a central Commander agent and three parallel Player sub-agents working concurrently.   
+
+The Commander agent manages out-of-game flows, including menu navigation, deck optimization, chest unlocking, and battle initialization. During active matches, the Commander spawns three independent Player sub-agent instances that evaluate the same live game stream in parallel. Each sub-agent processes incoming frames independently and submits card placement commands asynchronously.   
+
+By staggering visual reasoning cycles across three parallel sub-agents, the system reduces effective decision latency:   
+
+Δt 
+effective
+​
+ ≈ 
+N 
+agents
+​
+ 
+Δt 
+single_agent
+​
+ 
+​
+ = 
+3
+7.0s
+​
+ ≈2.33 seconds
+This staggered decision pipeline ensures continuous board control and timely defensive card deployments.   
+
+Heuristic Enhancements and Match Verification
+Claude Royale incorporates targeted heuristics to improve operational stability:   
+
+Automated Opening Sequence: Sub-agents often experienced early delays while awaiting initial VLM responses. An auto-opener script deploys a card at t=5s and a follow-up at t=8s after match initialization to establish early lane presence.   
+
+Prompt-Driven Tactical Guidelines: The agent synthesizes card synergy rules into structured markdown prompt documents (SPAWN_INSTRUCTIONS.md) to guide sub-agent placement logic during matches.   
+
+Trophy-Delta Victory Verification: End-of-match screens in Clash Royale display a generic "WINNER!" banner regardless of match outcome. To ensure accurate reward tracking, the framework verifies match results by measuring trophy count changes directly (ΔTrophies>0).   
+
+Through these multi-agent optimizations, Claude Royale autonomously progressed past 1000+ trophies (reaching Arena 5, Spell Valley) during live public benchmark streams.   
+
+Strategic Feature Classification and Deck Outcome Prediction
+Beyond real-time tactical placement, machine learning models are also applied to pre-game strategic analysis, such as evaluating deck composition matchups and predicting win probabilities. The ClashML project provides an empirical framework for evaluating tabular game features using traditional supervised learning classifiers.   
+
+ClashML converts raw eight-card deck lists into structured numerical feature vectors representing functional tactical roles:   
+
+X=[DEFENSE,BRAWLERS,HARD_HITTERS,FLYING,GROUND,DAMAGE_SPELLS,STUN,SPLASH,ELIXIR_CURVE]
+These vectors capture key tactical characteristics, such as single-target high-damage troops (Brawlers), tower-focused pushers (Building Busters), defensive swarms, aerial units, and average elixir costs.   
+
+Machine Learning Model	Hyperparameter Configuration	Cross-Validation Split (Train/Test)	
+Test Accuracy (Dataset Approach 1)
+
+Test Accuracy (Dataset Approach 2)
+
+Support Vector Machine (SVM)
+
+[cite: 16]
+
+RBF Kernel, Penalty parameter C=2.0
+
+[cite: 16]
+
+80 / 20 Split
+
+67.92%
+
+[cite: 16]
+
+68.43%
+
+[cite: 16]
+
+Support Vector Machine (SVM)
+
+[cite: 16]
+
+RBF Kernel, Penalty parameter C=2.0
+
+[cite: 16]
+
+60 / 40 Split
+
+65.69%
+
+66.56%
+
+Random Forest Classifier
+
+[cite: 16]
+
+N 
+trees
+​
+ =15 Estimators
+
+[cite: 16]
+
+80 / 20 Split
+
+64.10%	65.20%
+Dense Neural Network
+
+[cite: 16]
+
+Learning Rate =0.05,250 Epochs,p 
+dropout
+​
+ =0.25
+
+[cite: 16]
+
+80 / 20 Split
+
+65.50%
+
+Failed / Unstable
+
+  
+Across empirical trials, Support Vector Machines featuring Radial Basis Function (RBF) kernels consistently outperformed shallow dense neural networks and Random Forests on tabular feature vectors. This demonstrates the effectiveness of SVM architectures for strategic matchup analysis, meta-deck optimization, and win-rate prediction engines.   
+
+Execution Frameworks, Emulator Control, and Anti-Detection Technologies
+To link high-level decision engines with the active game interface, automation systems rely on robust Android emulation environments and input injection pipelines.   
+
+Virtual Machine Abstraction and API Wrappers
+Production-grade automation tools, such as PyClashBot, build on specialized API wrappers like pymemuc to programmatically control MEmu hypervisor instances. This setup enables automated virtual machine creation, life-cycle tracking, APK deployment, and multi-emulator configuration (supporting MEmu, BlueStacks 5, and Google Play Games Developer Emulator).   
+
+Python
+from pymemuc import PyMemuc
+
+# Initialize PyMemuc manager instance to connect with MEMUC service
+memuc = PyMemuc()
+
+# Create and boot a dedicated Android virtual machine instance
+vm_index = memuc.create_vm()
+memuc.start_vm(vm_index)
+
+# Execute low-level input commands or retrieve window handles via ADB
+Anti-Detection Frameworks and Humanization Protocols
+To prevent account flags from Supercell's automated behavioral analysis, production bots prioritize non-invasive visual interaction and input humanization:   
+
+Non-Invasive Visual Inspection: State transitions are derived entirely by parsing external render frames, avoiding native memory modifications or hooked DLLs.   
+
+Input Randomization: Micro-jitter offsets (Δx,Δy∼N(0,σ 
+2
+ )) are applied to click coordinates alongside non-uniform tap durations to mimic natural human touch patterns.
+
+Decoupled Control Architecture: Automation routines execute in separate user-space processes, interfacing with emulators via external ADB socket connections to minimize trace signatures.   
+
+Native Binary Instrumentation via Dynamic Hooking
+In contrast to non-invasive visual bots, reverse-engineering projects use dynamic binary instrumentation frameworks like Frida to hook directly into running game client processes. The allbrawl/Frida-Scripts repository contains JavaScript scripts (such as cr-v3.1.0.js) engineered to inject into Supercell's compiled native binaries.   
+
+These dynamic memory hooks intercept low-level C++ runtime functions, extracting precise unit coordinates, health statuses, hand queues, and real-time elixir values directly from memory, or injecting action packets directly into network communication loops. While dynamic instrumentation eliminates visual processing overhead, it carries a high ban risk when used on official live servers.   
+
+Comparative Systemic Evaluation
+The following comparative table synthesizes active open-source Clash Royale automation projects updated within the past four years, highlighting differences in software architecture, perception methods, decision engines, execution latencies, anti-detection strategies, and primary operational goals.
+
+Project & Repository	Core Technology Stack	Perception Framework	Action Space & Latency	Anti-Detection & Interface Strategy	Primary Operational Goal
+KataCR (wty-yy/KataCR)
+
+PyTorch, JAX, Offline RL, Decision Transformers
+
+Dual/Triple YOLOv8 Ensemble, ResNet, PaddleOCR
+
+Continuous/Discrete Spatial Coordinates (~120ms)
+
+Non-embedded screen stream capture via HarmonyOS / V4L2
+
+Competitive ladder play using offline RL (Achieved 8000+ trophies)
+
+RTS-RL-Clash-Royale (Jaso1024)
+
+Python, PyTorch, PPO, Multi-Agent RL
+
+Downscaled Spatial Grids & State Abstraction
+
+Factored Action Space (48x9 Grid Tiles)
+
+Direct emulator interface / Simulated environment
+
+On-policy deep reinforcement learning research
+
+Claude-Royale (houseworthe/claude-royale)
+
+Claude Code (Multimodal VLM), Node/Shell
+
+Zero-Shot Multimodal Screen Visual Parsing
+
+Multi-Agent Parallel Staggered Calls (~2.3s effective)
+
+Non-embedded UI screen capture with automated tap mapping
+
+Autonomous VLM ladder progression (Reached 1000+ Trophies)
+
+PyClashBot (pyclashbot/py-clash-bot)
+
+Python, OpenCV, pymemuc, Win32/ADB APIs
+
+Rule-Based Template Matching & Pixel Parsing
+
+Deterministic Screen Taps (~100ms execution)
+
+Non-invasive vision state machine with randomized touch jitter
+
+Production account automation (Pass claiming, upgrades, donations)
+
+ClashRoyale-AI (Chinedu-E/ClashRoyale-AI)
+
+PyTorch, Variational Autoencoders (VAE), Deep RL
+
+VAE Latent Compression + 166-Dim Feature Parsing
+
+Discrete(5) Card Choice + Spatial Boundaries
+
+Direct emulator screen frame capture
+
+Hybrid multimodal RL model development
+
+CRBot-Public (krazyness/CRBot-public)
+
+Python, PyTorch, Roboflow Inference API, Docker
+
+Containerized Roboflow Microservice Workflows
+
+Direct Screen Coordinate Injection
+
+PyAutoGUI / ADB injection on BlueStacks instances
+
+Educational ML/RL bot automation framework
+
+Frida-Scripts (allbrawl/Frida-Scripts)
+
+JavaScript, Frida Dynamic Instrumentation
+
+Direct Native Heap Inspection & Memory Parsing
+
+Direct C++ Function Interception (<1ms)	
+Native dynamic memory injection (High risk of account ban)
+
+Binary reverse engineering and client inspection
+
+  
+Strategic Synthesis and Future Engineering Outlook
+The technical evolution of Clash Royale automation frameworks highlights key shifts in real-time game AI research:
+
+Shift toward Offline Trajectory Modeling: Model-free online RL algorithms (such as PPO) often encounter training instability when applied to fast-paced mobile RTS games due to continuous time flow, variable deployment delays, and rate-limiting constraints. Modern state-of-the-art implementations increasingly rely on offline sequence transformers (such as StARformer and Decision Transformers) trained on curated expert replay datasets.   
+
+Multi-Agent Staggering to Reduce VLM Latency: While multimodal LLMs enable zero-shot tactical reasoning directly from game screens, their multi-second API latency creates operational challenges in real-time environments. Deploying parallel, staggered sub-agent architectures mitigates this bottleneck, lowering effective action latency to maintain continuous board pressure.   
+
+Specialized Multi-Model Perception Workflows: Broad single-model object detectors struggle to process complex RTS interfaces with high class counts. Modern visual pipelines combine spatial region-sliced YOLO detectors with specialized ResNet card classifiers and OCR engines to deliver real-time feature extraction.   
+
+Balancing Control Latency against Account Safety: Non-invasive visual state machines (e.g., PyClashBot) remain the standard choice for account automation due to their low ban risk. Conversely, while dynamic binary hooking (e.g., Frida) provides low-latency access to internal game state data, its detection footprint limits its use primarily to isolated research environments.   
+
+
+github.com
+GitHub - Jaso1024/Real-Time-Strategy-RL-Clash-Royale: A Reinforcement Learning agent for Clash Royale created using Proximal Policy Optimization
+Opens in a new window
+
+github.com
+GitHub - houseworthe/claude-royale: AI agents playing Clash Royale autonomously. Claude Code + multi-agent architecture reached 1000+ trophies live on Twitch.
+Opens in a new window
+
+github.com
+KataCR/README_en.md at master · wty-yy/KataCR - GitHub
+Opens in a new window
+
+github.com
+allbrawl/Frida-Scripts - GitHub
+Opens in a new window
+
+github.com
+wty-yy/KataCR: A non-embedded AI for Clash Royale based on RL and CV. - GitHub
+Opens in a new window
+
+github.com
+MSU-AI/clash-royale-gym - GitHub
+Opens in a new window
+
+github.com
+Jaso1024 - GitHub
+Opens in a new window
+
+github.com
+pyclashbot/py-clash-bot: An inherently undetectable Clash Royale automation bot - GitHub
+Opens in a new window
+
+github.com
+pyclashbot/pymemuc: A Python API for MEmu Android Emulator - GitHub
+Opens in a new window
+
+github.com
+Clash-Royale-Detection-Dataset/README_old.md at master - GitHub
+Opens in a new window
+
+github.com
+pyclashbot - GitHub
+Opens in a new window
+
+github.com
+Chinedu-E/ClashRoyale-AI: An AI that learns to play Clash Royale through reinforcement learning - GitHub
+Opens in a new window
+
+github.com
+krazyness/CRBot-public - GitHub
+Opens in a new window
+
+github.com
+GitHub - wty-yy/Clash-Royale-Replay-Dataset: Replays for training offline-rl policy.
+Opens in a new window
+
+github.com
+KataCR/UPDATE_LOGS.md at master - GitHub
+Opens in a new window
+
+github.com
+GitHub - fossil-ai/ClashML: A machine learning analysis on a famous free mobile strategy game - Clash Royale.

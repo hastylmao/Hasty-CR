@@ -1,0 +1,1233 @@
+{
+ "schema": 1,
+ "rules": {
+  "goblin_hero": {
+   "public_name": "Hero Goblins",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+    "https://royaleapi.com/blog/hero-goblins-february-2026?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "last_group_death_spawn_character": "GoblinHero_Flag_Building",
+   "mechanic": "All four deployed Hero Goblins share one deployment group. Only the final Goblin to die drops the ability banner at its death position; a later Hero Goblins deployment removes an older unused banner."
+  },
+  "goblin_hero__flag__building": {
+   "public_name": "Hero Goblins Brigade Banner",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+    "https://royaleapi.com/blog/hero-goblins-february-2026?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_window_ms": 5000,
+   "ability_action_delay_ms": 500,
+   "ability_reinforcement_character": "Goblin_dummy",
+   "ability_reinforcement_damage": 125,
+   "ability_reinforcement_offsets": [
+    [
+     1000,
+     500,
+     0
+    ],
+    [
+     -1000,
+     500,
+     200
+    ]
+   ],
+   "ability_self_destruct_delay_ms": 450,
+   "always_untargetable": true,
+   "permanent_invulnerable": true,
+   "lifetime_override_ms": 6500,
+   "mechanic": "The no-collision, untargetable banner offers its one-Elixir single-use ability for the client timer's current 5 seconds, then spends 1.5 seconds disappearing. Activation triggers after 0.5 seconds, creates the current two reinforcement Goblins 0.2 seconds apart at the client-authored offsets, and removes the banner after 0.45 seconds."
+  },
+  "tombstone_hero": {
+   "public_name": "Hero Tombstone",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-update-2026/",
+    "https://royaleapi.com/blog/hero-tombstone-june-2026?lang=en",
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "death_spawn_character_override": "TombstoneHeroSkeleton",
+   "death_spawn_count_override": 4,
+   "mechanic": "The Hero building keeps the current client Tombstone's two-Skeleton 3.5-second production and leaves four Hero Skeletons on destruction. Its separately grouped passive ability carrier tracks the building and remains available briefly after it dies."
+  },
+  "tombstone_hero__monster__passive": {
+   "public_name": "Hero Tombstone Regal Revival carrier",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-update-2026/",
+    "https://royaleapi.com/blog/hero-tombstone-june-2026?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_transform_character": "TombstoneHero_Monster_Active",
+   "ability_destroy_group_character": "tombstone_hero",
+   "ability_post_source_death_window_ms": 1500,
+   "ability_transform_lock_ms": 2000,
+   "always_untargetable": true,
+   "permanent_invulnerable": true,
+   "mechanic": "The hidden no-collision carrier owns the current single-use 5-Elixir ability. Activation destroys the linked Tombstone if it survives, fully raises Tomb Queen at that location, and locks the Queen for the client two-second standing animation. If the Tombstone dies first, activation remains legal for 1.5 seconds."
+  },
+  "tombstone_hero__monster__active": {
+   "public_name": "Tomb Queen",
+   "sources": [
+    "https://royaleapi.com/blog/hero-tombstone-june-2026?lang=en",
+    "https://royaleapi.com/blog/season-85-balance-wip-july-2026",
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 4224,
+   "damage_override": 422,
+   "death_spawn_character_override": "TombstoneHeroSkeleton",
+   "death_spawn_count_override": 4,
+   "death_spawn_deploy_ms": 500,
+   "death_spawn_offsets": [
+    [
+     1000,
+     0
+    ],
+    [
+     -1000,
+     0
+    ],
+    [
+     -1000,
+     -2000
+    ],
+    [
+     1000,
+     -2000
+    ]
+   ],
+   "mechanic": "The current August Tomb Queen has 4,224 HP, 422 damage, 2.1-second hit speed, seven-tile sight and targets buildings. July removed her continuous Skeleton waves. On death the client action graph deploys four Skeletons after 0.5 seconds at the four authored relative offsets."
+  },
+  "ronin": {
+   "public_name": "Ronin",
+   "sources": [
+    "https://support.supercell.com/clash-royale/en/articles/whats-new-july-2026.html",
+    "https://royaleapi.com/blog/ronin-new-card-july-2026?lang=en",
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "parry_cooldown_ms": 3500,
+   "parry_damage_pct": 200,
+   "parry_stun_ms": 500,
+   "parry_stun_delay_ms": 50,
+   "parry_damage_delay_ms": 300,
+   "mechanic": "Ronin deploys with Parry ready. The first targeted ground melee attack is reduced to zero, the instigator receives the client 0.5-second near-total hit-speed/full movement stun after 0.05 seconds and exactly twice the blocked damage after 0.3 seconds, then Parry recharges passively for 3.5 seconds. It does not trigger against projectiles, flying attackers, spells, deploy/death damage or independent ability AEOs, and cannot fire while Ronin is frozen or captured. The August fix means this handler does not cancel Golden Knight's separate dash-chain controller."
+  },
+  "boss_bandit": {
+   "public_name": "Boss Bandit",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/april-update/",
+    "https://royaleapi.com/blog/boss-bandit-new-card-2025-april?lang=en",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/july-balance-changes-2/",
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 2624,
+   "damage_override": 245,
+   "dash_damage_override": 491,
+   "ability_warp_backward_mt": 6000,
+   "ability_warp_delay_ms": 700,
+   "ability_invisible_ms": 1000,
+   "ability_max_charges": 2,
+   "ability_cooldown_ms": 3000,
+   "mechanic": "Getaway Grenade remains the August exception to single-use Champion abilities. It costs 1 Elixir, has two charges separated by the current 3-second cooldown, immediately makes Boss Bandit invisible for 1 second, locks her through the client 0.7-second warp plus 0.05-second release, then teleports her 6 tiles toward her own side and clears her target. Her ordinary 3.5-to-6-tile invulnerable dash remains the shared Bandit dash controller."
+  },
+  "monk": {
+   "public_name": "Monk",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/new-update-october-2022/",
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+    "https://royaleapi.com/blog/ronin-new-card-july-2026?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_buff_delay_ms": 933,
+   "deflect_radius_mt": 1500,
+   "mechanic": "After the client 0.933-second activation, Pensive Protection lasts 4 seconds, roots Monk, reduces his incoming damage by the current 65%, and reflects homing unit projectiles aimed at him or an ally inside the 1.5-tile aura back to their shooter with preserved damage and return flight time. Reflected Crown Tower arrows use the documented 25% return damage. Spell and non-homing projectile return geometry remains calibration-gated rather than being converted into fabricated homing shots."
+  },
+  "skeleton_trooper": {
+   "public_name": "Hero Balloon Skeletrooper",
+   "sources": [
+    "https://royaleapi.com/blog/hero-balloon-april-2026?lang=en",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/july-balance-changes-2026/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "damage_override": 204,
+   "tower_damage_pct": 10,
+   "spawn_area_damage_override": 263,
+   "spawn_area_tower_damage_override": 26,
+   "spawn_area_radius_override_mt": 2000,
+   "mechanic": "The current dropped Skeletrooper has 474 HP, 204 damage, 1.1-second hit speed and deals 10% damage to Crown Towers. Landing deals 263 ground area damage in the client two-tile radius, reduced to 26 on Crown Towers. The Balloon's nonlinear logX10000 projectile flight remains calibration-gated."
+  },
+  "arrows": {
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "mechanic": "Damages all enemy air and ground targets in a circular area. The client section is one projectile in a volley and is not the complete spell result.",
+   "radius_mt": 3500,
+   "damage_override": 366,
+   "tower_damage_override": 75,
+   "volley_waves": 3,
+   "volley_interval_ms": 200,
+   "sources": [
+    "https://liquipedia.net/clashroyale/Arrows",
+    "https://supercell.com/en/games/clashroyale/blog/news/mid-march-update/"
+   ],
+   "derivation": "The current card deals 122 damage in each of three waves at level 11. Supercell's June 2026 update independently reduces total Crown Tower damage from 93 to 75. The client supplies the 200 ms wave interval."
+  },
+  "earthquake": {
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "tower_damage_override": 147
+  },
+  "fireball": {
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "tower_damage_override": 172,
+   "travels_from_king": true,
+   "sources": [
+    "https://clashroyale.fandom.com/wiki/Fireball"
+   ]
+  },
+  "freeze": {
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "tower_damage_override": 37
+  },
+  "lightning": {
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "tower_damage_override": 265,
+   "sequential_targets": true,
+   "mechanic": "Strikes up to three different currently-highest-hitpoint targets one at a time; later bolts can select units spawned after an earlier target dies.",
+   "sources": [
+    "https://clashroyale.fandom.com/wiki/Lightning"
+   ]
+  },
+  "log": {
+   "public_name": "The Log",
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "tower_damage_override": 35
+  },
+  "poison": {
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "tower_damage_override": 168
+  },
+  "rage": {
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/august-balance-changes-2/",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/october-balance-changes-2/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/march-balance-changes/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "mechanic": "Deals instant enemy damage, then gives friendly troops and buildings in the 3-tile area +30% movement and hit speed. The area lasts 4.5 seconds and the buff lingers for up to 1 second after leaving it.",
+   "damage_override": 179,
+   "tower_damage_override": 45,
+   "radius_mt": 3000,
+   "life_duration_ms": 4500,
+   "hit_frequency_ms": 300,
+   "target_buff": "",
+   "buff_time_ms": 0,
+   "only_own_troops": false,
+   "area_only_own_troops": true,
+   "area_speed_pct": 30,
+   "area_hit_speed_pct": 30,
+   "area_buff_linger_ms": 1000,
+   "resolves_card_as_spell": true
+  },
+  "rocket": {
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "tower_damage_override": 342,
+   "travels_from_king": true,
+   "sources": [
+    "https://clashroyale.fandom.com/wiki/Rocket"
+   ]
+  },
+  "snowball": {
+   "public_name": "Giant Snowball",
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "tower_damage_override": 45,
+   "damage_override": 179,
+   "travels_from_king": true,
+   "sources": [
+    "https://clashroyale.fandom.com/wiki/Giant_Snowball"
+   ]
+  },
+  "vines": {
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "tower_damage_override": 70,
+   "hits_air": true,
+   "hits_ground": true
+  },
+  "zap": {
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "tower_damage_override": 48
+  },
+  "dark_magic": {
+   "public_name": "Void",
+   "source": "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "mechanic": "Each wave damages every hostile troop or building in the circle. The damage tier is chosen from the number of targets in that circle.",
+   "radius_mt": 2500,
+   "waves": 3,
+   "wave_interval_ms": 1200,
+   "damage_by_target_count": {
+    "one": 696,
+    "two_to_four": 294,
+    "five_or_more": 153
+   },
+   "tower_damage_by_target_count": {
+    "one": 97,
+    "two_to_four": 51,
+    "five_or_more": 35
+   }
+  },
+  "goblin_curse": {
+   "source": "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+   "verified_at": "2026-08-18",
+   "mechanic": "Enemy troops in the curse area are slowed by 15% while affected. Damage is over time; enemies that die while cursed become Goblins for the caster.",
+   "area_speed_pct": -15,
+   "initial_damage": false,
+   "hits_air": true,
+   "hits_ground": true,
+   "level": 11,
+   "damage_per_second_override": 35,
+   "tower_damage_per_hit_override": 10,
+   "sources": [
+    "https://liquipedia.net/clashroyale/Goblin_Curse"
+   ]
+  },
+  "goblin_barrel": {
+   "source": "https://clashroyale.fandom.com/wiki/Goblin_Barrel",
+   "verified_at": "2026-08-19",
+   "mechanic": "The projectile launches from the caster's King Tower, spawns three Goblins on landing, and cannot be placed on the river outside a bridge.",
+   "can_place_on_water": false,
+   "travels_from_king": true
+  },
+  "goblin_dummy": {
+   "public_name": "Goblin Barrel Evolution Decoy Goblin",
+   "source": "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+   "sources": [
+    "https://royaleapi.com/blog/goblin-barrel-2024-june"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "damage_override": 66,
+   "mechanic": "The evolved barrel throws three low-hitpoint GoblinDummy units in a second barrel at the horizontally mirrored position in the opposite lane."
+  },
+  "pekka_ev1": {
+   "public_name": "P.E.K.K.A Evolution",
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/january-balance-changes-2/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "kill_heal_thresholds": [
+    990,
+    1990
+   ],
+   "kill_heal_amounts": [
+    430,
+    819,
+    1551
+   ],
+   "kill_heal_overheal_pct": 150,
+   "mechanic": "On defeating a troop, heals 430 for targets below 990 maximum HP, 819 for 990-1989 HP, or 1551 for 1990 HP and above, up to 150% of maximum HP. February 2026 is the latest published P.E.K.K.A Evolution heal change."
+  },
+  "witch_ev1": {
+   "public_name": "Witch Evolution",
+   "source": "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+   "sources": [
+    "https://royaleapi.com/blog/season-86-balance-final-august-2026"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 1451,
+   "owned_spawn_death_heal": 153,
+   "owned_spawn_death_heal_count": 4,
+   "owned_spawn_death_heal_overheal_pct": 173,
+   "spawn_after_first_character": "Witch_EV1_Skeleton_Interval",
+   "spawn_after_first_pause_ms": 7000,
+   "mechanic": "The initial four personally spawned Skeletons each heal 153 on death; later Skeleton waves do not heal. Maximum overheal is 173%, and subsequent four-Skeleton waves use the client 7-second interval."
+  },
+  "wizard_ev1": {
+   "public_name": "Wizard Evolution",
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "shield_lost_damage_override": 281,
+   "mechanic": "When its shield breaks, the client action spawns a 3-tile explosion with 3000 pushback; the current published level-11 explosion damage is 281."
+  },
+  "archer_ev1": {
+   "public_name": "Archers Evolution",
+   "source": "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "far_attack_damage_override": 140,
+   "mechanic": "Targets at least 4.5 tiles away use the evolved power-shot projectile; its current level-11 damage is 140."
+  },
+  "ice_spirits_ev1": {
+   "public_name": "Ice Spirit Evolution",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/july-balance-changes-2/",
+    "https://clashroyale.fandom.com/wiki/Card_Evolution"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 215,
+   "cannot_target_towers": true,
+   "mechanic": "The homing jump deals 110 area damage and freezes for 1.1 seconds. One target-bound 2-tile blast repeats both effects after 3 seconds; if the carrier dies first, the blast remains at its last position."
+  },
+  "goblin_giant_ev1": {
+   "public_name": "Goblin Giant Evolution",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/vines-and-goblin-giant-evolution-nerfs/",
+    "https://royaleapi.com/blog/goblin-giant-evolution-new-card-2024-july",
+    "https://clashroyale.fandom.com/wiki/Card_Evolution"
+   ],
+   "verified_at": "2026-08-19",
+   "threshold_spawn_behind_mt": 2500,
+   "mechanic": "At 50% maximum hitpoints or lower, permanently starts spawning one Goblin every 2.2 seconds at a point 2.5 tiles behind the Goblin Giant, regardless of its facing animation."
+  },
+  "royal_hog_ev1": {
+   "public_name": "Royal Hogs Evolution",
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/march-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ground_landing_damage_override": 84,
+   "mechanic": "Each evolved Royal Hog begins airborne and starts a 0.5-second descent when damaged below 99% health or when it reaches its first attack. Landing changes it to the grounded form and deals 84 damage in a 2-tile ground-only area."
+  },
+  "hunter_ev1": {
+   "public_name": "Hunter Evolution",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/royales-9th-birthday-season/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2/",
+    "https://liquipedia.net/clashroyale/Hunter_Evolution"
+   ],
+   "verified_at": "2026-08-19",
+   "mechanic": "After a 1-second initial cooldown, throws a homing Net at the nearest non-building troop within 4 tiles. The 0.2-second cast and projectile flight precede a 3-second movement/attack disable; flying victims are ground-targetable. Net cooldown is 5 seconds."
+  },
+  "baby_dragon_ev1": {
+   "public_name": "Baby Dragon Evolution",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/new-season-back-to-drool/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/december-balance-changes/",
+    "https://royaleapi.com/blog/baby-dragon-evolution-2025-september"
+   ],
+   "verified_at": "2026-08-19",
+   "mechanic": "Attacking creates or refreshes an 8-by-9-tile wind rectangle following 1.5 tiles ahead of the Baby Dragon. It changes troop movement only: allies +30%, enemies -30%, excluding the source and allied evolved Baby Dragons. It lasts 6 seconds after the last attack or at most 2 seconds after the source dies."
+  },
+  "mega_knight_ev1": {
+   "public_name": "Mega Knight Evolution",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+    "https://royaleapi.com/blog/season-86-balance-final-august-2026"
+   ],
+   "verified_at": "2026-08-19",
+   "uppercut_every_hits": 2,
+   "mechanic": "The first attack is normal and every other attack uppercuts only the main target. All troops, including heavy troops, travel 4 tiles toward their nearest enemy Crown Tower over the client-declared 0.9-second flight, followed by a 0.4-second movement lock."
+  },
+  "electro_dragon_ev1": {
+   "public_name": "Electro Dragon Evolution",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/october-update/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/march-balance-changes-2026/"
+   ],
+   "verified_at": "2026-08-19",
+   "mechanic": "Lightning can chain indefinitely and revisit targets, while remembering and avoiding the previous two when another target is available. Hits one through three deal normal 192 damage and stun; fourth and later hits use the current 64 damage, slower projectile, no stun, and cannot select Crown Towers."
+  },
+  "inferno_dragon_ev1": {
+   "public_name": "Inferno Dragon Evolution",
+   "source": "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+   "verified_at": "2026-08-19",
+   "persistent_ramp_thresholds": [
+    4,
+    9,
+    49
+   ],
+   "persistent_ramp_decay_ms": 7000,
+   "mechanic": "Attack heat persists across targets. Attack counts 1-3, 4-8, 9-48 and 49+ use the four client damage stages; no attack for 7 seconds or combat disable/stun resets the stored count."
+  },
+  "ice_golemite_hero": {
+   "public_name": "Hero Ice Golem",
+   "source": "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_area_damage": 69,
+   "ability_area_radius_mt": 4000,
+   "ability_area_pulse_times_ms": [
+    50,
+    1550,
+    3050
+   ],
+   "ability_area_slow_pct": -30,
+   "ability_area_duration_ms": 3050,
+   "ability_area_slow_linger_ms": 2000,
+   "mechanic": "The single-use 2-elixir Blizzard follows Hero Ice Golem and pulses three times at the client offsets, each dealing the current 69 damage in a 4-tile air-and-ground area. All three effects now slow movement and hit speed by 30%; the refreshed slow lingers 2 seconds. Crown Towers take the client-declared 5% damage."
+  },
+  "musketeer_hero": {
+   "public_name": "Hero Musketeer",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/december-update-2025/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/march-balance-changes-2026/",
+    "https://royaleapi.com/blog/hero-musketeer-december-2025?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_deploy_character": "MusketeerTurret",
+   "ability_deploy_forward_mt": 3000,
+   "ability_deploy_delay_ms": 1000,
+   "ability_deploy_damage": 204,
+   "ability_deploy_radius_mt": 2000,
+   "ability_deploy_pushback_mt": 1000,
+   "mechanic": "The 3-elixir single-use Trusty Turret completes deployment after 1 second, 3 tiles toward the opponent. Its ground-only deployment shock deals 204 damage in a 2-tile radius and pushes eligible units 1 tile. The client turret has 1536 HP, 148 damage per 0.5 seconds, 4-tile range, air-and-ground targeting, and a 10-second lifetime."
+  },
+  "mighty_miner": {
+   "public_name": "Mighty Miner",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+    "https://clashroyale.fandom.com/wiki/Mighty_Miner"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 2250,
+   "damage_override": 43,
+   "variable_damage2_override": 204,
+   "variable_damage3_override": 409,
+   "ability_lane_switch": true,
+   "ability_lane_switch_delay_ms": 1000,
+   "ability_bomb_damage": 332,
+   "ability_bomb_radius_mt": 3000,
+   "ability_bomb_pushback_mt": 1800,
+   "mechanic": "The current single-use 1-elixir Explosive Escape makes Mighty Miner intangible for 1 second, mirrors his horizontal position while retaining Y, and simultaneously explodes at the original position for 332 air-and-ground area damage with 1.8-tile pushback. His current level-11 attack stages are 43/204/409."
+  },
+  "goblinstein": {
+   "public_name": "Goblinstein Monster",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/february-balance-changes/",
+    "https://royaleapi.com/blog/goblinstein-new-card-2024-october?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 2393,
+   "link_receiver_on_death": true,
+   "mechanic": "Goblinstein is a two-unit card. The building-targeting Monster leaves its receiver at its final position when destroyed, so the living Doctor can still activate Lightning Link."
+  },
+  "goblinstein_doctor": {
+   "public_name": "Goblinstein Doctor",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/january-balance-changes-2/",
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/maintenance-bug-fixes-and-balance-changes-2/",
+    "https://royaleapi.com/blog/goblinstein-new-card-2024-october?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 721,
+   "damage_override": 135,
+   "ability_link_target": "goblinstein",
+   "ability_link_duration_ms": 4000,
+   "ability_link_interval_ms": 500,
+   "ability_link_width_mt": 2000,
+   "ability_link_damage": 94,
+   "ability_link_tower_damage": 23,
+   "mechanic": "The current single-use 2-elixir Lightning Link lasts 4 seconds and hits every enemy whose hitbox is within 2 tiles of the moving Doctor-to-receiver segment every 0.5 seconds. Current 188 DPS is 94 per hit; Crown Towers take the client-declared 23 per hit. The Doctor has current 721 HP, 135 attack damage, and 0.5-second stun."
+  },
+  "berserker_hero": {
+   "public_name": "Hero Berserker",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/news/new-season-k-h-a-o-s/",
+    "https://support.clashroyale.com/hc/en-us/articles/53432180395035-What-s-New-August-2026",
+    "https://royaleapi.com/blog/hero-berserker-august-2026"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_damage_pct": 64,
+   "ability_tower_damage_pct": 25,
+   "ability_unkillable": true,
+   "ability_duration_includes_cast": true,
+   "ability_cast_locks_actions": true,
+   "mechanic": "The 3-elixir single-use Savage Survival lasts 4 seconds including its 1.45-second immobile cast. During it, movement is +50%, hit speed +200%, damage +64%, Crown Towers receive 25% of the buffed hit (41 from current 102), and damage cannot reduce Berserker below 1 HP."
+  },
+  "ice_spirits": {
+   "public_name": "Ice Spirit",
+   "source": "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 215,
+   "cannot_target_towers": true,
+   "mechanic": "Current Spirit-wide rule: 215 HP and cannot connect to a Crown Tower on its own; an attack triggered by a nearby troop can still splash the tower."
+  },
+  "fire_spirits": {
+   "public_name": "Fire Spirit",
+   "source": "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 215,
+   "cannot_target_towers": true,
+   "mechanic": "Current Spirit-wide rule: 215 HP and cannot connect to a Crown Tower on its own; an attack triggered by a nearby troop can still splash the tower."
+  },
+  "electro_spirit": {
+   "public_name": "Electro Spirit",
+   "source": "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 215,
+   "cannot_target_towers": true,
+   "mechanic": "Current Spirit-wide rule: 215 HP and cannot connect to a Crown Tower on its own; chain damage can still reach a tower after a troop triggers the attack."
+  },
+  "heal_spirit": {
+   "public_name": "Heal Spirit",
+   "source": "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 215,
+   "cannot_target_towers": true,
+   "mechanic": "Current Spirit-wide rule: 215 HP and cannot connect to a Crown Tower on its own."
+  },
+  "knight_hero": {
+   "public_name": "Hero Knight",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/december-update-2025/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/march-balance-changes-2026/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/july-balance-changes-2026/",
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_action_delay_ms": 150,
+   "ability_taunt_radius_mt": 6500,
+   "ability_taunt_area_ms": 1100,
+   "ability_taunt_duration_ms": 4000,
+   "mechanic": "The single-use 2-Elixir Triumphant Taunt triggers after 0.15 seconds during its 1.2-second cast, restores the current 512-point shield, and emits a 6.5-tile follow area for 1.1 seconds. Each enemy air or ground unit/building entering once is retargeted to the Knight for 4 seconds without a distance reset; the Goblin Demolisher's kamikaze form is explicitly excluded."
+  },
+  "valkyrie_hero": {
+   "public_name": "Hero Valkyrie",
+   "sources": [
+    "https://support.clashroyale.com/hc/en-us/articles/what-s-new-august-2026",
+    "https://royaleapi.com/blog/hero-valkyrie-august-2026?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_spin_seek_radius_mt": 5500,
+   "ability_spin_pending_speed_mt_per_sec": 2000,
+   "ability_spin_speed_mt_per_sec": 2500,
+   "ability_spin_duration_ms": 3500,
+   "ability_spin_interval_ms": 250,
+   "ability_spin_damage": 97,
+   "ability_spin_tower_damage": 49,
+   "ability_spin_radius_mt": 2500,
+   "ability_spin_damage_reduction_pct": 15,
+   "mechanic": "The single-use 3-Elixir Wild Whirlwind first runs toward the nearest enemy at Very Fast speed (120, or 2 tiles/s) and waits without consuming its duration. As soon as an enemy is within the client 5.5-tile selector, the 3.5-second Whirlwind Stage begins, moves at Ultra Fast 150 (2.5 tiles/s), retargets through enemies, takes 15% less damage, and independently deals 97 ground area damage (49 to Crown Towers) every 0.25 seconds in a 2.5-tile radius. Its 14 timed pulses continue even while Valkyrie is frozen, caged, or being hurled; ordinary attacks remain disabled and stay disabled for 0.4 seconds after the spin."
+  },
+  "barb_log_barbarian_hero": {
+   "public_name": "Hero Barbarian Barrel",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/march-update-2026/",
+    "https://supercell.com/en/games/clashroyale/blog/news/new-season-10th-anniversary/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/may-balance-changes-2026/",
+    "https://supercell.com/en/games/clashroyale/blog/news/february-balance-changes-26/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_action_delay_ms": 50,
+   "ability_reroll_range_mt": 3000,
+   "ability_reroll_duration_ms": 1000,
+   "ability_reroll_start_delay_ms": 350,
+   "ability_reroll_damage": 232,
+   "ability_reroll_tower_damage": 116,
+   "ability_reroll_radius_mt": 1300,
+   "ability_reroll_radius_y_mt": 600,
+   "ability_reroll_heal_missing_pct": 50,
+   "mechanic": "The single-use 1-Elixir Rowdy Reroll starts after the source 0.05-second trigger plus 0.35-second spawn delay. The Barbarian heals 50% of missing HP, becomes untargetable and damage-immune, and sweeps its source 1.3-by-0.6-tile rolling hitbox 3 tiles forward over the 1-second redeploy duration. Each ground target is hit once for the current 232 damage, while Crown Towers take the reroll projectile's explicit 50% value of 116."
+  },
+  "dark_prince_hero": {
+   "public_name": "Hero Dark Prince",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/news/new-season-siege-and-swish/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+    "https://royaleapi.com/blog/hero-dark-prince-may-2026"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_split_character": "DarkPrinceHero_Walking",
+   "ability_split_mount": "DarkPrinceHero_Mount",
+   "ability_split_warp_mt": 2000,
+   "ability_split_warp_ms": 500,
+   "ability_split_spawn_damage_delay_ms": 500,
+   "ability_split_spawn_damage": 307,
+   "ability_split_spawn_tower_damage": 0,
+   "ability_split_spawn_radius_mt": 3000,
+   "ability_split_spawn_pushback_mt": 1500,
+   "mechanic": "The single-use 3-Elixir Destructive Dismount triggers after 0.05 seconds. It preserves the Dark Prince's remaining HP and shield while changing him to the non-charging walking form and moving him 2 tiles backward over the source 0.5-second warp loop. One independent Rhino appears at the dismount point with the current 1-second deployment and 2.5-tile charge requirement; 0.5 seconds after appearing it deals 307 damage and 1.5-tile pushback to ground troops in a 3-tile radius, but the June-2026 rework makes its Crown Tower spawn damage zero. The Rhino then targets buildings with its source-scaled 1357 HP, 179 damage and 358 charge damage."
+  },
+  "bowler_hero": {
+   "public_name": "Hero Bowler",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/news/new-season-siege-and-swish/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+    "https://royaleapi.com/blog/hero-bowler-may-2026"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_siege_range_mt": 11500,
+   "ability_siege_duration_ms": 7300,
+   "ability_siege_lock_ms": 2300,
+   "ability_siege_damage": 384,
+   "ability_siege_tower_damage": 192,
+   "ability_siege_radius_mt": 2000,
+   "ability_siege_projectile_speed_mt_per_sec": 6666,
+   "ability_siege_hit_speed_ms": 1900,
+   "mechanic": "The single-use 2-Elixir Stone Swish triggers after 0.2 seconds, roots Bowler and prevents attacks for the client 2.3-second casting action, and keeps the current siege mode active for 7.3 seconds. In that mode his range and sight are 11.5 tiles, his fixed-position Mortar-style boulder travels at the client speed 400 (6.666 tiles/s), lands for 384 ground area damage in a 2-tile radius or 192 Crown Tower damage, and uses the published 1.9-second hit time. Because the projectile is positional, units can move out of its impact area before it lands."
+  },
+  "giant_hero": {
+   "public_name": "Hero Giant",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/december-update-2025/",
+    "https://royaleapi.com/blog/hero-giant-december-2025",
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "ability_hurl_radius_mt": 2500,
+   "ability_hurl_distance_mt": 9000,
+   "ability_hurl_delay_ms": 400,
+   "ability_hurl_flight_ms": 1500,
+   "ability_hurl_stun_ms": 2000,
+   "ability_hurl_damage": 135,
+   "ability_hurl_damage_radius_mt": 1000,
+   "mechanic": "The single-use 2-Elixir Heroic Hurl remains pending until an eligible enemy troop enters the client 2.5-tile selector, then chooses the troop with the highest current HP including shields. After a 0.4-second slap delay it throws that troop 9 tiles horizontally toward the opposite lane over 1.5 seconds and stuns it for 2 seconds from launch. The thrown troop and other enemy ground troops in the 1-tile landing area take the current 135 damage; the selector includes flying troops but excludes buildings, towers, untargetable and pushback-immune units. The Giant cannot move or attack for the source-declared 0.8 seconds after selection."
+  },
+  "mini_pekka_hero": {
+   "public_name": "Hero Mini P.E.K.K.A",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/december-update-2025/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/january-balance-changes-26/",
+    "https://supercell.com/en/games/clashroyale/blog/news/february-balance-changes-26/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "quest_interval_ms": 22000,
+   "quest_hit_advance_ms": 8000,
+   "quest_start_delay_ms": 1000,
+   "quest_max_stacks": 3,
+   "ability_level_adjustments": [
+    1,
+    2,
+    3,
+    5
+   ],
+   "ability_missing_hp_heal_pct": 30,
+   "ability_action_delay_ms": 200,
+   "mechanic": "After the client 1-second quest start delay, cooking advances continuously; every landed hit advances it by 8 seconds. Each current 22-second completion raises the stored tier, to at most three completions. The single-use 1-Elixir Breakfast Boost triggers after 0.2 seconds and chooses +1/+2/+3/+5 card levels for zero/one/two/three stored tiers, respectively, using ordinary level scaling for maximum HP and damage, then heals 30% of the now-missing HP. Its cast animation locks actions for 0.95 seconds."
+  },
+  "goblin_cage_ev1_tempname": {
+   "public_name": "Goblin Cage Evolution",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/october-balance-changes/",
+    "https://liquipedia.net/clashroyale/Goblin_Cage_Evolution",
+    "https://royaleapi.com/blog/goblin-cage-evolution-new-card-2024-august?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "capture_radius_mt": 3000,
+   "capture_damage": 366,
+   "capture_hit_frequency_ms": 1000,
+   "capture_drag_delay_ms": 100,
+   "capture_drag_time_ms": 300,
+   "capture_cooldown_ms": 300,
+   "mechanic": "Selects the nearest eligible enemy ground troop inside the client 3-tile radius, waits the 0.1-second arm delay, drags it into the cage over 0.3 seconds, and makes it hidden and unable to act. The trapped troop takes the current August-2026 366 damage every second until it or the cage dies. The cage can hold one troop; after killing one it waits the current 0.3-second cooldown before grabbing another. Destroying the cage releases the survivor at the cage with its remaining HP and also releases the Evolved Goblin Brawler."
+  },
+  "furnace_rework": {
+   "public_name": "Furnace",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/new-season-fired-up/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/january-balance-changes-26/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "spawn_character_override": "FireSpirits",
+   "spawn_count_override": 1,
+   "spawn_start_override_ms": 1950,
+   "spawn_pause_override_ms": 5000,
+   "spawn_forward_mt": 3000,
+   "spawn_deploy_ms": 500,
+   "mechanic": "The reworked walking Furnace attacks air and ground at the current 5.5-tile range and 1.7-second hit speed. Once deployed, it emits one current Fire Spirit 3 tiles forward after 1.95 seconds and every 5 seconds thereafter; each has the client action's 0.5-second deploy delay."
+  },
+  "furnace_ev1": {
+   "public_name": "Furnace Evolution",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/new-season-fired-up/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/september-balance-changes/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/january-balance-changes-26/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+    "https://supercell.com/en/games/clashroyale/blog/news/final-august-balance-changes-826/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "spawn_character_override": "FireSpirits",
+   "spawn_count_override": 1,
+   "spawn_start_override_ms": 1950,
+   "spawn_pause_override_ms": 5000,
+   "spawn_forward_mt": 3000,
+   "spawn_deploy_ms": 500,
+   "hot_spawn_character": "FireSpirits",
+   "hot_spawn_interval_ms": 2400,
+   "hot_spawn_first_delay_ms": 600,
+   "hot_spawn_side_mt": 1500,
+   "hot_spawn_behind_mt": 1000,
+   "hot_spawn_deploy_ms": 1000,
+   "hot_spawn_stop_moving_ms": 1000,
+   "hot_spawn_normal_resume_ms": 400,
+   "mechanic": "Retains the normal 1.95/5-second forward spawn. When it begins attacking, that timer pauses and the hot loop launches a Fire Spirit after the client 0.4-second group delay plus 0.2-second side-selection delay, then every current 2.4 seconds, alternating the exact 1.5-tile side and 1-tile-behind endpoints. Moving continuously for 1 second stops the loop and normal spawning remains delayed for 0.4 seconds. The client does not publish the falling projectile's collision procedure, so the simulator resolves the spawned Spirit at the source-timed endpoint rather than inventing a ballistic flight duration."
+  },
+  "rage_barbarian": {
+   "public_name": "Lumberjack",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/january-balance-changes-2/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+    "https://liquipedia.net/clashroyale/Lumberjack"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "death_area_damage_override": 179,
+   "death_area_tower_damage": 45,
+   "death_area_radius_override_mt": 3000,
+   "death_area_duration_override_ms": 5500,
+   "death_area_hit_frequency_override_ms": 300,
+   "death_area_speed_override_pct": 30,
+   "death_area_hit_speed_override_pct": 30,
+   "death_area_buff_linger_override_ms": 1000,
+   "mechanic": "On death the bottle immediately deals the current level-11 179 Rage damage (45 to Crown Towers), then leaves a 3-tile, 5.5-second allied Rage area. The current Rage boost is +30% movement and hit speed and the client refreshes it every 0.3 seconds with a 1-second linger."
+  },
+  "rage_barbarian_ev1": {
+   "public_name": "Lumberjack Evolution",
+   "sources": [
+    "https://royaleapi.com/blog/lumberjack-evolution-new-2025-february?lang=en",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/april-balance-changes/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/balance-changes-and-2v2-ladder-bug-fix/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "death_area_damage_override": 179,
+   "death_area_tower_damage": 45,
+   "death_area_radius_override_mt": 3000,
+   "death_area_duration_override_ms": 5500,
+   "death_area_hit_frequency_override_ms": 300,
+   "death_area_speed_override_pct": 30,
+   "death_area_hit_speed_override_pct": 30,
+   "death_area_buff_linger_override_ms": 1000,
+   "death_spawn_character_override": "RageBarbarianEvoGhost",
+   "death_spawn_count_override": 1,
+   "death_spawn_at_source": true,
+   "mechanic": "Drops the same current Rage bottle and deploys one invisible, invulnerable Ghost. Official February 2025 rules prevent other Rage spells from extending its lifespan; April raised its troop damage to 256 and June 2026 reduced its Crown Tower hit to 128."
+  },
+  "rage_barbarian_evo_ghost": {
+   "public_name": "Lumberjack Evolution Ghost",
+   "sources": [
+    "https://royaleapi.com/blog/lumberjack-evolution-new-2025-february?lang=en",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/april-balance-changes/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/balance-changes-and-2v2-ladder-bug-fix/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "hitpoints_override": 1,
+   "damage_override": 256,
+   "tower_damage_pct": 50,
+   "permanent_invulnerable": true,
+   "always_invisible": true,
+   "lifetime_override_ms": 5500,
+   "mechanic": "The Ghost remains invisible while attacking and cannot take damage. It uses the Lumberjack's 0.8-second hit speed and 0.7-tile range, deals 256 to ordinary targets and the current 128 to Crown Towers, and its fixed 5.5-second life cannot be extended by another Rage spell."
+  },
+  "cannon_ev1": {
+   "public_name": "Cannon Evolution",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/december-balance-changes/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/may-balance-changes-2/",
+    "https://clashroyale.fandom.com/wiki/Cannon/Evolution"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "deploy_barrage_x_mt": [
+    1500,
+    6500,
+    11500,
+    16500,
+    1000,
+    5000,
+    9000,
+    13000,
+    17000
+   ],
+   "deploy_barrage_forward_mt": [
+    1500,
+    1500,
+    1500,
+    1500,
+    8500,
+    8500,
+    8500,
+    8500,
+    8500
+   ],
+   "deploy_barrage_delays_ms": [
+    1300,
+    1100,
+    1100,
+    1300,
+    1300,
+    1200,
+    1100,
+    1200,
+    1300
+   ],
+   "deploy_barrage_damage": 281,
+   "deploy_barrage_tower_damage": 21,
+   "deploy_barrage_radius_mt": 2000,
+   "deploy_barrage_pushback_mt": 1000,
+   "mechanic": "On placement, nine source-positioned cannonballs form the client 4+5 rows: absolute X values are the client's half-tile coordinates and row distances are 1.5/8.5 tiles forward. They land at the per-AEO 1.1/1.2/1.3-second delays, deal the current 281 air-and-ground damage (21 to Crown Towers) in a 2-tile radius, and push troops 1 tile."
+  },
+  "skeleton_balloon_ev1": {
+   "public_name": "Skeleton Barrel Evolution",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/april26-balance-changes/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/august-balance-changes-2/",
+    "https://liquipedia.net/clashroyale/Skeleton_Barrel_Evolution"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "container_drop_hp_pct": 75,
+   "container_drop_damage": 192,
+   "container_drop_radius_mt": 2000,
+   "container_drop_pushback_mt": 1000,
+   "container_drop_delay_ms": 600,
+   "container_drop_spawn_character": "Skeleton",
+   "container_drop_spawn_count": 7,
+   "container_drop_spawn_radius_mt": 1480,
+   "container_drop_spawn_deploy_ms": 500,
+   "container_drop_threshold_offset": [
+    -350,
+    450
+   ],
+   "container_drop_death_offset": [
+    350,
+    0
+   ],
+   "mechanic": "The two-container evolution drops its extra container at 75% HP and its final container on death at the client offsets. Each lands after 0.6 seconds, deals the current 192 damage in a 2-tile air-and-ground radius with 1-tile pushback, then deploys seven Skeletons over the client 1.48-tile radius with 0.5-second deploy time."
+  },
+  "angry_barbarian_ev1": {
+   "public_name": "Elite Barbarians Evolution",
+   "source": "https://royaleapi.com/blog/elite-barbarians-evolution-august-2026",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "periodic_ranged_damage": 284,
+   "periodic_ranged_min_mt": 3500,
+   "periodic_ranged_max_mt": 5000,
+   "periodic_ranged_cooldown_ms": 5000,
+   "periodic_ranged_projectile_speed_mt_per_sec": 10000,
+   "periodic_ranged_trail_interval_ms": 160,
+   "periodic_ranged_trail_delay_ms": 200,
+   "periodic_ranged_area_radius_mt": 1000,
+   "periodic_ranged_area_duration_ms": 3500,
+   "periodic_ranged_area_speed_pct": 30,
+   "mechanic": "Each evolved Elite Barbarian starts spear-ready and can throw at its current ground target only from 3.5-5 tiles, for 284 damage, then reloads for 5 seconds. The 10-tile/s spear leaves 1-tile, 3.5-second ally Rage circles every 0.16 seconds after 0.2 seconds and another at the target, granting +30% move and hit speed."
+  },
+  "angry_barbarian_ev1_2": {
+   "public_name": "Elite Barbarians Evolution second troop",
+   "source": "https://royaleapi.com/blog/elite-barbarians-evolution-august-2026",
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "periodic_ranged_damage": 284,
+   "periodic_ranged_min_mt": 3500,
+   "periodic_ranged_max_mt": 5000,
+   "periodic_ranged_cooldown_ms": 5000,
+   "periodic_ranged_projectile_speed_mt_per_sec": 10000,
+   "periodic_ranged_trail_interval_ms": 160,
+   "periodic_ranged_trail_delay_ms": 200,
+   "periodic_ranged_area_radius_mt": 1000,
+   "periodic_ranged_area_duration_ms": 3500,
+   "periodic_ranged_area_speed_pct": 30,
+   "mechanic": "Same Rage Spear controller as the first troop; the client separately gives this second troop a 0.90-second load time."
+  },
+  "skeleton_army_ev1__soldier": {
+   "public_name": "Skeleton Army Evolution Soldier",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/october-update-2025/",
+    "https://royaleapi.com/blog/skeleton-army-evolution-2025-october?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "group_death_spawn_character": "SkeletonArmy_EV1_Spectral",
+   "group_required_guard_character": "skeleton_army_ev1__general",
+   "mechanic": "If destroyed while its deployment group's General is alive, the soldier becomes a spectral Skeleton at the same location."
+  },
+  "skeleton_army_ev1__general": {
+   "public_name": "Skeleton Army Evolution General Gerry",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/october-update-2025/",
+    "https://royaleapi.com/blog/skeleton-army-evolution-2025-october?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "group_death_kill_character": "skeleton_army_ev1__spectral",
+   "mechanic": "The shielded General uses the current client-scaled 82 HP plus an 82-HP shield at level 11. On death, all spectral Skeletons in his deployment group die with him."
+  },
+  "skeleton_army_ev1__spectral": {
+   "public_name": "Skeleton Army Evolution Spectral Skeleton",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/october-update-2025/",
+    "https://royaleapi.com/blog/skeleton-army-evolution-2025-october?lang=en",
+    "https://clashroyale.fandom.com/wiki/Skeleton_Army/Evolution"
+   ],
+   "verified_at": "2026-08-19",
+   "permanent_invulnerable": true,
+   "always_invisible": true,
+   "mechanic": "The January 2026 form moves at client speed 60. It attacks normally but is permanently invisible and damage-immune until its own General dies."
+  },
+  "musketeer_ev1": {
+   "public_name": "Musketeer Evolution",
+   "sources": [
+    "https://royaleapi.com/blog/musketeer-evolution-new-card-2024-november?lang=en",
+    "https://royaleapi.com/blog/season-65-balance-november-2024?lang=en",
+    "https://clashroyale.fandom.com/wiki/Musketeer/Evolution"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "sniper_ammo": 3,
+   "sniper_min_range_mt": 6000,
+   "sniper_max_range_mt": 30000,
+   "sniper_side_clip_mt": 1250,
+   "sniper_damage": 392,
+   "sniper_projectile_speed_mt_per_sec": 44166,
+   "mechanic": "Starts with three homing Long Shot rounds. Only when normal 6-tile range is clear, a round can target a non-Crown-Tower troop or building 6-30 tiles forward inside the client 1.25-tile side clip. Current damage is 180% of the level-11 Musketeer's 218 (392); the special projectile has the client speed 2650 units per minute."
+  },
+  "goblin_demolisher_kamikaze_form": {
+   "public_name": "Goblin Demolisher (kamikaze form)",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/news/july-balance-changes/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2/",
+    "https://clashroyale.fandom.com/wiki/Goblin_Demolisher"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "lifetime_override_ms": 10000,
+   "mechanic": "At 50% HP the normal ranged form transforms into the very-fast, building-targeting kamikaze form for the current 10-second lifetime. Its source projectile deals the current 404 level-11 death damage in a 2.5-tile air-and-ground area with 2-tile pushback."
+  },
+  "blowdart_goblin_ev1": {
+   "public_name": "Dart Goblin Evolution",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/june-balance-changes-2026/",
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/august-balance-changes-2/",
+    "https://royaleapi.com/blog/dart-goblin-evolution-new-card-2025-january?lang=en",
+    "https://clashroyale.fandom.com/wiki/Dart_Goblin/Evolution"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "target_poison_damage_tiers": [
+    64,
+    128,
+    307
+   ],
+   "target_poison_stack_thresholds": [
+    1,
+    4,
+    7
+   ],
+   "target_poison_radius_mt": 1500,
+   "target_poison_first_tick_ms": 1250,
+   "target_poison_interval_ms": 1000,
+   "target_poison_tower_pct": 25,
+   "target_poison_tower_duration_ms": 3000,
+   "mechanic": "Each homing dart attaches an independent poison controller to its target. The carrier leaves 1.5-tile air-and-ground poison clouds, with current June-2026 level-11 damage tiers 64/128/307 reached at 1/4/7 darts after the documented 1.25-second activation delay. The first tick is 1.25 seconds after attachment and later ticks are one second apart. Crown Towers stay at tier one, take 25%, and use the client controller's 3-second duration; each individual trail cloud has the current one-second duration. Troops carry the controller until destroyed."
+  },
+  "royal_delivery": {
+   "source": "https://liquipedia.net/clashroyale/Royal_Delivery",
+   "sources": [
+    "https://royaleapi.com/blog/season-86-balance-final-august-2026"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "mechanic": "Can only be deployed on the caster's side. It lands after 3 seconds, damages enemy air and ground troops but not buildings, then deploys one Royal Recruit with a 0.25 second deploy time.",
+   "damage_override": 384,
+   "impact_delay_ms": 3000,
+   "spawn_deploy_time_ms": 250,
+   "deploy_own_side_only": true,
+   "resolves_card_as_spell": true
+  },
+  "wizard_hero": {
+   "public_name": "Hero Wizard",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/april-update-2026/",
+    "https://royaleapi.com/blog/hero-wizard-april-2026?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "ability_action_delay_ms": 200,
+   "ability_temporary_character": "WizardHero_air",
+   "ability_temporary_transition_ms": 200,
+   "ability_temporary_duration_ms": 5000,
+   "mechanic": "Fiery Flight costs 1 Elixir. After the source 0.2-second trigger and 0.2-second ascent transition, Hero Wizard becomes airborne for the source five-second action duration, moves 50% faster and uses the enhanced aerial projectile. The descent uses the same 0.2-second transition. Exact tornado attraction displacement remains calibration-gated."
+  },
+  "wizard_hero_air": {
+   "public_name": "Hero Wizard (Fiery Flight form)",
+   "sources": [
+    "https://supercell.com/en/games/clashroyale/blog/release-notes/april-update-2026/",
+    "https://royaleapi.com/blog/hero-wizard-april-2026?lang=en"
+   ],
+   "verified_at": "2026-08-19",
+   "level": 11,
+   "projectile_area_damage_override": 43,
+   "projectile_area_radius_override_mt": 4000,
+   "projectile_area_delay_override_ms": 1,
+   "projectile_area_hits_ground_override": true,
+   "projectile_area_hits_air_override": true,
+   "mechanic": "The aerial form has the client-scaled 238 direct damage and its enhanced hit creates the current level-11 43-damage, four-tile air-and-ground area. A one-millisecond scheduler sentinel preserves hit ordering without inventing simultaneous engine ordering."
+  },
+  "fisherman": {
+   "source": "https://clashroyale.fandom.com/wiki/Fisherman",
+   "verified_at": "2026-08-18",
+   "mechanic": "A hook on a ground troop slows its movement and attack speed by 30% for 1.5 seconds; a hook on a building pulls the Fisherman instead.",
+   "pull_speed_pct": -30,
+   "pull_buff_ms": 1500
+  },
+  "elite_archer": {
+   "public_name": "Magic Archer",
+   "source": "https://clashroyale.fandom.com/wiki/Magic_Archer",
+   "verified_at": "2026-08-18",
+   "mechanic": "The magic arrow travels through and damages every enemy in its linear path.",
+   "pierces": true
+  },
+  "prince_buff": {
+   "public_name": "Raging Prince",
+   "source": "https://royaleapi.github.io/cr-api-data/json/cards_stats_characters.json",
+   "verified_at": "2026-08-20",
+   "level": 11,
+   "hitpoints_override": 2304,
+   "note": "Client base sits at the rarity's own level 1 rather than unified level 1, so scaling it by level-1 steps overshoots by the rarity offset. Value taken from the published per-level table at the index for level 11.",
+   "damage_override": 392
+  },
+  "super_archer": {
+   "public_name": "Super Archers",
+   "source": "https://royaleapi.github.io/cr-api-data/json/cards_stats_characters.json",
+   "verified_at": "2026-08-20",
+   "level": 11,
+   "hitpoints_override": 701,
+   "note": "Client base sits at the rarity's own level 1 rather than unified level 1, so scaling it by level-1 steps overshoots by the rarity offset. Value taken from the published per-level table at the index for level 11."
+  },
+  "super_elite_archer": {
+   "public_name": "Super Magic Archer",
+   "source": "https://royaleapi.github.io/cr-api-data/json/cards_stats_characters.json",
+   "verified_at": "2026-08-20",
+   "level": 11,
+   "hitpoints_override": 701,
+   "note": "Client base sits at the rarity's own level 1 rather than unified level 1, so scaling it by level-1 steps overshoots by the rarity offset. Value taken from the published per-level table at the index for level 11."
+  },
+  "super_hog_rider": {
+   "public_name": "Santa Hog Rider",
+   "source": "https://royaleapi.github.io/cr-api-data/json/cards_stats_characters.json",
+   "verified_at": "2026-08-20",
+   "level": 11,
+   "hitpoints_override": 1694,
+   "note": "Client base sits at the rarity's own level 1 rather than unified level 1, so scaling it by level-1 steps overshoots by the rarity offset. Value taken from the published per-level table at the index for level 11.",
+   "damage_override": 320
+  },
+  "super_ice_golemite": {
+   "public_name": "Super Ice Golem",
+   "source": "https://royaleapi.github.io/cr-api-data/json/cards_stats_characters.json",
+   "verified_at": "2026-08-20",
+   "level": 11,
+   "hitpoints_override": 3630,
+   "note": "Client base sits at the rarity's own level 1 rather than unified level 1, so scaling it by level-1 steps overshoots by the rarity offset. Value taken from the published per-level table at the index for level 11.",
+   "damage_override": 121
+  },
+  "super_lava_hound": {
+   "public_name": "Super Lava Hound",
+   "source": "https://royaleapi.github.io/cr-api-data/json/cards_stats_characters.json",
+   "verified_at": "2026-08-20",
+   "level": 11,
+   "hitpoints_override": 3388,
+   "note": "Client base sits at the rarity's own level 1 rather than unified level 1, so scaling it by level-1 steps overshoots by the rarity offset. Value taken from the published per-level table at the index for level 11."
+  },
+  "super_mini_pekka": {
+   "public_name": "Super Mini P.E.K.K.A",
+   "source": "https://royaleapi.github.io/cr-api-data/json/cards_stats_characters.json",
+   "verified_at": "2026-08-20",
+   "level": 11,
+   "hitpoints_override": 1573,
+   "note": "Client base sits at the rarity's own level 1 rather than unified level 1, so scaling it by level-1 steps overshoots by the rarity offset. Value taken from the published per-level table at the index for level 11."
+  },
+  "goblin_drill_dig": {
+   "public_name": "Goblin Drill",
+   "source": "https://royaleapi.github.io/cr-api-data/json/cards_stats_characters.json",
+   "verified_at": "2026-08-20",
+   "level": 11,
+   "hitpoints_override": 1600,
+   "note": "Client base sits at the rarity's own level 1 rather than unified level 1, so scaling it by level-1 steps overshoots by the rarity offset. Value taken from the published per-level table at the index for level 11. Keyed on the character the card resolves to (CHARACTER.GoblinDrillDig), which is what combat_rule() looks up."
+  },
+  "super_hog_rider__terry": {
+   "public_name": "Terry",
+   "source": "https://royaleapi.github.io/cr-api-data/json/cards_stats_characters.json",
+   "verified_at": "2026-08-20",
+   "level": 11,
+   "hitpoints_override": 2300,
+   "note": "Client base sits at the rarity's own level 1 rather than unified level 1, so scaling it by level-1 steps overshoots by the rarity offset. Value taken from the published per-level table at the index for level 11.",
+   "damage_override": 350
+  },
+  "moving_cannon": {
+   "public_name": "Cannon Cart",
+   "source": "https://royaleapi.github.io/cr-api-data/json/cards_stats_characters.json",
+   "verified_at": "2026-08-20",
+   "level": 11,
+   "hitpoints_override": 892,
+   "note": "Client base does not sit at unified level 1, so scaling it by level-1 steps overshoots. Value taken from the published per-level table at the index for level 11."
+  },
+  "elite_archer_hero": {
+   "public_name": "Hero Magic Archer",
+   "source": "https://clashroyale.fandom.com/wiki/Magic_Archer",
+   "verified_at": "2026-08-21",
+   "mechanic": "The hero form is Magic Archer and fires the same arrow - it inherits CHARACTER.EliteArcher and PROJECTILE.EliteArcherArrow unchanged. Piercing is recorded per card name rather than read from the client, so the hero form silently lost the one trait that defines the card and its arrows stopped at the first enemy.",
+   "pierces": true
+  },
+  "princess_ev1": {
+   "public_name": "Evolved Princess",
+   "sources": [
+    "https://clashcoachai.com/guides/princess-evolution-guide-may-2026",
+    "https://royaleapi.com/blog/princess-evolution-june-2026?lang=en"
+   ],
+   "verified_at": "2026-08-21",
+   "special_attack_every": 3,
+   "mechanic": "Every third attack, starting with the first, is an ice arrow: it drops a three-tile slow field instead of the ordinary 2.5-tile splash, applying IceWizardSlowDown at -30% move and hit speed. The cadence is the one number the client does not carry - `Princess_EV1_reload_frequency` is declared as a VARIABLE with no value anywhere in the shipped data - so the published 'every 3 attacks (1st, 4th, 7th)' supplies it. Everything else is read: the 3000 radius from the freeze projectile, the 5500ms field life, and the 1000ms buff. Her separate death freeze was already modelled and is not this."
+  }
+ }
+}

@@ -1,0 +1,97 @@
+{
+  "actions": [
+    {
+      "action": "deploy",
+      "card": "knight",
+      "position": [
+        9,
+        22
+      ],
+      "side": 1,
+      "time_ms": 0
+    },
+    {
+      "action": "deploy",
+      "card": "minipekka",
+      "position": [
+        9,
+        9
+      ],
+      "side": -1,
+      "time_ms": 150
+    }
+  ],
+  "category": "collisions",
+  "decks": [
+    [
+      "knight",
+      "minipekka",
+      "musketeer",
+      "cannon",
+      "fireball",
+      "log",
+      "minions",
+      "giant"
+    ],
+    [
+      "giant",
+      "hog_rider",
+      "balloon",
+      "bowler",
+      "fisherman",
+      "tornado",
+      "minions",
+      "cannon"
+    ]
+  ],
+  "dt_ms": 50,
+  "duration_ms": 1000,
+  "evidence_ids": [
+    "SYNTH-S5-019"
+  ],
+  "evidence_status": "synthetic",
+  "measures": [
+    {
+      "category": "position",
+      "evidence_ids": [
+        "SYNTH-S5-019"
+      ],
+      "name": "entity_positions",
+      "tolerance": 0.5
+    },
+    {
+      "category": "collisions",
+      "evidence_ids": [
+        "SYNTH-S5-019"
+      ],
+      "name": "event_order_candidate",
+      "tolerance": 250.0
+    }
+  ],
+  "metadata": {
+    "candidate_thresholds_only": true,
+    "implementation_locations": [
+      "tools/calibration/core.py"
+    ],
+    "provenance": {
+      "method": "deterministic template",
+      "real_data_claim": false,
+      "source": "generated_synthetic_catalog"
+    }
+  },
+  "observation_windows": [
+    [
+      0,
+      1000
+    ]
+  ],
+  "scenario_id": "sprint5_019_collisions",
+  "seed": 5019,
+  "split": "train",
+  "tags": [
+    "sprint-5",
+    "collisions",
+    "knight",
+    "minipekka"
+  ]
+}

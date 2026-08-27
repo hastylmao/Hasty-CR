@@ -1,0 +1,6 @@
+[
+  [],
+  [{"class_name":"knight","team":1,"x":9.0,"y":22.0,"confidence":0.95,"uncertainty":{"sigma":0.1,"reason":"synthetic detector"}}],
+  [{"class_name":"knight","team":1,"x":9.1,"y":21.8,"confidence":0.9,"uncertainty":{"sigma":0.1,"reason":"synthetic detector"}}],
+  [{"class_name":"knight","team":1,"x":9.3,"y":21.6,"confidence":0.88,"uncertainty":{"sigma":0.15,"reason":"synthetic detector"}}]
+]

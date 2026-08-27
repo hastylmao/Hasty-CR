@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "scenario": {
+    "scenario_id": "diff_knight_musketeer",
+    "duration_ms": 750,
+    "dt_ms": 50,
+    "seed": 101,
+    "decks": [
+      [
+        "knight",
+        "musketeer"
+      ],
+      [
+        "knight",
+        "musketeer"
+      ]
+    ],
+    "actions": [
+      {
+        "time_ms": 0,
+        "action": "deploy",
+        "side": 1,
+        "card": "knight",
+        "position": [
+          9.0,
+          22.0
+        ],
+        "uid": null,
+        "actor_id": null,
+        "metadata": {}
+      },
+      {
+        "time_ms": 150,
+        "action": "deploy",
+        "side": -1,
+        "card": "musketeer",
+        "position": [
+          9.0,
+          9.0
+        ],
+        "uid": null,
+        "actor_id": null,
+        "metadata": {}
+      }
+    ],
+    "observation_windows": [
+      [
+        0,
+        750
+      ]
+    ],
+    "measures": [],
+    "tags": [
+      "knight",
+      "musketeer"
+    ],
+    "category": "arena",
+    "split": "train",
+    "evidence_ids": [],
+    "metadata": {}
+  },
+  "sampling": {
+    "dt_ms": 50,
+    "include_initial": true,
+    "include_final": true,
+    "observation_windows": [
+      [
+        0,
+        750
+      ]
+    ]
+  },
+  "capabilities": [
+    {
+      "name": "normalized_trace",
+      "required": true,
+      "rationale": ""
+    },
+    {
+      "name": "deterministic_seed",
+      "required": true,
+      "rationale": ""
+    },
+    {
+      "name": "fixed_tick_sampling",
+      "required": true,
+      "rationale": ""
+    },
+    {
+      "name": "deploy",
+      "required": true,
+      "rationale": ""
+    },
+    {
+      "name": "damage_events",
+      "required": false,
+      "rationale": ""
+    }
+  ],
+  "provenance": {
+    "source": "generated_synthetic_catalog",
+    "evidence_ids": [],
+    "method": "bounded differential fixture",
+    "details": {
+      "real_measurements": 0,
+      "claim_class": "SYNTHETIC_ONLY"
+    }
+  },
+  "real_measurements": 0,
+  "unsupported_states": [],
+  "metadata": {
+    "fixture": true
+  }
+}

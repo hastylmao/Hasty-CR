@@ -1,0 +1,17 @@
+{
+  "a": "checkpoints\\night\\best.pt",
+  "b": "checkpoints\\ladder\\ladder_best.pt",
+  "step_a": 2408448,
+  "step_b": 1656832,
+  "seed": 8000,
+  "games": 40,
+  "wins": 24,
+  "losses": 13,
+  "draws": 3,
+  "win_rate": 0.6,
+  "wilson_lo": 0.445956198273935,
+  "wilson_hi": 0.7365188938759863,
+  "crowns_for": 7,
+  "crowns_against": 2,
+  "crown_diff": 0.125
+}

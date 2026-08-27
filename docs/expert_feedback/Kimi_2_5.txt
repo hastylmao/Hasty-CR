@@ -1,0 +1,468 @@
+# Model Advice: Kimi_2_5
+# Model ID: moonshotai.kimi-k2.5
+# Response Time: 29.47s
+# Output Characters: 17228
+
+ # HastyCR Technical Advisory Document
+## Principal AI Architect's Comprehensive Blueprint for Competitive Clash Royale Automation
+
+---
+
+## Executive Summary
+
+HastyCR represents a sophisticated but fundamentally misaligned system: a high-capacity transformer policy (StARformer_3L) trained on synthetic data, wrapped in heuristic shims, operating through high-latency ADB pipelines, with unreliable state estimation. The 0-168 record is not a failure of learning capacity but of **system integration** and **distribution alignment**.
+
+This document provides exhaustive technical prescriptions across five critical domains. Each section includes implementation-ready pseudocode, mathematical formulations, and architectural decisions.
+
+---
+
+## 1. Immediate Computer Vision / Perception Fixes
+
+### 1.1 Dynamic Tower HP Bar Localization (The Shifting ROI Problem)
+
+**Root Cause Analysis:**
+The tower HP bar vertical shift (1160-1194px) correlates with:
+- Screen aspect ratio variations in MuMu Player
+- Android navigation bar visibility (immersive mode toggles)
+- Supercell's responsive UI scaling across devices
+
+**Solution Architecture: Multi-Anchor Hierarchical Detection**
+
+```
+┌─────────────────────────────────────────┐
+│  TOWER HP DETECTION PIPELINE           │
+├─────────────────────────────────────────┤
+│  Layer 0: Landmark-Based ROI Proposal  │
+│    ├── Detect King Tower (fixed anchor) │
+│    ├── Infer princess tower Y from      │
+│    │   known spatial relationship       │
+│    │   (King Y + 340px ± 20px dynamic)  │
+│    └── Cross-validate with level badge   │
+│                                         │
+│  Layer 1: Subpixel Refinement            │
+│    ├── Template match HP bar ends        │
+│    │   (green→red gradient signature)   │
+│    └── Contour analysis for bar bounds   │
+│                                         │
+│  Layer 2: Robust HP Extraction           │
+│    ├── Pixel-intensity-based percentage │
+│    └── Temporal consistency filtering    │
+└─────────────────────────────────────────┘
+```
+
+**Implementation: `perception/tower_hp_detector.py`**
+
+```python
+import cv2
+import numpy as np
+from dataclasses import dataclass
+from typing import Optional, Tuple
+from enum import Enum
+
+class TowerSide(Enum):
+    ALLY_LEFT = 0
+    ALLY_RIGHT = 1
+    ENEMY_LEFT = 2
+    ENEMY_RIGHT = 3
+
+@dataclass
+class TowerHPReading:
+    side: TowerSide
+    hp_pixels: int
+    max_hp_pixels: int
+    hp_fraction: float
+    confidence: float
+    roi: Tuple[int, int, int, int]  # x, y, w, h
+
+class DynamicTowerHPDetector:
+    """
+    Robust tower HP detection using geometric constraints and
+    adaptive template matching.
+    """
+    
+    # King tower serves as global coordinate anchor
+    KING_TOWER_TEMPLATE = cv2.imread("templates/king_tower_ally.png", 0)
+    HP_BAR_GRADIENT_KERNEL = np.array([-1, -2, 0, 2, 1])  # Edge detection for bar ends
+    
+    # Known geometric relationships (1080x1920 reference)
+    PRINCESS_TOWER_OFFSET_Y = 340  # pixels below king tower center
+    PRINCESS_TOWER_OFFSET_X = 260  # horizontal offset from center
+    
+    def __init__(self):
+        self._king_position_cache: Optional[Tuple[int, int]] = None
+        self._hp_bar_template = self._create_hp_bar_template()
+        self._temporal_history: deque = deque(maxlen=30)  # 3 seconds @ 10fps
+        
+    def _create_hp_bar_template(self) -> np.ndarray:
+        """Create synthetic HP bar template for normalized cross-correlation."""
+        # 120x8 template: green left, red right, black border
+        template = np.zeros((8, 120, 3), dtype=np.uint8)
+        # Full HP pattern
+        template[:, :60] = [0, 255, 0]  # Green
+        template[:, 60:] = [0, 0, 255]   # Red
+        return template
+    
+    def detect_king_tower(self, frame: np.ndarray) -> Optional[Tuple[int, int]]:
+        """
+        Multi-scale template matching with rotational invariance.
+        King tower is most reliable anchor due to distinctive crown.
+        """
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        
+        # Multi-scale search
+        scales = [0.95, 1.0, 1.05]
+        best_match = None
+        best_score = 0.0
+        
+        for scale in scales:
+            resized = cv2.resize(self.KING_TOWER_TEMPLATE, None, 
+                               fx=scale, fy=scale)
+            result = cv2.matchTemplate(gray, resized, cv2.TM_CCOEFF_NORMED)
+            _, max_val, _, max_loc = cv2.minMaxLoc(result)
+            
+            if max_val > 0.75 and max_val > best_score:
+                best_score = max_val
+                h, w = resized.shape
+                best_match = (max_loc[0] + w//2, max_loc[1] + h//2)
+        
+        # Validate: king tower should be in lower center for ally
+        if best_match and 400 < best_match[0] < 680 and 1400 < best_match[1] < 1700:
+            self._king_position_cache = best_match
+            return best_match
+        elif self._king_position_cache:
+            # Fallback to cached with confidence decay
+            return self._king_position_cache
+        
+        return None
+    
+    def propose_princess_rois(self, king_pos: Tuple[int, int]) -> list:
+        """
+        Generate ROI proposals for princess towers based on
+        known geometric layout of Clash Royale arena.
+        """
+        kx, ky = king_pos
+        
+        proposals = [
+            # Ally left princess
+            (kx - self.PRINCESS_TOWER_OFFSET_X, 
+             ky - self.PRINCESS_TOWER_OFFSET_Y - 30,  # HP bar above tower
+             120, 25),
+            # Ally right princess  
+            (kx + self.PRINCESS_TOWER_OFFSET_X - 120,
+             ky - self.PRINCESS_TOWER_OFFSET_Y - 30,
+             120, 25),
+            # Enemy left princess (mirror)
+            (kx - self.PRINCESS_TOWER_OFFSET_X,
+             180,  # Fixed Y for enemy side (more reliable)
+             120, 25),
+            # Enemy right princess
+            (kx + self.PRINCESS_TOWER_OFFSET_X - 120,
+             180,
+             120, 25),
+        ]
+        return proposals
+    
+    def refine_roi_with_contours(self, 
+                                  frame: np.ndarray,
+                                  rough_roi: Tuple[int, int, int, int]
+                                  ) -> Optional[Tuple[int, int, int, int]]:
+        """
+        Refine ROI using color segmentation and contour analysis.
+        HP bars have distinctive: black background, colored fill, thin border.
+        """
+        x, y, w, h = rough_roi
+        roi = frame[y:y+h, x:x+w]
+        
+        # HSV color space for robust green/red detection
+        hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
+        
+        # Green mask (full HP)
+        green_lower, green_upper = np.array([35, 50, 50]), np.array([85, 255, 255])
+        green_mask = cv2.inRange(hsv, green_lower, green_upper)
+        
+        # Red mask (damage)
+        red_lower1, red_upper1 = np.array([0, 50, 50]), np.array([10, 255, 255])
+        red_lower2, red_upper2 = np.array([160, 50, 50]), np.array([180, 255, 255])
+        red_mask = cv2.inRange(hsv, red_lower1, red_upper1) + \
+                   cv2.inRange(hsv, red_lower2, red_upper2)
+        
+        combined = green_mask + red_mask
+        
+        # Morphological cleanup
+        kernel = np.ones((2, 2), np.uint8)
+        cleaned = cv2.morphologyEx(combined, cv2.MORPH_CLOSE, kernel)
+        
+        # Find largest contour (the bar)
+        contours, _ = cv2.findContours(cleaned, cv2.RETR_EXTERNAL, 
+                                      cv2.CHAIN_APPROX_SIMPLE)
+        
+        if not contours:
+            return None
+            
+        largest = max(contours, key=cv2.contourArea)
+        bx, by, bw, bh = cv2.boundingRect(largest)
+        
+        # Validate aspect ratio and size
+        if not (3 < bw/bh < 20 and 30 < bw < 150 and 5 < bh < 20):
+            return None
+            
+        return (x + bx - 2, y + by - 2, bw + 4, bh + 4)  # Small padding
+    
+    def extract_hp_fraction(self, 
+                           frame: np.ndarray,
+                           roi: Tuple[int, int, int, int]
+                           ) -> Tuple[float, float]:
+        """
+        Extract HP percentage from bar using pixel intensity analysis.
+        Returns (fraction, confidence).
+        """
+        x, y, w, h = roi
+        bar = frame[y:y+h, x:x+w]
+        
+        # Convert to grayscale and threshold
+        gray = cv2.cvtColor(bar, cv2.COLOR_BGR2GRAY)
+        _, binary = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)
+        
+        # Count colored pixels (non-black)
+        colored_pixels = np.sum(binary > 0, axis=1).mean()
+        total_pixels = w * h
+        
+        # Green vs red classification per column
+        hsv = cv2.cvtColor(bar, cv2.COLOR_BGR2HSV)
+        green_cols = []
+        for col in range(w):
+            col_hsv = hsv[:, col, :]
+            mean_h = col_hsv[:, 0].mean()
+            green_cols.append(35 < mean_h < 85)
+        
+        # Find transition point
+        if any(green_cols) and not all(green_cols):
+            # Mixed bar: find green/red boundary
+            transition = next((i for i, g in enumerate(green_cols) 
+                             if not g and any(green_cols[:i])), w)
+            fraction = transition / w
+        elif all(green_cols):
+            fraction = 1.0
+        else:
+            fraction = 0.0
+        
+        # Confidence based on detection quality
+        confidence = min(1.0, colored_pixels / (0.3 * total_pixels))
+        
+        return fraction, confidence
+    
+    def detect_all_towers(self, frame: np.ndarray) -> list[TowerHPReading]:
+        """
+        Main entry point: robust multi-tower HP detection.
+        """
+        king = self.detect_king_tower(frame)
+        if king is None:
+            # Emergency fallback: search entire screen for HP bar patterns
+            return self._emergency_fallback(frame)
+        
+        proposals = self.propose_princess_rois(king)
+        results = []
+        
+        for i, (side, (px, py, pw, ph)) in enumerate(zip(TowerSide, proposals)):
+            # Layer 1: Refine ROI
+            refined = self.refine_roi_with_contours(frame, (px, py, pw, ph))
+            if refined is None:
+                refined = (px, py, pw, ph)  # Use rough estimate
+            
+            # Layer 2: Extract HP
+            fraction, conf = self.extract_hp_fraction(frame, refined)
+            
+            # Temporal smoothing
+            smoothed = self._temporal_filter(side, fraction, conf)
+            
+            results.append(TowerHPReading(
+                side=side,
+                hp_pixels=int(fraction * 120),
+                max_hp_pixels=120,
+                hp_fraction=smoothed,
+                confidence=conf,
+                roi=refined
+            ))
+        
+        return results
+    
+    def _temporal_filter(self, side: TowerSide, 
+                         raw_fraction: float,
+                         raw_conf: float) -> float:
+        """
+        Kalman-inspired temporal smoothing with outlier rejection.
+        HP changes are gradual except for spell damage (detectable).
+        """
+        # Implementation: simple exponential moving average
+        # with spike detection for sudden spell damage
+        pass  # See full implementation in appendix
+    
+    def _emergency_fallback(self, frame: np.ndarray) -> list[TowerHPReading]:
+        """Hough transform-based HP bar detection when anchor fails."""
+        pass  # See appendix
+```
+
+**Validation Suite:**
+```python
+def test_tower_hp_detector():
+    """Unit test with synthetic and captured frames."""
+    detector = DynamicTowerHPDetector()
+    
+    # Test cases: full HP, partial damage, destroyed, UI shifted
+    test_frames = load_test_suite("tests/tower_hp/")
+    
+    for frame, expected in test_frames:
+        results = detector.detect_all_towers(frame)
+        for reading, exp in zip(results, expected):
+            assert abs(reading.hp_fraction - exp) < 0.05
+            assert reading.confidence > 0.7
+```
+
+### 1.2 Unit Detection Enhancement: Handling Overlaps & Swarms
+
+**Problem:** ClashRoyaleBuildABot's ONNX detector struggles with:
+- Skeleton army overlapping (NMS threshold too aggressive)
+- Same-unit-type stacking (multiple Hog Riders)
+- Elevation ambiguity (flying vs ground at same tile)
+
+**Solution: Multi-Frame Temporal Association + Tile Space Constraints**
+
+```python
+class TemporalUnitTracker:
+    """
+    SORT-style (Simple Online Realtime Tracking) adaptation for
+    Clash Royale with domain-specific motion models.
+    """
+    
+    def __init__(self):
+        self.active_tracks: dict[int, UnitTrack] = {}
+        self.next_id = 0
+        self.max_age = 5  # frames
+        self.min_hits = 3
+        
+        # Clash Royale physics constants
+        self.TILE_SIZE_PX = 60  # approximate
+        self.MAX_SPEED_TILES_PER_SEC = 12  # Hog Rider speed
+        
+    def predict(self, dt: float = 0.1):
+        """Kalman prediction for all tracks."""
+        for track in self.active_tracks.values():
+            track.predict(dt)
+    
+    def update(self, detections: list[UnitDetection], frame_time: float):
+        """
+        Hungarian assignment with tile-space distance cost.
+        """
+        # Convert detections to measurement space
+        measurements = [(d.tile_x, d.tile_y, d.unit_type.confidence) 
+                       for d in detections]
+        
+        # Cost matrix: combine Mahalanobis distance + unit type compatibility
+        cost_matrix = np.zeros((len(self.active_tracks), len(detections)))
+        
+        for i, (tid, track) in enumerate(self.active_tracks.items()):
+            for j, det in enumerate(detections):
+                # Spatial cost: tile distance (not pixel!)
+                tile_dist = np.hypot(track.tile_x - det.tile_x,
+                                    track.tile_y - det.tile_y)
+                
+                # Type compatibility: same unit type preferred
+                type_match = 1.0 if track.unit_type == det.unit_type else 0.3
+                
+                # Velocity consistency: penalize impossible jumps
+                expected_dist = track.speed * dt * 1.5  # 50% margin
+                velocity_penalty = 10.0 if tile_dist > expected_dist else 1.0
+                
+                cost_matrix[i, j] = tile_dist * velocity_penalty / type_match
+        
+        # Hungarian assignment
+        from scipy.optimize import linear_sum_assignment
+        row_ind, col_ind = linear_sum_assignment(cost_matrix)
+        
+        # Update matched tracks
+        matched_detections = set()
+        for r, c in zip(row_ind, col_ind):
+            if cost_matrix[r, c] < 5.0:  # Gating threshold
+                tid = list(self.active_tracks.keys())[r]
+                self.active_tracks[tid].update(detections[c])
+                matched_detections.add(c)
+        
+        # Initiate new tracks for unmatched detections
+        for j, det in enumerate(detections):
+            if j not in matched_detections:
+                self.active_tracks[self.next_id] = UnitTrack(
+                    track_id=self.next_id,
+                    initial_detection=det
+                )
+                self.next_id += 1
+        
+        # Remove stale tracks
+        self.active_tracks = {
+            k: v for k, v in self.active_tracks.items() 
+            if v.time_since_update < self.max_age
+        }
+        
+        return list(self.active_tracks.values())
+
+class UnitTrack:
+    """Kalman filter for unit state estimation."""
+    
+    def __init__(self, track_id: int, initial_detection: UnitDetection):
+        self.track_id = track_id
+        
+        # State: [tile_x, tile_y, vx, vy, hp_fraction]
+        self.kf = KalmanFilter(dim_x=5, dim_z=3)
+        self.kf.x = np.array([
+            initial_detection.tile_x,
+            initial_detection.tile_y,
+            0,  # vx
+            0,  # vy
+            initial_detection.hp_fraction
+        ])
+        
+        # Process noise tuned for Clash Royale unit dynamics
+        self.kf.Q = np.diag([0.1, 0.1, 2.0, 2.0, 0.05])
+        
+        # Measurement noise
+        self.kf.R = np.diag([0.5, 0.5, 0.1])
+        
+        self.unit_type = initial_detection.unit_type
+        self.time_since_update = 0
+        self.hit_streak = 1
+        
+    def predict(self, dt: float):
+        # State transition: position += velocity * dt
+        self.kf.F = np.array([
+            [1, 0, dt, 0,  0],
+            [0, 1,  0, dt, 0],
+            [0, 0,  1,  0, 0],
+            [0, 0,  0,  1, 0],
+            [0, 0,  0,  0, 1]
+        ])
+        self.kf.predict()
+        self.time_since_update += 1
+        
+    def update(self, detection: UnitDetection):
+        self.kf.update(np.array([
+            detection.tile_x,
+            detection.tile_y,
+            detection.hp_fraction
+        ]))
+        self.time_since_update = 0
+        self.hit_streak += 1
+        
+    @property
+    def tile_x(self): return self.kf.x[0]
+    @property
+    def tile_y(self): return self.kf.x[1]
+    @property
+    def speed(self): return np.hypot(self.kf.x[2], self.kf.x[3])
+```
+
+**Overlapping Swarm Resolution:**
+
+```python
+def resolve_swarm_overlaps(detections: list[UnitDetection]) -> list[UnitDetection]:
+    """
+    Post-processing for skeleton armies and other swarms.
+    Uses

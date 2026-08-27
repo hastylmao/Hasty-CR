@@ -1,0 +1,102 @@
+{
+  "actions": [
+    {
+      "action": "deploy",
+      "card": "knight",
+      "position": [
+        9,
+        9
+      ],
+      "side": -1,
+      "time_ms": 0
+    },
+    {
+      "action": "building",
+      "card": "cannon",
+      "metadata": {
+        "map_ready": true,
+        "sweep_role": "generic_obstacle_pull_map"
+      },
+      "position": [
+        9,
+        11
+      ],
+      "side": -1,
+      "time_ms": 100
+    }
+  ],
+  "category": "building_pull",
+  "decks": [
+    [
+      "knight",
+      "cannon",
+      "musketeer",
+      "fireball",
+      "log",
+      "minions",
+      "giant",
+      "balloon"
+    ],
+    [
+      "giant",
+      "hog_rider",
+      "balloon",
+      "bowler",
+      "fisherman",
+      "tornado",
+      "minions",
+      "cannon"
+    ]
+  ],
+  "dt_ms": 50,
+  "duration_ms": 1000,
+  "evidence_ids": [
+    "SYNTH-S5-040"
+  ],
+  "evidence_status": "synthetic",
+  "measures": [
+    {
+      "category": "position",
+      "evidence_ids": [
+        "SYNTH-S5-040"
+      ],
+      "name": "entity_positions",
+      "tolerance": 0.5
+    },
+    {
+      "category": "building_pull",
+      "evidence_ids": [
+        "SYNTH-S5-040"
+      ],
+      "name": "event_order_candidate",
+      "tolerance": 250.0
+    }
+  ],
+  "metadata": {
+    "candidate_thresholds_only": true,
+    "implementation_locations": [
+      "tools/calibration/core.py"
+    ],
+    "provenance": {
+      "method": "deterministic template",
+      "real_data_claim": false,
+      "source": "generated_synthetic_catalog"
+    }
+  },
+  "observation_windows": [
+    [
+      0,
+      1000
+    ]
+  ],
+  "scenario_id": "sprint5_040_building_pull",
+  "seed": 5040,
+  "split": "validation",
+  "tags": [
+    "sprint-5",
+    "building_pull",
+    "knight",
+    "cannon",
+    "generic_obstacle_pull_map"
+  ]
+}

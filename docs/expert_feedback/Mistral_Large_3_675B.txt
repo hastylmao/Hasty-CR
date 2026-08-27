@@ -1,0 +1,347 @@
+# Model Advice: Mistral_Large_3_675B
+# Model ID: mistral.mistral-large-3-675b-instruct
+# Response Time: 18.20s
+# Output Characters: 13637
+
+# **HastyCR: Exhaustive Technical Advisory for Autonomous Clash Royale RL Agent**
+*Principal AI/RL Architect & Game Bot Engineering Blueprint*
+
+---
+
+## **1. Immediate Computer Vision / Perception Fixes**
+### **1.1 Tower HP Bar Detection: Dynamic ROI Anchoring**
+**Problem:** Static ROIs fail due to vertical shifts in the HP bar (Δy ≈ 17px).
+**Solution:** Use **contour-based landmark alignment** with template matching.
+
+#### **Algorithm:**
+1. **Landmark Detection:**
+   - Detect the **level badge** (top-left corner) via template matching (OpenCV `matchTemplate`).
+   - Use the badge’s bottom-right corner as an anchor `(x_anchor, y_anchor)`.
+   - Scale offsets relative to this anchor (e.g., `y_hp_bar = y_anchor + 420`).
+
+2. **Dynamic ROI Calculation:**
+   ```python
+   def get_hp_bar_roi(frame, template_badge):
+       res = cv2.matchTemplate(frame, template_badge, cv2.TM_CCOEFF_NORMED)
+       _, _, _, max_loc = cv2.minMaxLoc(res)
+       x_anchor, y_anchor = max_loc[0] + template_badge.shape[1], max_loc[1] + template_badge.shape[0]
+       roi_left = x_anchor + 120  # Relative to badge
+       roi_top = y_anchor + 420
+       roi_right = roi_left + 200
+       roi_bottom = roi_top + 10
+       return frame[roi_top:roi_bottom, roi_left:roi_right]
+   ```
+
+3. **HP Bar Parsing:**
+   - Use **color thresholding** (HP bar is green/red) or **OCR** (Tesseract) for numeric HP.
+   - For robustness, combine both:
+     ```python
+     def parse_hp(roi):
+         # Color-based
+         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
+         mask = cv2.inRange(hsv, (35, 100, 100), (85, 255, 255))  # Green
+         hp_ratio = cv2.countNonZero(mask) / roi.size
+
+         # OCR fallback
+         hp_text = pytesseract.image_to_string(roi, config='--psm 7')
+         return min(float(hp_text) / 1000, hp_ratio * 3346)  # Clamp to max tower HP
+     ```
+
+4. **Fallback: Contour Analysis**
+   - If template matching fails, detect the **HP bar contour**:
+     ```python
+     def get_hp_bar_contour(frame):
+         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+         _, thresh = cv2.threshold(gray, 200, 255, cv2.THRESH_BINARY_INV)
+         contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+         hp_bar = max(contours, key=cv2.contourArea)
+         x, y, w, h = cv2.boundingRect(hp_bar)
+         return frame[y:y+h, x:x+w]
+     ```
+
+---
+
+### **1.2 Unit Detection: Overlapping Swarms & Occlusion Handling**
+**Problem:** Swarms (Skeletons, Bats) and splash units (Witch, Baby Dragon) cause detection conflicts.
+**Solution:** **Multi-scale template matching + YOLOv8 segmentation**.
+
+#### **Implementation:**
+1. **Pre-trained YOLOv8 Model:**
+   - Fine-tune YOLOv8 on Clash Royale unit sprites (annotate 1k screenshots).
+   - Key classes: `hog`, `musketeer`, `cannon`, `ice_golem`, `skeletons`, `swarm_unit`.
+
+2. **Post-Processing:**
+   - Merge overlapping detections (e.g., Skeletons + Ice Spirit) via **Non-Max Suppression (NMS)**.
+   - For splash units, use **dilation + contour grouping**:
+     ```python
+     def group_swarm_units(masks):
+         kernel = np.ones((5,5), np.uint8)
+         dilated = cv2.dilate(masks, kernel, iterations=2)
+         contours, _ = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+         return [cv2.boundingRect(c) for c in contours]
+     ```
+
+3. **Tile Position Mapping:**
+   - Convert bounding boxes to grid coordinates:
+     ```python
+     def bbox_to_grid(bbox, mumu_res=(1080, 1920), grid_size=(18, 32)):
+         x, y, w, h = bbox
+         grid_x = int((x + w/2) / mumu_res[0] * grid_size[0])
+         grid_y = int((y + h/2) / mumu_res[1] * grid_size[1])
+         return (grid_x, grid_y)
+     ```
+
+---
+
+## **2. Latency Reduction & Actuation Architecture**
+### **2.1 ADB Latency Optimization**
+**Problem:** `exec-out screencap` + `input tap` introduces **800-1200ms latency**.
+**Solutions:**
+
+#### **Option 1: Minicap + Raw Framebuffer**
+- **Minicap** streams frames via **socket** (≈100ms latency):
+  ```bash
+  adb shell LD_LIBRARY_PATH=/data/local/tmp /data/local/tmp/minicap -P 1080x1920@1080x1920/0 -S
+  adb forward tcp:1313 localabstract:minicap
+  ```
+- **Python Client:**
+  ```python
+  import socket
+  sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+  sock.connect(("localhost", 1313))
+  frame = sock.recv(1024 * 1024)  # Read JPEG header + frame
+  ```
+
+#### **Option 2: Scrcpy for Low-Latency Control**
+- **Scrcpy** provides **<50ms latency**:
+  ```bash
+  scrcpy --no-display --v4l2-sink=/dev/video0 --no-audio
+  ```
+- **Frame Capture via V4L2:**
+  ```python
+  import cv2
+  cap = cv2.VideoCapture("/dev/video0", cv2.CAP_V4L2)
+  ret, frame = cap.read()
+  ```
+
+#### **Option 3: Shared Memory (Fastest)**
+- **Android `ashmem` + `mmap`**:
+  ```python
+  # On Android:
+  adb shell "su -c 'echo /dev/ashmem > /proc/self/fd/1'"
+  # Python mmap:
+  import mmap
+  f = os.open("/dev/ashmem", os.O_RDWR)
+  buf = mmap.mmap(f, 1080*1920*4)
+  ```
+
+---
+
+### **2.2 Predictive State Estimation & Action Queuing**
+**Problem:** Hand-card state shifts before taps land (**149 rejected decisions/night**).
+**Solution:** **Kalman Filter + Action Buffer**.
+
+#### **Kalman Filter for Unit Tracking:**
+```python
+from filterpy.kalman import KalmanFilter
+kf = KalmanFilter(dim_x=4, dim_z=2)  # x, y, vx, vy
+kf.F = np.array([[1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0], [0, 0, 0, 1]])  # State transition
+kf.H = np.array([[1, 0, 0, 0], [0, 1, 0, 0]])  # Measurement function
+kf.R = np.eye(2) * 5  # Measurement noise
+kf.Q = np.eye(4) * 0.1  # Process noise
+
+def predict_unit_position(measurements):
+    kf.predict()
+    kf.update(measurements[-1])
+    return kf.x[:2]  # Predicted (x, y)
+```
+
+#### **Action Buffer with Deadline Scheduling:**
+```python
+from collections import deque
+action_buffer = deque(maxlen=5)
+
+def queue_action(card_slot, x, y, delay):
+    deadline = time.time() + delay
+    action_buffer.append((deadline, card_slot, x, y))
+    action_buffer.sort(key=lambda x: x[0])  # Earliest deadline first
+
+def execute_buffer():
+    now = time.time()
+    while action_buffer and action_buffer[0][0] <= now:
+        _, slot, x, y = action_buffer.popleft()
+        adb_tap(slot, x, y)
+```
+
+---
+
+## **3. Tactical Hog 2.6 Micro-Defense Formulation**
+### **3.1 Kiting Geometry & Cannon Pull Placements**
+**Hog 2.6 Defense relies on:**
+1. **Ice Golem Pull** (forces Hog to take a long path).
+2. **Cannon Pull** (positions Hog in splash radius).
+3. **Spell Trading** (Fireball/Log for value).
+
+#### **Algorithmic Formulation:**
+1. **Ice Golem Placement:**
+   - Place **2 tiles ahead of Hog** (angle-dependent):
+     ```python
+     def ice_golem_placement(hog_pos):
+         hog_x, hog_y = hog_pos
+         if hog_x < 9:  # Left lane
+             return (hog_x + 2, hog_y - 1)
+         else:  # Right lane
+             return (hog_x - 2, hog_y - 1)
+     ```
+
+2. **Cannon Pull (4-3 vs 2-3):**
+   - **4-3 Pull:** Cannon at `(8, 20)` forces Hog to take 3 turns to reach tower.
+   - **2-3 Pull:** Cannon at `(9, 21)` for faster rotation.
+   - **Dynamic Selection:**
+     ```python
+     def cannon_placement(hog_pos, enemy_units):
+         if len(enemy_units) >= 2:  # Under pressure
+             return (9, 21)  # 2-3 pull
+         else:
+             return (8, 20)  # 4-3 pull
+     ```
+
+3. **Spell Trading:**
+   - **Fireball** if `sum(enemy_hp) < 400` and `elixir >= 4`.
+   - **Log** if `sum(enemy_hp) < 200` and `elixir >= 2`.
+   - **Prioritize Musketeer > Cannon > Ice Golem**:
+     ```python
+     def spell_target(enemies):
+         targets = sorted(enemies, key=lambda x: (x["hp"], -x["value"]))
+         return targets[0]["grid_pos"]
+     ```
+
+---
+
+## **4. The Roadmap to True Reinforcement Learning**
+### **Phase 1: High-Fidelity Data Generation & Imitation Learning**
+#### **4.1 Data Harvesting Pipeline**
+| Source          | Method                          | Volume  | Labeling |
+|-----------------|---------------------------------|---------|----------|
+| RoyaleAPI       | Replay downloads                | 100k    | Automatic |
+| YouTube/Twitch  | Screen recording + OCR          | 50k     | Semi-auto |
+| Emulator Farm   | Self-play with scripted bots    | 200k    | Auto     |
+
+#### **4.2 Behavioral Cloning with Transformer Policy**
+- **Model:** `StARformer_3L` (current) → **Decision Transformer** (offline RL).
+- **Data Format:**
+  ```python
+  {
+      "state": {
+          "grid": np.array(18x32xN_units),  # One-hot unit types
+          "tower_hp": [3346, 3346, 3346],   # Ally king + 2 towers
+          "elixir": 8,
+          "hand": [4, 2, 6, 1]              # Card IDs
+      },
+      "action": (card_slot=2, x=8, y=20, delay=0.5),
+      "reward": 0.0,                        # Shaped reward (tower damage)
+      "next_state": {...}
+  }
+  ```
+- **Training:**
+  ```python
+  import torch
+  model = DecisionTransformer(state_dim=64, act_dim=4)
+  optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
+
+  for batch in dataloader:
+      states, actions, rewards = batch
+      action_pred = model(states)
+      loss = torch.nn.CrossEntropyLoss()(action_pred, actions)
+      optimizer.zero_grad()
+      loss.backward()
+      optimizer.step()
+  ```
+
+---
+
+### **Phase 2: Simulation vs Live Environment**
+#### **Option A: ClashAI (Headless Simulator)**
+- **Pros:** Fast (~1000x real-time), deterministic.
+- **Cons:** Simplistic physics (no splash, no pathing bugs).
+- **Integration:**
+  ```python
+  from clashai import Environment
+  env = Environment(deck=["hog", "musketeer", ...])
+  obs = env.reset()
+  action = model(obs)
+  obs, reward, done, info = env.step(action)
+  ```
+
+#### **Option B: Parallel Emulator Farm (Real Environment)**
+- **Pros:** Real physics, ladder opponents.
+- **Cons:** Slow (~10 FPS), noisy.
+- **Architecture:**
+  ```
+  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+  │ Emulator 1  │    │ Emulator 2  │    │ Emulator N  │
+  └──────┬──────┘    └──────┬──────┘    └──────┬──────┘
+         │                  │                  │
+  ┌──────▼──────┐    ┌──────▼──────┐    ┌──────▼──────┐
+  │ Perception  │    │ Perception  │    │ Perception  │
+  └──────┬──────┘    └──────┬──────┘    └──────┬──────┘
+         │                  │                  │
+  ┌──────▼──────────────────▼──────────────────▼──────┐
+  │               Central Policy Model                │
+  └──────────────────────────────────────────────────┘
+  ```
+
+---
+
+### **Phase 3: Modern RL Algorithms & Reward Design**
+#### **4.3 Algorithm Selection**
+| Algorithm               | Use Case                          | Pros                          | Cons                          |
+|-------------------------|-----------------------------------|-------------------------------|-------------------------------|
+| **PPO**                 | On-policy fine-tuning             | Stable, sample-efficient      | Needs simulator               |
+| **SAC**                 | Off-policy exploration            | Works with continuous actions | High variance                 |
+| **Decision Transformer**| Offline RL                        | Leverages large datasets      | Needs high-quality data       |
+| **IQL**                 | Conservative offline RL           | Robust to OOD actions         | Hyperparameter-sensitive      |
+
+#### **4.4 Reward Shaping**
+- **Immediate Rewards:**
+  ```python
+  def reward(state, action, next_state):
+      tower_damage = next_state["tower_hp"][1:] - state["tower_hp"][1:]  # Enemy towers
+      elixir_advantage = next_state["elixir"] - state["elixir"]
+      lane_pressure = sum(1 for unit in next_state["grid"] if unit["y"] < 16 and unit["team"] == "ally")
+      return 0.1 * sum(tower_damage) + 0.01 * elixir_advantage + 0.05 * lane_pressure
+  ```
+- **Long-Term Rewards:**
+  - **Win/Loss:** +1000 / -1000
+  - **Crown Differential:** `ally_crowns - enemy_crowns`
+  - **Elixir Efficiency:** `sum(ally_unit_costs) - sum(enemy_unit_costs)`
+
+#### **4.5 Self-Play League Training (AlphaStar-style)**
+1. **Population-Based Training:**
+   - Maintain **10 versions** of the policy, each specializing in a meta (Hog, Bait, Beatdown).
+   - **Elo Rating System:**
+     ```python
+     def update_elo(winner, loser):
+         winner_elo = winner["elo"]
+         loser_elo = loser["elo"]
+         expected = 1 / (1 + 10 ** ((loser_elo - winner_elo) / 400))
+         winner["elo"] += 32 * (1 - expected)
+         loser["elo"] -= 32 * (1 - expected)
+     ```
+2. **Exploiter Bots:**
+   - Train **scripted exploiters** (e.g., "always Giant", "always Rocket cycle") to find policy weaknesses.
+3. **Diversity Reward:**
+   - Encourage **novel strategies** by rewarding policies that beat **multiple archetypes**:
+     ```python
+     def diversity_reward(policy, opponents):
+         return 0.1 * sum(1 for opp in opponents if policy.beats(opp))
+     ```
+
+---
+
+## **5. Priority Action Matrix & Milestones**
+| Timeline  | Milestone                                                                 | Key Actions                                                                 |
+|-----------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| **Day 1-7** | **Perception & Latency Fix**                                             | - Dynamic ROI for HP bars. <br> - Minicap/Scrcpy integration. <br> - Kalman filter for unit tracking. |
+| **Week 2**  | **Tactical Defense Rules**                                               | - Cannon pull logic. <br> - Ice Golem kiting. <br> - Spell trading.        |
+| **Month 1** | **Imitation Learning Pipeline**                                          | - Harvest 100k replays. <br> - Train Decision Transformer.

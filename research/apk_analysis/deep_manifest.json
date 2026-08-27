@@ -1,0 +1,193 @@
+{
+  "analysis": "deterministic bounded static byte-container analysis",
+  "artifacts": {
+    "_references/apk_analysis/deep/apks.json": {
+      "sha256": "b7742879f32ccdcfef0b0cdaf84149893b87ef1bafd432632875e32954a39971",
+      "size": 147209622
+    },
+    "_references/apk_analysis/deep/evidence_graph.json": {
+      "sha256": "b75f1f870c922ca29bbf50da2b1b93c8f73630b044cee1c60af1a5d7c4657119",
+      "size": 14601101
+    },
+    "_references/apk_analysis/deep/pairs.json": {
+      "sha256": "24591a445577f9f213db277ac429d885c5b4172912ed306589822e6bda0f39cd",
+      "size": 563819
+    },
+    "_references/apk_analysis/deep/source_validation.json": {
+      "sha256": "fefa6157d0457ebe7da2480aded50b969c0f487e8d159e1d47f522bd3f3db884",
+      "size": 895
+    },
+    "research/apk_analysis/DATA_DELTA.md": {
+      "sha256": "05dd042f08f899a4463c0977f12bfc59ed2b41457f420ca15bb2a8d84f0a6e68",
+      "size": 1671
+    },
+    "research/apk_analysis/DEEP_STATIC_ANALYSIS.md": {
+      "sha256": "e68c3a77ed74e813cea4c2f9a061ba97c41fcced18f456a6aa16a2b872b9387d",
+      "size": 3085
+    },
+    "research/apk_analysis/DEX_RECONSTRUCTION.md": {
+      "sha256": "5630753885c42f94b86500cfb7930d33cc612d7bc3b016123df311471c249c11",
+      "size": 8495
+    },
+    "research/apk_analysis/NATIVE_RECONSTRUCTION.md": {
+      "sha256": "cba1b92379608b4c38a0b0061046a141919bf330a9aa123335b4e4591cb582c3",
+      "size": 6502
+    },
+    "research/apk_analysis/SUBSYSTEM_CLASSIFICATION.md": {
+      "sha256": "5a05a562df95a43a08f3afee2502df393f77cafed0507769ea54965b5c1fe353",
+      "size": 2479
+    },
+    "research/apk_analysis/deep_pairwise.csv": {
+      "sha256": "5a4496c6bac72f8ab6ff96ae03b940e02050ce62d21068becf22d8fb8929122d",
+      "size": 1512
+    }
+  },
+  "classifications": [
+    "UNCHANGED_SHARED_CLIENT",
+    "MODIFIED_CLIENT",
+    "PRIVATE_SERVER_SPECIFIC",
+    "CUSTOM_DATA",
+    "UNKNOWN"
+  ],
+  "coverage": {
+    "archive_entries_bound_to_originals": true,
+    "dex_full_map_header_correspondence_validated": false,
+    "dex_integrity_validated": true,
+    "graph_edges_source_labeled": true,
+    "official_tool_controls_enforced_now": false,
+    "partial_or_unsupported_is_explicit": true,
+    "raw_container_decode_and_parse_status_separate": true
+  },
+  "external_study": {
+    "data": "absent",
+    "fixtures": "absent",
+    "head": "46a4a2d6f0c01bf0549cde70dfcc35e0c9849b7c",
+    "license": "absent",
+    "policy": "study-only; not cloned or run",
+    "provenance": "absent",
+    "relationship": "reported-zero-change-fork-unverified",
+    "repository": "milanmaldini/cr-sc-dump2026",
+    "tests": "absent",
+    "tree_comparison_evidence": "absent"
+  },
+  "input_digests": {
+    "_references/apk_analysis/clash-royale-mod-15-535-13-an1-com/entries.json": {
+      "sha256": "a15a510f158440964dea9af7234b37b2c0611ecc479d83b7cc6935542d242960",
+      "size": 2653624
+    },
+    "_references/apk_analysis/inventory.json": {
+      "sha256": "d37559fbca0aabe422d96f86a56a21f396921921969acccbfc5f1fba929d8b34",
+      "size": 2142660
+    },
+    "_references/apk_analysis/master-royale-apk-v3-2729-1/entries.json": {
+      "sha256": "c24ff9cd1ba2b571ec11bcc8eb262c66ba40b18627ce1e5dd86a961e6d3d70c8",
+      "size": 945607
+    },
+    "_references/apk_analysis/nr-15-535-13-infinity-da5a0dc4-1/entries.json": {
+      "sha256": "42ca4bbd85644a97c44efa7211f5ed49dd3c139f3dbe92491331e5703207dbf1",
+      "size": 2798056
+    },
+    "_references/apk_analysis/nr-15-535-13-infinity-da5a0dc4/entries.json": {
+      "sha256": "42ca4bbd85644a97c44efa7211f5ed49dd3c139f3dbe92491331e5703207dbf1",
+      "size": 2798056
+    },
+    "analyzer/tools/research/apk_deep_analysis.py": {
+      "sha256": "97a09500b05c9d06d4fbf6f1f190c804fea43cbd745bdeda2ec6e5692c6c1f83",
+      "size": 91342
+    },
+    "original_apks/clash-royale-mod_15.535.13-an1.com.apk": {
+      "sha256": "da4fdba452a552aaf5843f595bdb383bc313cb097d719b2e103b383ee5fcf00e",
+      "size": 794497101
+    },
+    "original_apks/master.royale.apk.v3.2729.1.apk": {
+      "sha256": "53d7715c06362bdcd755f9f66d6fbf3376f3a7c0d66ca8df1f518e46a6b49480",
+      "size": 152505196
+    },
+    "original_apks/nr_15.535.13_infinity_da5a0dc4 (1).apk": {
+      "sha256": "8a27110f2fcdc0500290f11a062ca80b5fb8f3a9e4b5c82ad8424ed21fdf9705",
+      "size": 906308776
+    },
+    "original_apks/nr_15.535.13_infinity_da5a0dc4.apk": {
+      "sha256": "e5e78f8ae27f0f3eb006627126257f27044054d23f7e3b8b3196f5e2bd76ef20",
+      "size": 906308776
+    }
+  },
+  "manifest_digest": "641c3b2d7f49056021ba41b9e868ec8e0e26cbe9975b0738c972d84daa4bb8aa",
+  "metrics": {
+    "apk_count": 4,
+    "code_item_count": 64739,
+    "data_file_count": 2240,
+    "data_parse_non_success_count": 0,
+    "data_parse_success_count": 2240,
+    "dex_class_count": 13981,
+    "dex_count": 5,
+    "dex_malformed_code_item_count": 0,
+    "dex_parse_failure_count": 0,
+    "elf_count": 56,
+    "elf_export_count": 32877,
+    "elf_import_count": 7054,
+    "elf_parse_failure_count": 2,
+    "elf_parse_success_count": 54,
+    "elf_relocation_count": 392586,
+    "entry_count": 34506,
+    "graph_edge_count": 9082,
+    "graph_mechanics_chain_edge_count": 248,
+    "instruction_code_units": 2510246,
+    "pair_count": 6,
+    "proprietary_file_count": 25768,
+    "real_measurements": 0,
+    "source_archive_manifest_bindings": 4
+  },
+  "official_tool_future_lane": {
+    "apktool": {
+      "asset_filename": "apktool_3.0.3.jar",
+      "asset_url": "https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar",
+      "commit": "18b5e99cb56ff9451e8aa55b065dcf5bbd616975",
+      "license": "Apache-2.0",
+      "release_date": "2026-07-20",
+      "release_url": "https://github.com/iBotPeaches/Apktool/releases/tag/v3.0.3",
+      "sha256": "dbf930b076c6b9be08d57c449cacefc3bdd6b71ebd59b3066fc0e1f5b14f9423",
+      "version": "3.0.3"
+    },
+    "jadx": {
+      "asset_filename": "jadx-1.5.6.zip",
+      "asset_url": "https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip",
+      "commit": "28ff15e4ae69950aebea110a13e5ab895d234dfc",
+      "license": "Apache-2.0",
+      "release_date": "2026-07-10",
+      "release_url": "https://github.com/skylot/jadx/releases/tag/v1.5.6",
+      "sha256": "545ea2be9c242511bc145755cf4bda2485ade42966e096f8b4d3da2a230e8974",
+      "version": "1.5.6"
+    },
+    "policy": {
+      "command_allowlist": [
+        "java -jar <pinned-apktool.jar>",
+        "<pinned-jadx>/bin/jadx"
+      ],
+      "failure_mode": "fail closed before tool start if any control is unavailable",
+      "inputs": "read-only, archive-bound, hash-validated",
+      "java_limits": [
+        "-Xms64m",
+        "-Xmx3072m",
+        "-XX:MaxMetaspaceSize=512m"
+      ],
+      "network": "deny all",
+      "output_revalidation": "reject unsafe paths, links, special files, limit violations, and unexpected executables; hash accepted output",
+      "plugins_and_user_config": "disabled; empty HOME and tool config roots",
+      "resource_limits": {
+        "cpu_seconds": 1800,
+        "output_bytes": 2147483648,
+        "ram_bytes": 4294967296,
+        "wall_seconds": 3600
+      },
+      "writable_output": "dedicated empty directory only"
+    },
+    "status": "future-only-not-executed-or-enforced"
+  },
+  "safety": {
+    "decompilation_claim": false,
+    "payload_execution": false,
+    "real_measurements": 0
+  },
+  "schema_version": 2
+}

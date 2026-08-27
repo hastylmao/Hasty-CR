@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "policy": "category-gated sim-to-real readiness",
+  "scalar_accuracy_claim": false,
+  "required_category_evidence": {
+    "arena": {"minimum_measured_scenarios": 2, "required_status": "measured"},
+    "movement": {"minimum_measured_scenarios": 3, "required_status": "measured"},
+    "targeting": {"minimum_measured_scenarios": 3, "required_status": "measured"},
+    "collisions": {"minimum_measured_scenarios": 3, "required_status": "measured"},
+    "combat_timing": {"minimum_measured_scenarios": 3, "required_status": "measured"},
+    "pathing": {"minimum_measured_scenarios": 3, "required_status": "measured"},
+    "building_pull": {"minimum_measured_scenarios": 4, "required_status": "measured"},
+    "projectiles": {"minimum_measured_scenarios": 3, "required_status": "measured"},
+    "knockback": {"minimum_measured_scenarios": 2, "required_status": "measured"},
+    "spawning": {"minimum_measured_scenarios": 2, "required_status": "measured"},
+    "special_mechanics": {"minimum_measured_scenarios": 2, "required_status": "measured"}
+  },
+  "regression_health": {
+    "required": true,
+    "catalog_static_validation": "PASS",
+    "focused_tests": "PASS",
+    "no_new_failures": true,
+    "fixture_digests_stable": true
+  },
+  "promotion_rules": [
+    "Synthetic or reference-hypothesis evidence never satisfies measured category gates.",
+    "Every category must meet its minimum measured scenario count on train and validation evidence.",
+    "Any FAIL in focused calibration regressions blocks readiness.",
+    "No aggregate scalar accuracy score is computed or used for promotion."
+  ],
+  "current_status": "NOT_READY",
+  "current_blockers": ["No real measured trace campaign has been completed.", "All checked-in traces are synthetic or simulator-only."]
+}

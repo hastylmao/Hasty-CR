@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "registry": "shared_physics",
+  "game_version": "local-data-2026-08",
+  "entries": [
+    {"id":"physics.coordinate_units","status":"implemented","confidence":"medium","provenance":"implementation","evidence_ids":["SYNTH-S5-001"],"tested_range":{"x_tiles":[0,18],"y_tiles":[0,32]},"implementation_locations":["sim/arena.py:tile","tools/calibration/core.py:SimTraceAdapter"],"legacy_default":"millitiles internally, tiles at calibration boundary","promotion_rules":"Retain unless measured coordinate mapping contradicts it."},
+    {"id":"physics.tick_dt","status":"implemented-hypothesis","confidence":"low","provenance":"implementation-review","evidence_ids":["SYNTH-S5-025"],"tested_range":{"dt_ms":[25,100]},"implementation_locations":["sim/arena.py:TICK_MS"],"legacy_default":"50ms","promotion_rules":"Do not alter constants until instrumented live evidence exists."},
+    {"id":"physics.bridge_geometry","status":"unmeasured","confidence":"none","provenance":"measurement-plan","evidence_ids":["SYNTH-S5-031"],"tested_range":{"bridge_width_tiles":[2,3]},"implementation_locations":["sim/arena.py:BRIDGE_X","sim/arena.py:BRIDGE_HALF_WIDTH"],"legacy_default":"current arena geometry","promotion_rules":"Require arena landmark calibration and controlled path traces."},
+    {"id":"physics.knockback_order","status":"unmeasured","confidence":"none","provenance":"implementation-review","evidence_ids":["SYNTH-S5-053"],"tested_range":{"impulse_tiles":[0,5]},"implementation_locations":["sim/engine.py:Battle"],"legacy_default":"current simulator behavior","promotion_rules":"Require synchronized impact and post-impact position evidence."}
+  ]
+}

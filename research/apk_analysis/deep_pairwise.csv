@@ -1,0 +1,7 @@
+left,right,basename_multiplicity_jaccard,path_hash_multiplicity_jaccard,content_hash_multiplicity_jaccard,dex_semantic_path_multiplicity_jaccard,dex_implementation_path_hash_jaccard,native_component_path_multiplicity_jaccard,native_implementation_path_hash_jaccard,data_total_extension_path_hash_jaccard,data_parseable_path_hash_jaccard,data_opaque_path_hash_jaccard,added_paths,removed_paths,changed_paths,dex_classification,native_classification,data_classification
+clash-royale-mod-15-535-13-an1-com,master-royale-apk-v3-2729-1,0.053732,0.02377,0.028256,0.023162,0.0,0.105396,0.0,0.0,0.0,1.0,2996,9228,377,UNKNOWN,UNKNOWN,UNKNOWN
+clash-royale-mod-15-535-13-an1-com,nr-15-535-13-infinity-da5a0dc4,0.94956,0.91528,0.91528,0.665759,0.0,1.0,1.0,0.56066,0.56066,1.0,527,0,187,UNKNOWN,UNCHANGED_SHARED_CLIENT,UNKNOWN
+clash-royale-mod-15-535-13-an1-com,nr-15-535-13-infinity-da5a0dc4-1,0.94956,0.91528,0.91528,0.665759,0.0,1.0,1.0,0.56066,0.56066,1.0,527,0,187,UNKNOWN,UNCHANGED_SHARED_CLIENT,UNKNOWN
+master-royale-apk-v3-2729-1,nr-15-535-13-infinity-da5a0dc4,0.051704,0.022864,0.027174,0.023138,0.0,0.105396,0.0,0.0,0.0,1.0,9754,2995,378,UNKNOWN,UNKNOWN,UNKNOWN
+master-royale-apk-v3-2729-1,nr-15-535-13-infinity-da5a0dc4-1,0.051704,0.022864,0.027174,0.023138,0.0,0.105396,0.0,0.0,0.0,1.0,9754,2995,378,UNKNOWN,UNKNOWN,UNKNOWN
+nr-15-535-13-infinity-da5a0dc4,nr-15-535-13-infinity-da5a0dc4-1,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0,0,0,UNCHANGED_SHARED_CLIENT,UNCHANGED_SHARED_CLIENT,UNCHANGED_SHARED_CLIENT

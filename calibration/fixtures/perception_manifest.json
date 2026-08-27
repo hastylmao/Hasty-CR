@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "status": "SYNTHETIC_ONLY",
+  "trace_id": "synthetic-perception",
+  "frames": 4,
+  "entity_observations": 3,
+  "events": 1,
+  "trace_sha256": "76210276a658d4baf52dacb7300e783cbafe882a617086aa8e6537b666f1a470",
+  "weighted_metrics": [],
+  "real_measurements": 0,
+  "performance_claim": null,
+  "detector_input_sha256": "adb5df1c4513b6367ac63cf756333b5bf4a472fafde62d1098b8c1fb937c3e6c"
+}

@@ -1,0 +1,211 @@
+# Model Advice: GLM_5
+# Model ID: zai.glm-5
+# Response Time: 49.53s
+# Output Characters: 12085
+
+**Principal AI Architect Advisory Document: Project HastyCR**
+
+**Subject:** Strategic & Technical Roadmap for Competitive Clash Royale RL Agent
+**Status:** Critical Path Advisory
+**Reference:** HastyCR System Architecture v1.0
+
+---
+
+### Executive Summary
+
+The current system demonstrates a classic "Sim2Real" gap combined with infrastructure latency that renders the agent strategically blind and tactically impotent. A 0-168 record is not a failure of the neural network architecture, but a failure of the perception-action loop. The agent is effectively playing "blindfolded" chess with a 10-second move delay.
+
+The Hog 2.6 deck is chosen specifically for its mechanical precision. It relies on **positive elixir trades** and **positional micro** (kiting/pulling). Currently, the bot cannot see tower HP (defensive blindness), cannot track unit states reliably, and acts on stale data (latency).
+
+This document outlines the surgical restructuring required to stabilize the system for RL, moving from a "research prototype" to a "competitive agent."
+
+---
+
+### 1. Immediate Computer Vision / Perception Fixes
+
+The current perception pipeline treats the screen as a static set of Regions of Interest (ROIs). This is the root cause of the Tower HP bug. Clash Royale is dynamic; UI elements shift slightly based on device resolution, safe areas, and aspect ratio cropping.
+
+#### 1.1 Solving the Shifting Tower HP Bar (Dynamic Anchoring)
+
+**Diagnosis:** Fixed pixel coordinates (e.g., y=1160) fail because the emulator window rendering varies slightly, or the HP bar renders differently based on the King Level badge adjacent to it.
+
+**Solution: Landmark-Based Relative ROI**
+
+We must abandon fixed coordinates for UI elements. Instead, implement a **Hierarchical Detection Pipeline**:
+
+1.  **Global Anchoring:** Detect the Arena Base (green grass line) or the River. This establishes the `y=0` logical ground.
+2.  **Tower Landmark Detection:** Use template matching or a lightweight object detector (YOLOv8-nano trained on 50-100 annotated screenshots) to find the **Princess Tower Base** (the stone structure) and the **King Level Badge**.
+3.  **Dynamic ROI Calculation:**
+    The HP bar position is relative to the Tower Base.
+    ```python
+    # Pseudocode
+    tower_bbox = detect_tower_base(frame) # Returns (x, y, w, h)
+    # HP bar is typically ~5-10 pixels above the tower top edge
+    hp_bar_roi = (
+        tower_bbox.x, 
+        tower_bbox.y - 10, 
+        tower_bbox.w, 
+        5
+    )
+    ```
+4.  **Color-Space Segmentation:** Instead of relying on OCR (slow) or exact pixel sums (brittle), convert the ROI to HSV color space.
+    *   **Green HP:** `H` in [40, 80], `S` high.
+    *   **Blue HP (Ally):** `H` in [100, 130].
+    *   **Red HP (Enemy):** `H` in [0, 10] or [170, 180].
+    Calculate HP percentage based on the width of the contiguous color mask.
+
+#### 1.2 Fixing Unit Detection (Swarm & Overlap)
+
+**Current Issue:** Bounding boxes from `ClashRoyaleBuildABot` likely struggle with overlapping units (e.g., Skeleton Army surrounding a Hog).
+
+**Recommendation:** Shift from pure Bounding Box regression to **Instance Segmentation** or **Keypoint Detection** for units.
+*   **For Small Swarms (Skeletons/Goblins):** Do not track individual skeletons. Track the **"Swarm Centroid"** and **"Spread Radius"**. The policy needs to know "There is a swarm here," not "Skeleton 1 is at (x,y)."
+*   **Occlusion Handling:** Use a simple "Tracker" (e.g., SORT or DeepSORT) to maintain unit ID consistency between frames. If a Hog disappears for 1 frame due to overlap, the tracker maintains its position based on velocity, preventing the model from thinking the threat vanished.
+
+---
+
+### 2. Latency Reduction & Actuation Architecture
+
+The 800ms-1200ms latency is the single biggest bottleneck. In a 60-second overtime, 1 second of latency allows the enemy 4-5 actions before you can respond.
+
+#### 2.1 Bypassing ADB `exec-out`
+
+`exec-out screencap` creates a process fork, encodes to PNG (slow), pipes through USB, and decodes. This is inefficient.
+
+**Solution: Scrcpy / Minicap Implementation**
+
+1.  **Video Stream:** Use `scrcpy` (Screen Copy) to stream H.264 video over ADB socket. It utilizes hardware encoding on the emulator (NVENC/QuickSync) and decodes on the CPU/GPU with minimal latency (<50ms).
+2.  **Shared Memory (Advanced):** If running locally, configure MuMu Player to render to a specific surface, or use `minicap` which streams raw JPEGs via a local socket, bypassing the PNG encoding overhead.
+3.  **Architecture Change:**
+    *   **Frame Grabber:** Runs in a separate `multiprocessing` thread, pushing frames to a `deque` (maxlen 2).
+    *   **Inference:** Runs on the "latest available" frame, never waiting for a capture to finish.
+
+#### 2.2 Predictive Action Queuing (The "Lookahead" Buffer)
+
+Since we cannot eliminate physics latency (network + emulator processing), we must account for it in the **State Model**.
+
+**Implementation:**
+1.  **State Estimator:** The agent does not observe the current frame $t$. It observes the frame $t - \Delta$ (where $\Delta$ is observed latency).
+2.  **Physics Engine:** Maintain a lightweight simulation of the game state. Project unit positions forward by $\Delta$ milliseconds.
+    *   *Input:* Unit position $(x, y)$, speed $v$, target $t$.
+    *   *Output:* Predicted position at time $t$.
+3.  **Action Dispatch:** When the agent decides to deploy a Musketeer at $(x, y)$, it calculates the trajectory for time $t+\Delta$.
+4.  **Pre-Validation:** Before sending the `input tap`, check the predicted state: "Will the card still be in hand at $t+\Delta$? Will the elixir be sufficient?" If yes, dispatch.
+
+---
+
+### 3. Tactical Hog 2.6 Micro-Defense Formulation
+
+The current heuristic policy fails because it treats defense as "placing buildings." Hog 2.6 defense is geometric.
+
+#### 3.1 The "Kiting Geometry" Algorithm
+
+We need a function `calculate_kite_vector(unit_type, target_enemy, tower_pos)`.
+
+**Ice Golem Kiting:**
+*   **Logic:** Ice Golem is a defensive tank. It must be placed such that the enemy targets it, walks towards it, and ends up *away* from the tower.
+*   **Algorithm:**
+    1.  Identify Enemy Target (e.g., a Mega Knight).
+    2.  Calculate vector $V$ from Enemy to Tower.
+    3.  Rotate $V$ by $+/- 45$ degrees.
+    4.  Place Ice Golem at end of rotated vector (approx 3-4 tiles away).
+    *   *Result:* Enemy walks diagonally, buying 2-3 seconds of time.
+
+**Cannon Pulling (The 4-3 / 2-3 Split):**
+*   **Logic:** The Cannon has a range of 5.5 tiles. It must be placed so the enemy enters its aggro range *before* entering the Tower aggro range.
+*   **Constraint:** $y \ge 20$ (Ally half).
+*   **Optimization:** Place Cannon at $(x=8.5, y=21)$. This central position pulls units from both lanes.
+*   **"Activate" King Tower:** If the enemy plays a "cheesy" unit (Goblin Barrel), place a troop (Log/Archers) specifically to damage the King Tower early, activating its cannon to aid defense.
+
+#### 3.2 Spell Trade Calculations
+
+We must encode the "Value" of a spell.
+$$ \text{Value} = \frac{\text{Enemy Elixir Cost} + \text{Damage Potential}}{\text{Our Elixir Cost}} $$
+
+*   **Fireball (4 Elixir):** Never cast on a single unit unless it is a $\ge$ 5 Elixir unit (e.g., Wizard, Witch) AND it is crossing the bridge.
+*   **The Log (2 Elixir):** Always cast if $\ge 2$ units are present or to reset attack animations of charging units (Prince/Ram).
+
+---
+
+### 4. The Roadmap to True Reinforcement Learning
+
+The "Offline vs. Online" gap is fatal. Training against a Golem bot teaches the model to defend slow, heavy pushes. Ladder is fast cycle and bridge spam.
+
+#### Phase 1: High-Fidelity Imitation Learning (Month 1)
+
+Do not start with RL. Start with **Behavioral Cloning (BC)** using expert data.
+
+1.  **Data Harvesting:**
+    *   Source: RoyaleAPI (top 200 player replays), YouTube "Pro Play" videos.
+    *   Tool: Build a replay parser. If CR replays are encrypted, use screen recording of top ladder matches.
+    *   Labeling: Extract actions $(card, x, y, t)$ from video.
+2.  **Training:**
+    *   Train the StARformer (or a ResNet+Transformer hybrid) to predict the expert's action given the state.
+    *   *Goal:* The bot should learn to "play like a human"—cycling cards, placing buildings proactively—not just reacting.
+
+#### Phase 2: Simulation Environment (Month 2-3)
+
+Live RL training is slow (3-5 mins per game) and risky (trophies drop). We need a **Gym Environment**.
+
+1.  **Option A: Headless Simulator.** If you have access to game assets (modding community), build a Unity-based "Physics Clone."
+2.  **Option B: Emulator Farm.** Run 10-20 instances of MuMu Player in parallel.
+    *   Use `docker` containers to manage instances.
+    *   Self-Play: Have the bot play against its own past checkpoints.
+    *   *Speed:* Accelerate the emulator clock if possible, or run 10 games in parallel to decouple training time from wall-clock time.
+
+#### Phase 3: Reinforcement Learning Loop (Month 4-6)
+
+**Algorithm:** **PPO (Proximal Policy Optimization)** or **SAC (Soft Actor-Critic)**.
+Why? They are robust to continuous action spaces and sample efficient enough if combined with a good simulator.
+
+**State Representation ($s_t$):**
+*   **Global Features:** Elixir, Hand Cards, Next Card, Tower HPs.
+*   **Spatial Features:** 18x32 Grid tensor. Channels: `[Ally_Units, Enemy_Units, Projectiles, Buildings]`.
+*   **History:** Stack last 4 frames to capture velocity.
+
+**Action Space ($a_t$):**
+*   Discrete: Wait, Deploy Card $i \in \{0..3\}$.
+*   Continuous: Coordinate $(x, y) \in [0, 1] \times [0, 1]$.
+*   *Architecture:* Use a Gaussian policy head for coordinates.
+
+**Reward Design ($r_t$):**
+We must shape the reward to prevent degenerate strategies (e.g., "Never deploy to save elixir").
+
+$$ r_t = r_{tower} + r_{elixir} + r_{pressure} $$
+
+1.  **Tower Damage:** $\pm \alpha \times \Delta HP_{tower}$. (Large magnitude).
+2.  **Elixir Efficiency:** $\beta \times (\text{Elixir}_{spent\_enemy} - \text{Elixir}_{spent\_ally})$. Encourages positive trades.
+3.  **Pressure:** $\gamma \times \text{Units\_on\_enemy\_side}$. Prevents "turtling."
+4.  **Win/Loss:** $\pm 100$ at match end.
+
+---
+
+### 5. Priority Action Matrix & Milestones
+
+#### Week 1: Stabilization (The "Eyes and Hands")
+*   **Goal:** Achieve a functional perception loop and 1 win.
+*   **Action:** Implement Dynamic HP Bar Anchoring. Switch to `scrcpy` or socket-based frame grabbing. Add "Predictive State" logic to handle latency.
+*   **Metric:** HP detection accuracy > 99%. Latency < 200ms.
+
+#### Week 2: Defensive Logic (The "Brain")
+*   **Goal:** Stop the bleeding.
+*   **Action:** Implement the "Kiting Geometry" logic in `policy_shims.py`. Force Cannon placement to dynamic coordinates based on enemy positions. Implement spell value thresholds.
+*   **Metric:** Reduce enemy damage per match by 50%.
+
+#### Month 1: Data Pipeline & Imitation
+*   **Goal:** Learn from humans.
+*   **Action:** Scrape 1000 top-ladder replays. Train the Transformer on Behavioral Cloning. Replace the "Golem Bot" checkpoint with this "Human Clone" checkpoint.
+*   **Metric:** Positive win rate against mid-ladder opponents (4000-5000 trophies).
+
+#### Month 3: RL Infrastructure
+*   **Goal:** Scale training.
+*   **Action:** Set up parallel emulator environment (Gym wrapper). Initialize Replay Buffer. Begin PPO training runs against the Behavioral Cloning agent (Agent vs. Clone).
+
+#### Month 6: Self-Play & Refinement
+*   **Goal:** Surpass human performance.
+*   **Action:** Full self-play league. Implement population-based training (League Training). Fine-tune reward shaping to handle specific meta-decks.
+
+---
+
+**Conclusion:**
+The current system is suffering from infrastructure starvation, not model incapacity. By fixing the perception latency and hardening the defensive logic with geometric rules, we can immediately stabilize the bot. Once the loop is reliable, the transition to Imitation Learning followed by RL will allow the agent to transcend scripted behavior. **Fix the eyes and hands before training the brain.**

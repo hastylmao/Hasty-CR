@@ -1,0 +1,10 @@
+{
+  "identity": {
+    "position_error": 0.0,
+    "timing_error_ms": 0.0
+  },
+  "known_shift_translation": {
+    "time_shift_error_max_ms": 0.0,
+    "translation_error_max": 0.03
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "drop_probability": 0.0,
+  "gap_tracks": [],
+  "position_noise_sigma": 0.01,
+  "seed": 42,
+  "time_shift_ms": 100,
+  "translation": [
+    0.25,
+    -0.15
+  ]
+}

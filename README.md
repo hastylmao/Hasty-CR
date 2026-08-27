@@ -383,8 +383,12 @@ flowchart LR
 
 <sub>60 held-out matches per opponent · fixed seed · greedy actions · opponents never trained against. Wilson intervals on the rule-engine axis do not overlap.</sub>
 
+> [!NOTE]
+> **These numbers predate the lane-commitment fix and are being re-measured.**
+> Until that commit, a unit whose own princess tower had fallen walked at the *far lane's* tower instead of the king, because the engine picked the nearest tower by straight-line distance. So this policy learned its after-you're-up-a-tower play against a board that does not exist. Opening play is unaffected; the closing behaviour is not trustworthy, and neither is any part of the figure above that depends on it. The table will be replaced with a measurement on the fixed engine rather than quietly left standing.
+
 > [!IMPORTANT]
-> **This is the simulator marking its own homework.** No trained policy has beaten a human. One match played by a person found a pathing bug that thirty million training steps never did — which is the honest measure of what a simulated win rate is worth.
+> **This is the simulator marking its own homework.** No trained policy has beaten a human. One match played by a person found the pathing bug above that thirty million training steps never did — which is the honest measure of what a simulated win rate is worth.
 
 <br>
 

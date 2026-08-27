@@ -121,6 +121,45 @@ def on_bridge(p: Point) -> bool:
     return any(abs(p.x - bx) <= BRIDGE_HALF_WIDTH for bx in BRIDGE_X)
 
 
+# The centre line, and the band around it the king tower stands on. Princess
+# towers sit five and a half tiles either side of centre, the king half a tile
+# off it, so this band separates them cleanly without needing to identify a
+# tower by name - which matters because towers are built directly rather than
+# from a card, and not every construction site passes `king=True`.
+CENTRE_X = WIDTH // 2
+CENTRE_BAND_MT = 3 * MT // 2       # 1.5 tiles either side
+
+
+def lane_of(p: Point) -> str:
+    """Which half of the arena a point stands in."""
+    return "left" if p.x < CENTRE_X else "right"
+
+
+def is_centre_lane(p: Point) -> bool:
+    """True on the centre column, where the king tower stands.
+
+    The king belongs to both lanes: a push down either one ends at it.
+    """
+    return abs(p.x - CENTRE_X) <= CENTRE_BAND_MT
+
+
+def same_lane(unit: Point, tower: Point) -> bool:
+    """Whether a unit at `unit` is in the lane that `tower` defends.
+
+    Ground troops in Clash Royale are lane-committed. A unit on the right half
+    walks at the right princess tower, and when that tower falls it walks at
+    the king - it does not cross the arena to the surviving princess tower on
+    the far side.
+
+    Straight-line distance says the opposite, and says it in the most common
+    situation in the game. From the back of the right lane with the right
+    tower already down, the *left* princess tower is about 20.7 tiles away and
+    the king about 22.1, so nearest-target sends a Hog diagonally across the
+    whole board. That walk does not exist in a real match.
+    """
+    return is_centre_lane(tower) or lane_of(unit) == lane_of(tower)
+
+
 def clamp_to_arena(p: Point) -> Point:
     return Point(max(0, min(WIDTH - 1, p.x)), max(0, min(HEIGHT - 1, p.y)))
 

@@ -223,6 +223,21 @@ def main() -> int:
                              "enough to be reinforced. A high coefficient "
                              "early finds them; holding it there would keep "
                              "the policy noisy once it has")
+    parser.add_argument("--anchor", type=Path,
+                        help="a checkpoint to stay close to, usually the "
+                             "behaviour clone. PPO is free to improve on it "
+                             "but pays --anchor-coef * KL for drifting, which "
+                             "is how a policy that transfers stops being "
+                             "optimised away. Measured live on 2026-08-28: "
+                             "the rule engine this clone imitates played hog "
+                             "15%% of the time holding 4.5 elixir, while the "
+                             "PPO policy that beats it 94%% in simulation "
+                             "played hog 3%% holding 2.3 - it had learned to "
+                             "dump cheap cards, which scores in a simulator "
+                             "whose body-block cost is a guess and loses to a "
+                             "person.")
+    parser.add_argument("--anchor-coef", type=float, default=0.0,
+                        help="weight on the anchor KL. 0 disables it")
     parser.add_argument("--entropy-hold", type=int, default=0,
                         help="steps to hold --entropy before annealing starts")
     parser.add_argument("--entropy-anneal", type=int, default=0,
@@ -329,6 +344,19 @@ def main() -> int:
         blob = torch.load(args.init, map_location=device, weights_only=False)
         network.load_state_dict(blob["state_dict"])
         log(f"initialised from {args.init} (weights only, step counter at 0)")
+    anchor_net = None
+    if args.anchor and args.anchor_coef > 0:
+        if not args.anchor.exists():
+            raise SystemExit(f"--anchor {args.anchor} does not exist")
+        anchor_net = build_network(NUM_PLANES, NUM_SCALARS, ACTIONS).to(device)
+        anchor_blob = torch.load(args.anchor, map_location=device,
+                                 weights_only=False)
+        anchor_net.load_state_dict(anchor_blob["state_dict"])
+        anchor_net.eval()
+        for parameter in anchor_net.parameters():
+            parameter.requires_grad_(False)
+        log(f"anchored to {args.anchor.name} at coef {args.anchor_coef}")
+
     if args.resume and args.resume.exists():
         blob = torch.load(args.resume, map_location=device, weights_only=False)
         network.load_state_dict(blob["state_dict"])
@@ -510,6 +538,19 @@ def main() -> int:
                     else:
                         loss = (loss_policy + hyper.value_coef * loss_value
                                 - entropy_coef * entropy)
+                        if anchor_net is not None:
+                            # KL(policy || anchor) over the *masked* action
+                            # distribution, so illegal actions cannot
+                            # contribute; their logits are -inf in both and
+                            # the softmax has already dropped them.
+                            with torch.no_grad():
+                                a_logits, _ = anchor_net(b_planes[sel],
+                                                         b_scalars[sel])
+                                a_dist = masked_distribution(a_logits,
+                                                             b_masks[sel])
+                            anchor_kl = torch.distributions.kl_divergence(
+                                dist, a_dist).mean()
+                            loss = loss + args.anchor_coef * anchor_kl
                     optimiser.zero_grad(set_to_none=True)
                     loss.backward()
                     nn.utils.clip_grad_norm_(network.parameters(), hyper.max_grad_norm)

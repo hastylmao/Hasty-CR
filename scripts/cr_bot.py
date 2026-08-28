@@ -34,6 +34,7 @@ import reward_screen  # noqa: E402
 from sprite_harvest import SpriteHarvester  # noqa: E402
 import connection_lost  # noqa: E402
 import tower_hp  # noqa: E402
+from emulator import verify as verify_emulator  # noqa: E402
 from brain import arena  # noqa: E402
 from brain.knowledge import BOOK  # noqa: E402
 from brain.policy import Brain  # noqa: E402
@@ -136,8 +137,7 @@ def main() -> int:
     # machine runs a Clash of Clans bot; a wrong --serial used to be silent,
     # because the runner would connect, fail to recognise the screen, and go
     # on tapping into somebody else's village.
-    from scripts.emulator import verify as _verify_emulator
-    _verify_emulator(args.serial, args.adb)
+    verify_emulator(args.serial, args.adb)
 
     if not args.verbose:
         logger.remove()

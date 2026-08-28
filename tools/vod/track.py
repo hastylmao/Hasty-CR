@@ -155,19 +155,36 @@ def detect_span(model, video: Path, start_s: float, end_s: float,
     capture = cv2.VideoCapture(str(video))
     if not capture.isOpened():
         return []
+
+    source_fps = capture.get(cv2.CAP_PROP_FPS) or 60.0
+    every = max(1, int(round(source_fps / fps)))
+
+    # Seek ONCE, then read forward. Seeking per frame - which this did - costs
+    # a decode from the preceding keyframe every time: measured at 0.77 frames
+    # a second over a twelve minute span, about twelve times slower than the
+    # video is long. grab() advances without decoding, so skipped frames are
+    # nearly free and only the sampled ones are paid for.
+    capture.set(cv2.CAP_PROP_POS_MSEC, start_s * 1000.0)
+
     out: list[Detection] = []
-    step = 1.0 / fps
-    t = start_s
-    while t < end_s:
-        capture.set(cv2.CAP_PROP_POS_MSEC, t * 1000.0)
+    index = 0
+    while True:
+        position = capture.get(cv2.CAP_PROP_POS_MSEC) / 1000.0
+        if position > end_s:
+            break
+        if index % every:
+            if not capture.grab():          # advance, do not decode
+                break
+            index += 1
+            continue
         ok, frame = capture.read()
         if not ok:
             break
         result = model.predict(frame, conf=conf, verbose=False)[0]
         for name, c, cx, cy, w, h in _boxes(result):
-            out.append(Detection(round(t - start_s, 3), name, round(c, 3),
-                                 cx, cy, w, h))
-        t += step
+            out.append(Detection(round(position - start_s, 3), name,
+                                 round(c, 3), cx, cy, w, h))
+        index += 1
     capture.release()
     return out
 

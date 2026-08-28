@@ -463,6 +463,7 @@ def main() -> int:
             line = (f"{decision.card} slot={decision.slot} grid=({decision.x},{decision.y}) "
                     f"tag={decision.tag} score={decision.score:.1f} "
                     f"elixir={state.numbers.elixir.number} "
+                    f"next={obs.next_card or '?'} "
                     f"enemy_elixir={obs.enemy_elixir:.1f} "
                     f"threat={obs.threat_score:.0f}/{len(obs.threats)} "
                     f"{_threat_names(obs)}"

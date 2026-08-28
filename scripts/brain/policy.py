@@ -110,6 +110,13 @@ class Observation:
     serious: bool                     # threat worth spending a card on
     contained: bool                   # our units are already on top of the push
     now: float
+    # The card queued behind the hand. Clash Royale shows it, the card
+    # detector already reads it as slot 0 - CARD_CONFIG[0] is its own
+    # crop, separate from the four evenly spaced hand slots - and this
+    # was the one input the RL bridge silently left at zero. For a cycle
+    # deck it is not decoration: the whole plan is knowing how far away
+    # the win condition is.
+    next_card: str = ""
 
 
 class Brain:
@@ -264,6 +271,8 @@ class Brain:
         # is unreliable enough to make the runner tap the wrong slot - see
         # brain/hand.py for the captured evidence.
         raw = [state.cards[slot + 1].name for slot in range(4)]
+        # Slot 0 is the next-card preview, not part of the hand.
+        next_card = (str(getattr(state.cards[0], "name", "")) if len(state.cards) > 4 else "")
         # Second opinion. The replacement classifier abstains when two cards
         # are too close to call. We previously fell back to the upstream detector
         # here, but the upstream detector is noisy and caused 299 hand flips.
@@ -372,6 +381,7 @@ class Brain:
                 "left": get_hp("enemy_left", float(numbers.left_enemy_princess_hp.number)),
                 "right": get_hp("enemy_right", float(numbers.right_enemy_princess_hp.number)),
             },
+            next_card=next_card,
             threat_elixir=threat_elixir,
             threat_score=threat_score,
             threat_lane=lane,

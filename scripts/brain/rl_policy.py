@@ -167,6 +167,18 @@ def observation_from_live(obs, allies=None) -> dict:
     for card, slot in obs.hand.items():
         if card in DECK_26 and 0 <= slot < NUM_SLOTS:
             scalars[base + slot * len(DECK_26) + DECK_26.index(card)] = 1.0
+    # The next card. These eight scalars were left at zero for the whole of
+    # every live match while the simulator always set one of them, so the
+    # policy was reading a state that never occurred once in training.
+    #
+    # It matters most for exactly this deck. 2.6 wins by cycling back to the
+    # Hog faster than the opponent cycles their answer, and "how far away is
+    # the Hog" lives entirely in this one-hot. Measured over five live
+    # matches against a person, hog share was 3-5% against 11-13% for the
+    # same checkpoint in the simulator, with 266-360 holds a match.
+    nxt = getattr(obs, "next_card", "")
+    if nxt in DECK_26:
+        scalars[base + NUM_SLOTS * len(DECK_26) + DECK_26.index(nxt)] = 1.0
     return {"planes": planes, "scalars": scalars}
 
 
@@ -213,6 +225,14 @@ class RLBrain:
         self.min_confidence = min_confidence
         self.last_obs = None
         self.holds = 0
+        # Why the mask came back empty. `holds` alone says the policy
+        # did nothing; it does not say whether that was its choice.
+        # It never is: decide() returns before the network runs when
+        # nothing is playable, so a hold is the mask's verdict, and
+        # 266-360 of them a match against 52-68 plays in the simulator
+        # is the gap worth explaining.
+        self.hold_reasons = {"no_hand": 0, "no_elixir": 0,
+                             "no_placement": 0}
         # Built here rather than on the first decision. `cr_bot` calls
         # `brain.reset()` the moment it sees a battle, before it ever asks for
         # a decision, and a lazily-built observer made that throw
@@ -242,6 +262,8 @@ class RLBrain:
         self._observer.reset()
         self.last_obs = None
         self.holds = 0
+        for key in self.hold_reasons:
+            self.hold_reasons[key] = 0
 
     def confirm(self, candidate, obs_now=None) -> None:
         """A card was actually tapped. The observer needs to know."""
@@ -279,13 +301,28 @@ class RLBrain:
     # attribute exists so the match record can say so rather than crash.
     advisor = None
 
+    def _note_hold(self, obs) -> None:
+        """Which constraint emptied the mask, in order of severity."""
+        hand = {c: sl for c, sl in getattr(obs, "hand", {}).items()
+                if c in DECK_26 and 0 <= sl < NUM_SLOTS}
+        if not hand:
+            self.hold_reasons["no_hand"] += 1
+            return
+        cheapest = min(card_cost(card) for card in hand)
+        if float(getattr(obs, "elixir", 0.0)) < cheapest:
+            self.hold_reasons["no_elixir"] += 1
+            return
+        self.hold_reasons["no_placement"] += 1
+
     def summary(self) -> str:
         # A string, because that is what the match record stores and what
         # `Brain.summary` returns; returning a dict here wrote a different
         # shape into every match json depending on which brain played.
         return (f"{self._observer.summary()} brain=rl "
                 f"ckpt={self.checkpoint_name} step={self.step_trained} "
-                f"holds={self.holds}")
+                f"holds={self.holds} "
+                f"hold_why=" + ",".join(
+                    f"{k}:{v}" for k, v in self.hold_reasons.items()))
 
     # The runner reloads config between matches; nothing to reload here.
     def reload_config(self) -> None:
@@ -301,6 +338,7 @@ class RLBrain:
         mask = mask_from_live(obs)
         if not mask[1:].any():
             self.holds += 1
+            self._note_hold(obs)
             return None
 
         torch = self.torch

@@ -88,7 +88,11 @@ def live_view_of(match):
         allies=[cell for cell, _ in allies], tracks=tracks,
         elixir=player.elixir / 1000.0, elapsed=match.elapsed_ms / 1000.0,
         multiplier=2800.0 / max(1, match.regen_ms()),
-        ally_hp=ours, enemy_hp=theirs, hand=hand)
+        ally_hp=ours, enemy_hp=theirs, hand=hand,
+        # The card detector reads this every frame as slot 0:
+        # CARD_CONFIG[0] is its own crop, separate from the four
+        # evenly spaced hand slots.
+        next_card=player.next_card)
     return obs, allies
 
 
@@ -137,19 +141,36 @@ def test_the_scalars_match_the_simulators():
     obs, allies = live_view_of(env.match)
     from_sim = observe(env.match, 1)["scalars"]
     from_live = observation_from_live(obs, allies)["scalars"]
-    # Everything except the next-card one-hot, which live vision cannot see.
-    shared = 3 + 4 + 4 * len(DECK_26)
+    # The whole vector. This used to compare everything *except* the
+    # next-card one-hot, and that exemption is what let a sixth of the
+    # scalars be wrong in every live match while the test stayed green.
+    shared = len(from_sim)
     assert np.allclose(from_sim[:shared], from_live[:shared], atol=1e-3), (
         f"scalars differ:\n sim  {from_sim[:shared]}\n live {from_live[:shared]}")
 
 
-def test_the_next_card_is_the_one_thing_live_cannot_supply():
-    """Asserted rather than left as a surprise: it is a real blind spot."""
+def test_the_next_card_is_supplied_live():
+    """It was never a blind spot, and asserting it was made it permanent.
+
+    This test used to assert the tail summed to zero, calling the next
+    card something "live vision cannot see". That was false: the card
+    detector reads it every frame as `state.cards[0]`, whose crop is
+    declared separately from the four hand slots in CARD_CONFIG. The
+    bridge simply never copied it across.
+
+    The cost was real. The policy trained with one of these eight always
+    set, then played live with none set - a state occurring nowhere in
+    training - and for a cycle deck this is the input that says how far
+    away the win condition is. Over five matches against a person: hog
+    share 3-5% live against 11-13% in the simulator, 266-360 holds.
+    """
     env = played_out_match()
     obs, allies = live_view_of(env.match)
     from_live = observation_from_live(obs, allies)["scalars"]
     tail = 3 + 4 + 4 * len(DECK_26)
-    assert from_live[tail:].sum() == 0.0
+    assert from_live[tail:].sum() == 1.0, "exactly one next card must be set"
+    assert (from_live[tail:].argmax()
+            == DECK_26.index(env.match.players[1].next_card))
 
 
 # ------------------------------------------------------------------- the mask

@@ -96,6 +96,13 @@ MAX_JUMP_TILES = 1.5
 # A segment whose direction reverses is a fight or a knockback, not a walk.
 MIN_DIRECTION_CONSISTENCY = 0.85
 
+# Below this many clean segments, a per-card number is not evidence of
+# anything. Named as a constant rather than left to whoever reads the table,
+# because the entire purpose of this package is to stop unmeasured numbers
+# entering the engine, and a table that looks authoritative at n=3 is exactly
+# how one would.
+SOLID_SEGMENTS = 20
+
 
 @dataclass
 class Segment:
@@ -219,14 +226,32 @@ def measure(track_files: list[Path]) -> dict[str, list[Segment]]:
 
 
 def simulator_speeds() -> dict[str, float]:
+    """Tiles per second as the ENGINE moves a unit, not as the card declares it.
+
+    These differ by a factor of 16.667 and reading the wrong one is not a
+    rounding error: a Hog Rider's card says 120 and the entity the engine
+    actually steps says 2000 millitiles a second, so `speed_mt_per_sec` off
+    the card is 0.12 tiles/s where the truth is 2.0. The first version of this
+    function did exactly that and reported the simulator as twenty times
+    slower than the footage, which reads as a spectacular finding and is
+    entirely an own goal.
+
+    So the unit is built the way a match builds it and asked afterwards.
+    """
+    from sim import arena
+    from sim.entities import make_unit
     from sim.gamedata import load_gamedata
+
     cards = load_gamedata(level=11)
     speeds = {}
-    for name in set(DETECTOR_TO_CARD.values()):
-        card = cards.get(name) if hasattr(cards, "get") else None
-        unit = getattr(card, "unit", None)
-        if unit is not None and getattr(unit, "speed_mt_per_sec", 0):
-            speeds[name] = unit.speed_mt_per_sec / 1000.0
+    for name in sorted(set(DETECTOR_TO_CARD.values())):
+        try:
+            spec = cards[name].unit
+            entity = make_unit(0, spec, 1, arena.tile(9, 20))
+        except (KeyError, AttributeError, TypeError):
+            continue
+        if entity.speed_mt_per_sec:
+            speeds[name] = entity.speed_mt_per_sec / 1000.0
     return speeds
 
 
@@ -244,18 +269,32 @@ def report(found: dict[str, list[Segment]], min_segments: int = 5) -> str:
             continue
         rows.append((abs(observed - expected) / expected, card, len(segs),
                      observed, expected))
+    thin = 0
     for _rel, card, n, observed, expected in sorted(rows, reverse=True):
         diff = (observed - expected) / expected * 100.0
+        flag = ""
+        if n < SOLID_SEGMENTS:
+            flag = "   preliminary"
+            thin += 1
         lines.append(f"{card:<16} {n:>3}   {observed:>6.2f}      "
-                     f"{expected:>6.2f}   {diff:>+6.1f}%")
+                     f"{expected:>6.2f}   {diff:>+6.1f}%{flag}")
     if len(lines) == 2:
         lines.append("(no card had enough clean segments yet)")
     lines.append("")
-    lines.append("Observed is the median over segments where a single unit of "
-                 "that class walked")
-    lines.append("uninterrupted. A large disagreement is a calibration finding; "
-                 "a small one is")
-    lines.append("box jitter and the sampling interval.")
+    lines.append("Observed is the median over segments where one unit of that "
+                 "class walked")
+    lines.append("uninterrupted, in tiles per second. Simulator is the speed "
+                 "the engine steps")
+    lines.append("a unit at, not the raw card value - those differ by 16.667x.")
+    if thin:
+        lines.append("")
+        lines.append(f"{thin} row(s) are marked preliminary: fewer than "
+                     f"{SOLID_SEGMENTS} clean segments.")
+        lines.append("Do not read a calibration finding off those. A real "
+                     "engine error biases one")
+        lines.append("direction across cards; disagreeing signs at low n is "
+                     "what association")
+        lines.append("noise and partially-blocked walks look like.")
     return "\n".join(lines)
 
 

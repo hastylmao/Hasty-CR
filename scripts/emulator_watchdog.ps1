@@ -10,7 +10,7 @@
 # to act unless the instance still has the name it was identified by.
 #
 # The identification, recorded so it can be re-checked rather than trusted:
-#   - the bot talks to 127.0.0.1:7555
+#   - the bot talks to 127.0.0.1:16480
 #   - MuMuManager reports instance 3 ("Android Device-1-2") on port 16480
 #   - both ports return the same focused window handle, running
 #     com.supercell.clashroyale, so they are one device
@@ -24,7 +24,7 @@ $ErrorActionPreference = 'SilentlyContinue'
 $root       = 'C:\Users\aksha\Downloads\HastyCR'
 $adb        = 'C:\Program Files\Netease\MuMuPlayer\nx_device\15.0\shell\adb.exe'
 $manager    = 'C:\Program Files\Netease\MuMuPlayer\nx_main\MuMuManager.exe'
-$serial     = '127.0.0.1:7555'
+$serial     = '127.0.0.1:16480'
 $vmIndex    = 3
 $vmName     = 'Android Device-1-2'
 $logFile    = Join-Path $root 'tmp\live\emulator_watchdog.log'

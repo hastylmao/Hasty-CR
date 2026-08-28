@@ -101,7 +101,7 @@ def choose(state):
 def main() -> int:
     parser = argparse.ArgumentParser(description="One bounded MuMu Training Camp trial")
     parser.add_argument("--adb", required=True, type=Path)
-    parser.add_argument("--serial", default="127.0.0.1:7555")
+    parser.add_argument("--serial", default="127.0.0.1:16480")
     parser.add_argument("--max-seconds", type=float, default=260)
     parser.add_argument("--log", type=Path, default=ROOT / "tmp" / "live" / "training-bot.log")
     args = parser.parse_args()

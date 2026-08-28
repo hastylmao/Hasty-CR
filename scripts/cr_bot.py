@@ -107,7 +107,7 @@ def patch_tower_numbers(state, full, hp_filter=None, now=0.0):
 def main() -> int:
     parser = argparse.ArgumentParser(description="HastyCR live runner")
     parser.add_argument("--adb", required=True, type=Path)
-    parser.add_argument("--serial", default="127.0.0.1:7555")
+    parser.add_argument("--serial", default="127.0.0.1:16480")
     parser.add_argument("--hours", type=float, default=8.0)
     parser.add_argument("--max-matches", type=int)
     parser.add_argument("--dry-run", action="store_true")
@@ -131,6 +131,13 @@ def main() -> int:
     parser.add_argument("--log", type=Path, default=ROOT / "tmp" / "live" / "cr_bot.log")
     parser.add_argument("--matches-dir", type=Path, default=ROOT / "tmp" / "live" / "matches")
     args = parser.parse_args()
+
+    # Refuse to drive the wrong emulator. The other MuMu instance on this
+    # machine runs a Clash of Clans bot; a wrong --serial used to be silent,
+    # because the runner would connect, fail to recognise the screen, and go
+    # on tapping into somebody else's village.
+    from scripts.emulator import verify as _verify_emulator
+    _verify_emulator(args.serial, args.adb)
 
     if not args.verbose:
         logger.remove()

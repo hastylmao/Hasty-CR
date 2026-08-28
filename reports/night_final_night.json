@@ -1,0 +1,55 @@
+{
+  "seed": 9000,
+  "episodes": 200,
+  "compare_seed": 8000,
+  "final_seed": 9000,
+  "eval_mode": "eval no_grad greedy argmax deterministic",
+  "results": {
+    "C:\\Users\\aksha\\Downloads\\HastyCR\\checkpoints\\night\\best.pt": [
+      {
+        "opponent": "brain",
+        "episodes": 200,
+        "seed": 9000,
+        "wins": 189,
+        "losses": 11,
+        "draws": 0,
+        "win_rate": 0.945,
+        "wilson_lo": 0.9042120755340645,
+        "wilson_hi": 0.9690149791986299,
+        "crowns_for": 161,
+        "crowns_against": 7,
+        "crown_diff": 0.77,
+        "tower_for": 1.4795968191964277,
+        "tower_against": 0.9189174107142856,
+        "tower_diff": 0.5606794084821423,
+        "hog_share": 0.11183120904443004,
+        "plays_per_match": 69.435,
+        "illegal_total": 0,
+        "illegal_rate": 0.0,
+        "duration_s": 236.776
+      },
+      {
+        "opponent": "meta",
+        "episodes": 200,
+        "seed": 9000,
+        "wins": 166,
+        "losses": 34,
+        "draws": 0,
+        "win_rate": 0.83,
+        "wilson_lo": 0.7718399896049648,
+        "wilson_hi": 0.8757216464889435,
+        "crowns_for": 188,
+        "crowns_against": 50,
+        "crown_diff": 0.69,
+        "tower_for": 1.2005664062500006,
+        "tower_against": 0.9833105468749999,
+        "tower_diff": 0.21725585937500072,
+        "hog_share": 0.11669693204625824,
+        "plays_per_match": 52.315,
+        "illegal_total": 0,
+        "illegal_rate": 0.0,
+        "duration_s": 197.0555
+      }
+    ]
+  }
+}

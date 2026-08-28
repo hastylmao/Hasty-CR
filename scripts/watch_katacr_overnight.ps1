@@ -18,7 +18,7 @@ while ((Get-Date) -lt $deadline) {
     Add-Content -Path $supervisorLog -Value "$(Get-Date -Format s) START remaining_hours=$([math]::Round($remainingHours, 3))"
     & $pythonExe $runner `
         --adb $adbExe `
-        --serial "127.0.0.1:7555" `
+        --serial "127.0.0.1:16480" `
         --checkpoint $checkpoint `
         --epoch 3 `
         --hours $remainingHours `

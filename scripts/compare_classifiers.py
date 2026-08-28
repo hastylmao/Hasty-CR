@@ -51,7 +51,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Old vs new card classifier")
     parser.add_argument("--adb", type=Path,
                         default=Path(r"C:\Program Files\Netease\MuMuPlayer\nx_device\15.0\shell\adb.exe"))
-    parser.add_argument("--serial", default="127.0.0.1:7555")
+    parser.add_argument("--serial", default="127.0.0.1:16480")
     parser.add_argument("--frames", type=int, default=20)
     args = parser.parse_args()
 

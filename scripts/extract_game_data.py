@@ -150,7 +150,7 @@ def pull_live_patch(adb: Path, serial: str, out_dir: Path) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Extract CR gameplay data from the APK")
     parser.add_argument("--adb", type=Path, default=DEFAULT_ADB)
-    parser.add_argument("--serial", default="127.0.0.1:7555")
+    parser.add_argument("--serial", default="127.0.0.1:16480")
     parser.add_argument("--apk-dir", type=Path, default=ROOT / "tmp" / "apk")
     parser.add_argument("--out", type=Path, default=ROOT / "tmp" / "gamedata")
     parser.add_argument("--skip-live-patch", action="store_true",

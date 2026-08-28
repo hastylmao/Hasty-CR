@@ -6,11 +6,11 @@ updated before exit.
 
 Single emulator:
     python scripts/capture_emulators.py --adb C:\\path\\adb.exe \\
-        --serial 127.0.0.1:7555 --hours 8 --interval 0.5
+        --serial 127.0.0.1:16480 --hours 8 --interval 0.5
 
 Multiple emulators:
     python scripts/capture_emulators.py --adb C:\\path\\adb.exe \\
-        --serial 127.0.0.1:7555 --serial 127.0.0.1:7557 --hours 12
+        --serial 127.0.0.1:16480 --serial 127.0.0.1:7557 --hours 12
 """
 
 from __future__ import annotations

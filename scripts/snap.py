@@ -30,7 +30,7 @@ def capture(adb: Path, serial: str) -> Image.Image:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Screenshot the emulator, downscaled")
     parser.add_argument("--adb", type=Path, default=DEFAULT_ADB)
-    parser.add_argument("--serial", default="127.0.0.1:7555")
+    parser.add_argument("--serial", default="127.0.0.1:16480")
     parser.add_argument("--out", type=Path, default=Path("tmp/live/snap.jpg"))
     parser.add_argument("--scale", type=float, default=3.0)
     parser.add_argument("--quality", type=int, default=60)

@@ -96,7 +96,7 @@ def validate_battle(detector, adb_path, serial, slot=None, card_name=None, count
 def main() -> int:
     parser = argparse.ArgumentParser(description="Guarded native BuildABot policy on MuMu")
     parser.add_argument("--adb", required=True, type=Path)
-    parser.add_argument("--serial", default="127.0.0.1:7555")
+    parser.add_argument("--serial", default="127.0.0.1:16480")
     parser.add_argument("--hours", type=float, default=8.0)
     parser.add_argument(
         "--log",

@@ -11,7 +11,7 @@ $capture    = Join-Path $root "scripts\capture_daemon.py"
 $analyzer   = Join-Path $root "scripts\analyze_run.py"
 $reviewer   = Join-Path $root "scripts\peer_review.py"
 $adb        = "C:\Program Files\Netease\MuMuPlayer\nx_device\15.0\shell\adb.exe"
-$serial     = "127.0.0.1:7555"
+$serial     = "127.0.0.1:16480"
 
 $liveDir    = Join-Path $root "tmp\live"
 $frameDir   = Join-Path $root "tmp\live\frames"

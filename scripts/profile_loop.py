@@ -48,7 +48,7 @@ def report(name: str, samples: list[float]) -> float:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Profile the decision loop")
     parser.add_argument("--adb", type=Path, default=DEFAULT_ADB)
-    parser.add_argument("--serial", default="127.0.0.1:7555")
+    parser.add_argument("--serial", default="127.0.0.1:16480")
     parser.add_argument("--frames", type=int, default=25)
     args = parser.parse_args()
 

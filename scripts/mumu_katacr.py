@@ -56,7 +56,7 @@ def valid_model_hand(state) -> bool:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Guarded sequence-model runner for MuMu")
     parser.add_argument("--adb", required=True, type=Path)
-    parser.add_argument("--serial", default="127.0.0.1:7555")
+    parser.add_argument("--serial", default="127.0.0.1:16480")
     parser.add_argument("--checkpoint", type=Path, default=DEFAULT_CHECKPOINT)
     parser.add_argument("--model-root", dest="kata_root", type=Path, default=ROOT / "vendor" / "KataCR")
     parser.add_argument("--verbose", action="store_true", help="show upstream library debug logs")

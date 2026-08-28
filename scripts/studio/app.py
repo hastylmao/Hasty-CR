@@ -193,7 +193,7 @@ class Studio(QWidget):
             self.still = np.dstack([rgb[:, :, ::-1],
                                     np.full(rgb.shape[:2], 255, np.uint8)]).copy()
         else:
-            self.surface = find_surface(args.hwnd)
+            self.surface = find_surface(args.hwnd, getattr(args, 'instance', None))
             self.grabber = SurfaceGrabber(self.surface)
         # MuMu's renderer can stall while the emulator keeps playing perfectly,
         # leaving the window presenting one frame for ever - measured at 180

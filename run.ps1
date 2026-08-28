@@ -66,7 +66,7 @@ $ErrorActionPreference = 'Continue'
 $root   = $PSScriptRoot
 $python = Join-Path $root '.venvs\buildabot\Scripts\python.exe'
 $adb    = 'C:\Program Files\Netease\MuMuPlayer\nx_device\15.0\shell\adb.exe'
-$serial = '127.0.0.1:7555'
+$serial = '127.0.0.1:16480'
 
 if ($Stop) {
     Get-CimInstance Win32_Process -Filter "Name='python.exe'" |

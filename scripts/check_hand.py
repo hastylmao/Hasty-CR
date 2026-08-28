@@ -33,7 +33,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Dump detected hand vs the screen")
     parser.add_argument("--adb", type=Path,
                         default=Path(r"C:\Program Files\Netease\MuMuPlayer\nx_device\15.0\shell\adb.exe"))
-    parser.add_argument("--serial", default="127.0.0.1:7555")
+    parser.add_argument("--serial", default="127.0.0.1:16480")
     parser.add_argument("--samples", type=int, default=4)
     parser.add_argument("--out", type=Path, default=ROOT / "tmp" / "live" / "hand")
     args = parser.parse_args()

@@ -32,6 +32,7 @@ from __future__ import annotations
 import ctypes
 import ctypes.wintypes as wintypes
 import threading
+import os
 import time
 from dataclasses import dataclass
 from typing import Iterator, Optional
@@ -49,6 +50,11 @@ PW_RENDERFULLCONTENT = 2
 # one in use; the others are here because they cost nothing and save an hour if
 # the emulator ever changes again.
 SURFACE_CLASSES = ("nemuwin", "subWin", "BlueStacksApp", "AndroidSurface")
+
+# Which MuMu instance this project drives. Pinned because more than one
+# emulator runs on this machine and the other one is a Clash of Clans bot that
+# must never be touched. Override with HASTYCR_INSTANCE, or --instance.
+DEFAULT_INSTANCE = os.environ.get("HASTYCR_INSTANCE", "Android Device-1-2")
 
 _ENUM_PROC = ctypes.WINFUNCTYPE(ctypes.c_bool, wintypes.HWND, wintypes.LPARAM)
 
@@ -131,18 +137,48 @@ def find_surfaces() -> Iterator[Surface]:
     yield from sorted(candidates, key=lambda s: s.width * s.height, reverse=True)
 
 
-def find_surface(hwnd: Optional[int] = None) -> Surface:
+def find_surface(hwnd: Optional[int] = None,
+                 instance: Optional[str] = None) -> Surface:
+    """The window to mirror, chosen by identity rather than by size.
+
+    `find_surfaces` sorts largest first, and taking the first one was wrong
+    the moment a second emulator existed. With a Clash Royale instance at
+    560x996 beside a Clash of Clans instance at 1770x996, "largest" is the
+    Clash of Clans one every time - so the studio mirrored the wrong device,
+    and the bot drove it, which is a good way to lose a village.
+
+    Size is not identity. `instance` names the MuMu instance to attach to and
+    is matched against the owning window's title, exactly first so that
+    "Android Device" cannot swallow "Android Device-1-2", then as a prefix.
+    """
     if hwnd:
         _, _, width, height = _rect(hwnd)
         if width <= 0 or height <= 0:
             raise RuntimeError(f"hwnd {hwnd} has no area; is the emulator running?")
         return Surface(hwnd, width, height, _window_text(hwnd) or "explicit")
-    for surface in find_surfaces():
-        return surface
-    raise RuntimeError(
-        "no emulator surface found - looked for child windows of class "
-        + "/".join(SURFACE_CLASSES) + ". Is MuMu running with a device started?"
-    )
+
+    surfaces = list(find_surfaces())
+    if not surfaces:
+        raise RuntimeError(
+            "no emulator surface found - looked for child windows of class "
+            + "/".join(SURFACE_CLASSES) + ". Is MuMu running with a device started?"
+        )
+
+    wanted = instance if instance is not None else DEFAULT_INSTANCE
+    if wanted:
+        for surface in surfaces:
+            if surface.owner.strip() == wanted:
+                return surface
+        for surface in surfaces:
+            if surface.owner.strip().startswith(wanted):
+                return surface
+        raise RuntimeError(
+            f"no emulator surface belongs to instance {wanted!r}. Running: "
+            + ", ".join(repr(s.owner) for s in surfaces)
+            + ". Start it, or pass --instance with one of those names "
+              "(or --hwnd to target a window directly)."
+        )
+    return surfaces[0]
 
 
 class SurfaceGrabber:

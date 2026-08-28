@@ -16,6 +16,11 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_LOG = ROOT / "tmp" / "live" / "cr_bot.log"
 DEFAULT_ADB = Path(r"C:\Program Files\Netease\MuMuPlayer\nx_device\15.0\shell\adb.exe")
 
+# One source of truth for which emulator this project may touch: the
+# other MuMu instance on this machine runs a Clash of Clans bot.
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from scripts.emulator import DEFAULT_SERIAL          # noqa: E402
+
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(
@@ -36,7 +41,12 @@ def main(argv=None) -> int:
     parser.add_argument("--frame", type=Path,
                         help="use a still image instead of the live window")
     parser.add_argument("--adb", default=str(DEFAULT_ADB))
-    parser.add_argument("--serial", default="127.0.0.1:7555")
+    parser.add_argument("--serial", default=DEFAULT_SERIAL,
+                        help="adb endpoint of the Clash Royale instance")
+    parser.add_argument("--instance", default=None,
+                        help="MuMu instance window to mirror. Defaults to "
+                             "the Clash Royale one; the other emulator on "
+                             "this machine runs a Clash of Clans bot.")
     # MuMu's renderer can stall while the game keeps running; ADB reads the
     # framebuffer, so it cannot freeze. Slow, and it shares the bot's channel,
     # so it engages only once the window has gone stale.

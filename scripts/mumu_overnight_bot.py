@@ -197,7 +197,7 @@ def choose(state):
 def main() -> int:
     parser = argparse.ArgumentParser(description="Guarded MuMu ladder heuristic")
     parser.add_argument("--adb", required=True, type=Path)
-    parser.add_argument("--serial", default="127.0.0.1:7555")
+    parser.add_argument("--serial", default="127.0.0.1:16480")
     parser.add_argument("--hours", type=float, default=8.0)
     parser.add_argument("--log", type=Path, default=ROOT / "tmp" / "live" / "overnight-bot.log")
     args = parser.parse_args()

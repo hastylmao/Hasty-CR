@@ -1,0 +1,55 @@
+{
+  "seed": 9000,
+  "episodes": 200,
+  "compare_seed": 8000,
+  "final_seed": 9000,
+  "eval_mode": "eval no_grad greedy argmax deterministic",
+  "results": {
+    "C:\\Users\\aksha\\Downloads\\HastyCR\\checkpoints\\sprint4_baseline\\pilot_best_4392960.pt": [
+      {
+        "opponent": "brain",
+        "episodes": 200,
+        "seed": 9000,
+        "wins": 76,
+        "losses": 124,
+        "draws": 0,
+        "win_rate": 0.38,
+        "wilson_lo": 0.3155889366123922,
+        "wilson_hi": 0.4489341048080049,
+        "crowns_for": 85,
+        "crowns_against": 142,
+        "crown_diff": -0.285,
+        "tower_for": 0.9117940848214287,
+        "tower_against": 0.7527064732142851,
+        "tower_diff": 0.1590876116071435,
+        "hog_share": 0.186364487731785,
+        "plays_per_match": 53.39,
+        "illegal_total": 0,
+        "illegal_rate": 0.0,
+        "duration_s": 213.80725
+      },
+      {
+        "opponent": "meta",
+        "episodes": 200,
+        "seed": 9000,
+        "wins": 176,
+        "losses": 24,
+        "draws": 0,
+        "win_rate": 0.88,
+        "wilson_lo": 0.8276563857409517,
+        "wilson_hi": 0.9180206497611246,
+        "crowns_for": 195,
+        "crowns_against": 32,
+        "crown_diff": 0.815,
+        "tower_for": 1.3151478794642855,
+        "tower_against": 0.4213281250000002,
+        "tower_diff": 0.8938197544642853,
+        "hog_share": 0.17745513208308128,
+        "plays_per_match": 49.59,
+        "illegal_total": 0,
+        "illegal_rate": 0.0,
+        "duration_s": 202.1485
+      }
+    ]
+  }
+}

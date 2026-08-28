@@ -518,6 +518,9 @@ class Entity:
     # Held until it is clear, because recomputing the choice every tick is what
     # made units oscillate against a tower instead of rounding it.
     avoid_turn: int = 0
+    # True while the last steering decision was around an enemy troop
+    # rather than a building, which is what a body block actually is.
+    blocked_by_troop: bool = False
     avoid_uid: int = 0
     ability_damage_pct: int = 0
     ability_tower_damage_pct: int = 0

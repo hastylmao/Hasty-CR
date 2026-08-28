@@ -79,6 +79,11 @@ def run(delay_s: float, block: str = "skeletons", verbose: bool = False):
     return hits, first_hit_s, hog.alive
 
 
+def _when(seconds):
+    """A hog that never arrives has no first hit, and formatting None throws."""
+    return "never" if seconds is None else f"{seconds:.2f}s"
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--block", default="skeletons")
@@ -90,11 +95,11 @@ def main() -> int:
         if delay is None:
             hits, first, alive = run(9999.0, args.block)
             print(f"  no block at all        -> {hits} hits, "
-                  f"first at {first}s")
+                  f"first at {_when(first)}")
             continue
         hits, first, alive = run(delay, args.block)
         print(f"  block {delay:>4.2f}s after hog  -> {hits} hits, "
-              f"first at {first}s")
+              f"first at {_when(first)}")
     return 0
 
 

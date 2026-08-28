@@ -43,6 +43,24 @@ from .entities import (ATTACKING, DEAD, IDLE, MOVING, WINDUP, Entity,
 # documented in the data files. This is the placeholder: re-evaluate a target
 # only when the current one dies or leaves sight, plus a periodic sweep.
 RETARGET_INTERVAL_MS = 500
+
+# What a body block costs, as a percentage of normal speed while pressing past
+# an enemy troop that cannot be attacked back.
+#
+# It used to cost nothing. The steering below deflects a unit sideways at full
+# speed, so a Hog rounded a wall of Skeletons and carried on - measured at 0.6
+# seconds lost, against a live match where the same block cost it FIVE tower
+# hits (7 hits unblocked, 2 blocked; tmp/live/studio/clip_20260828_153533.mp4,
+# tower HP read frame by frame at 317 per hit).
+#
+# That single number is most of why every policy trained here spams: if cheap
+# bodies cannot stop a push, defending cheaply does not work, and throwing
+# everything at every threat is the correct response to this world. It is not
+# the correct response to Clash Royale.
+#
+# Calibrated with scripts/probe_body_block.py against that recording, whose
+# unblocked control the simulator already reproduced exactly.
+BODY_BLOCK_STEP_PCT = 100
 # Pushback is mass-weighted and resolved iteratively in the real game; one pass
 # is enough to keep units from stacking without being a physics simulation.
 # Two passes at full strength. One pass at 60% only decays an overlap rather
@@ -3742,7 +3760,14 @@ class Battle:
         # for. Making buildings solid without this left units grinding against
         # the side of a tower for ever - a Royal Giant sat behind one and never
         # walked round it, which the real game does.
+        entity_was_blocked = False
         dx, dy = self._avoid_buildings(entity, dx, dy, gap, step)
+        if getattr(entity, "blocked_by_troop", False):
+            # Pressing past a body, not rounding a wall. Buildings keep the
+            # full-speed slide: steering around a Cannon is not a body block
+            # and making it one would quietly nerf every building in the game.
+            entity_was_blocked = True
+            step = max(1, step * BODY_BLOCK_STEP_PCT // 100)
         gap = arena.isqrt(dx * dx + dy * dy) or 1
         if gap <= step:
             entity.pos = Point(entity.pos.x + dx, entity.pos.y + dy)
@@ -3858,6 +3883,7 @@ class Battle:
             # nowhere, which is exactly what it looks like in the viewer.
             if entity.avoid_uid == other.uid and entity.avoid_turn:
                 index = 0 if entity.avoid_turn > 0 else 1
+                entity.blocked_by_troop = not (other.is_building or other.is_tower)
                 return options[index]
             index = 0
             for candidate, (turn_x, turn_y) in enumerate(options):
@@ -3871,9 +3897,11 @@ class Battle:
                 index = entity.uid % 2
             entity.avoid_uid = other.uid
             entity.avoid_turn = 1 if index == 0 else -1
+            entity.blocked_by_troop = not (other.is_building or other.is_tower)
             return options[index]
         entity.avoid_uid = 0
         entity.avoid_turn = 0
+        entity.blocked_by_troop = False
         return dx, dy
 
     def _waypoint(self, entity: Entity, target: Entity) -> Point:

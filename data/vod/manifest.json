@@ -11,7 +11,15 @@
       "kind": "video",
       "spans": 1,
       "at": "2026-08-29 04:39:30"
+    },
+    "b1Z6m7gtOuM": {
+      "title": "Lava Hound is Finally Back..",
+      "kind": "video",
+      "spans": 1,
+      "at": "2026-08-29 04:51:06"
     }
   },
-  "failed": {}
+  "failed": {
+    "b1Z6m7gtOuM": "PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\Users\\\\aksha\\\\Downloads\\\\HastyCR\\\\data\\\\vod\\\\videos\\\\b1Z6m7gtOuM.mp4'"
+  }
 }

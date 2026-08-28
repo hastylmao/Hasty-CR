@@ -122,9 +122,50 @@ def process(video: fetch.Video, model, args, state: dict) -> bool:
         log(f"  wrote {written} match files")
         return written > 0
     finally:
-        if path.exists() and not args.keep_videos:
+        if not args.keep_videos:
+            _remove(path)
+
+
+def _remove(path: Path, attempts: int = 8) -> bool:
+    """Delete a processed video, tolerating Windows holding it briefly.
+
+    Ultralytics opens the file itself for `predict(stream=True)` and does not
+    always let go the instant the generator is exhausted. On Windows that is a
+    hard PermissionError rather than the silent no-op it would be elsewhere,
+    and it used to abort the video's own cleanup *after* its tracks were
+    safely written - so nothing was lost, but every processed video stayed on
+    a disk that hit 99% full yesterday.
+
+    Retry briefly, then give up and say so. A file left behind is a disk
+    problem; a raised exception here would be a pipeline problem.
+    """
+    import gc
+    import time
+
+    if not path.exists():
+        return True
+    for attempt in range(attempts):
+        gc.collect()                       # drop any lingering capture object
+        try:
             path.unlink()
             log(f"  deleted {path.name} ({free_gb():.1f} GB free)")
+            return True
+        except PermissionError:
+            time.sleep(0.5 * (attempt + 1))
+        except OSError as exc:
+            log(f"  could not delete {path.name}: {type(exc).__name__}")
+            return False
+    log(f"  {path.name} still locked; sweeping it on the next pass")
+    return False
+
+
+def sweep_videos(keep: bool) -> None:
+    """Delete leftovers from earlier passes that were locked at the time."""
+    if keep or not VIDEOS.exists():
+        return
+    for stale in sorted(VIDEOS.glob("*.*")):
+        if stale.suffix.lower() in (".mp4", ".webm", ".mkv"):
+            _remove(stale, attempts=2)
 
 
 def main() -> int:
@@ -160,6 +201,7 @@ def main() -> int:
             break
         if video.video_id in state["done"]:
             continue
+        sweep_videos(args.keep_videos)
         if free_gb() < MIN_FREE_GB:
             log(f"stopping: {free_gb():.1f} GB free, below the {MIN_FREE_GB} GB floor")
             break

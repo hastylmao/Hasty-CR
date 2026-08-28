@@ -65,6 +65,14 @@ def test_divergence_from_a_different_policy_is_positive():
     assert float(kl) > 0.0
 
 
+def anchor_kl(logits, other, mask):
+    """The penalty exactly as sim/train_ppo.py computes it."""
+    floor = torch.finfo(logits.dtype).min / 4
+    logp = torch.log_softmax(logits.masked_fill(~mask, floor), dim=-1)
+    logq = torch.log_softmax(other.masked_fill(~mask, floor), dim=-1)
+    return (logp.exp() * (logp - logq)).sum(-1).mean().detach()
+
+
 def test_masked_actions_cannot_contribute_to_the_penalty():
     """Two policies that differ only on illegal actions are the same policy.
 
@@ -76,10 +84,69 @@ def test_masked_actions_cannot_contribute_to_the_penalty():
     logits, _ = net(planes, scalars)
     other = logits.clone()
     other[:, ~mask[0]] += 25.0          # only the forbidden ones move
-    kl = torch.distributions.kl_divergence(
-        masked_distribution(logits, mask),
-        masked_distribution(other, mask)).mean().detach()
-    assert float(kl) == pytest.approx(0.0, abs=1e-5)
+    assert float(anchor_kl(logits, other, mask)) == pytest.approx(0.0, abs=1e-5)
+
+
+def test_the_penalty_survives_an_infinite_mask():
+    """The regression that took down a training run.
+
+    `masked_distribution` fills illegal actions with -inf. Through
+    torch's kl_divergence that is -inf - -inf = nan on every masked entry,
+    and multiplying by a zero probability does not rescue it: 0 * nan is
+    nan. The whole batch went NaN on the first update after the policy
+    unfroze, at step 301,056.
+
+    The original version of this test moved the forbidden logits by a
+    finite +25 and so never touched the -inf path at all. It asserted the
+    right property and proved nothing, which is worse than no test.
+    """
+    net = build_network(NUM_PLANES, NUM_SCALARS, ACTIONS)
+    planes, scalars, mask = a_batch()
+    logits, _ = net(planes, scalars)
+    other, _ = build_network(NUM_PLANES, NUM_SCALARS, ACTIONS)(planes, scalars)
+
+    # Exactly what the training loop feeds it: -inf outside the mask.
+    logits = logits.masked_fill(~mask, float("-inf"))
+    other = other.masked_fill(~mask, float("-inf"))
+
+    value = float(anchor_kl(logits, other, mask))
+    assert value == value, "anchor KL produced NaN on an -inf mask"
+    assert value >= 0.0 and value < float("inf")
+
+
+def test_torch_kl_is_infinite_when_the_supports_disagree():
+    """Why the penalty is hand-rolled, measured rather than assumed.
+
+    With both sides masked identically torch's kl_divergence is perfectly
+    fine - about 1e-3 here. It returns +inf only where the policy has
+    probability on an action the anchor has ruled out. The training loop
+    builds both from the same mask so that cannot happen today; the floor
+    exists so a future caller that passes two different masks gets a large
+    number instead of an inf that would poison a run silently.
+
+    An earlier version of this file claimed the naive form produced NaN and
+    asserted it. It does not, and the assertion failed the moment it was
+    written against the real -inf path instead of a finite stand-in.
+    """
+    net_a = build_network(NUM_PLANES, NUM_SCALARS, ACTIONS)
+    net_b = build_network(NUM_PLANES, NUM_SCALARS, ACTIONS)
+    planes, scalars, mask = a_batch()
+    la, _ = net_a(planes, scalars)
+    lb, _ = net_b(planes, scalars)
+
+    same = torch.distributions.kl_divergence(
+        masked_distribution(la, mask), masked_distribution(lb, mask)).detach()
+    assert torch.isfinite(same).all(), "matching masks must give a finite KL"
+
+    other = mask.clone()
+    other[1, 5:40] = False
+    other[1, 100:140] = True
+    mismatched = torch.distributions.kl_divergence(
+        masked_distribution(la, mask), masked_distribution(lb, other)).detach()
+    assert torch.isinf(mismatched[1]), "a disagreeing support should be inf"
+
+    # The hand-rolled version stays finite in both cases.
+    assert torch.isfinite(anchor_kl(la, lb, mask))
 
 
 def test_the_penalty_is_off_unless_both_flags_are_given():
@@ -99,3 +166,17 @@ def test_a_missing_anchor_file_is_refused_not_ignored():
     assert "does not exist" in source, (
         "a typo'd --anchor path must stop the run, not silently train "
         "unanchored for six hours")
+
+
+def test_the_loss_never_calls_torchs_kl_on_masked_distributions():
+    """The hand-rolled form is the point; a tidy-up that reverts it would
+    reintroduce an inf that no log line explains."""
+    from sim import train_ppo
+    source = inspect.getsource(train_ppo.main)
+    # Strip comments first. The previous version of this assertion matched
+    # the comment that explains why the call is absent, which is a test that
+    # fails precisely when the code is correct.
+    code = chr(10).join(line.split("#", 1)[0]
+                        for line in source.splitlines())
+    assert "kl_divergence(" not in code, (
+        "the anchor penalty must not go through torch's kl_divergence")

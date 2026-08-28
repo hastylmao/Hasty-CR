@@ -539,17 +539,30 @@ def main() -> int:
                         loss = (loss_policy + hyper.value_coef * loss_value
                                 - entropy_coef * entropy)
                         if anchor_net is not None:
-                            # KL(policy || anchor) over the *masked* action
-                            # distribution, so illegal actions cannot
-                            # contribute; their logits are -inf in both and
-                            # the softmax has already dropped them.
                             with torch.no_grad():
                                 a_logits, _ = anchor_net(b_planes[sel],
                                                          b_scalars[sel])
-                                a_dist = masked_distribution(a_logits,
-                                                             b_masks[sel])
-                            anchor_kl = torch.distributions.kl_divergence(
-                                dist, a_dist).mean()
+                            # Computed by hand rather than through
+                            # kl_divergence, which is finite while both sides
+                            # share a mask but returns +inf the moment they do
+                            # not - measured, not assumed: matching supports
+                            # give ~1e-3, a row where the policy is legal and
+                            # the anchor is not gives inf. Today both are built
+                            # from b_masks[sel] so they always match, and an
+                            # inf here would poison a whole training run for a
+                            # reason no log line would explain.
+                            #
+                            # A large finite floor keeps the distribution
+                            # identical (softmax of -1e30 is zero to every
+                            # digit that matters) and keeps the subtraction
+                            # finite whatever the masks do later.
+                            floor = torch.finfo(logits.dtype).min / 4
+                            legal = b_masks[sel]
+                            logp = torch.log_softmax(
+                                logits.masked_fill(~legal, floor), dim=-1)
+                            logq = torch.log_softmax(
+                                a_logits.masked_fill(~legal, floor), dim=-1)
+                            anchor_kl = (logp.exp() * (logp - logq)).sum(-1).mean()
                             loss = loss + args.anchor_coef * anchor_kl
                     optimiser.zero_grad(set_to_none=True)
                     loss.backward()

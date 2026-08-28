@@ -66,3 +66,6 @@ research/csv_history/
 .clinerules
 CLAUDE.md
 AGENTS.md
+
+# VOD corpus: videos are fetched, measured and deleted; tracks are the artefact
+data/vod/videos/

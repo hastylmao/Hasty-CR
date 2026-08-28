@@ -201,6 +201,24 @@ class Studio(QWidget):
         # the foreground. ADB reads the framebuffer instead, so it cannot freeze.
         # It is slow and shares the channel the bot needs, so it is only used
         # once the window has demonstrably gone stale.
+        # Native-resolution capture, for when the run is going into a video.
+        # The window mirror cannot exceed the monitor: MuMu renders 1080x1920
+        # but a 1080-row desktop shows it at 560x996, and the canvas then
+        # upscales that 1.3x. screenrecord encodes on the device instead, so
+        # the frames arrive at full size. About a second behind, which is fine
+        # for recording and wrong for deciding - the bot never reads this.
+        self.device_stream = None
+        if getattr(args, "hq", False) and not args.frame:
+            from .devicecap import DeviceStream
+            stream = DeviceStream(args.adb, args.serial, args.hq_bitrate)
+            if stream.ready and stream.start():
+                self.device_stream = stream
+                print(f"mirror: device stream at native resolution "
+                      f"({args.hq_bitrate}); window capture is the fallback",
+                      flush=True)
+            else:
+                print(f"hq capture unavailable: {stream.error}", flush=True)
+
         self.adb_grabber: Optional[AdbGrabber] = None
         if getattr(args, "adb_fallback", False) and not args.frame:
             self.adb_grabber = AdbGrabber(args.adb, args.serial, args.adb_fps)
@@ -691,6 +709,14 @@ class Studio(QWidget):
 
         raw = self.still if self.grabber is None else self.grabber.grab()
         stale = self.grabber.stale_seconds if self.grabber is not None else 0.0
+        if self.device_stream is not None:
+            native = self.device_stream.grab()
+            if native is not None:
+                # Full-resolution frames win outright; the window grab above
+                # still runs so `stale` keeps meaning what it meant, and so a
+                # dead stream falls back without a branch here.
+                raw = native
+                stale = 0.0
         if self.adb_grabber is not None and stale >= self.args.stale_seconds:
             fallback = self.adb_grabber.grab()
             if fallback is not None:
@@ -846,6 +872,8 @@ class Studio(QWidget):
         if self.recorder is not None:
             self.toggle_recording()
         self.detector.stop()
+        if self.device_stream is not None:
+            self.device_stream.close()
         self.bot.close()
         if self.grabber is not None:
             self.grabber.close()

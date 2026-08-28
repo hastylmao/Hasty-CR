@@ -71,9 +71,24 @@ def main(argv=None) -> int:
 
     parser.add_argument("--record", nargs="?", const=True, default=False,
                         help="start recording at launch; optionally give a path")
+    parser.add_argument("--hq", action="store_true",
+                        help="mirror the device at its own 1080x1920 "
+                             "instead of the on-screen window, which a "
+                             "1080-row monitor caps at 560x996. Sharper, "
+                             "about a second behind, and it shares the "
+                             "ADB channel. Use it when the run is going "
+                             "into a video.")
+    parser.add_argument("--hq-bitrate", default="24M",
+                        help="device-side encode bitrate for --hq")
     parser.add_argument("--record-fps", type=int, default=60)
-    parser.add_argument("--crf", type=int, default=20, help="lower is better quality")
-    parser.add_argument("--preset", default="veryfast")
+    parser.add_argument("--crf", type=int, default=17,
+                        help="x264 quality, lower is better. 17 is "
+                             "visually lossless for flat UI and text; "
+                             "20 left visible mush on card art")
+    parser.add_argument("--preset", default="medium",
+                        help="x264 speed/quality tradeoff. veryfast "
+                             "was leaving quality on the table: the "
+                             "encoder thread was not the bottleneck")
     args = parser.parse_args(argv)
 
     if args.list:

@@ -1,0 +1,1594 @@
+{
+  "hog_rider": [
+    {
+      "card": "hog_rider",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.6869439569571869,
+      "speed_tiles_s": 1.0413932974623452,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 0.6358569021407253,
+      "speed_tiles_s": 1.078378412246594,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.3320015060206795,
+      "speed_tiles_s": 0.5162363799657723,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 1.0251058481932491,
+      "speed_tiles_s": 2.1575217264279085,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 12,
+      "seconds": 1.1000000000000227,
+      "tiles": 1.1255123277867711,
+      "speed_tiles_s": 1.0024470060815287,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 0.8810363216122252,
+      "speed_tiles_s": 1.4820925600477253,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 1.173856038873593,
+      "speed_tiles_s": 1.8400271737130265,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 0.971996399170285,
+      "speed_tiles_s": 0.9269843580123802,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 12,
+      "seconds": 1.1000000000000227,
+      "tiles": 1.5198480187176606,
+      "speed_tiles_s": 1.7006175348978319,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 1.2773147615212168,
+      "speed_tiles_s": 1.9524343778991817,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.599446154142115,
+      "speed_tiles_s": 1.8842957007078083,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 17,
+      "seconds": 1.599999999999909,
+      "tiles": 1.591694066081795,
+      "speed_tiles_s": 0.9585416735678118,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 12,
+      "seconds": 1.1000000000000227,
+      "tiles": 1.7586372565142594,
+      "speed_tiles_s": 2.3785709995704223,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.368533521693933,
+      "speed_tiles_s": 1.6570153891877362,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 1.3272712608958261,
+      "speed_tiles_s": 2.4925296070644274,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 15,
+      "seconds": 1.3999999999999773,
+      "tiles": 1.1438610055421958,
+      "speed_tiles_s": 1.3665012212957703,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 9,
+      "seconds": 0.8000000000000682,
+      "tiles": 0.7441941950862013,
+      "speed_tiles_s": 1.1614122152475603,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 0.6592799102050654,
+      "speed_tiles_s": 1.02682777941722,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.8629397429716641,
+      "speed_tiles_s": 1.4045995870706736,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 12,
+      "seconds": 1.1000000000000227,
+      "tiles": 1.3692644010562738,
+      "speed_tiles_s": 1.6568041525786716,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 0.7124387692988076,
+      "speed_tiles_s": 0.9329523031750215,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 15,
+      "seconds": 1.3999999999999773,
+      "tiles": 1.043127029656503,
+      "speed_tiles_s": 1.185979252061208,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 9,
+      "seconds": 0.8000000000000682,
+      "tiles": 0.9050005524860183,
+      "speed_tiles_s": 2.054568265845974,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 9,
+      "seconds": 0.8000000000000682,
+      "tiles": 0.8986078121182781,
+      "speed_tiles_s": 1.602204407989601,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.332177540720453,
+      "speed_tiles_s": 1.6148158255362874,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 9,
+      "seconds": 0.8000000000000043,
+      "tiles": 1.0818142169522464,
+      "speed_tiles_s": 1.8244095096450463,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 10,
+      "seconds": 0.9000000000000057,
+      "tiles": 1.1281777342245314,
+      "speed_tiles_s": 1.873846311734353,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 1.4700013605435869,
+      "speed_tiles_s": 2.1494124345599372,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 10,
+      "seconds": 0.9000000000000057,
+      "tiles": 1.272764707241679,
+      "speed_tiles_s": 1.7560182231401635,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 15,
+      "seconds": 1.3999999999999773,
+      "tiles": 1.780805435750913,
+      "speed_tiles_s": 1.4292592686505465,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 0.7443178084662485,
+      "speed_tiles_s": 0.8645229898618549,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 9,
+      "seconds": 0.7999999999999545,
+      "tiles": 0.7609533494242604,
+      "speed_tiles_s": 1.4751418316881255,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 9,
+      "seconds": 0.7999999999999545,
+      "tiles": 0.768668979470357,
+      "speed_tiles_s": 0.8940500718518429,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 8,
+      "seconds": 0.700000000000017,
+      "tiles": 0.2478810198462145,
+      "speed_tiles_s": 0.20024984394496312,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.6840007309937624,
+      "speed_tiles_s": 0.938616002420908,
+      "source": "hog-rider"
+    },
+    {
+      "card": "hog_rider",
+      "frames": 9,
+      "seconds": 0.7999999999999545,
+      "tiles": 0.9484645486258302,
+      "speed_tiles_s": 0.23668550623149687,
+      "source": "hog-rider"
+    }
+  ],
+  "skeletons": [
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.7000000000000028,
+      "tiles": 1.1919270111881841,
+      "speed_tiles_s": 1.7324260445974284,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 1.0629115673469738,
+      "speed_tiles_s": 1.73216627377456,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 13,
+      "seconds": 1.1999999999999318,
+      "tiles": 1.9681039098584205,
+      "speed_tiles_s": 1.7204223656546827,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.7024646839215185,
+      "speed_tiles_s": 1.5577861920316947,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999318,
+      "tiles": 1.0873495298201032,
+      "speed_tiles_s": 1.5526107045872601,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.6073954087280447,
+      "speed_tiles_s": 1.6468363064706357,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 0.7031016996139318,
+      "speed_tiles_s": 1.244708801286186,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 0.9649538849084971,
+      "speed_tiles_s": 1.7176728442863136,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999318,
+      "tiles": 0.7586949321038081,
+      "speed_tiles_s": 1.2065239326260335,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.7000000000000028,
+      "tiles": 0.6126483493816004,
+      "speed_tiles_s": 1.5647363995253587,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.7662747549019244,
+      "speed_tiles_s": 1.4800337833982788,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 12,
+      "seconds": 1.1000000000000227,
+      "tiles": 1.8123081967480035,
+      "speed_tiles_s": 1.8386136081293483,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 1.0573816718668816,
+      "speed_tiles_s": 1.7586642658559355,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.7999999999999545,
+      "tiles": 1.32519621188713,
+      "speed_tiles_s": 2.007656374321466,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.7999999999999545,
+      "tiles": 1.336432564703508,
+      "speed_tiles_s": 1.7487018137249661,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 15,
+      "seconds": 1.3999999999999773,
+      "tiles": 2.2774217878996414,
+      "speed_tiles_s": 1.8062171215865699,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 0.26315394733881525,
+      "speed_tiles_s": 0.4244997055357298,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 16,
+      "seconds": 1.5,
+      "tiles": 2.2117289616948996,
+      "speed_tiles_s": 1.6843990026134397,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.384700689679903,
+      "speed_tiles_s": 1.8675384868854623,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 17,
+      "seconds": 1.6000000000000227,
+      "tiles": 2.642365796024463,
+      "speed_tiles_s": 1.3327977868144036,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.7000000000000011,
+      "tiles": 0.9376145263379828,
+      "speed_tiles_s": 1.7482848738120813,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999993,
+      "tiles": 1.1630068787414805,
+      "speed_tiles_s": 1.6324827717314514,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999957,
+      "tiles": 1.2229574808634998,
+      "speed_tiles_s": 2.349553149005133,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.9000000000000057,
+      "tiles": 1.8765566871267163,
+      "speed_tiles_s": 2.508804496169585,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 1.1924114222867868,
+      "speed_tiles_s": 1.3231351953428905,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 1.4076569184286347,
+      "speed_tiles_s": 1.7460855526451495,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 30,
+      "seconds": 2.900000000000034,
+      "tiles": 4.405830795661584,
+      "speed_tiles_s": 1.596621432901024,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 12,
+      "seconds": 1.099999999999966,
+      "tiles": 1.731563455377829,
+      "speed_tiles_s": 1.7930142219175358,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 12,
+      "seconds": 1.1000000000000227,
+      "tiles": 1.9080555547467677,
+      "speed_tiles_s": 2.120377324912492,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.5633373767113263,
+      "speed_tiles_s": 1.403566884762301,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.47523152252349493,
+      "speed_tiles_s": 0.17464249196580625,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.36785051311640254,
+      "speed_tiles_s": 0.7749193506426423,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 1.256463688293457,
+      "speed_tiles_s": 0.9736299570381086,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 1.227467311173702,
+      "speed_tiles_s": 1.5021318184496937,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 0.10332473082471327,
+      "speed_tiles_s": 0.23021728866437105,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.33672095271901403,
+      "speed_tiles_s": 0.7169379331572462,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 15,
+      "seconds": 1.400000000000034,
+      "tiles": 2.5847493108616937,
+      "speed_tiles_s": 1.859492152785947,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.35900557098741515,
+      "speed_tiles_s": 0.20248456731311992,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 1.104523426641555,
+      "speed_tiles_s": 1.2940247292850107,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 1.238466794064338,
+      "speed_tiles_s": 1.3398880550251857,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.9000000000000341,
+      "tiles": 1.4090950997005132,
+      "speed_tiles_s": 1.1709824934647695,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 1.35154504179476,
+      "speed_tiles_s": 1.853024554612934,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.906573103764972,
+      "speed_tiles_s": 1.986941159165068,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 31,
+      "seconds": 3.0,
+      "tiles": 4.5059571680165815,
+      "speed_tiles_s": 1.6871674761028932,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 18,
+      "seconds": 1.7000000000000455,
+      "tiles": 3.2542406180244248,
+      "speed_tiles_s": 2.1866183937756087,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 13,
+      "seconds": 1.1999999999999318,
+      "tiles": 1.957488441856043,
+      "speed_tiles_s": 1.5546083413270475,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.274626611992704,
+      "speed_tiles_s": 1.7443793072205653,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999318,
+      "tiles": 1.2197594025052634,
+      "speed_tiles_s": 1.7791290003815206,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 3.099312343085156,
+      "speed_tiles_s": 1.0508092119883206,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.6991915724838098,
+      "speed_tiles_s": 1.7465652192042038,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.8000000000000682,
+      "tiles": 1.2447027757661637,
+      "speed_tiles_s": 1.9195233693840839,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 14,
+      "seconds": 1.2999999999999545,
+      "tiles": 2.596810543724743,
+      "speed_tiles_s": 1.6681127060258925,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 12,
+      "seconds": 1.1000000000000227,
+      "tiles": 1.4955781490781401,
+      "speed_tiles_s": 1.3685759021695387,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.341090973797079,
+      "speed_tiles_s": 1.3783383489348886,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 12,
+      "seconds": 1.099999999999909,
+      "tiles": 1.9279929979125954,
+      "speed_tiles_s": 1.589779858973831,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.3017853125611751,
+      "speed_tiles_s": 1.2900387591073692,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 35,
+      "seconds": 3.400000000000091,
+      "tiles": 5.407610285514297,
+      "speed_tiles_s": 1.442374799525294,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.7999999999999545,
+      "tiles": 0.8301867259839805,
+      "speed_tiles_s": 1.4507014466689039,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 0.24040798655618772,
+      "speed_tiles_s": 1.3793114224146312,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.5118945069018532,
+      "speed_tiles_s": 1.836054707668875,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 51,
+      "seconds": 5.0,
+      "tiles": 8.060415497975272,
+      "speed_tiles_s": 1.7494114391795135,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 45,
+      "seconds": 4.400000000000006,
+      "tiles": 7.283019222822358,
+      "speed_tiles_s": 1.8576139627242667,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 16,
+      "seconds": 1.5,
+      "tiles": 2.4239942244155626,
+      "speed_tiles_s": 1.5493224325492245,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.9000000000000057,
+      "tiles": 1.4038240630506373,
+      "speed_tiles_s": 1.3562448156583689,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 42,
+      "seconds": 4.099999999999966,
+      "tiles": 3.866657988496009,
+      "speed_tiles_s": 1.4878844041126031,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 1.1149246611318637,
+      "speed_tiles_s": 1.2039416888878296,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.8000000000000007,
+      "tiles": 0.5471791297189619,
+      "speed_tiles_s": 0.7022542435077506,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 12,
+      "seconds": 1.1000000000000014,
+      "tiles": 2.877311244895136,
+      "speed_tiles_s": 1.2431009613060737,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.8000000000000043,
+      "tiles": 1.2694743006457458,
+      "speed_tiles_s": 1.457937382294122,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.8000000000000043,
+      "tiles": 1.4010603127631585,
+      "speed_tiles_s": 1.5121557747325234,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 23,
+      "seconds": 2.200000000000003,
+      "tiles": 3.5770603852884553,
+      "speed_tiles_s": 1.3356896383309547,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 12,
+      "seconds": 1.0999999999999943,
+      "tiles": 1.7118580548631945,
+      "speed_tiles_s": 1.5181897114656882,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.700000000000017,
+      "tiles": 1.176542816900429,
+      "speed_tiles_s": 1.5608010763708149,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 3.214858006195609,
+      "speed_tiles_s": 1.6107755193669155,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 1.3853248716456366,
+      "speed_tiles_s": 1.6673631877914084,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 1.3543596272777776,
+      "speed_tiles_s": 1.858364475512912,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 27,
+      "seconds": 2.599999999999966,
+      "tiles": 4.345659098456758,
+      "speed_tiles_s": 1.6269505478935313,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 40,
+      "seconds": 3.8999999999999773,
+      "tiles": 6.442367654830016,
+      "speed_tiles_s": 1.505257453062063,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 1.255183253553042,
+      "speed_tiles_s": 1.3939365962581003,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.5690203950235964,
+      "speed_tiles_s": 1.5164761785135128,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.5620604981882094,
+      "speed_tiles_s": 1.711908231932088,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.900000000000091,
+      "tiles": 1.5161774302501672,
+      "speed_tiles_s": 1.9698730923585526,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 12,
+      "seconds": 1.1000000000000227,
+      "tiles": 1.5283366775681326,
+      "speed_tiles_s": 1.8588437266231796,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 12,
+      "seconds": 1.099999999999909,
+      "tiles": 1.576325474005926,
+      "speed_tiles_s": 1.8680738743418075,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.8630826605387114,
+      "speed_tiles_s": 1.1458621208515354,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.4300087412320246,
+      "speed_tiles_s": 1.2200409829193053,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.4640054644706766,
+      "speed_tiles_s": 1.8564751546967415,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 41,
+      "seconds": 4.0,
+      "tiles": 6.427660305274385,
+      "speed_tiles_s": 1.376913304215499,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 46,
+      "seconds": 4.5,
+      "tiles": 7.299873492054504,
+      "speed_tiles_s": 1.4289856542317807,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 61,
+      "seconds": 6.0,
+      "tiles": 6.73747504633598,
+      "speed_tiles_s": 1.3773001743822992,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 44,
+      "seconds": 4.300000000000011,
+      "tiles": 6.901487738161968,
+      "speed_tiles_s": 1.5515798400341034,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.700000000000017,
+      "tiles": 1.1402350634847187,
+      "speed_tiles_s": 1.2907362240210734,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.9000000000000057,
+      "tiles": 2.336214459333731,
+      "speed_tiles_s": 2.3796848530840014,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.799999999999983,
+      "tiles": 0.5170415844010995,
+      "speed_tiles_s": 0.5245366394388928,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 1.3352276959380378,
+      "speed_tiles_s": 1.900910523185182,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 43,
+      "seconds": 4.199999999999989,
+      "tiles": 6.661593878344733,
+      "speed_tiles_s": 1.717301057660771,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 1.1603141815904865,
+      "speed_tiles_s": 1.8760063965771665,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 28,
+      "seconds": 2.6999999999999886,
+      "tiles": 4.400734143299274,
+      "speed_tiles_s": 1.7724841325096587,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 1.2810097579643964,
+      "speed_tiles_s": 1.4003570973152952,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 10,
+      "seconds": 0.9000000000000341,
+      "tiles": 0.4360332556124598,
+      "speed_tiles_s": 0.5103920062071658,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 12,
+      "seconds": 1.099999999999966,
+      "tiles": 1.8648420844672082,
+      "speed_tiles_s": 1.7360011520729484,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.461540283399674,
+      "speed_tiles_s": 1.4018996950609646,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 34,
+      "seconds": 3.300000000000068,
+      "tiles": 5.298602174158764,
+      "speed_tiles_s": 1.462942240828072,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 25,
+      "seconds": 2.3999999999999773,
+      "tiles": 3.7105882283001996,
+      "speed_tiles_s": 1.5769633925715518,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 1.3102060906590227,
+      "speed_tiles_s": 1.4601369798751944,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 17,
+      "seconds": 1.599999999999909,
+      "tiles": 2.034000983283933,
+      "speed_tiles_s": 1.6687689120450007,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 8,
+      "seconds": 0.6999999999999318,
+      "tiles": 1.0591439939875968,
+      "speed_tiles_s": 1.2488794977896345,
+      "source": "skeleton"
+    },
+    {
+      "card": "skeletons",
+      "frames": 17,
+      "seconds": 1.6000000000000227,
+      "tiles": 2.4279456336582177,
+      "speed_tiles_s": 1.6695862975566527,
+      "source": "skeleton"
+    }
+  ],
+  "ice_golem": [
+    {
+      "card": "ice_golem",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 0.7586336401715911,
+      "speed_tiles_s": 0.9556535937510704,
+      "source": "ice-golem"
+    },
+    {
+      "card": "ice_golem",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 1.2734904789593071,
+      "speed_tiles_s": 1.8738729946296797,
+      "source": "ice-golem"
+    },
+    {
+      "card": "ice_golem",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.187211110781386,
+      "speed_tiles_s": 0.5499999999998756,
+      "source": "ice-golem"
+    },
+    {
+      "card": "ice_golem",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.028770625552655,
+      "speed_tiles_s": 1.4598630072716583,
+      "source": "ice-golem"
+    },
+    {
+      "card": "ice_golem",
+      "frames": 20,
+      "seconds": 1.8999999999999773,
+      "tiles": 1.918207496596758,
+      "speed_tiles_s": 1.080185169311022,
+      "source": "ice-golem"
+    },
+    {
+      "card": "ice_golem",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 0.5647025765834617,
+      "speed_tiles_s": 0.870976463516469,
+      "source": "ice-golem"
+    }
+  ],
+  "goblin": [
+    {
+      "card": "goblin",
+      "frames": 8,
+      "seconds": 0.700000000000017,
+      "tiles": 1.5977287003743763,
+      "speed_tiles_s": 2.6000000000001386,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 2.8476211124375377,
+      "speed_tiles_s": 3.160822677721009,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 1.2934376676129402,
+      "speed_tiles_s": 2.4768124676683123,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 2.0200378709321276,
+      "speed_tiles_s": 1.9262643376006254,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 9,
+      "seconds": 0.8000000000000007,
+      "tiles": 2.0813401932408846,
+      "speed_tiles_s": 2.8554125125390653,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 8,
+      "seconds": 0.7000000000000028,
+      "tiles": 0.782304288624319,
+      "speed_tiles_s": 1.4401388821914487,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 0.1385784976105599,
+      "speed_tiles_s": 0.13347600084030276,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 8,
+      "seconds": 0.700000000000017,
+      "tiles": 1.50672127482159,
+      "speed_tiles_s": 2.0146711890530686,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.37165171868296404,
+      "speed_tiles_s": 0.4504442251823785,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.8999361088432886,
+      "speed_tiles_s": 2.6466015944975116,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 12,
+      "seconds": 1.1000000000000227,
+      "tiles": 2.36802111477073,
+      "speed_tiles_s": 2.772002886002338,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 13,
+      "seconds": 1.2000000000000455,
+      "tiles": 0.7351748091440571,
+      "speed_tiles_s": 1.6097690355753844,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 1.554166336014261,
+      "speed_tiles_s": 1.9265772758969633,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.690215666712385,
+      "speed_tiles_s": 1.4988328792760603,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 2.030472851332911,
+      "speed_tiles_s": 2.466110297613874,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 1.7595237992138666,
+      "speed_tiles_s": 1.7349622668323694,
+      "source": "goblin"
+    },
+    {
+      "card": "goblin",
+      "frames": 10,
+      "seconds": 0.9000000000000341,
+      "tiles": 1.802276338412066,
+      "speed_tiles_s": 2.424706167766338,
+      "source": "goblin"
+    }
+  ],
+  "firecracker": [
+    {
+      "card": "firecracker",
+      "frames": 14,
+      "seconds": 1.2999999999999545,
+      "tiles": 2.938017018330563,
+      "speed_tiles_s": 2.311752581916509,
+      "source": "firecracker"
+    }
+  ],
+  "mini_pekka": [
+    {
+      "card": "mini_pekka",
+      "frames": 13,
+      "seconds": 1.2000000000000455,
+      "tiles": 1.9650753166227501,
+      "speed_tiles_s": 1.5969579822276825,
+      "source": "mini-pekka"
+    }
+  ],
+  "bomber": [
+    {
+      "card": "bomber",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 0.7804665271489872,
+      "speed_tiles_s": 1.1753832561083666,
+      "source": "bomber"
+    }
+  ],
+  "knight": [
+    {
+      "card": "knight",
+      "frames": 24,
+      "seconds": 2.3000000000000007,
+      "tiles": 2.5712926710119937,
+      "speed_tiles_s": 1.0139033484509237,
+      "source": "knight"
+    },
+    {
+      "card": "knight",
+      "frames": 15,
+      "seconds": 1.4000000000000057,
+      "tiles": 1.4264753765838367,
+      "speed_tiles_s": 1.1218991723930156,
+      "source": "knight"
+    },
+    {
+      "card": "knight",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.1387010143141165,
+      "speed_tiles_s": 1.4103191128252566,
+      "source": "knight"
+    },
+    {
+      "card": "knight",
+      "frames": 10,
+      "seconds": 0.9000000000000341,
+      "tiles": 0.9041205671811702,
+      "speed_tiles_s": 0.9500526301214156,
+      "source": "knight"
+    },
+    {
+      "card": "knight",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.1539982668964448,
+      "speed_tiles_s": 1.1222973638764273,
+      "source": "knight"
+    }
+  ],
+  "ice_spirit": [
+    {
+      "card": "ice_spirit",
+      "frames": 9,
+      "seconds": 0.8000000000000682,
+      "tiles": 1.9264529581591139,
+      "speed_tiles_s": 2.142498516510822,
+      "source": "ice-spirit"
+    },
+    {
+      "card": "ice_spirit",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 0.5963975184388343,
+      "speed_tiles_s": 0.35695379389699833,
+      "source": "ice-spirit"
+    },
+    {
+      "card": "ice_spirit",
+      "frames": 10,
+      "seconds": 0.9000000000000057,
+      "tiles": 1.9970398093177808,
+      "speed_tiles_s": 2.141611542740157,
+      "source": "ice-spirit"
+    },
+    {
+      "card": "ice_spirit",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.8831285139363156,
+      "speed_tiles_s": 2.363048878038814,
+      "source": "ice-spirit"
+    },
+    {
+      "card": "ice_spirit",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 1.7286352998825407,
+      "speed_tiles_s": 2.7128767019525055,
+      "source": "ice-spirit"
+    },
+    {
+      "card": "ice_spirit",
+      "frames": 30,
+      "seconds": 2.8999999999999773,
+      "tiles": 6.596932089994562,
+      "speed_tiles_s": 2.569435735720395,
+      "source": "ice-spirit"
+    },
+    {
+      "card": "ice_spirit",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.87202809587765,
+      "speed_tiles_s": 0.4162931659300004,
+      "source": "ice-spirit"
+    },
+    {
+      "card": "ice_spirit",
+      "frames": 10,
+      "seconds": 0.8999999999999773,
+      "tiles": 1.4427116829082656,
+      "speed_tiles_s": 2.1023796041647844,
+      "source": "ice-spirit"
+    }
+  ],
+  "musketeer": [
+    {
+      "card": "musketeer",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.20632013958893894,
+      "speed_tiles_s": 0.3584689665787278,
+      "source": "musketeer"
+    },
+    {
+      "card": "musketeer",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.9468183563915515,
+      "speed_tiles_s": 1.2209013064123238,
+      "source": "musketeer"
+    },
+    {
+      "card": "musketeer",
+      "frames": 15,
+      "seconds": 1.400000000000034,
+      "tiles": 1.341134221470768,
+      "speed_tiles_s": 1.084570105162368,
+      "source": "musketeer"
+    },
+    {
+      "card": "musketeer",
+      "frames": 11,
+      "seconds": 1.0,
+      "tiles": 1.0806076993988147,
+      "speed_tiles_s": 1.1961376740595486,
+      "source": "musketeer"
+    },
+    {
+      "card": "musketeer",
+      "frames": 13,
+      "seconds": 1.1999999999999886,
+      "tiles": 1.1396424878004527,
+      "speed_tiles_s": 1.206549646637753,
+      "source": "musketeer"
+    },
+    {
+      "card": "musketeer",
+      "frames": 9,
+      "seconds": 0.7999999999999545,
+      "tiles": 0.8629310517069129,
+      "speed_tiles_s": 1.0038772890241805,
+      "source": "musketeer"
+    },
+    {
+      "card": "musketeer",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 0.9366477459536223,
+      "speed_tiles_s": 1.2831889510525638,
+      "source": "musketeer"
+    },
+    {
+      "card": "musketeer",
+      "frames": 8,
+      "seconds": 0.7000000000000028,
+      "tiles": 1.0584705947734228,
+      "speed_tiles_s": 1.250039999359932,
+      "source": "musketeer"
+    },
+    {
+      "card": "musketeer",
+      "frames": 8,
+      "seconds": 0.7000000000000455,
+      "tiles": 1.015628376917463,
+      "speed_tiles_s": 1.2010412149461458,
+      "source": "musketeer"
+    }
+  ],
+  "royal_giant": [
+    {
+      "card": "royal_giant",
+      "frames": 9,
+      "seconds": 0.7999999999999972,
+      "tiles": 0.7926260152177694,
+      "speed_tiles_s": 0.8270450128646005,
+      "source": "royal-giant"
+    },
+    {
+      "card": "royal_giant",
+      "frames": 9,
+      "seconds": 0.8000000000000114,
+      "tiles": 0.833038414480389,
+      "speed_tiles_s": 0.9181999846534549,
+      "source": "royal-giant"
+    },
+    {
+      "card": "royal_giant",
+      "frames": 8,
+      "seconds": 0.6999999999999886,
+      "tiles": 0.8012402885526926,
+      "speed_tiles_s": 0.977445650663332,
+      "source": "royal-giant"
+    }
+  ],
+  "wizard": [
+    {
+      "card": "wizard",
+      "frames": 9,
+      "seconds": 0.7999999999999545,
+      "tiles": 1.2597352896541392,
+      "speed_tiles_s": 1.7738871360107547,
+      "source": "wizard"
+    }
+  ]
+}

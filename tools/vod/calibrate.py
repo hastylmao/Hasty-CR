@@ -42,9 +42,11 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-# Detector class name -> the card name the simulator knows it by. Only the ones
-# that are unambiguous single units; a name that maps to several cards, or to a
-# unit whose speed changes (charging, raged), is deliberately absent.
+# Detector class name -> the card name the simulator knows it by. Only
+# unambiguous single units whose speed is CONSTANT. Charging cards are
+# deliberately absent: Prince measured 2.17 tiles/s against an engine
+# constant of 1.00, which is not a calibration finding, it is the charge
+# multiplier being compared against a base speed that excludes it.
 DETECTOR_TO_CARD = {
     "hog-rider": "hog_rider",
     "knight": "knight",
@@ -63,8 +65,6 @@ DETECTOR_TO_CARD = {
     "spear-goblin": "spear_goblin",
     "barbarian": "barbarian",
     "minion": "minion",
-    "prince": "prince",
-    "dark-prince": "dark_prince",
     "royal-giant": "royal_giant",
     "electro-wizard": "electro_wizard",
     "mega-minion": "mega_minion",
@@ -78,7 +78,6 @@ DETECTOR_TO_CARD = {
     "witch": "witch",
     "lumberjack": "lumberjack",
     "miner": "miner",
-    "bandit": "bandit",
     "golem": "golem",
     "pekka": "pekka",
 }

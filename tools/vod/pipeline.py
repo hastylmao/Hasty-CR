@@ -207,6 +207,14 @@ def main() -> int:
             break
         try:
             process(video, model, args, state)
+        except fetch.BlockedError as exc:
+            # Stop, and leave the untried videos untried. Recording them as
+            # failures would make the next run skip footage that was never
+            # actually requested.
+            log(f"HALTED: {exc}")
+            log("  pass --cookies-from-browser to yt-dlp, or wait it out; "
+                "the manifest is unchanged for anything not attempted")
+            break
         except KeyboardInterrupt:
             log("interrupted")
             break

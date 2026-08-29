@@ -65,6 +65,28 @@ def listing(kind: str = "video", limit: int = 30) -> list[Video]:
     return videos
 
 
+class BlockedError(RuntimeError):
+    """YouTube is refusing anonymous access, not refusing this video.
+
+    After roughly a dozen downloads it starts answering "Sign in to confirm
+    you are not a bot" in about a second. Every subsequent request fails the
+    same way, so a loop that treats it as a per-video problem marks the whole
+    remaining catalogue as broken in half a minute - which is exactly what
+    happened, and it is worse than stopping because a later run then skips
+    videos that were never actually tried.
+    """
+
+
+# Substrings that mean "the client is blocked", not "this video is gone".
+BLOCKED_MARKERS = (
+    "sign in to confirm",
+    "confirm you're not a bot",
+    "confirm you are not a bot",
+    "http error 429",
+    "too many requests",
+)
+
+
 def download(video: Video, into: Path, timeout: int = 5400) -> Optional[Path]:
     """Fetch one video. Returns its path, or None if it could not be had.
 
@@ -81,6 +103,11 @@ def download(video: Video, into: Path, timeout: int = 5400) -> Optional[Path]:
                 "-o", str(into / f"{video.video_id}.%(ext)s"), video.url],
                timeout=timeout)
     if out.returncode != 0:
+        blob = (str(out.stderr) + " " + str(out.stdout)).lower()
+        if any(marker in blob for marker in BLOCKED_MARKERS):
+            raise BlockedError(
+                "YouTube is requiring sign-in for anonymous downloads. "
+                "Remaining videos were NOT attempted.")
         return None
     for candidate in sorted(into.glob(f"{video.video_id}.*")):
         if candidate.suffix.lower() in (".mp4", ".webm", ".mkv"):

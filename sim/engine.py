@@ -92,6 +92,25 @@ BODY_BLOCK_STEP_PCT = 100
 # than assumed. Flip it and run scripts/probe_body_block.py - the target is 7
 # tower hits unblocked and 2 blocked, which is what a real match produced.
 BODY_BLOCK_HOLDS_CONTACT = False
+
+# Let a unit steer around an ALLY that has stopped.
+#
+# Reported from the viewer: a Hog placed behind its own Ice Golem stays glued
+# to it the whole way down the lane, advancing only when the Golem does, where
+# the real game has the Hog round it once the Golem connects. The complaint is
+# correct and the engine does behave that way.
+#
+# OFF because three attempts to express it have all frozen units. Treating
+# every ally as an obstacle deadlocks pairs of equals; restricting it to
+# slower allies still froze a wizard; restricting it to stopped allies froze
+# the same wizard. tests/test_stuck_units.py catches each one, and a frozen
+# unit is a worse defect than a welded push - it is the failure class that has
+# cost this project the most.
+#
+# The remaining suspicion is that steering around a stationary ally can walk a
+# unit into a position where its own deflection re-triggers every tick. That
+# wants the collision rewrite rather than a fourth guard on this generator.
+ALLY_STEERING = False
 # Pushback is mass-weighted and resolved iteratively in the real game; one pass
 # is enough to keep units from stacking without being a physics simulation.
 # Two passes at full strength. One pass at 60% only decays an overlap rather
@@ -3879,14 +3898,49 @@ class Battle:
         Hog and stands its ground, the Hog cannot hit the Skeleton and walks
         round it.
         """
+        # A flier is obstructed by nothing on the ground - not troops, not
+        # buildings. This checked whether the OBSTACLE was flying and never
+        # whether the mover was, so a Balloon steered around Skeletons it was
+        # floating over: measured at 4.83 tiles of travel in six seconds
+        # against the 6.0 it should cover.
+        if entity.flying:
+            return
+
         now_ms = self.now_ms
         for other in self._buildings():
             yield other
         for other in self.entities.values():
-            if other.side == entity.side or not other.alive:
+            if not other.alive or other.uid == entity.uid:
                 continue
             if other.is_building or other.is_tower or other.flying:
                 continue          # buildings came from above; fliers overlap
+            if other.side == entity.side:
+                # An ALLY is walked around only if we are FASTER than it.
+                #
+                # The case this exists for: a Hog placed behind its own Ice
+                # Golem inherited the Golem's pace and stayed glued to it down
+                # the whole lane, advancing only when the Golem did. In the
+                # real game the faster unit rounds the slower one.
+                #
+                # The strict inequality is what makes it safe. Treating every
+                # ally as an obstacle deadlocks pairs of equals - each steers
+                # around the other and neither advances - which froze units
+                # across a batch of matches. With this, of any two units only
+                # the faster one gives way, so the symmetry that caused the
+                # deadlock cannot arise.
+                # Narrower still: only an ally that has STOPPED. That is the
+                # reported case exactly - the Ice Golem reaches the tower and
+                # connects, and the Hog behind it should round it rather than
+                # inherit its pace. A moving ally is simply followed.
+                #
+                # "Slower than me" was still too broad and froze a wizard;
+                # "not moving" cannot deadlock a pair, because two units that
+                # are both stopped are not trying to go anywhere.
+                if (ALLY_STEERING
+                        and other.state != MOVING
+                        and other.speed_mt_per_sec > 0):
+                    yield other
+                continue
             if entity.is_valid_target(other, now_ms):
                 continue          # something we may attack is not an obstacle
             yield other

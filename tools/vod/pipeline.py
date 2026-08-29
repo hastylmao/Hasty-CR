@@ -168,6 +168,62 @@ def sweep_videos(keep: bool) -> None:
             _remove(stale, attempts=2)
 
 
+def process_local(path: Path, model, args, state: dict) -> int:
+    """Segment and track a video already on disk.
+
+    The Twitch captures were downloaded by hand and compressed here; there is
+    nothing to fetch and nothing to delete. Same segmentation and tracking as
+    the YouTube path, so measurements from both are directly comparable.
+    """
+    import cv2
+
+    key = f"local:{path.stem}"
+    if key in state["done"]:
+        return 0
+    capture = cv2.VideoCapture(str(path))
+    height = capture.get(cv2.CAP_PROP_FRAME_HEIGHT) or 1920.0
+    source_fps = capture.get(cv2.CAP_PROP_FPS) or 60.0
+    frames = capture.get(cv2.CAP_PROP_FRAME_COUNT) or 0
+    capture.release()
+    duration = frames / source_fps if source_fps else 0.0
+
+    if duration < args.min_duration_s:
+        log(f"{path.name}: {duration:.0f}s, too short to be a stream, skipping")
+        return 0
+
+    log(f"{path.name}  {duration / 3600:.2f}h  segmenting")
+    spans = segment.find_spans(model, path, args.segment_stride)
+    log(f"  {segment.describe(spans)}")
+
+    written = 0
+    for index, span in enumerate(spans):
+        start = segment.refine_start(model, path, span)
+        dets = track.detect_span(model, path, start, span.end_s, args.track_fps)
+        matrix, error = track.to_tiles(dets, height)
+        if matrix is None:
+            continue
+        if error > args.max_residual:
+            log(f"    span {index}: tower fit off by {error:.2f} tiles, skipped")
+            continue
+        out = TRACKS / f"{path.stem}_{index:03d}.jsonl"
+        track.write_jsonl(out, path.stem, index, dets, {
+            "title": path.stem, "kind": "twitch_local",
+            "video_start_s": round(start, 3),
+            "video_end_s": round(span.end_s, 3),
+            "duration_s": round(span.end_s - start, 3),
+            "track_fps": args.track_fps, "source_fps": source_fps,
+            "frame_height": height,
+            "tower_fit_residual_tiles": round(error, 4),
+        })
+        written += 1
+    state["done"][key] = {"title": path.stem, "kind": "twitch_local",
+                          "spans": written,
+                          "at": time.strftime("%Y-%m-%d %H:%M:%S")}
+    save_manifest(state)
+    log(f"  wrote {written} match files")
+    return written
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--videos", type=int, default=30)
@@ -180,6 +236,13 @@ def main() -> int:
     ap.add_argument("--max-residual", type=float, default=0.75,
                     help="reject a match whose tower fit misses by more than "
                          "this many tiles; every distance would inherit it")
+    ap.add_argument("--local-dir", type=Path,
+                    help="segment and track videos already on disk "
+                         "instead of fetching a channel. Nothing is "
+                         "downloaded or deleted.")
+    ap.add_argument("--min-duration-s", type=float, default=600.0,
+                    help="ignore local files shorter than this; a "
+                         "stream folder collects unrelated clips")
     ap.add_argument("--keep-videos", action="store_true")
     ap.add_argument("--weights", type=Path, default=WEIGHTS)
     args = ap.parse_args()
@@ -189,6 +252,24 @@ def main() -> int:
 
     from ultralytics import YOLO
     model = YOLO(str(args.weights))
+
+    if args.local_dir:
+        state = load_manifest()
+        files = sorted(p for p in args.local_dir.glob("*.mp4") if p.is_file())
+        log(f"{len(files)} local videos in {args.local_dir}")
+        total = 0
+        for path in files:
+            try:
+                total += process_local(path, model, args, state)
+            except KeyboardInterrupt:
+                log("interrupted")
+                break
+            except Exception as exc:
+                state["failed"][f"local:{path.stem}"] = f"{type(exc).__name__}: {exc}"
+                save_manifest(state)
+                log(f"  {path.name} failed: {type(exc).__name__}: {exc}")
+        log(f"done: {total} match files written from local video")
+        return 0
 
     corpus = fetch.catalogue(CATALOGUE, args.videos, args.streams)
     log(f"catalogue: {len(corpus)} items, "

@@ -196,3 +196,67 @@ def test_a_teleporting_association_is_rejected():
         assert seg.speed_tiles_s < track.__dict__.get("MAX", 99), "sanity"
         assert seg.speed_tiles_s == pytest.approx(0.6, abs=0.2), (
             "a 15-tile jump between two units must not become a speed")
+
+
+# ------------------------------------------------------- inferred card plays
+
+def _det(t, name, x, y, side="theirs"):
+    return {"kind": "det", "t": t, "name": name, "conf": 0.9,
+            "tile_x": x, "tile_y": y, "side": side}
+
+
+def test_a_unit_standing_still_is_one_play_not_hundreds():
+    """The bug that produced 121,841 plays from twenty matches.
+
+    The recency test compared `now - t >= -1e-9`, true only when a remembered
+    sighting lies in the FUTURE. Stored times are always past, so nothing was
+    ever "recently seen" and every single detection became a fresh play.
+    """
+    from tools.vod import plays
+    rows = [_det(round(i * 0.1, 2), "knight", 9.0, 20.0) for i in range(80)]
+    found = plays.extract(rows)
+    assert len(found) == 1, f"one knight standing still produced {len(found)} plays"
+
+
+def test_a_fast_unit_is_not_recounted_as_it_travels():
+    """A Hog covers three tiles inside the grace window.
+
+    Comparing against where a unit *was*, with a fixed radius, lets anything
+    fast outrun it and re-register. The radius has to grow with elapsed time.
+    """
+    from tools.vod import plays
+    rows = [_det(round(i * 0.1, 2), "hog-rider", 9.0, 20.0 - i * 0.2)
+            for i in range(60)]
+    found = plays.extract(rows)
+    assert len(found) == 1, (
+        f"one hog crossing the arena produced {len(found)} plays")
+
+
+def test_a_multi_unit_card_counts_once():
+    """Three Skeletons are one card. Counting three triples its frequency."""
+    from tools.vod import plays
+    rows = []
+    for i in range(40):
+        t = round(i * 0.1, 2)
+        for dx in (0.0, 0.6, 1.2):
+            rows.append(_det(t, "skeleton", 9.0 + dx, 20.0))
+    found = plays.extract(rows)
+    assert len(found) == 1, f"one Skeletons card produced {len(found)} plays"
+    assert found[0].count == 3, "the play should carry how many units landed"
+
+
+def test_two_separate_plays_of_a_card_are_both_counted():
+    """The suppression must not swallow a genuine second play."""
+    from tools.vod import plays
+    rows = [_det(round(i * 0.1, 2), "knight", 3.0, 20.0) for i in range(20)]
+    rows += [_det(round(6.0 + i * 0.1, 2), "knight", 15.0, 20.0) for i in range(20)]
+    found = plays.extract(rows)
+    assert len(found) == 2, (
+        "two knights, far apart and seconds apart, are two plays")
+
+
+def test_interface_classes_are_never_plays():
+    from tools.vod import plays
+    rows = [_det(round(i * 0.1, 2), "tower-bar", 3.0, 6.0) for i in range(30)]
+    rows += [_det(round(i * 0.1, 2), "clock", 9.0, 1.0) for i in range(30)]
+    assert plays.extract(rows) == []

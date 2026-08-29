@@ -4,8 +4,12 @@ The first thing worth measuring is movement speed, for three reasons. It is
 directly observable - a unit's tile position over consecutive frames, nothing
 inferred. It is directly comparable - `speed_mt_per_sec` is a number the engine
 already has for every card. And it is load-bearing: the body-block gap that
-started all this comes down to a Hog at 2 tiles/s outrunning Skeletons at 1.06,
-so if either of those speeds is wrong, the conclusion drawn from them is too.
+started all this comes down to a Hog at 2.0 tiles/s outrunning Skeletons at
+1.5, so if either of those speeds is wrong, the conclusion drawn from them is
+too. (An earlier version of this note said Skeletons move at 1.06. That was
+wrong: the engine, an independent simulator and the footage all agree on 1.5.
+The mechanism survives the correction - 0.5 tiles/s of drift over a five second
+crossing is still more than a Skeleton's reach - but the number was invented.)
 
 Method, and its limits, stated up front:
 

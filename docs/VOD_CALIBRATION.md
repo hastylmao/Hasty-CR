@@ -118,3 +118,53 @@ skipping them.
 Continuing needs either browser cookies passed to yt-dlp, or simply waiting for
 the block to lapse. That is a decision for the repository owner, not something
 to work around unattended.
+
+## Cross-validation against an independent simulator
+
+`Jason-XII/clash-royale-simulator` is a separately written Python engine for the
+same game: 18x32 tiles like ours, A* pathfinding, 47 cards, validated by its
+author against recorded gameplay timestamps. No shared lineage with this
+project.
+
+Comparing the two engines' movement speeds, card by card:
+
+| card | ours | theirs |
+|---|---|---|
+| hog_rider | 2.00 | 2.00 |
+| baby_dragon | 1.50 | 1.50 |
+| archer, bomber, knight, musketeer, valkyrie, witch, wizard | 1.00 | 1.00 |
+| giant, golem, pekka | 0.75 | 0.75 |
+
+**Twelve of twelve agree exactly.** The two arrive there differently - this
+engine scales the raw card value into millitiles per second, that one divides
+it by 60 - but the result is identical.
+
+### What that does to the Hog measurement
+
+Before this, a Hog observed at 1.45 tiles/s against an engine constant of 2.00
+had two possible readings: our constant is wrong, or real Hogs are slowed by
+something we do not model. The cross-check removes the first.
+
+    our engine          2.00 tiles/s
+    independent engine  2.00 tiles/s
+    observed, n=36      1.45 tiles/s
+
+So the shortfall is not a bad constant. It is Hogs being interfered with in
+real play - and Skeletons, which nothing bothers on their way across, measure
+1.56 against a constant of 1.50.
+
+That makes three independent measurements pointing at the same defect:
+
+1. The recorded body-block test: 2 tower hits live against 4 simulated
+2. The engine trace: blockers landing 34 of their 224 dps because the Hog
+   outruns them and they spend the fight chasing
+3. This: real Hogs averaging 27% below a top speed that two engines agree on,
+   while an uninterfered card sits within 4% of its own
+
+The collision behaviour is the common cause of all three.
+
+### A caution on borrowing
+
+That repository has **no licence file**. Comparing measurements against it is
+fine - a speed is a fact about the game, not an expression - but no code from
+it may be copied into this project.

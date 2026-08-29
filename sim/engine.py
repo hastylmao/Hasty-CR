@@ -62,6 +62,29 @@ RETARGET_INTERVAL_MS = 500
 # unblocked control the simulator already reproduced exactly.
 BODY_BLOCK_STEP_PCT = 100
 
+# Two attempts to express a body block as a speed penalty have failed, and the
+# way they failed says what the real mechanism is not. Recorded so neither is
+# tried a third time.
+#
+# 1. Cap the blocked unit to its blocker's speed (BODY_BLOCK_HOLDS_CONTACT).
+#    Right for a moving blocker, fatal for a stationary one: a Musketeer stops
+#    to shoot, so its speed while blocking is zero, and the cap becomes a wall.
+#    Reintroduced the Hog deadlock outright.
+#
+# 2. Scale the step by a fixed percentage. Swept for the recorded 2-hit result
+#    and 35% produced it - by coincidence. The same 35% gives 2, 5, 0 and 4
+#    hits across four blocker placements, where 0 means the Hog never arrives.
+#    It also failed three body-block tests, including a Giant no longer able to
+#    round a body.
+#
+# The measurement is not in doubt: a recorded block cost a Hog 5 tower hits
+# (7 unblocked, 2 blocked) where this engine costs 1 (7 and 4). But the effect
+# is not proportional to speed, which is why both attempts miss. A block is
+# contact and the damage delivered during it - traced, blockers land 34 of
+# their 224 dps because they spend the fight chasing rather than hitting. The
+# fix belongs in how contact converts to damage, not in how fast the blocked
+# unit walks.
+
 # Hold a blocked unit to the speed of whatever is blocking it.
 #
 # OFF by default: this changes how every ground push in the game resolves, and

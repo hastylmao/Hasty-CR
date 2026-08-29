@@ -521,6 +521,10 @@ class Entity:
     # True while the last steering decision was around an enemy troop
     # rather than a building, which is what a body block actually is.
     blocked_by_troop: bool = False
+    # Speed of the troop currently blocking, so the blocked unit can be
+    # held to it. A body yields at its own pace, not at the pace of
+    # whatever is pushing into it.
+    blocker_speed_mt_per_sec: int = 0
     avoid_uid: int = 0
     ability_damage_pct: int = 0
     ability_tower_damage_pct: int = 0

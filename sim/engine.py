@@ -61,6 +61,14 @@ RETARGET_INTERVAL_MS = 500
 # Calibrated with scripts/probe_body_block.py against that recording, whose
 # unblocked control the simulator already reproduced exactly.
 BODY_BLOCK_STEP_PCT = 100
+
+# Hold a blocked unit to the speed of whatever is blocking it.
+#
+# OFF by default: this changes how every ground push in the game resolves, and
+# it is not enabling until it has been measured against the recording rather
+# than assumed. Flip it and run scripts/probe_body_block.py - the target is 7
+# tower hits unblocked and 2 blocked, which is what a real match produced.
+BODY_BLOCK_HOLDS_CONTACT = False
 # Pushback is mass-weighted and resolved iteratively in the real game; one pass
 # is enough to keep units from stacking without being a physics simulation.
 # Two passes at full strength. One pass at 60% only decays an overlap rather
@@ -3767,7 +3775,24 @@ class Battle:
             # full-speed slide: steering around a Cannon is not a body block
             # and making it one would quietly nerf every building in the game.
             entity_was_blocked = True
-            step = max(1, step * BODY_BLOCK_STEP_PCT // 100)
+            if BODY_BLOCK_HOLDS_CONTACT and entity.blocker_speed_mt_per_sec:
+                # You cannot get past a body faster than the body moves.
+                #
+                # This is the whole defect, stated as a rule. Steering deflected
+                # a blocked unit sideways at FULL speed, so a 2.0 tiles/s Hog
+                # rounded 1.5 tiles/s Skeletons and left them behind - measured
+                # in a trace, they landed 34 of their 224 dps because they spent
+                # the fight chasing. Real bodies hold: the Hog arrives roughly
+                # on time and dies to the damage it walked through, which is why
+                # a recorded block cost 5 tower hits where this engine cost 1.
+                #
+                # Capping to the blocker's own speed rather than to a chosen
+                # fraction means there is no new constant to get wrong: a
+                # Skeleton yields at a Skeleton's pace, a Knight at a Knight's.
+                step = min(step, max(1, entity.blocker_speed_mt_per_sec
+                                     * dt_ms // 1000))
+            else:
+                step = max(1, step * BODY_BLOCK_STEP_PCT // 100)
         gap = arena.isqrt(dx * dx + dy * dy) or 1
         if gap <= step:
             entity.pos = Point(entity.pos.x + dx, entity.pos.y + dy)
@@ -3884,6 +3909,8 @@ class Battle:
             if entity.avoid_uid == other.uid and entity.avoid_turn:
                 index = 0 if entity.avoid_turn > 0 else 1
                 entity.blocked_by_troop = not (other.is_building or other.is_tower)
+                entity.blocker_speed_mt_per_sec = (
+                    other.speed_mt_per_sec if entity.blocked_by_troop else 0)
                 return options[index]
             index = 0
             for candidate, (turn_x, turn_y) in enumerate(options):
@@ -3898,10 +3925,13 @@ class Battle:
             entity.avoid_uid = other.uid
             entity.avoid_turn = 1 if index == 0 else -1
             entity.blocked_by_troop = not (other.is_building or other.is_tower)
+            entity.blocker_speed_mt_per_sec = (
+                other.speed_mt_per_sec if entity.blocked_by_troop else 0)
             return options[index]
         entity.avoid_uid = 0
         entity.avoid_turn = 0
         entity.blocked_by_troop = False
+        entity.blocker_speed_mt_per_sec = 0
         return dx, dy
 
     def _waypoint(self, entity: Entity, target: Entity) -> Point:

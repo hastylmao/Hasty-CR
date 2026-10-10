@@ -418,7 +418,7 @@ flowchart LR
 
 - **The body-block cost is uncalibrated.** A cheap unit stepping in front of a Hog delays it ~0.5 s. Contact used to stop it *permanently*, which made cheap-body defence unbeatable — and is why every earlier policy hoarded cheap cards and never learned to Fireball. The fix is right in shape; the magnitude is judgement, not measurement.
 - **Charging units still deadlock.** A Battle Ram is held indefinitely by one Knight — kept as a strict `xfail` so it cannot be quietly forgotten. Prince, Dark Prince and Ram Rider share it. No 2.6 card charges, which is the only reason it hasn't blocked anything.
-- **Live vision cannot read hit points.** A detected unit contributes its card's full HP, so a half-dead Musketeer looks healthy to the policy.
+- **Live hit points are read off health bars, approximately.** `scripts/brain/hp_bars.py` reads the bar over each damaged unit (no bar = full), but max HP is the card's level-11 value rather than the badge's level, shields are not read, and with `-Vision buildabot` there are no bars, so every unit reads as full.
 - **Eight named calibration approximations remain**, each written down in [`docs/`](docs/) rather than left implicit.
 
 <br>

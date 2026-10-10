@@ -68,24 +68,32 @@ def played_out_match(seed: int = 3, steps: int = 260):
     return env
 
 
-def live_view_of(match):
-    """What vision would have reported for this board, in live types."""
+def live_view_of(match, with_bars: bool = True):
+    """What vision would have reported for this board, in live types.
+
+    `with_bars` gives each unit the share of hit points its bar would show, as
+    `hp_bars` reads it live; without it every unit is full, which is what live
+    vision reported before bars were read.
+    """
     allies, tracks = [], []
     for entity in match.battle.entities.values():
         if not entity.alive or entity.is_tower:
             continue
         x, y = sim_arena.to_tiles(entity.pos)
         cell = SimpleNamespace(x=x, y=y)
+        share = 1.0
+        if with_bars and getattr(entity, "max_hitpoints", 0):
+            share = min(1.0, entity.hitpoints / entity.max_hitpoints)
         if entity.side > 0:
-            allies.append((cell, entity.name))
+            allies.append((cell, entity.name, share))
         else:
-            tracks.append(SimpleNamespace(cell=cell, name=entity.name))
+            tracks.append(SimpleNamespace(cell=cell, name=entity.name, hp=share))
     player = match.players[1]
     ours = match.tower_fractions(1)
     theirs = match.tower_fractions(-1)
     hand = {card: slot for slot, card in enumerate(player.hand[:4])}
     obs = SimpleNamespace(
-        allies=[cell for cell, _ in allies], tracks=tracks,
+        allies=[ally[0] for ally in allies], tracks=tracks,
         elixir=player.elixir / 1000.0, elapsed=match.elapsed_ms / 1000.0,
         multiplier=2800.0 / max(1, match.regen_ms()),
         ally_hp=ours, enemy_hp=theirs, hand=hand,
@@ -261,10 +269,11 @@ def _greedy(net, view, mask):
 def _blind_hp(view):
     """The same view with the hit-point planes removed.
 
-    Live vision reports that a unit is there, not how hurt it is, so planes 2
-    and 3 are the one part of the observation the bridge cannot reproduce.
-    Zeroing them on both sides isolates everything it *can*: orientation,
-    binning, ownership, air, buildings, scalars and the mask.
+    Live vision reads how hurt a unit is off its health bar, but only
+    approximately (level-11 max HP, and only bars the detector finds), so
+    planes 2 and 3 are the one part of the observation the bridge cannot
+    reproduce exactly. Zeroing them on both sides isolates everything it can:
+    orientation, binning, ownership, air, buildings, scalars and the mask.
     """
     scrubbed = {"planes": view["planes"].copy(), "scalars": view["scalars"]}
     scrubbed["planes"][2] = 0.0
@@ -280,7 +289,7 @@ def test_the_same_board_gets_the_same_action_given_the_same_information():
     tests nothing. What must be true is that the two routes to the network
     agree: same board and same information in, same choice out.
 
-    Hit points are excluded because live cannot supply them; that gap is
+    Hit points are excluded because live only approximates them; that gap is
     measured separately below rather than hidden here.
     """
     pytest.importorskip("torch")
@@ -331,10 +340,10 @@ def test_the_hit_point_gap_is_real_and_is_measured_not_assumed():
         env = played_out_match(seed=seed, steps=100 + 30 * seed)
         if env.match.finished:
             continue
-        obs, allies = live_view_of(env.match)
         mask = legal_mask(env.match, env._cards, 1)
         true_hp = _greedy(net, observe(env.match, 1), mask)
-        full_hp = _greedy(net, observation_from_live(obs, allies), mask)
+        full_obs, full_allies = live_view_of(env.match, with_bars=False)
+        full_hp = _greedy(net, observation_from_live(full_obs, full_allies), mask)
         compared += 1
         changed += true_hp != full_hp
     assert compared >= 6, "not enough boards to say anything"
@@ -344,6 +353,36 @@ def test_the_hit_point_gap_is_real_and_is_measured_not_assumed():
         f"{changed}/{compared} boards ({share:.0%}). Above half means the "
         f"live policy is effectively playing a different game than the "
         f"trained one, and vision needs to carry health")
+
+
+def test_reading_bars_brings_the_hit_point_planes_to_the_simulators():
+    """With bar readings, planes 2 and 3 should land on the simulator's.
+
+    Not asserted exactly equal: live takes max HP from the level-11 card table,
+    and a unit the table does not know contributes nothing either way. What
+    must hold is that the readings close the gap rather than leave it - and
+    on a board with anyone hurt, close it strictly.
+    """
+    for seed in range(6):
+        env = played_out_match(seed=seed, steps=120 + 30 * seed)
+        if env.match.finished:
+            continue
+        from_sim = observe(env.match, 1)["planes"][2:4]
+        bars_obs, bars_allies = live_view_of(env.match)
+        full_obs, full_allies = live_view_of(env.match, with_bars=False)
+        with_bars = observation_from_live(bars_obs, bars_allies)["planes"][2:4]
+        full = observation_from_live(full_obs, full_allies)["planes"][2:4]
+        gap_bars = np.abs(with_bars - from_sim).sum()
+        gap_full = np.abs(full - from_sim).sum()
+        from brain.rl_policy import _unit_traits
+        hurt = any(e.alive and not e.is_tower and e.hitpoints < e.max_hitpoints
+                   and _unit_traits(e.name)[0] > 0
+                   for e in env.match.battle.entities.values())
+        assert gap_bars <= gap_full + 1e-6, (seed, gap_bars, gap_full)
+        if hurt:
+            assert gap_bars < gap_full, (
+                f"seed {seed}: units are hurt but reading their bars did not "
+                f"move the hit-point planes any closer to the simulator's")
 
 
 def test_every_live_decision_it_does_make_is_legal():

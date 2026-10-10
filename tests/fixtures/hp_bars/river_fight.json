@@ -1,0 +1,65 @@
+{
+ "source": "real 1184x2576 phone screenshot, river fight, overtime",
+ "bars": {
+  "hog_a": {
+   "box": [
+    92.2,
+    70.5,
+    185,
+    101.5
+   ],
+   "unit": "hog_rider",
+   "fraction_by_hand": 0.67
+  },
+  "hog_b": {
+   "box": [
+    223.2,
+    137.5,
+    316,
+    168.5
+   ],
+   "unit": "hog_rider",
+   "fraction_by_hand": 0.66
+  },
+  "hog_c": {
+   "box": [
+    128.2,
+    182.5,
+    221,
+    213.5
+   ],
+   "unit": "hog_rider",
+   "fraction_by_hand": 0.19
+  },
+  "hog_d": {
+   "box": [
+    242.2,
+    187.5,
+    335,
+    218.5
+   ],
+   "unit": "hog_rider",
+   "fraction_by_hand": 0.61
+  },
+  "cannon": {
+   "box": [
+    270.2,
+    279.5,
+    393,
+    310.5
+   ],
+   "unit": "cannon",
+   "fraction_by_hand": 0.84
+  },
+  "small_a": {
+   "box": [
+    27.2,
+    4.5,
+    93,
+    35.5
+   ],
+   "unit": null,
+   "fraction_by_hand": 0.23
+  }
+ }
+}

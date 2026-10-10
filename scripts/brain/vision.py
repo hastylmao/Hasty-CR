@@ -36,7 +36,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 import numpy as np
 from PIL import Image
 
-from . import arena
+from . import arena, hp_bars
 
 ROOT = Path(__file__).resolve().parents[2]
 RUNS = ROOT / "tmp" / "yolo" / "runs"
@@ -127,6 +127,33 @@ class Seen:
     confidence: float
     side: int                    # 0 = ours, 1 = theirs
     side_confidence: float
+    # Share of hit points left, read off the bar above the unit (`hp_bars`).
+    # 1.0 = no bar, so full; None = a bar that could not be read.
+    hp: Optional[float] = 1.0
+
+
+_HP_DETECTION = None
+
+
+def hp_detection_class():
+    """BuildABot's `UnitDetection` with a `hp_fraction` field.
+
+    Upstream's class is a frozen dataclass, so the reading cannot be set on it
+    after the fact. A subclass keeps every consumer that only knows
+    `unit`/`position` working, and anything that wants health reads
+    `getattr(detection, "hp_fraction", 1.0)`.
+    """
+    global _HP_DETECTION
+    if _HP_DETECTION is None:
+        from dataclasses import dataclass as _dataclass
+        from clashroyalebuildabot.namespaces.units import UnitDetection
+
+        @_dataclass(frozen=True)
+        class HPUnitDetection(UnitDetection):
+            hp_fraction: Optional[float] = 1.0
+
+        _HP_DETECTION = HPUnitDetection
+    return _HP_DETECTION
 
 
 class SideClassifier:
@@ -209,6 +236,9 @@ class YoloVision:
         # Detector classes with no units.json entry: cards the
         # brain is blind to. Empty is the only acceptable value.
         self.unresolved: dict = {}
+        # Health bars kept for `hp_bars` since start. Zero for a whole match
+        # means the detector is not finding bars and every unit reads as full.
+        self.bars_seen = 0
 
         self._model = None
         self._names: Dict[int, str] = {}
@@ -278,10 +308,15 @@ class YoloVision:
         confidences = boxes.conf.cpu().numpy()
         classes = boxes.cls.cpu().numpy().astype(int)
 
-        keep, crops = [], []
+        keep, crops, unit_boxes, bars = [], [], [], []
         size = self.sides.crop
         for (x1, y1, x2, y2), confidence, cls in zip(xyxy, confidences, classes):
             raw = self._names.get(int(cls), "")
+            if raw == "bar":
+                # Not a unit, but it is how much health the unit under it has.
+                if confidence >= hp_bars.MIN_BAR_CONF:
+                    bars.append((float(x1), float(y1), float(x2), float(y2)))
+                continue
             if raw in NOT_A_UNIT:
                 continue
             key = _key(raw)
@@ -301,6 +336,8 @@ class YoloVision:
             # sits somewhere around its chest and reads a tile too far forward.
             tile_x, tile_y = self._to_tile((x1 + x2) / 2.0, y2, width, height)
             keep.append((unit.name, tile_x, tile_y, float(confidence)))
+            unit_boxes.append(hp_bars.UnitBox(
+                unit.name, (float(x1), float(y1), float(x2), float(y2))))
 
             pad_w, pad_h = (x2 - x1) * 0.125, (y2 - y1) * 0.125
             cx1 = max(0, int(x1 - pad_w))
@@ -314,9 +351,12 @@ class YoloVision:
                 Image.fromarray(patch).resize((size, size), Image.BILINEAR)))
 
         verdicts = self.sides.classify(crops)
+        health = hp_bars.unit_fractions(pixels, unit_boxes, bars)
+        self.bars_seen += len(bars)
         ours: List[Seen] = []
         theirs: List[Seen] = []
-        for (name, tile_x, tile_y, confidence), (side, side_confidence) in zip(keep, verdicts):
+        for (name, tile_x, tile_y, confidence), (side, side_confidence), hp in zip(
+                keep, verdicts, health):
             # An unsure side is worse than a missing unit: putting one of ours
             # in the threat list invents a push, and putting one of theirs in
             # the ally list hides one. Below the floor, fall back to the half
@@ -324,7 +364,7 @@ class YoloVision:
             # wrong only in the contested middle.
             if side_confidence < self.side_floor:
                 side = 1 if tile_y > (31 - arena.RIVER_Y) else 0
-            seen = Seen(name, tile_x, tile_y, confidence, int(side), side_confidence)
+            seen = Seen(name, tile_x, tile_y, confidence, int(side), side_confidence, hp)
             (theirs if side == 1 else ours).append(seen)
 
         self.frames += 1
@@ -338,8 +378,7 @@ class YoloVision:
         """Replace the state's unit lists in place. True if it ran."""
         if not self.ready:
             return False
-        from clashroyalebuildabot.namespaces.units import (NAME2UNIT, Position,
-                                                           UnitDetection)
+        from clashroyalebuildabot.namespaces.units import NAME2UNIT, Position
 
         ours, theirs = self.detect(frame)
         # The same merge as `_units`: a name that resolves in
@@ -347,16 +386,19 @@ class YoloVision:
         by_name = {unit.name: unit for unit in NAME2UNIT.values()}
         by_name.update(_extra_units())
 
+        detection = hp_detection_class()
+
         def build(items: List[Seen]) -> list:
             out = []
             for seen in items:
                 unit = by_name.get(seen.name)
                 if unit is None:
                     continue
-                out.append(UnitDetection(
+                out.append(detection(
                     unit=unit,
                     position=Position(bbox=(0, 0, 0, 0), conf=seen.confidence,
-                                      tile_x=seen.tile_x, tile_y=seen.tile_y)))
+                                      tile_x=seen.tile_x, tile_y=seen.tile_y),
+                    hp_fraction=seen.hp))
             return out
 
         state.allies = build(ours)

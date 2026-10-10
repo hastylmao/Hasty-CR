@@ -20,11 +20,14 @@ a unit at tile y into plane row 31-y - and that flip is applied here too.
 `tests/test_rl_policy.py` asserts both, because a silent mirror is the single
 most expensive bug this project has hit.
 
-**What is approximated, honestly.** The simulator observes each unit's current
-hit points; live vision does not measure HP, so a detected unit contributes its
-card's full HP. A half-dead Musketeer therefore looks healthy to the policy.
-That is a real gap, not a rounding detail, and it is the first thing to suspect
-if live behaviour diverges from simulated behaviour.
+**Hit points.** The simulator observes each unit's current hit points. Live,
+`hp_bars` reads the bar the game draws over a damaged unit, and a unit
+contributes its card's max HP times that fraction - so a half-dead Musketeer
+counts as half a Musketeer, as it did in training. A unit with no bar is at
+full health. What is still approximate: max HP is the card's level-11 value
+rather than the badge's level, and shields are not read (the simulator leaves
+them out of the observation too). With the upstream detector (`-Vision
+buildabot`) there are no bars, so every unit reads as full, as before.
 """
 
 from __future__ import annotations
@@ -106,7 +109,7 @@ def _unit_traits(name: str):
 
 
 def ally_cells_with_names(state):
-    """Our units as (cell, name), which `Observation.allies` throws away.
+    """Our units as (cell, name, hp), which `Observation.allies` throws away.
 
     `obs.allies` is a list of bare cells - the hand-written policy only ever
     needed to know where our units are. The network was trained with four
@@ -119,39 +122,55 @@ def ally_cells_with_names(state):
     out = []
     for ally in getattr(state, "allies", ()) or ():
         cell = live_arena.to_grid(ally.position.tile_x, ally.position.tile_y)
-        out.append((cell, str(ally.unit.name)))
+        out.append((cell, str(ally.unit.name), _fraction(ally)))
     return out
+
+
+def _fraction(thing) -> float:
+    """Health share carried by a detection or track; full if it has none.
+
+    `None` - a bar that was there but unreadable - also counts as full here.
+    Enemies go through the tracker, which holds the last good reading instead;
+    allies are read fresh every frame.
+    """
+    value = getattr(thing, "hp_fraction", getattr(thing, "hp", 1.0))
+    return 1.0 if value is None else float(min(1.0, max(0.0, value)))
 
 
 def observation_from_live(obs, allies=None) -> dict:
     """A live `brain.policy.Observation` in the simulator's own frame.
 
     `obs.tracks` are the enemies. `allies` is an optional list of
-    `(cell, name)` from `ally_cells_with_names`; without it our own units fall
-    back to `obs.allies`, which carries positions but no identity.
+    `(cell, name)` or `(cell, name, hp)` from `ally_cells_with_names`; without
+    it our own units fall back to `obs.allies`, which carries positions but no
+    identity. `hp` - here and on each track - is the share of hit points left,
+    which scales the unit's max HP exactly as `sim.env.observe` uses current HP.
     """
     planes = np.zeros((NUM_PLANES, GRID_H, GRID_W), dtype=np.float32)
 
-    def place(cell_x: float, cell_y: float, base: int, name: Optional[str]):
+    def place(cell_x: float, cell_y: float, base: int, name: Optional[str],
+              share: float = 1.0):
         # Same flip `sim.env.observe` applies: tile y -> plane row 31-y.
         col = int(np.clip(round(cell_x), 0, GRID_W - 1))
         row = int(np.clip(round(31 - cell_y), 0, GRID_H - 1))
         planes[base, row, col] += 1.0
         hp, flying, building = _unit_traits(name) if name else (0.0, False, False)
-        planes[2 + base, row, col] += hp / 1000.0
+        planes[2 + base, row, col] += hp * share / 1000.0
         if flying:
             planes[4 + base, row, col] += 1.0
         if building:
             planes[6 + base, row, col] += 1.0
 
     if allies is not None:
-        for cell, name in allies:
-            place(cell.x, cell.y, 0, name)
+        for ally in allies:
+            cell, name = ally[0], ally[1]
+            share = ally[2] if len(ally) > 2 and ally[2] is not None else 1.0
+            place(cell.x, cell.y, 0, name, share)
     else:
         for cell in obs.allies:
             place(cell.x, cell.y, 0, None)
     for track in obs.tracks:
-        place(track.cell.x, track.cell.y, 1, str(track.name))
+        place(track.cell.x, track.cell.y, 1, str(track.name), _fraction(track))
 
     scalars = np.zeros(NUM_SCALARS, dtype=np.float32)
     scalars[0] = float(obs.elixir) / 10.0

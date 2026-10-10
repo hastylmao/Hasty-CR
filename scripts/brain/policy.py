@@ -244,7 +244,8 @@ class Brain:
         detections = []
         for enemy in state.enemies:
             cell = arena.to_grid(enemy.position.tile_x, enemy.position.tile_y)
-            detections.append((str(enemy.unit.name), cell))
+            detections.append((str(enemy.unit.name), cell,
+                               getattr(enemy, "hp_fraction", 1.0)))
         tracks = self.tracker.update(detections, now)
 
         # Charge the opponent for anything appearing for the first time, then

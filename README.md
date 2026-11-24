@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="docs/assets/logo.svg" alt="HastyCR" width="120">
+<img src="docs/assets/logo.png" alt="HastyCR" width="160">
 
 # HastyCR
 
-![status](https://img.shields.io/badge/status-offline%20research-4f7cff)
+![status](https://img.shields.io/badge/status-offline%20research-7c5cff)
 ![tested](https://img.shields.io/badge/tested%20on-Null's%20Royale-e8a316)
 ![peak](https://img.shields.io/badge/peak-Champion%20league-a855f7)
 ![python](https://img.shields.io/badge/python-3.10%20%7C%203.12-3776AB)
@@ -13,12 +13,31 @@
 
 **Offline research into a Clash Royale agent: a memory reader, a transformer policy trained on replays and self-play, and a search that forks the real game logic before each play.**
 
-[How it works](#how-it-works) · [Results](#results) · [Findings](#findings) · [Layout](#layout) · [Run it](#run-it) · [Limits](#limits)
+[Showcase](#showcase) · [How it works](#how-it-works) · [Results](#results) · [Findings](#findings) · [Layout](#layout) · [Run it](#run-it) · [Limits](#limits)
 
 </div>
 
 > [!IMPORTANT]
 > HastyCR is a research project. It has only been tested on **Null's Royale**, a private server, and is not meant for use on official Supercell servers. No game binaries, assets or extracted engine files are in this repository.
+
+<br>
+
+## Showcase
+
+<table>
+<tr>
+<td width="50%" align="center">
+<a href="docs/assets/bot-showcase.mp4"><img src="docs/assets/bot-preview.gif" width="300" alt="The bot playing live"></a>
+<br><b>The bot, live</b>
+<br><sub>The trained policy playing a real match on Null's Royale. No scripted plays. <a href="docs/assets/bot-showcase.mp4">Full video</a></sub>
+</td>
+<td width="50%" align="center">
+<a href="docs/assets/simulator-showcase.mp4"><img src="docs/assets/simulator-preview.gif" width="300" alt="Two policies in the simulator"></a>
+<br><b>Training in simulation</b>
+<br><sub>Two policies fighting offline. This is the project's first simulator; training now runs on the headless real engine. <a href="docs/assets/simulator-showcase.mp4">Full video</a></sub>
+</td>
+</tr>
+</table>
 
 <br>
 

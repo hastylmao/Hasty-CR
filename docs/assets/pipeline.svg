@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 250" width="920" height="250" role="img" aria-label="HastyCR pipeline: memory reader, shadow battle, policy, search, taps">
   <style>
     .box{fill:#161b26;stroke:#3a4a6b;stroke-width:1.5}
-    .hl{fill:#1b2a52;stroke:#4f7cff;stroke-width:2}
+    .hl{fill:#231a45;stroke:#7c5cff;stroke-width:2}
     .t{font:600 15px -apple-system,Segoe UI,Helvetica,Arial,sans-serif;fill:#e6edf3}
     .s{font:12px -apple-system,Segoe UI,Helvetica,Arial,sans-serif;fill:#8b98ad}
     .a{stroke:#6b7a99;stroke-width:2;fill:none;marker-end:url(#arr)}

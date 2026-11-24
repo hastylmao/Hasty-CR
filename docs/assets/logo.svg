@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 180" width="160" height="180" role="img" aria-label="HastyCR logo">
+  <defs>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4f7cff"/>
+      <stop offset="1" stop-color="#2346c9"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd860"/>
+      <stop offset="1" stop-color="#e8a316"/>
+    </linearGradient>
+  </defs>
+  <!-- crown -->
+  <path d="M40 46 L40 18 L58 34 L80 10 L102 34 L120 18 L120 46 Z" fill="url(#gold)" stroke="#9a6a08" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="40" cy="17" r="6" fill="url(#gold)" stroke="#9a6a08" stroke-width="2.5"/>
+  <circle cx="80" cy="9" r="6" fill="url(#gold)" stroke="#9a6a08" stroke-width="2.5"/>
+  <circle cx="120" cy="17" r="6" fill="url(#gold)" stroke="#9a6a08" stroke-width="2.5"/>
+  <!-- shield -->
+  <path d="M22 50 H138 V104 C138 140 110 160 80 172 C50 160 22 140 22 104 Z" fill="url(#shield)" stroke="#e8a316" stroke-width="6" stroke-linejoin="round"/>
+  <!-- lightning bolt: haste -->
+  <path d="M90 64 L58 116 H80 L70 156 L106 98 H84 Z" fill="#ffffff" stroke="#16307f" stroke-width="3" stroke-linejoin="round"/>
+</svg>

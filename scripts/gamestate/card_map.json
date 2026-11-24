@@ -1,550 +1,674 @@
 {
- "note": "native card id (reader +0xAC, 26/27/28xxxxxx) -> RoyaleSim catalogue. Evolution ids (13xxxxxx) are not here: resolve them from the unit's data name (e.g. Knight_EV1) - see frame.py.",
- "cards": {
-  "26000000": {
-   "slug": "knight",
-   "royalesim": "Knight",
-   "rs_id": 0
-  },
-  "26000001": {
-   "slug": "archers",
-   "royalesim": "Archer",
-   "rs_id": 1
-  },
-  "26000002": {
-   "slug": "goblins",
-   "royalesim": "Goblins",
-   "rs_id": 2
-  },
-  "26000003": {
-   "slug": "giant",
-   "royalesim": "Giant",
-   "rs_id": 3
-  },
-  "26000004": {
-   "slug": "pekka",
-   "royalesim": "Pekka",
-   "rs_id": 4
-  },
-  "26000005": {
-   "slug": "minions",
-   "royalesim": "Minions",
-   "rs_id": 5
-  },
-  "26000006": {
-   "slug": "balloon",
-   "royalesim": "Balloon",
-   "rs_id": 6
-  },
-  "26000007": {
-   "slug": "witch",
-   "royalesim": "Witch",
-   "rs_id": 7
-  },
-  "26000008": {
-   "slug": "barbarians",
-   "royalesim": "Barbarians",
-   "rs_id": 8
-  },
-  "26000009": {
-   "slug": "golem",
-   "royalesim": "Golem",
-   "rs_id": 9
-  },
-  "26000010": {
-   "slug": "skeletons",
-   "royalesim": "Skeletons",
-   "rs_id": 10
-  },
-  "26000011": {
-   "slug": "valkyrie",
-   "royalesim": "Valkyrie",
-   "rs_id": 11
-  },
-  "26000012": {
-   "slug": "skeleton-army",
-   "royalesim": "SkeletonArmy",
-   "rs_id": 12
-  },
-  "26000013": {
-   "slug": "bomber",
-   "royalesim": "Bomber",
-   "rs_id": 13
-  },
-  "26000014": {
-   "slug": "musketeer",
-   "royalesim": "Musketeer",
-   "rs_id": 14
-  },
-  "26000015": {
-   "slug": "baby-dragon",
-   "royalesim": "BabyDragon",
-   "rs_id": 15
-  },
-  "26000016": {
-   "slug": "prince",
-   "royalesim": "Prince",
-   "rs_id": 16
-  },
-  "26000017": {
-   "slug": "wizard",
-   "royalesim": "Wizard",
-   "rs_id": 17
-  },
-  "26000018": {
-   "slug": "mini-pekka",
-   "royalesim": "MiniPekka",
-   "rs_id": 18
-  },
-  "26000019": {
-   "slug": "spear-goblins",
-   "royalesim": "SpearGoblins",
-   "rs_id": 19
-  },
-  "26000020": {
-   "slug": "giant-skeleton",
-   "royalesim": "GiantSkeleton",
-   "rs_id": 20
-  },
-  "26000021": {
-   "slug": "hog-rider",
-   "royalesim": "HogRider",
-   "rs_id": 21
-  },
-  "26000022": {
-   "slug": "minion-horde",
-   "royalesim": "MinionHorde",
-   "rs_id": 22
-  },
-  "26000023": {
-   "slug": "ice-wizard",
-   "royalesim": "IceWizard",
-   "rs_id": 23
-  },
-  "26000024": {
-   "slug": "royal-giant",
-   "royalesim": "RoyalGiant",
-   "rs_id": 24
-  },
-  "26000025": {
-   "slug": "guards",
-   "royalesim": "SkeletonWarriors",
-   "rs_id": 25
-  },
-  "26000026": {
-   "slug": "princess",
-   "royalesim": "Princess",
-   "rs_id": 26
-  },
-  "26000027": {
-   "slug": "dark-prince",
-   "royalesim": "DarkPrince",
-   "rs_id": 27
-  },
-  "26000028": {
-   "slug": "three-musketeers",
-   "royalesim": "ThreeMusketeers",
-   "rs_id": 28
-  },
-  "26000029": {
-   "slug": "lava-hound",
-   "royalesim": "LavaHound",
-   "rs_id": 29
-  },
-  "26000030": {
-   "slug": "ice-spirit",
-   "royalesim": "IceSpirits",
-   "rs_id": 30
-  },
-  "26000031": {
-   "slug": "fire-spirit",
-   "royalesim": "FireSpirits",
-   "rs_id": 31
-  },
-  "26000032": {
-   "slug": "miner",
-   "royalesim": "Miner",
-   "rs_id": 32
-  },
-  "26000033": {
-   "slug": "sparky",
-   "royalesim": "ZapMachine",
-   "rs_id": 33
-  },
-  "26000034": {
-   "slug": "bowler",
-   "royalesim": "Bowler",
-   "rs_id": 34
-  },
-  "26000035": {
-   "slug": "lumberjack",
-   "royalesim": "RageBarbarian",
-   "rs_id": 35
-  },
-  "26000036": {
-   "slug": "battle-ram",
-   "royalesim": "BattleRam",
-   "rs_id": 36
-  },
-  "26000037": {
-   "slug": "inferno-dragon",
-   "royalesim": "InfernoDragon",
-   "rs_id": 37
-  },
-  "26000038": {
-   "slug": "ice-golem",
-   "royalesim": "IceGolemite",
-   "rs_id": 38
-  },
-  "26000039": {
-   "slug": "mega-minion",
-   "royalesim": "MegaMinion",
-   "rs_id": 39
-  },
-  "26000040": {
-   "slug": "dart-goblin",
-   "royalesim": "BlowdartGoblin",
-   "rs_id": 40
-  },
-  "26000041": {
-   "slug": "goblin-gang",
-   "royalesim": "GoblinGang",
-   "rs_id": 41
-  },
-  "26000042": {
-   "slug": "electro-wizard",
-   "royalesim": "ElectroWizard",
-   "rs_id": 42
-  },
-  "26000043": {
-   "slug": "elite-barbarians",
-   "royalesim": "AngryBarbarians",
-   "rs_id": 43
-  },
-  "26000044": {
-   "slug": "hunter",
-   "royalesim": "Hunter",
-   "rs_id": 44
-  },
-  "26000045": {
-   "slug": "executioner",
-   "royalesim": "AxeMan",
-   "rs_id": 45
-  },
-  "26000046": {
-   "slug": "bandit",
-   "royalesim": "Assassin",
-   "rs_id": 46
-  },
-  "26000047": {
-   "slug": "royal-recruits",
-   "royalesim": "RoyalRecruits",
-   "rs_id": 47
-  },
-  "26000048": {
-   "slug": "night-witch",
-   "royalesim": "DarkWitch",
-   "rs_id": 48
-  },
-  "26000049": {
-   "slug": "bats",
-   "royalesim": "Bats",
-   "rs_id": 49
-  },
-  "26000050": {
-   "slug": "royal-ghost",
-   "royalesim": "Ghost",
-   "rs_id": 50
-  },
-  "26000051": {
-   "slug": "ram-rider",
-   "royalesim": "RamRider",
-   "rs_id": 51
-  },
-  "26000052": {
-   "slug": "zappies",
-   "royalesim": "MiniSparkys",
-   "rs_id": 52
-  },
-  "26000053": {
-   "slug": "rascals",
-   "royalesim": "Rascals",
-   "rs_id": 53
-  },
-  "26000054": {
-   "slug": "cannon-cart",
-   "royalesim": "MovingCannon",
-   "rs_id": 54
-  },
-  "26000055": {
-   "slug": "mega-knight",
-   "royalesim": "MegaKnight",
-   "rs_id": 55
-  },
-  "26000056": {
-   "slug": "skeleton-barrel",
-   "royalesim": "SkeletonBalloon",
-   "rs_id": 56
-  },
-  "26000057": {
-   "slug": "flying-machine",
-   "royalesim": "DartBarrell",
-   "rs_id": 57
-  },
-  "26000058": {
-   "slug": "wall-breakers",
-   "royalesim": "Wallbreakers",
-   "rs_id": 58
-  },
-  "26000059": {
-   "slug": "royal-hogs",
-   "royalesim": "RoyalHogs",
-   "rs_id": 59
-  },
-  "26000060": {
-   "slug": "goblin-giant",
-   "royalesim": "GoblinGiant",
-   "rs_id": 60
-  },
-  "26000061": {
-   "slug": "fisherman",
-   "royalesim": "Fisherman",
-   "rs_id": 61
-  },
-  "26000062": {
-   "slug": "magic-archer",
-   "royalesim": "EliteArcher",
-   "rs_id": 62
-  },
-  "26000063": {
-   "slug": "electro-dragon",
-   "royalesim": "ElectroDragon",
-   "rs_id": 63
-  },
-  "26000064": {
-   "slug": "firecracker",
-   "royalesim": "Firecracker",
-   "rs_id": 64
-  },
-  "26000065": {
-   "slug": "mighty-miner",
-   "royalesim": "MightyMiner",
-   "rs_id": 65
-  },
-  "26000067": {
-   "slug": "elixir-golem",
-   "royalesim": "ElixirGolem",
-   "rs_id": 66
-  },
-  "26000068": {
-   "slug": "battle-healer",
-   "royalesim": "BattleHealer",
-   "rs_id": 67
-  },
-  "26000069": {
-   "slug": "skeleton-king",
-   "royalesim": "SkeletonKing",
-   "rs_id": 68
-  },
-  "26000072": {
-   "slug": "archer-queen",
-   "royalesim": "ArcherQueen",
-   "rs_id": 69
-  },
-  "26000074": {
-   "slug": "golden-knight",
-   "royalesim": "GoldenKnight",
-   "rs_id": 70
-  },
-  "26000077": {
-   "slug": "monk",
-   "royalesim": "Monk",
-   "rs_id": 72
-  },
-  "26000080": {
-   "slug": "skeleton-dragons",
-   "royalesim": "SkeletonDragons",
-   "rs_id": 75
-  },
-  "26000083": {
-   "slug": "mother-witch",
-   "royalesim": "WitchMother",
-   "rs_id": 77
-  },
-  "26000084": {
-   "slug": "electro-spirit",
-   "royalesim": "ElectroSpirit",
-   "rs_id": 78
-  },
-  "26000085": {
-   "slug": "electro-giant",
-   "royalesim": "ElectroGiant",
-   "rs_id": 79
-  },
-  "26000087": {
-   "slug": "phoenix",
-   "royalesim": "Phoenix",
-   "rs_id": 81
-  },
-  "27000000": {
-   "slug": "cannon",
-   "royalesim": "Cannon",
-   "rs_id": 93
-  },
-  "27000001": {
-   "slug": "goblin-hut",
-   "royalesim": "GoblinHut",
-   "rs_id": 94
-  },
-  "27000002": {
-   "slug": "mortar",
-   "royalesim": "Mortar",
-   "rs_id": 95
-  },
-  "27000003": {
-   "slug": "inferno-tower",
-   "royalesim": "InfernoTower",
-   "rs_id": 96
-  },
-  "27000004": {
-   "slug": "bomb-tower",
-   "royalesim": "BombTower",
-   "rs_id": 97
-  },
-  "27000005": {
-   "slug": "barbarian-hut",
-   "royalesim": "BarbarianHut",
-   "rs_id": 98
-  },
-  "27000006": {
-   "slug": "tesla",
-   "royalesim": "Tesla",
-   "rs_id": 99
-  },
-  "27000007": {
-   "slug": "elixir-collector",
-   "royalesim": "Elixir Collector",
-   "rs_id": 100
-  },
-  "27000008": {
-   "slug": "x-bow",
-   "royalesim": "Xbow",
-   "rs_id": 101
-  },
-  "27000009": {
-   "slug": "tombstone",
-   "royalesim": "Tombstone",
-   "rs_id": 102
-  },
-  "27000010": {
-   "slug": "furnace",
-   "royalesim": "FirespiritHut",
-   "rs_id": 103
-  },
-  "27000012": {
-   "slug": "goblin-cage",
-   "royalesim": "GoblinCage",
-   "rs_id": 105
-  },
-  "27000013": {
-   "slug": "goblin-drill",
-   "royalesim": "GoblinDrill",
-   "rs_id": 106
-  },
-  "28000000": {
-   "slug": "fireball",
-   "royalesim": "Fireball",
-   "rs_id": 108
-  },
-  "28000001": {
-   "slug": "arrows",
-   "royalesim": "Arrows",
-   "rs_id": 109
-  },
-  "28000002": {
-   "slug": "rage",
-   "royalesim": "Rage",
-   "rs_id": 110
-  },
-  "28000003": {
-   "slug": "rocket",
-   "royalesim": "Rocket",
-   "rs_id": 111
-  },
-  "28000004": {
-   "slug": "goblin-barrel",
-   "royalesim": "GoblinBarrel",
-   "rs_id": 112
-  },
-  "28000005": {
-   "slug": "freeze",
-   "royalesim": "Freeze",
-   "rs_id": 113
-  },
-  "28000006": {
-   "slug": "mirror",
-   "royalesim": "Mirror",
-   "rs_id": 114
-  },
-  "28000007": {
-   "slug": "lightning",
-   "royalesim": "Lightning",
-   "rs_id": 115
-  },
-  "28000008": {
-   "slug": "zap",
-   "royalesim": "Zap",
-   "rs_id": 116
-  },
-  "28000009": {
-   "slug": "poison",
-   "royalesim": "Poison",
-   "rs_id": 117
-  },
-  "28000010": {
-   "slug": "graveyard",
-   "royalesim": "Graveyard",
-   "rs_id": 118
-  },
-  "28000011": {
-   "slug": "the-log",
-   "royalesim": "Log",
-   "rs_id": 119
-  },
-  "28000012": {
-   "slug": "tornado",
-   "royalesim": "Tornado",
-   "rs_id": 120
-  },
-  "28000013": {
-   "slug": "clone",
-   "royalesim": "Clone",
-   "rs_id": 121
-  },
-  "28000014": {
-   "slug": "earthquake",
-   "royalesim": "Earthquake",
-   "rs_id": 122
-  },
-  "28000015": {
-   "slug": "barbarian-barrel",
-   "royalesim": "BarbLog",
-   "rs_id": 123
-  },
-  "28000016": {
-   "slug": "heal-spirit",
-   "royalesim": "Heal",
-   "rs_id": 124
-  },
-  "28000017": {
-   "slug": "giant-snowball",
-   "royalesim": "Snowball",
-   "rs_id": 125
-  },
-  "28000018": {
-   "slug": "royal-delivery",
-   "royalesim": "RoyalDelivery",
-   "rs_id": 126
+  "note": "native card id (reader +0xAC, 26/27/28xxxxxx) -> RoyaleSim catalogue. Evolution ids (13xxxxxx) are not here: resolve them from the unit's data name (e.g. Knight_EV1) - see frame.py.",
+  "cards": {
+    "26000000": {
+      "slug": "knight",
+      "royalesim": "Knight",
+      "rs_id": 0
+    },
+    "26000001": {
+      "slug": "archers",
+      "royalesim": "Archer",
+      "rs_id": 1
+    },
+    "26000002": {
+      "slug": "goblins",
+      "royalesim": "Goblins",
+      "rs_id": 2
+    },
+    "26000003": {
+      "slug": "giant",
+      "royalesim": "Giant",
+      "rs_id": 3
+    },
+    "26000004": {
+      "slug": "pekka",
+      "royalesim": "Pekka",
+      "rs_id": 4
+    },
+    "26000005": {
+      "slug": "minions",
+      "royalesim": "Minions",
+      "rs_id": 5
+    },
+    "26000006": {
+      "slug": "balloon",
+      "royalesim": "Balloon",
+      "rs_id": 6
+    },
+    "26000007": {
+      "slug": "witch",
+      "royalesim": "Witch",
+      "rs_id": 7
+    },
+    "26000008": {
+      "slug": "barbarians",
+      "royalesim": "Barbarians",
+      "rs_id": 8
+    },
+    "26000009": {
+      "slug": "golem",
+      "royalesim": "Golem",
+      "rs_id": 9
+    },
+    "26000010": {
+      "slug": "skeletons",
+      "royalesim": "Skeletons",
+      "rs_id": 10
+    },
+    "26000011": {
+      "slug": "valkyrie",
+      "royalesim": "Valkyrie",
+      "rs_id": 11
+    },
+    "26000012": {
+      "slug": "skeleton-army",
+      "royalesim": "SkeletonArmy",
+      "rs_id": 12
+    },
+    "26000013": {
+      "slug": "bomber",
+      "royalesim": "Bomber",
+      "rs_id": 13
+    },
+    "26000014": {
+      "slug": "musketeer",
+      "royalesim": "Musketeer",
+      "rs_id": 14
+    },
+    "26000015": {
+      "slug": "baby-dragon",
+      "royalesim": "BabyDragon",
+      "rs_id": 15
+    },
+    "26000016": {
+      "slug": "prince",
+      "royalesim": "Prince",
+      "rs_id": 16
+    },
+    "26000017": {
+      "slug": "wizard",
+      "royalesim": "Wizard",
+      "rs_id": 17
+    },
+    "26000018": {
+      "slug": "mini-pekka",
+      "royalesim": "MiniPekka",
+      "rs_id": 18
+    },
+    "26000019": {
+      "slug": "spear-goblins",
+      "royalesim": "SpearGoblins",
+      "rs_id": 19
+    },
+    "26000020": {
+      "slug": "giant-skeleton",
+      "royalesim": "GiantSkeleton",
+      "rs_id": 20
+    },
+    "26000021": {
+      "slug": "hog-rider",
+      "royalesim": "HogRider",
+      "rs_id": 21
+    },
+    "26000022": {
+      "slug": "minion-horde",
+      "royalesim": "MinionHorde",
+      "rs_id": 22
+    },
+    "26000023": {
+      "slug": "ice-wizard",
+      "royalesim": "IceWizard",
+      "rs_id": 23
+    },
+    "26000024": {
+      "slug": "royal-giant",
+      "royalesim": "RoyalGiant",
+      "rs_id": 24
+    },
+    "26000025": {
+      "slug": "guards",
+      "royalesim": "SkeletonWarriors",
+      "rs_id": 25
+    },
+    "26000026": {
+      "slug": "princess",
+      "royalesim": "Princess",
+      "rs_id": 26
+    },
+    "26000027": {
+      "slug": "dark-prince",
+      "royalesim": "DarkPrince",
+      "rs_id": 27
+    },
+    "26000028": {
+      "slug": "three-musketeers",
+      "royalesim": "ThreeMusketeers",
+      "rs_id": 28
+    },
+    "26000029": {
+      "slug": "lava-hound",
+      "royalesim": "LavaHound",
+      "rs_id": 29
+    },
+    "26000030": {
+      "slug": "ice-spirit",
+      "royalesim": "IceSpirits",
+      "rs_id": 30
+    },
+    "26000031": {
+      "slug": "fire-spirit",
+      "royalesim": "FireSpirits",
+      "rs_id": 31
+    },
+    "26000032": {
+      "slug": "miner",
+      "royalesim": "Miner",
+      "rs_id": 32
+    },
+    "26000033": {
+      "slug": "sparky",
+      "royalesim": "ZapMachine",
+      "rs_id": 33
+    },
+    "26000034": {
+      "slug": "bowler",
+      "royalesim": "Bowler",
+      "rs_id": 34
+    },
+    "26000035": {
+      "slug": "lumberjack",
+      "royalesim": "RageBarbarian",
+      "rs_id": 35
+    },
+    "26000036": {
+      "slug": "battle-ram",
+      "royalesim": "BattleRam",
+      "rs_id": 36
+    },
+    "26000037": {
+      "slug": "inferno-dragon",
+      "royalesim": "InfernoDragon",
+      "rs_id": 37
+    },
+    "26000038": {
+      "slug": "ice-golem",
+      "royalesim": "IceGolemite",
+      "rs_id": 38
+    },
+    "26000039": {
+      "slug": "mega-minion",
+      "royalesim": "MegaMinion",
+      "rs_id": 39
+    },
+    "26000040": {
+      "slug": "dart-goblin",
+      "royalesim": "BlowdartGoblin",
+      "rs_id": 40
+    },
+    "26000041": {
+      "slug": "goblin-gang",
+      "royalesim": "GoblinGang",
+      "rs_id": 41
+    },
+    "26000042": {
+      "slug": "electro-wizard",
+      "royalesim": "ElectroWizard",
+      "rs_id": 42
+    },
+    "26000043": {
+      "slug": "elite-barbarians",
+      "royalesim": "AngryBarbarians",
+      "rs_id": 43
+    },
+    "26000044": {
+      "slug": "hunter",
+      "royalesim": "Hunter",
+      "rs_id": 44
+    },
+    "26000045": {
+      "slug": "executioner",
+      "royalesim": "AxeMan",
+      "rs_id": 45
+    },
+    "26000046": {
+      "slug": "bandit",
+      "royalesim": "Assassin",
+      "rs_id": 46
+    },
+    "26000047": {
+      "slug": "royal-recruits",
+      "royalesim": "RoyalRecruits",
+      "rs_id": 47
+    },
+    "26000048": {
+      "slug": "night-witch",
+      "royalesim": "DarkWitch",
+      "rs_id": 48
+    },
+    "26000049": {
+      "slug": "bats",
+      "royalesim": "Bats",
+      "rs_id": 49
+    },
+    "26000050": {
+      "slug": "royal-ghost",
+      "royalesim": "Ghost",
+      "rs_id": 50
+    },
+    "26000051": {
+      "slug": "ram-rider",
+      "royalesim": "RamRider",
+      "rs_id": 51
+    },
+    "26000052": {
+      "slug": "zappies",
+      "royalesim": "MiniSparkys",
+      "rs_id": 52
+    },
+    "26000053": {
+      "slug": "rascals",
+      "royalesim": "Rascals",
+      "rs_id": 53
+    },
+    "26000054": {
+      "slug": "cannon-cart",
+      "royalesim": "MovingCannon",
+      "rs_id": 54
+    },
+    "26000055": {
+      "slug": "mega-knight",
+      "royalesim": "MegaKnight",
+      "rs_id": 55
+    },
+    "26000056": {
+      "slug": "skeleton-barrel",
+      "royalesim": "SkeletonBalloon",
+      "rs_id": 56
+    },
+    "26000057": {
+      "slug": "flying-machine",
+      "royalesim": "DartBarrell",
+      "rs_id": 57
+    },
+    "26000058": {
+      "slug": "wall-breakers",
+      "royalesim": "Wallbreakers",
+      "rs_id": 58
+    },
+    "26000059": {
+      "slug": "royal-hogs",
+      "royalesim": "RoyalHogs",
+      "rs_id": 59
+    },
+    "26000060": {
+      "slug": "goblin-giant",
+      "royalesim": "GoblinGiant",
+      "rs_id": 60
+    },
+    "26000061": {
+      "slug": "fisherman",
+      "royalesim": "Fisherman",
+      "rs_id": 61
+    },
+    "26000062": {
+      "slug": "magic-archer",
+      "royalesim": "EliteArcher",
+      "rs_id": 62
+    },
+    "26000063": {
+      "slug": "electro-dragon",
+      "royalesim": "ElectroDragon",
+      "rs_id": 63
+    },
+    "26000064": {
+      "slug": "firecracker",
+      "royalesim": "Firecracker",
+      "rs_id": 64
+    },
+    "26000065": {
+      "slug": "mighty-miner",
+      "royalesim": "MightyMiner",
+      "rs_id": 65
+    },
+    "26000067": {
+      "slug": "elixir-golem",
+      "royalesim": "ElixirGolem",
+      "rs_id": 66
+    },
+    "26000068": {
+      "slug": "battle-healer",
+      "royalesim": "BattleHealer",
+      "rs_id": 67
+    },
+    "26000069": {
+      "slug": "skeleton-king",
+      "royalesim": "SkeletonKing",
+      "rs_id": 68
+    },
+    "26000072": {
+      "slug": "archer-queen",
+      "royalesim": "ArcherQueen",
+      "rs_id": 69
+    },
+    "26000074": {
+      "slug": "golden-knight",
+      "royalesim": "GoldenKnight",
+      "rs_id": 70
+    },
+    "26000077": {
+      "slug": "monk",
+      "royalesim": "Monk",
+      "rs_id": 72
+    },
+    "26000080": {
+      "slug": "skeleton-dragons",
+      "royalesim": "SkeletonDragons",
+      "rs_id": 75
+    },
+    "26000083": {
+      "slug": "mother-witch",
+      "royalesim": "WitchMother",
+      "rs_id": 77
+    },
+    "26000084": {
+      "slug": "electro-spirit",
+      "royalesim": "ElectroSpirit",
+      "rs_id": 78
+    },
+    "26000085": {
+      "slug": "electro-giant",
+      "royalesim": "ElectroGiant",
+      "rs_id": 79
+    },
+    "26000087": {
+      "slug": "phoenix",
+      "royalesim": "Phoenix",
+      "rs_id": 81
+    },
+    "27000000": {
+      "slug": "cannon",
+      "royalesim": "Cannon",
+      "rs_id": 93
+    },
+    "27000001": {
+      "slug": "goblin-hut",
+      "royalesim": "GoblinHut",
+      "rs_id": 94
+    },
+    "27000002": {
+      "slug": "mortar",
+      "royalesim": "Mortar",
+      "rs_id": 95
+    },
+    "27000003": {
+      "slug": "inferno-tower",
+      "royalesim": "InfernoTower",
+      "rs_id": 96
+    },
+    "27000004": {
+      "slug": "bomb-tower",
+      "royalesim": "BombTower",
+      "rs_id": 97
+    },
+    "27000005": {
+      "slug": "barbarian-hut",
+      "royalesim": "BarbarianHut",
+      "rs_id": 98
+    },
+    "27000006": {
+      "slug": "tesla",
+      "royalesim": "Tesla",
+      "rs_id": 99
+    },
+    "27000007": {
+      "slug": "elixir-collector",
+      "royalesim": "Elixir Collector",
+      "rs_id": 100
+    },
+    "27000008": {
+      "slug": "x-bow",
+      "royalesim": "Xbow",
+      "rs_id": 101
+    },
+    "27000009": {
+      "slug": "tombstone",
+      "royalesim": "Tombstone",
+      "rs_id": 102
+    },
+    "27000010": {
+      "slug": "furnace",
+      "royalesim": "FirespiritHut",
+      "rs_id": 103
+    },
+    "27000012": {
+      "slug": "goblin-cage",
+      "royalesim": "GoblinCage",
+      "rs_id": 105
+    },
+    "27000013": {
+      "slug": "goblin-drill",
+      "royalesim": "GoblinDrill",
+      "rs_id": 106
+    },
+    "28000000": {
+      "slug": "fireball",
+      "royalesim": "Fireball",
+      "rs_id": 108
+    },
+    "28000001": {
+      "slug": "arrows",
+      "royalesim": "Arrows",
+      "rs_id": 109
+    },
+    "28000002": {
+      "slug": "rage",
+      "royalesim": "Rage",
+      "rs_id": 110
+    },
+    "28000003": {
+      "slug": "rocket",
+      "royalesim": "Rocket",
+      "rs_id": 111
+    },
+    "28000004": {
+      "slug": "goblin-barrel",
+      "royalesim": "GoblinBarrel",
+      "rs_id": 112
+    },
+    "28000005": {
+      "slug": "freeze",
+      "royalesim": "Freeze",
+      "rs_id": 113
+    },
+    "28000006": {
+      "slug": "mirror",
+      "royalesim": "Mirror",
+      "rs_id": 114
+    },
+    "28000007": {
+      "slug": "lightning",
+      "royalesim": "Lightning",
+      "rs_id": 115
+    },
+    "28000008": {
+      "slug": "zap",
+      "royalesim": "Zap",
+      "rs_id": 116
+    },
+    "28000009": {
+      "slug": "poison",
+      "royalesim": "Poison",
+      "rs_id": 117
+    },
+    "28000010": {
+      "slug": "graveyard",
+      "royalesim": "Graveyard",
+      "rs_id": 118
+    },
+    "28000011": {
+      "slug": "the-log",
+      "royalesim": "Log",
+      "rs_id": 119
+    },
+    "28000012": {
+      "slug": "tornado",
+      "royalesim": "Tornado",
+      "rs_id": 120
+    },
+    "28000013": {
+      "slug": "clone",
+      "royalesim": "Clone",
+      "rs_id": 121
+    },
+    "28000014": {
+      "slug": "earthquake",
+      "royalesim": "Earthquake",
+      "rs_id": 122
+    },
+    "28000015": {
+      "slug": "barbarian-barrel",
+      "royalesim": "BarbLog",
+      "rs_id": 123
+    },
+    "28000016": {
+      "slug": "heal-spirit",
+      "royalesim": "Heal",
+      "rs_id": 124
+    },
+    "28000017": {
+      "slug": "giant-snowball",
+      "royalesim": "Snowball",
+      "rs_id": 125
+    },
+    "28000018": {
+      "slug": "royal-delivery",
+      "royalesim": "RoyalDelivery",
+      "rs_id": 126
+    },
+    "26000093": {
+      "slug": "little-prince",
+      "royalesim": "LittlePrince",
+      "rs_id": 133
+    },
+    "26000103": {
+      "slug": "boss-bandit",
+      "royalesim": "BossBandit",
+      "rs_id": 135
+    },
+    "26000099": {
+      "slug": "goblinstein",
+      "royalesim": "Goblinstein",
+      "rs_id": 134
+    },
+    "26000104": {
+      "slug": "spirit-empress",
+      "royalesim": "MergeMaiden",
+      "rs_id": 130
+    },
+    "26000096": {
+      "slug": "goblin-machine",
+      "royalesim": "GoblinMachine",
+      "rs_id": 84
+    },
+    "28000023": {
+      "slug": "void",
+      "royalesim": "DarkMagic",
+      "rs_id": 128
+    },
+    "26000095": {
+      "slug": "goblin-demolisher",
+      "royalesim": "GoblinDemolisher",
+      "rs_id": 83
+    },
+    "26000101": {
+      "slug": "rune-giant",
+      "royalesim": "GiantBuffer",
+      "rs_id": 88
+    },
+    "28000026": {
+      "slug": "vines",
+      "royalesim": "Vines",
+      "rs_id": 131
+    },
+    "28000024": {
+      "slug": "goblin-curse",
+      "royalesim": "GoblinCurse",
+      "rs_id": 129
+    },
+    "26000097": {
+      "slug": "suspicious-bush",
+      "royalesim": "SuspiciousBush",
+      "rs_id": 85
+    },
+    "26000102": {
+      "slug": "berserker",
+      "royalesim": "Berserker",
+      "rs_id": 89
+    },
+    "26000106": {
+      "slug": "ronin",
+      "royalesim": "Ronin",
+      "rs_id": 92
+    },
+    "26000107": {
+      "slug": "minion-giant",
+      "royalesim": "MinionGiant",
+      "rs_id": 132
+    },
+    "28000025": {
+      "slug": "spirit-empress",
+      "royalesim": "MergeMaiden",
+      "rs_id": 130,
+      "note": "Official API base Spirit Empress ID; observed spawned form also uses 26000104."
+    },
+    "203000000": {
+      "slug": "knight",
+      "royalesim": "Knight",
+      "rs_id": 0,
+      "note": "Observed hero native ID; retained base card association."
+    },
+    "203000076": {
+      "slug": "berserker",
+      "royalesim": "Berserker",
+      "rs_id": 89,
+      "note": "Observed hero native ID; retained base card association."
+    },
+    "203000014": {
+      "slug": "musketeer",
+      "royalesim": "Musketeer",
+      "rs_id": 14,
+      "note": "Recorded hero ID; child unit identity preserved separately."
+    },
+    "203000038": {
+      "slug": "ice-golem",
+      "royalesim": "IceGolemite",
+      "rs_id": 38,
+      "note": "Recorded hero ID; child unit identity preserved separately."
+    },
+    "203000088": {
+      "slug": "tombstone",
+      "royalesim": "Tombstone",
+      "rs_id": 102,
+      "note": "Recorded hero ID; child unit identity preserved separately."
+    },
+    "203000003": {
+      "slug": "giant",
+      "royalesim": "Giant",
+      "rs_id": 3,
+      "note": "Recorded hero ID; child unit identity preserved separately."
+    },
+    "203000062": {
+      "slug": "magic-archer",
+      "royalesim": "EliteArcher",
+      "rs_id": 62,
+      "note": "Recorded hero ID; child unit identity preserved separately."
+    },
+    "203000023": {
+      "slug": "ice-wizard",
+      "royalesim": "IceWizard",
+      "rs_id": 23,
+      "note": "Recorded hero ID; child unit identity preserved separately."
+    }
   }
- }
 }

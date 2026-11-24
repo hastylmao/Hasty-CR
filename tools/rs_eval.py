@@ -155,6 +155,16 @@ class RSAgent:
             self._prev_tick = state["tick"]
             return future
         if getattr(self, "lead_rebuild", False):
+            if getattr(self, 'memory_observation', False):
+                # Match the memory bridge's measured-board fallback for heroes
+                # and child forms. Rebuilding them as base cards loses abilities.
+                names = _unit_names()
+                if any('Hero' in names[e[27]] or names[e[27]]=='MusketeerTurret'
+                       for e in state['entities'] if 0<=e[27]<len(names)):
+                    return state
+            if state.get("unmodelled_forms"):
+                # Keep measured bodies that the reset API cannot restore exactly.
+                return state
             # The live case: only what a player can see is carried forward, so
             # nothing hidden can leak into the view. Our own plays still in
             # flight are known to us and are replayed at the ticks they land;
@@ -181,6 +191,9 @@ class RSAgent:
                 sim.step([], now + self.lead - t)
             future = json.loads(sim.state_json())
             for t in (0, 1):
+                # A reset's default tower maximum can differ from live tower
+                # levels. Preserve measured maxima for normalized model input.
+                future['players'][t]['tower_max_hp'] = state['players'][t]['tower_max_hp']
                 future["players"][t]["hand"] = state["players"][t]["hand"]
                 future["players"][t]["hand_costs"] = state["players"][t]["hand_costs"]
                 future["players"][t]["elixir_milli"] = state["players"][t]["elixir_milli"]
@@ -278,12 +291,23 @@ class RSAgent:
         from sim.model_tokens import TokenPolicy
         blob = torch.load(ckpt, map_location="cpu")
         meta = blob["meta"]
+        self.unit_token_map = None
+        if not meta.get("live_compat", False) and meta.get("units"):
+            self.unit_token_map = np.asarray([0, 1] +
+                [meta["units"].get(name, 0) for name in _unit_names()], dtype=np.int64)
+        if meta.get("cards"):
+            import royalesim
+            catalogue = json.loads(royalesim.Battle(card_names=None, slot_of_k=[[0,1,2],[0,1,2]]).catalogue_json())
+            for name, token in meta["cards"].items():
+                if token-2 >= len(catalogue) or catalogue[token-2][0] != name:
+                    raise ValueError(f"checkpoint card vocabulary mismatch: {name}")
         self.torch = torch
         self.model = TokenPolicy(meta["n_cards"], meta["n_units"], d=meta.get("d", 192),
                                  layers=meta.get("layers", 4), heads=meta.get("heads", 6)).eval()
         self.model.load_state_dict(blob["model"])
         # A live-compatible checkpoint was trained on card-id unit tokens.
         self.live = bool(meta.get("live_compat", False))
+        self.memory_observation = bool(meta.get('memory_observation', False))
         self.rng = np.random.default_rng(seed)
         # Waits were subsampled to `wait_keep` in training, so the wait logit
         # is low by log(1 / wait_keep). Read the value the checkpoint was
@@ -302,9 +326,14 @@ class RSAgent:
         keys = ("unit_ids", "unit_feats", "towers", "scalars", "hand", "opp_seen",
                 "opp_last", "opp_last_age")
         b = {k: t.as_tensor(np.asarray(row[k])[None]) for k in keys}
+        if getattr(self, "unit_token_map", None) is not None:
+            raw = np.asarray(row["unit_ids"], dtype=np.int64)
+            b["unit_ids"] = t.as_tensor(self.unit_token_map[raw][None])
         for k in ("unit_ids", "hand", "opp_seen", "opp_last"):
             b[k] = b[k].long()
         b["unit_feats"] = b["unit_feats"].float()
+        if getattr(self, 'memory_observation', False):
+            b['unit_feats'][...,6] = 0
         b["opp_last_age"] = b["opp_last_age"].float()
         b["next"] = t.as_tensor([int(row["next"])]).long()
         return b
@@ -366,7 +395,13 @@ def _spawn_tables():
     """card id -> the unit type a spawn of it makes, and the inverse."""
     if not _SPAWN:
         raw = json.loads((ROOT / "data" / "rs_rows" / "spawn_primary.json").read_text())
-        prim = {int(k): v for k, v in raw["primary"].items()}
+        # This file was generated with an older engine. Its indices must be
+        # translated through that file's vocabulary, just like model tokens.
+        old = json.loads((ROOT / 'data' / 'rs_rows' / 'vocab.json').read_text())['units']
+        old_names = {token-2:name for name,token in old.items()}
+        current = {name:i for i,name in enumerate(_unit_names())}
+        prim = {int(k):current[old_names[v]] for k,v in raw['primary'].items()
+                if old_names.get(v) in current}
         by_unit = {}
         for card, unit in sorted(prim.items()):
             by_unit.setdefault(unit, card)
@@ -700,10 +735,14 @@ def main() -> int:
              else "search" if args.search else "agent")
     t0 = time.time()
     with ProcessPoolExecutor(args.workers) as pool:
-        rows = [r for r in pool.map(play, [(t, args.ckpt, mode_, k, args.opponent_ckpt, args.delay, args.lead,
-                                        args.hold_pending, args.shadow, args.spell_aim)
-                                       for k, t in enumerate(picked)])
-                if r]
+        rows = []
+        for r in pool.map(play, [(t, args.ckpt, mode_, k, args.opponent_ckpt, args.delay, args.lead,
+                                 args.hold_pending, args.shadow, args.spell_aim)
+                                for k, t in enumerate(picked)]):
+            if r:
+                rows.append(r)
+                if len(rows) % 8 == 0:
+                    print(f'evaluation: {len(rows)}/{len(picked)} matches ({time.time()-t0:.0f}s)',flush=True)
     wins = sum(r["result"] == "win" for r in rows)
     draws = sum(r["result"] == "draw" for r in rows)
     lo, hi = wilson(wins, len(rows))

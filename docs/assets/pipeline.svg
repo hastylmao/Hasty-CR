@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 250" width="920" height="250" role="img" aria-label="HastyCR pipeline: memory reader, shadow battle, policy, search, taps">
+  <style>
+    .box{fill:#161b26;stroke:#3a4a6b;stroke-width:1.5}
+    .hl{fill:#1b2a52;stroke:#4f7cff;stroke-width:2}
+    .t{font:600 15px -apple-system,Segoe UI,Helvetica,Arial,sans-serif;fill:#e6edf3}
+    .s{font:12px -apple-system,Segoe UI,Helvetica,Arial,sans-serif;fill:#8b98ad}
+    .a{stroke:#6b7a99;stroke-width:2;fill:none;marker-end:url(#arr)}
+  </style>
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6b7a99"/></marker></defs>
+  <rect width="920" height="250" rx="14" fill="#0d1117"/>
+  <rect class="box" x="20" y="40" width="160" height="70" rx="10"/>
+  <text class="t" x="100" y="70" text-anchor="middle">Game client</text>
+  <text class="s" x="100" y="92" text-anchor="middle">Null's Royale, emulator</text>
+  <rect class="box" x="230" y="40" width="160" height="70" rx="10"/>
+  <text class="t" x="310" y="70" text-anchor="middle">Memory reader</text>
+  <text class="s" x="310" y="92" text-anchor="middle">units, hand, elixir, towers</text>
+  <rect class="hl" x="440" y="40" width="190" height="70" rx="10"/>
+  <text class="t" x="535" y="70" text-anchor="middle">Policy network</text>
+  <text class="s" x="535" y="92" text-anchor="middle">transformer: wait / card / tile</text>
+  <rect class="hl" x="440" y="150" width="190" height="70" rx="10"/>
+  <text class="t" x="535" y="180" text-anchor="middle">Shadow battle + search</text>
+  <text class="s" x="535" y="202" text-anchor="middle">real engine, forks top plays</text>
+  <rect class="box" x="230" y="150" width="160" height="70" rx="10"/>
+  <text class="t" x="310" y="180" text-anchor="middle">Real engine</text>
+  <text class="s" x="310" y="202" text-anchor="middle">headless game logic</text>
+  <rect class="box" x="690" y="40" width="200" height="70" rx="10"/>
+  <text class="t" x="790" y="70" text-anchor="middle">Taps</text>
+  <text class="s" x="790" y="92" text-anchor="middle">card + tile to the device</text>
+  <rect class="box" x="690" y="150" width="200" height="70" rx="10"/>
+  <text class="t" x="790" y="180" text-anchor="middle">Training (offline)</text>
+  <text class="s" x="790" y="202" text-anchor="middle">imitation, league, ghost games</text>
+  <path class="a" d="M180 75H226"/>
+  <path class="a" d="M390 75H436"/>
+  <path class="a" d="M630 75H686"/>
+  <path class="a" d="M535 110V146"/>
+  <path class="a" d="M535 150V114" transform="translate(30 0)"/>
+  <path class="a" d="M390 185H436"/>
+  <path class="a" d="M790 150V114"/>
+</svg>

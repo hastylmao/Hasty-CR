@@ -35,8 +35,17 @@ ROOT = Path(__file__).resolve().parents[1]
 CORPUS = ROOT / "data" / "il_replay"
 
 
+# The real engine never deals these into the starting hand: with one in deck slots
+# 0-3 under FixedDeckOrder the hand is filled from slot 4 instead (measured
+# 2026-11-14, both cards, slots 0 and 3). A deal order that starts with one cannot be
+# re-driven; 12 of 200 UC pilot games were cut at an Elixir Collector play for this.
+NOT_IN_START = {"Elixir Collector", "Mirror"}
+
+
 def deal_order(deck, plays):
     for hand in combinations(deck, 4):
+        if NOT_IN_START & set(hand):
+            continue
         rest = [c for c in deck if c not in hand]
         for queue in permutations(rest):
             held, waiting = set(hand), list(queue)

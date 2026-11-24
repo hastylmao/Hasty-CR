@@ -43,6 +43,48 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRAPER = ROOT / "_references" / "clash-replay-scraper"
 if str(SCRAPER) not in sys.path:
     sys.path.insert(0, str(SCRAPER))
+HERE = Path(__file__).resolve().parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+
+import cf_autoclick  # noqa: E402  (needs HERE on sys.path first)
+
+# The checkbox is ticked automatically; --no-autoclick leaves a human to it.
+AUTOCLICK = True
+
+# Chrome throttles renderers of windows it believes are hidden. A locked
+# Windows session counts as hidden, so without these a challenge can sit on a
+# stopped timer until someone walks back to the PC.
+NO_THROTTLE = ["--disable-backgrounding-occluded-windows",
+               "--disable-renderer-backgrounding",
+               "--disable-background-timer-throttling"]
+
+
+def page_shows_box(page) -> bool:
+    """Is a Turnstile widget on screen, tickable or not? Never raises."""
+    try:
+        if any("challenges.cloudflare.com" in (frame.url or "") for frame in page.frames
+               if frame is not page.main_frame):
+            return True
+        return page.locator("iframe[src*='challenges.cloudflare.com']").count() > 0
+    except Exception:
+        return False
+
+
+def tick_cf(pages, label: str) -> None:
+    """Tick the checkbox on every open tab of this run, not just the main one.
+
+    One process starts one window, but a run can have extra tabs (login
+    popups), and a challenge in any of them blocks the run.
+    """
+    if not AUTOCLICK:
+        return
+    try:
+        tabs = [p for p in pages._ctx.pages if not p.is_closed()]
+    except Exception:
+        tabs = [pages.page]
+    for tab in tabs:
+        cf_autoclick.tick(tab, label)
 
 # Our deck. Evolution cards carry `-ev1`, champions `-hero`; only true
 # variations of these eight are kept, so a substituted card is not a match.
@@ -107,7 +149,7 @@ def learn_side(battle: dict, plays: list) -> str:
     return side
 
 
-def solve_replay_challenge(pages, ctx, b, timeout_s: int = 600) -> bool:
+def solve_replay_challenge(pages, ctx, b, timeout_s: int = 0) -> bool:
     """Show Cloudflare's challenge on /data/replay itself, for a person.
 
     Measured 2026-10-10: /data/replay is challenged on its own ("Just a
@@ -122,14 +164,17 @@ def solve_replay_challenge(pages, ctx, b, timeout_s: int = 600) -> bool:
     from royale import pipeline
     url = "https://royaleapi.com/data/replay?" + urlencode(pipeline.replay_params(b))
     pages.page.goto(url, wait_until="domcontentloaded", timeout=60_000)
+    timeout_s = timeout_s or CHALLENGE_WAIT_S
     if pages.page.title().startswith("Just a moment"):
+        notify("Cloudflare is checking the replay page: the box is ticked automatically; downloads resume after.")
         print()
         print("=" * 68)
-        print("  Cloudflare is checking the replay page. Solve it in the Chrome")
-        print("  window (tick the box if one shows); downloads resume after.")
+        print("  Cloudflare is checking the replay page. The box is ticked")
+        print("  automatically; downloads resume after.")
         print("=" * 68, flush=True)
     deadline = _t.time() + timeout_s
     while _t.time() < deadline:
+        tick_cf(pages, "replay")
         try:
             if not pages.page.title().startswith("Just a moment"):
                 break
@@ -145,7 +190,49 @@ def solve_replay_challenge(pages, ctx, b, timeout_s: int = 600) -> bool:
     return True
 
 
-def renew_or_ask(pages, timeout_s: int = 600) -> bool:
+# Set by --challenge-wait / --notify. A challenge in the middle of a run used to
+# end the run after ten minutes, and every restart cost the owner another
+# checkbox. With a long wait the run just sits until someone is back; with
+# --notify it beeps and shows a Windows message when it needs a person. It
+# never clicks anything itself.
+CHALLENGE_WAIT_S = 600
+NOTIFY = False
+# One beep per distinct message per half hour; see notify().
+NOTIFY_REMIND_S = 30 * 60
+_last_notify: dict = {}
+# How long a challenge page may sit with no widget before it is reloaded.
+# Through a VPS proxy the widget can take 20-30 s; reloading sooner aborts it
+# each time and the box never appears.
+RELOAD_AFTER_S = 45
+
+
+def notify(text: str) -> None:
+    """Tell the person at this PC that the browser window needs them.
+
+    Six workers all hitting the same condition used to beep in unison. The same
+    message now sounds once, then at most once per NOTIFY_REMIND_S.
+    """
+    if not NOTIFY:
+        return
+    now = time.time()
+    if now - _last_notify.get(text, 0.0) < NOTIFY_REMIND_S:
+        return
+    _last_notify[text] = now
+    try:
+        import winsound
+        for _ in range(3):
+            winsound.Beep(880, 300)
+    except Exception:
+        pass
+    try:
+        import subprocess as _sp
+        _sp.Popen(["msg", "*", "/TIME:600", "HastyCR scraper: " + text],
+                  stdout=_sp.DEVNULL, stderr=_sp.DEVNULL)
+    except Exception:
+        pass
+
+
+def renew_or_ask(pages, timeout_s: int = 0) -> bool:
     """Refresh the Cloudflare pass, waiting for a person if it is challenged.
 
     `Pages.renew()` assumes the interstitial self-solves. It usually does - but
@@ -161,15 +248,19 @@ def renew_or_ask(pages, timeout_s: int = 600) -> bool:
         return True
     except Exception:
         pass
+    timeout_s = timeout_s or CHALLENGE_WAIT_S
+    notify("the Cloudflare box is being ticked automatically; the crawl then carries on by itself.")
     print()
-    print("=" * 68)
-    print("  Cloudflare wants the checkbox again. Tick 'Verify you are human'")
-    print("  in the browser window; the crawl carries on by itself after that.")
+    print("  Cloudflare wants the checkbox again. It is ticked automatically;")
+    print("  the crawl carries on by itself after that. --no-autoclick leaves")
+    print("  it to a person instead.")
     print(f"  Waiting up to {timeout_s // 60} minutes.")
     print("=" * 68)
     print(flush=True)
     deadline = _t.time() + timeout_s
+    last_reload = _t.time()
     while _t.time() < deadline:
+        tick_cf(pages, "renew")
         # Wait for the challenge PAGE to be gone, not merely for a cookie to
         # exist. An earlier version took any cf_clearance it could see, and at
         # startup `pages.clearance` is empty - so the stale cookie already in
@@ -177,14 +268,62 @@ def renew_or_ask(pages, timeout_s: int = 600) -> bool:
         # then every request 403'd with the same dead pass it began with.
         try:
             title = pages.page.title()
+            blocked = page_shows_box(pages.page)
         except Exception:
-            title = "Just a moment"
+            title, blocked = "Just a moment", False
         if not title.startswith("Just a moment"):
             for cookie in pages._ctx.cookies():
                 if cookie["name"] == "cf_clearance" and cookie["value"]:
                     pages.clearance = cookie["value"]
                     print("  cleared, carrying on", flush=True)
                     return True
+        # A slow proxy can leave the tab on a blank or error page, where there
+        # is no widget to tick. Ask again every 20 s instead of waiting out the
+        # 12 hours on an empty tab.
+        elif not blocked and _t.time() - last_reload > RELOAD_AFTER_S:
+            last_reload = _t.time()
+            print(f"  challenge page has no box yet ({title[:40]!r}); reloading", flush=True)
+            try:
+                detail = pages.page.evaluate(
+                    "() => [document.readyState, location.href.slice(0, 80),"
+                    " document.querySelectorAll('script[src]').length,"
+                    " typeof window.turnstile, document.visibilityState]")
+                print(f"    debug ready={detail[0]} url={detail[1]} scripts={detail[2]}"
+                      f" turnstile={detail[3]} vis={detail[4]} frames={len(pages.page.frames)}",
+                      flush=True)
+            except Exception as exc:
+                print(f"    debug failed: {exc}", flush=True)
+            # Turnstile's API is loaded but its render never made a frame on
+            # some restored profiles. Render it into our own container, and if
+            # that also fails, reload with a cache-buster so the page's own
+            # inline script runs fresh.
+            rendered = False
+            try:
+                if detail[3] == "object":
+                    rendered = pages.page.evaluate("""() => {
+                        if (!window.turnstile || !window.turnstile.render) return false;
+                        const holder = document.createElement('div');
+                        holder.id = 'hasty-box';
+                        holder.style.cssText = 'display:grid;place-items:center;margin:24px auto';
+                        document.body.prepend(holder);
+                        window.turnstile.render('#hasty-box', {sitekey:
+                            (window._cf_chl_opt && (_cf_chl_opt.sitekey || _cf_chl_opt.cSitekey)) || undefined});
+                        return true; }""")
+                    if rendered:
+                        print("    force-rendered the widget", flush=True)
+            except Exception:
+                rendered = False
+            try:
+                if rendered:
+                    _t.sleep(6)
+                else:
+                    pages.page.goto(pages.page.url.split("?")[0] + "?r=" + str(int(_t.time() * 1000)),
+                                    wait_until="domcontentloaded", timeout=60_000)
+            except Exception:
+                try:
+                    pages.renew()
+                except Exception:
+                    pass
         _t.sleep(3.0)
     print("  nobody ticked it; stopping", flush=True)
     return False
@@ -523,6 +662,7 @@ def leaderboard_players(curl, pipeline, args, note):
 
 
 def main() -> int:
+    global SEED
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--players", type=int, default=20,
                     help="how many of the top-rated players on this archetype")
@@ -570,14 +710,30 @@ def main() -> int:
                          "first run's 'leaderboard pages' line")
     ap.add_argument("--max-locations", type=int, default=0,
                     help="leaderboard mode: stop after this many boards (0 = all)")
+    ap.add_argument("--challenge-wait", type=int, default=600,
+                    help="seconds to wait for the Cloudflare checkbox to clear, before "
+                         "giving up (e.g. 43200 = keep the run alive for 12 hours)")
+    ap.add_argument("--no-autoclick", action="store_true",
+                    help="do not tap the Cloudflare checkbox automatically; leave it to a person")
+    ap.add_argument("--notify", action="store_true",
+                    help="beep and show a Windows message when the browser window needs a person")
     ap.add_argument("--probe", action="store_true",
                     help="fetch one pending replay two ways and print the raw answer")
+    ap.add_argument("--deck", default=SEED,
+                    help="the deck to collect, as RoyaleAPI card slugs joined by commas; evolution and "
+                         "hero forms of the same eight cards also match. Give --out a folder of its own.")
     ap.add_argument("--out", type=Path, default=ROOT / "data" / "replays")
     ap.add_argument("--profile", type=Path,
                     default=ROOT / "tmp" / "royale_loop_profile",
                     help="persistent browser profile, so the login and the "
                          "Cloudflare pass survive between runs")
     args = ap.parse_args()
+    global CHALLENGE_WAIT_S, NOTIFY, AUTOCLICK
+    CHALLENGE_WAIT_S, NOTIFY = args.challenge_wait, args.notify
+    AUTOCLICK = not args.no_autoclick
+    SEED = ",".join(sorted(c.strip() for c in args.deck.split(",") if c.strip()))
+    if len(SEED.split(",")) != 8:
+        raise SystemExit(f"--deck needs 8 cards, got {len(SEED.split(','))}: {SEED}")
 
     from playwright.sync_api import sync_playwright
 
@@ -606,7 +762,7 @@ def main() -> int:
     pages._pw = sync_playwright().start()
     ctx = pages._pw.chromium.launch_persistent_context(
         user_data_dir=str(args.profile), channel="chrome", headless=False,
-        args=["--disable-blink-features=AutomationControlled"])
+        args=["--disable-blink-features=AutomationControlled", *NO_THROTTLE])
     pages._browser, pages._ctx = ctx.browser, ctx
     pages.page = ctx.pages[0] if ctx.pages else ctx.new_page()
     # No resource filtering: Cloudflare's check needs the whole page, which is
@@ -645,6 +801,7 @@ def main() -> int:
 
     if not signed_in(curl):
         print()
+        notify("sign in to RoyaleAPI in the Chrome window (needed once).")
         print("  Not signed in - sign in to RoyaleAPI in the browser window.")
         print("  This is needed once; the profile keeps it afterwards.")
         print(flush=True)
@@ -678,11 +835,12 @@ def main() -> int:
         if r[0] == 403:
             # Cloudflare challenges /data/replay itself, and a fetch() never
             # shows the challenge. Open it as a page so a person can solve it.
-            print("\n>>> Cloudflare is challenging the replay URL. It is now open in the")
-            print(">>> Chrome window: solve the check there (tick the box if one shows).", flush=True)
+            print("\n>>> Cloudflare is challenging the replay URL. It is open in the")
+            print(">>> Chrome window and the box is ticked automatically.", flush=True)
             pages.page.goto("https://royaleapi.com" + url, wait_until="domcontentloaded", timeout=60_000)
             deadline = time.time() + TURNSTILE_WAIT_S
             while time.time() < deadline:
+                tick_cf(pages, "probe")
                 try:
                     if not pages.page.title().startswith("Just a moment"):
                         break
@@ -721,6 +879,12 @@ def main() -> int:
                                                    workers=args.list_workers,
                                                    on_error=note)
         order = sorted(players, key=lambda t: -int(players[t]["rating"] or 0))
+        if not order:
+            # No rated player came back: say why instead of crashing on an empty list.
+            for key, items in failures.items():
+                print(f"  {len(items)} x {key}")
+            raise SystemExit(f"no rated players for these {len(decks)} deck variations "
+                             f"({len(failures)} kinds of fetch error above; none = RoyaleAPI lists nobody)")
         keep = {t: players[t] for t in order[:args.players]}
         print(f"{len(players)} rated players; taking the top {len(keep)} "
               f"(rating {players[order[0]]['rating']} down to "
@@ -810,7 +974,7 @@ def main() -> int:
             renewals += 1
             print(f"  chunk empty - refreshing the pass ({renewals})", flush=True)
             if not solve_replay_challenge(pages, ctx, chunk[0]):
-                print("  replay check not solved within 10 minutes", flush=True)
+                print(f"  replay check not solved within {CHALLENGE_WAIT_S // 60} minutes", flush=True)
                 break
             budget_reset()
             try:

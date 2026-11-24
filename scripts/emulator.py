@@ -54,6 +54,15 @@ def verify(serial: str = DEFAULT_SERIAL, adb: str | Path = DEFAULT_ADB) -> None:
     """
     found = packages(serial, adb)
     if not found:
+        # Re-register only the requested endpoint after MuMu/ADB loses it.
+        # This connects to an already-running instance; it never launches one.
+        try:
+            subprocess.run([str(adb), "connect", serial], capture_output=True,
+                           text=True, timeout=8)
+        except (OSError, subprocess.SubprocessError):
+            pass
+        found = packages(serial, adb)
+    if not found:
         raise SystemExit(
             f"cannot reach {serial}. Start the emulator, or run:\n"
             f'  "{adb}" connect {serial}\n'

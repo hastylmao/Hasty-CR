@@ -97,6 +97,9 @@ def _sampling_agent():
             q = gate_probs(g, mask)
             a = int(self.rng.choice(5, p=q))
             rec = {k: np.asarray(row[k]) for k in KEYS}
+            # Rollout storage feeds the checkpoint directly during PPO updates.
+            # Store the embedding IDs used for inference, not engine indices.
+            rec['unit_ids'] = b['unit_ids'][0].cpu().numpy().astype(np.int16)
             rec.update(next=int(row["next"]), mask=mask, gate_a=a, logq_gate=float(math.log(q[a])),
                        v=float(1 / (1 + math.exp(-float(value[0, 1])))), tile_a=-1, logq_tile=0.0,
                        tile_cands=np.full(CANDS, -1, np.int16), tick=tick)
@@ -182,6 +185,80 @@ def _collect_one(task):
     return out["result"], out["crowns"], r, out["records"]
 
 
+def _curriculum_one(task):
+    """Full defensive sequences with a reactive opponent, never rule teachers.
+
+    Boundary-state spawns deliberately oversample pushes and a fallen tower.
+    These are simulator stress scenarios, not reconstructed live matches.
+    """
+    ckpt, opponent_ckpt, seed, delay = task
+    import royalesim as rs
+    import rs_rows as rr
+    import rs_eval
+    rng=np.random.default_rng(seed)
+    rr._setup()
+    b=rs.Battle(card_names=None,slot_of_k=[[0,1,2],[0,1,2]])
+    cat=json.loads(b.catalogue_json());ids={c[0]:i for i,c in enumerate(cat)}
+    hog=['Cannon','Skeletons','IceSpirits','IceGolemite','Musketeer','Log','Fireball','HogRider']
+    target=['MiniPekka','Skeletons','Goblins','Bats','IceSpirits','MinionHorde'][seed%6]
+    enemies=[target]+[x for x in ['Giant','Witch','Fireball','Zap','MiniPekka','Goblins','Bats','HogRider'] if x!=target][:7]
+    amount=1 if target in ('MiniPekka','MinionHorde') else int(rng.choice([2,3,4]))
+    x=int(rng.choice([3500,14500]));sub=rs.SUBTILE_PER_MILLITILE
+    spawns=[(1,ids[target],(x+i*200)*sub,(14500+i*150)*sub,-1) for i in range(amount)]
+    hp=[[4824,3052,3052],[4824,3052,3052]]
+    if seed%3==0:hp[1][1+seed%2]=0
+    clock=int(rng.choice([800,2600,4200]));mana=int(rng.choice([2000,4000,8000,10000]))
+    # In overtime an unequal crown count would already have ended the match.
+    # Post-tower overtime scenarios must therefore start tied on crowns.
+    if clock>=3600 and 0 in hp[1][1:]:hp[0][1+(seed+1)%2]=0
+    hero=target=='MiniPekka' # alternate base/hero in adjacent seed banks below
+    hero=hero and (seed//6)%2==0
+    forms=[[0]*8,[2 if c=='MiniPekka' and hero else 0 for c in enemies]]
+    b.reset(seed=seed,decks=[[ids[c] for c in hog],[ids[c] for c in enemies]],shuffle=0,
+        start_tick=clock-60 if hero else clock,elixir_milli=[mana,8000],tower_hp=hp,
+        spawns=[] if hero else spawns,forms=forms)
+    b.set_command_delay_ticks(delay,delay)
+    if hero:
+        # Scenario spawns always make base characters. A real deployment is
+        # needed to materialise the hero form and its initial runtime state.
+        result=b.step([(1,0,x*sub,17500*sub)],60)
+        assert all(rs.DEPLOY_REASONS[r[1]]=='OK' for r in result),result
+    agent=_sampling_agent()(ckpt,seed=seed,wait_keep=.25)
+    agent.lead=delay;agent.lead_rebuild=True
+    opponent=rs_eval.RSAgent(opponent_ckpt,seed=seed+7)
+    mem={'seen':{0:set(),1:set()},'last':{0:[],1:[]}}
+    initial=json.loads(b.state_json());tick=initial['tick']
+    names=json.loads(b.unit_types_json())
+    initial_enemies=[e for e in initial['entities'] if e[4]<0 and e[1]==1 and e[7]>0]
+    assert initial_enemies,'Stress scenario must contain a living push'
+    if hero:assert any(names[e[27]]=='MiniPekkaHero' for e in initial_enemies),'Missing hero form'
+    while tick<min(clock+1600,6200):
+        state=json.loads(b.state_json())
+        if state['game_over']:break
+        commands=[]
+        for team,a in [(0,agent),(1,opponent)]:
+            cmd=a.act(b,state,team,mem,tick,rs.SUBTILE_PER_MILLITILE,rs)
+            if cmd:
+                card=state['players'][team]['hand'][cmd[1]];commands.append(cmd)
+                a.sent=getattr(a,'sent',[])+[(tick+delay,card,cmd[2],cmd[3])]
+                mem['seen'][team].add(card+2);mem['last'][team].append((card+2,tick))
+        b.step(commands,DECIDE);tick+=DECIDE
+    end=json.loads(b.state_json());losses=[]
+    for t in (0,1):
+        losses.append(sum(initial['players'][t]['tower_hp'])-sum(end['players'][t]['tower_hp']))
+    # Dense episode return based on actual damage, bounded for the win head.
+    # Training heuristic, not an assertion about live optimal strategy.
+    result=.5+.5*np.tanh((losses[1]-losses[0])/3052)
+    if end['players'][0]['tower_hp'][0]<=0:result=0.
+    elif end['players'][1]['tower_hp'][0]<=0:result=1.
+    label='win' if result>.55 else 'loss' if result<.45 else 'draw'
+    units=json.loads(b.unit_types_json())
+    return label,[0,0],float(result),agent.records,dict(seed=seed,target=target,
+        starting_units=[units[e[27]] for e in initial['entities'] if e[4]<0 and e[1]==1],
+        clock=clock,mana=mana,fallen_tower=hp[1][1:]==[0,3052] or hp[1][1:]==[3052,0],
+        own_damage=losses[0],enemy_damage=losses[1])
+
+
 def pick_matches(n, seed, split="train"):
     """Hog 2.6 matches from IL_Replay (train split by default), shuffled by seed."""
     import random
@@ -216,20 +293,25 @@ def pick_matches(n, seed, split="train"):
 
 def collect(args):
     from concurrent.futures import ProcessPoolExecutor
-    picked = pick_matches(args.matches, args.seed)
-    tasks = [(t, args.ckpt, "agent", args.seed * 1000 + k, args.opponent, 21, -21, False, False, False)
+    curriculum_n=round(args.matches*args.curriculum_fraction)
+    picked = pick_matches(args.matches-curriculum_n, args.seed) if args.matches>curriculum_n else []
+    tasks = [(t, args.ckpt, "agent", args.seed * 1000 + k, args.opponent, args.delay, -args.delay, False, False, False)
              for k, t in enumerate(picked)]
     t0 = time.time()
     recs, results = [], []
     with ProcessPoolExecutor(args.workers) as pool:
-        for res in pool.map(_collect_one, tasks):
+        collected=list(pool.map(_collect_one, tasks))
+        collected.extend(pool.map(_curriculum_one,[(args.ckpt,args.opponent,args.seed*1000+k,args.delay)
+                                                  for k in range(curriculum_n)]))
+        for res in collected:
             if res is None:
                 continue
-            outcome, crowns, r, rows = res
+            outcome, crowns, r, rows = res[:4]
             results.append(outcome)
             for row in rows:
                 row["ret"] = r
                 recs.append(row)
+    if not recs:raise RuntimeError('No valid simulator rollouts')
     out = {k: np.stack([x[k] for x in recs]) for k in recs[0]}
     np.savez_compressed(args.out, **out)
     w = results.count("win") / max(1, len(results))
@@ -246,6 +328,8 @@ def train(args):
     import torch.nn.functional as F
     from sim.model_tokens import TokenPolicy
     dev = "cuda" if torch.cuda.is_available() else "cpu"
+    torch.set_num_threads(1)
+    if dev == 'cuda':torch.cuda.set_per_process_memory_fraction(.20)
 
     def load(path):
         blob = torch.load(path, map_location="cpu")
@@ -262,12 +346,21 @@ def train(args):
     ref, _ = load(args.ref)
     ref.eval()
     wait_bias = math.log(1 / float(args.wait_keep))
-    d = np.load(args.data)
+    # Materialise once. Repeated NPZ key access re-decompresses the entire
+    # rollout at every minibatch, wasting CPU and memory.
+    with np.load(args.data) as archive:
+        d = {k:archive[k] for k in archive.files}
     n = len(d["gate_a"])
     adv_all = d["ret"] - d["v"]
     adv_all = (adv_all - adv_all.mean()) / (adv_all.std() + 1e-6)
     opt = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.0)
     stats = []
+    expert_paths=sorted(Path(args.expert_data).glob('shard-*.npz')) if args.expert_data else []
+    expert=None
+    if expert_paths:
+        from train_policy_v2 import read_rows, COLS
+        from sim.model_tokens import losses as expert_losses
+        expert_rng=np.random.default_rng(100)
     for epoch in range(args.epochs):
         perm = np.random.permutation(n)
         for i in range(0, n, args.batch):
@@ -328,6 +421,18 @@ def train(args):
                        * played.float()).sum() / played.float().sum().clamp(min=1)
             v_loss = F.binary_cross_entropy_with_logits(value[:, 1].float(), ret)
             loss = pg + args.kl * (kl_gate + kl_tile) + 0.5 * v_loss
+            if expert_paths:
+                if expert is None or i % (args.batch*20)==0:
+                    for _ in range(len(expert_paths)):
+                        candidate=read_rows(expert_paths[int(expert_rng.integers(len(expert_paths)))],
+                                            'train',expert_rng)
+                        if candidate is not None:expert=candidate;break
+                if expert is not None:
+                    ix=expert_rng.integers(len(expert['act_card']),size=min(16,len(idx)))
+                    eb={k:torch.as_tensor(np.ascontiguousarray(expert[k][ix]),device=dev,
+                        dtype=torch.long if expert[k].dtype.kind in 'iu' else torch.float32) for k in COLS}
+                    il,_=expert_losses(model,eb,beta=0)
+                    loss=loss+args.expert_weight*il
             opt.zero_grad()
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
@@ -367,8 +472,11 @@ def loop(args):
         ckpt = run / f"it{it:03d}.pt"
         data = run / f"it{it:03d}.npz"
         t0 = time.time()
-        c = subprocess.run([str(rg), me, "collect", "--ckpt", str(ckpt), "--opponent", args.opponent,
+        opponents = args.opponents or [args.opponent]
+        selected_opponent = opponents[it % len(opponents)]
+        c = subprocess.run([str(rg), me, "collect", "--ckpt", str(ckpt), "--opponent", selected_opponent,
                             "--matches", str(args.matches), "--workers", str(args.workers),
+                            "--delay", str(args.delay), "--curriculum-fraction", str(args.curriculum_fraction),
                             "--seed", str(it + 1), "--out", str(data)],
                            capture_output=True, text=True)
         if c.returncode != 0:
@@ -378,7 +486,9 @@ def loop(args):
         nxt = run / f"it{it + 1:03d}.pt"
         t = subprocess.run([str(bb), me, "train", "--ckpt", str(ckpt), "--ref", args.ref or args.init,
                             "--data", str(data), "--out", str(nxt), "--lr", str(args.lr),
-                            "--kl", str(args.kl), "--wait-keep", str(wait_keep)],
+                            "--kl", str(args.kl), "--batch", str(args.batch),
+                            "--expert-data",args.expert_data,"--expert-weight",str(args.expert_weight),
+                            "--wait-keep", str(wait_keep)],
                            capture_output=True, text=True)
         if t.returncode != 0:
             print(t.stderr[-2000:], flush=True)
@@ -390,7 +500,7 @@ def loop(args):
         if args.eval_every and (it + 1) % args.eval_every == 0:
             e = subprocess.run([str(rg), str(ROOT / "tools" / "rs_eval.py"), "--ckpt", str(nxt),
                                 "--opponent-ckpt", args.eval_opponent, "--matches", str(args.eval_matches),
-                                "--workers", str(args.workers), "--delay", "21", "--lead", "-21"],
+                                "--workers", str(args.workers), "--delay", str(args.delay), "--lead", str(-args.delay)],
                                capture_output=True, text=True)
             line = [l for l in e.stdout.splitlines() if " wins (" in l]
             rec["eval"] = line[-1] if line else e.stderr[-300:]
@@ -410,6 +520,8 @@ def main() -> int:
     c.add_argument("--workers", type=int, default=4)
     c.add_argument("--seed", type=int, default=1)
     c.add_argument("--out", required=True)
+    c.add_argument('--delay',type=int,default=26)
+    c.add_argument('--curriculum-fraction',type=float,default=0.)
     t = sp.add_parser("train")
     t.add_argument("--ckpt", required=True)
     t.add_argument("--ref", required=True)
@@ -421,6 +533,8 @@ def main() -> int:
     t.add_argument("--epochs", type=int, default=2)
     t.add_argument("--batch", type=int, default=256)
     t.add_argument("--wait-keep", default="0.25")
+    t.add_argument('--expert-data',default='')
+    t.add_argument('--expert-weight',type=float,default=.2)
     lp = sp.add_parser("loop")
     lp.add_argument("--name", default="sp_v1")
     lp.add_argument("--init", default=str(ROOT / "runs" / "tokens" / "rs_big_hog" / "best.pt"))
@@ -432,6 +546,12 @@ def main() -> int:
     lp.add_argument("--iters", type=int, default=40)
     lp.add_argument("--matches", type=int, default=48)
     lp.add_argument("--workers", type=int, default=4)
+    lp.add_argument('--delay',type=int,default=26)
+    lp.add_argument('--batch',type=int,default=32)
+    lp.add_argument('--opponents',nargs='+',default=None)
+    lp.add_argument('--curriculum-fraction',type=float,default=.5)
+    lp.add_argument('--expert-data',default='')
+    lp.add_argument('--expert-weight',type=float,default=.2)
     lp.add_argument("--lr", type=float, default=1e-5)
     lp.add_argument("--kl", type=float, default=0.05)
     lp.add_argument("--eval-every", type=int, default=5)

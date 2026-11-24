@@ -26,6 +26,8 @@ findings. Every one is re-verified against the live process before use
 
 from __future__ import annotations
 
+import json
+import re
 import struct
 import subprocess
 import sys
@@ -56,16 +58,27 @@ def _sh(cmd: str, serial: str = DEFAULT_SERIAL, binary: bool = False, timeout: i
     return out.stdout if binary else out.stdout.decode("utf-8", "replace")
 
 
+OFFSETS = Path(__file__).with_name("offsets.json")
+
+
+def known_builds() -> dict:
+    return json.loads(OFFSETS.read_text())["builds"]
+
+
 class GameMemory:
-    def __init__(self, serial: str = DEFAULT_SERIAL):
+    def __init__(self, serial: str = DEFAULT_SERIAL, allow_new: bool = False):
         verify(serial)
         self.serial = serial
         if _sh("id -u", serial).strip() != "0":
             raise Refused("adb is not root: enable MuMu's 'ADB Root' on instance 3 only")
         version = _sh(f"dumpsys package {PACKAGE} | grep -m1 versionCode", serial)
-        if IDENTITY["version_code"] not in version:
-            raise Refused(f"client build changed ({version.strip()}); offsets are for "
-                          f"{IDENTITY['version_code']} only")
+        m = re.search(r"versionCode=(\d+)", version)
+        self.version = m.group(1) if m else "?"
+        builds = known_builds()
+        self.offsets = builds.get(self.version)
+        if self.offsets is None and not allow_new:
+            raise Refused(f"client build {self.version} has no offsets yet (known: {sorted(builds)}); "
+                          f"live_play finds them in the first battle")
         pid = _sh(f"pidof {PACKAGE}", serial).strip()
         if not pid:
             raise Refused("Clash Royale is not running")
@@ -74,10 +87,55 @@ class GameMemory:
         if not maps:
             raise Refused("libg.so is not mapped")
         path = maps[0].split()[-1]
-        sha = _sh(f"sha256sum {path}", serial).split()[0]
-        if sha != IDENTITY["libg_sha256"]:
-            raise Refused(f"libg.so hash {sha} is not the pinned build")
+        self.libg_sha = _sh(f"sha256sum {path}", serial).split()[0]
+        if self.offsets is not None and self.libg_sha != self.offsets["libg_sha256"]:
+            raise Refused(f"libg.so hash {self.libg_sha} is not the pinned build {self.version}")
         self.libg = min(int(line.split("-")[0], 16) for line in maps)
+        # libg's writable mappings and its .bss (an anonymous "[anon:.bss]"
+        # mapping right after them): where the battle global lives. Build
+        # 160635007 put it in .bss (libg+0x1c0f6e8, found live 2026-11-07).
+        full = _sh(f"cat /proc/{self.pid}/maps", serial).splitlines()
+        self.rw, prev_libg = [], False
+        for line in full:
+            f = line.split()
+            if len(f) < 2:
+                continue
+            is_libg = line.rstrip().endswith("libg.so")
+            if f[1].startswith("rw") and (is_libg or (prev_libg and "[anon:.bss]" in line)):
+                self.rw.append(tuple(int(x, 16) for x in f[0].split("-")))
+            prev_libg = is_libg or (prev_libg and "[anon:.bss]" in line)
+
+    @property
+    def known(self) -> bool:
+        return self.offsets is not None
+
+    def reader_env(self) -> str:
+        """Environment for hcr_reader: this build's global and hops."""
+        o = self.offsets
+        return f"HCR_GLOBAL={o['global']} HCR_HOP1={o['hops'][0]} HCR_HOP2={o['hops'][1]}"
+
+    def find_battle(self) -> list:
+        """Candidate (global, hop1, hop2, tick) chains to a live battle, via the
+        on-device probe (/data/local/tmp/hcr_findbattle; read-only, small reads).
+        Empty outside a battle."""
+        out = []
+        for lo, hi in self.rw:
+            for line in _sh(f"/data/local/tmp/hcr_findbattle {self.pid} {lo:x} {hi:x} {self.libg:x}",
+                            self.serial, timeout=120).splitlines():
+                parts = line.split()
+                if len(parts) == 4 and parts[0] != "done":
+                    out.append((int(parts[0], 16), int(parts[1], 16), int(parts[2], 16), int(parts[3])))
+        return out
+
+    def learn_build(self, g: int, h1: int, h2: int, note: str) -> None:
+        """Save offsets found live for this build and use them from now on."""
+        data = json.loads(OFFSETS.read_text())
+        data["builds"][self.version] = {"global": hex(g), "hops": [hex(h1), hex(h2)],
+                                        "libg_sha256": self.libg_sha, "source": note}
+        tmp = OFFSETS.with_suffix(".tmp")
+        tmp.write_text(json.dumps(data, indent=1) + "\n")
+        tmp.replace(OFFSETS)
+        self.offsets = data["builds"][self.version]
 
     def read(self, addr: int, size: int) -> bytes:
         if addr <= 0:
@@ -92,8 +150,8 @@ class GameMemory:
 
     def battle(self) -> int:
         """Address of the battle object, or 0 outside a battle."""
-        p = self.u64(self.libg + BATTLE_GLOBAL)
-        for hop in BATTLE_HOPS:
+        p = self.u64(self.libg + int(self.offsets["global"], 16))
+        for hop in (int(h, 16) for h in self.offsets["hops"]):
             if not p:
                 return 0
             p = self.u64(p + hop)

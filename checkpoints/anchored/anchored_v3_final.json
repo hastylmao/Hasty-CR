@@ -1,8 +1,0 @@
-{
- "mode": "Anchored 0.1 (pre-physics)",
- "order": 20,
- "blurb": "Trained before the movement-speed correction, so it learned a game where every unit moved 20% slower than the real one. Kept for comparison, not for play. It also holds on all 30 boards of a swept elixir/threat range: p(hold) is 0.53 even at 10 elixir with a full hand and 1441 legal actions.",
- "measured": "87.5% vs rule engine (W35 L5), hog 20%, crowns 36-7",
- "anchor_coef": 0.1,
- "step": 3705600
-}

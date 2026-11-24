@@ -116,8 +116,16 @@ def battles_for(tag: str, token: str, rate: Rate, scratch: Path) -> list[dict]:
 
 
 def deck_of(side: dict) -> str:
-    """A deck as a stable, comparable string: card names, sorted."""
-    return ",".join(sorted(c["name"] for c in side.get("cards", [])))
+    """A deck as a stable, comparable string: card names, sorted.
+
+    The card's form rides along as a suffix: "Cannon*evo" for evolutionLevel 1,
+    "Musketeer*hero" for 2 (the API's own encoding: in the 2026-09 pull, every
+    Berserker, Mega Minion and Magic Archer at level 2 is a hero card). Without
+    it every opponent deck trained as base cards.
+    """
+    form = {1: "*evo", 2: "*hero"}
+    return ",".join(sorted(c["name"] + form.get(c.get("evolutionLevel") or 0, "")
+                           for c in side.get("cards", [])))
 
 
 def rows_from(battle: dict, elo: dict) -> list[dict]:

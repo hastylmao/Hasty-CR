@@ -1,0 +1,32 @@
+{
+ "note": "Per client build: libg-relative battle global and the two hops to the battle object. New builds are found by live_play's discovery (hcr_findbattle) in the first battle and added here; libg_sha256 pins the exact library.",
+ "builds": {
+  "160402012": {
+   "global": "0x1AEEF98",
+   "hops": [
+    "0x18",
+    "0x90"
+   ],
+   "libg_sha256": "79c4e485a4e730db4482a08d625d92ddfccaceee2033ee6c55046b57088918c2",
+   "source": "vegetableleaf/ClashAI FINDINGS.md, verified live 2026-10-10"
+  },
+  "160635007": {
+   "global": "0x1c0f6e8",
+   "hops": [
+    "0x18",
+    "0x90"
+   ],
+   "libg_sha256": "beb5ff197394a1ab5c21f7cc28f5511fc896bd1e9301de66d9d8ab003e98ad6b",
+   "source": "found live 2026-11-07 by hcr_findbattle in [anon:.bss]; old hops; hcr_reader frame read towers, units, elixir and hand correctly"
+  },
+  "160635013": {
+   "global": "0x1c0f7e8",
+   "hops": [
+    "0x18",
+    "0x90"
+   ],
+   "libg_sha256": "1a664d54774b7c137a3ddd4c4e1ace4bc0213a254cfa85847f54d17201ac1f3a",
+   "source": "found live by hcr_findbattle 2026-11-18 22:10, tick 146; 6 crown towers read"
+  }
+ }
+}

@@ -98,6 +98,17 @@ def home_guard(full):
     return float(orange.mean()) > 0.35
 
 
+END_OK = (540, 1688)
+
+
+def end_ok_button(full):
+    """The blue OK button of a challenge end screen (see Navigator.step)."""
+    roi = np.asarray(full)[1640:1740, 400:680].astype(np.int16)
+    r, g, b = roi[:, :, 0], roi[:, :, 1], roi[:, :, 2]
+    blue = (b > 230) & (g > 130) & (g < 210) & (r < 130)
+    return float(blue.mean()) > 0.4
+
+
 def tap(serial, xy):
     subprocess.run([ADB, "-s", serial, "shell", "input", "tap", str(xy[0]), str(xy[1])],
                    capture_output=True, timeout=10)
@@ -142,6 +153,14 @@ class Navigator:
                 return f"    tapped {screen} button"
             return note
         # unknown
+        # Grand Challenge (and other event) end screens have a single blue OK
+        # button and no Play Again, so the BuildABot hashes call them unknown.
+        # Measured on instance 3, 2026-11-18: button spans x 398-681, y ~1630-1740,
+        # 65% of the box below matches this blue; 2% of the whole screen does.
+        if self.queue and now - self.last_nav > 4 and end_ok_button(full):
+            tap(self.serial, END_OK)
+            self.last_nav = self.unknown_since = now
+            return "    tapped end-screen OK"
         if now - self.last_reward > 1.5 and reward_screen.is_reward_screen(full):
             self.last_reward = now
             self.reward_taps += 1

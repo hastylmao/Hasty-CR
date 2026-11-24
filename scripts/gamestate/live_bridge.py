@@ -195,6 +195,48 @@ def main() -> int:
 
 _FORM_SUFFIXES = ("_EV1", "_EV2", "Hero")
 _CARD_BY_NAME = {}
+# ChefTowerKing (2026-11-15): the king of a Royal Chef player has its own unit name. It
+# was missing here, so against those opponents the king was dropped as an unknown unit
+# and the model's tower vector read their king as destroyed (capture of 2026-11-14).
+CROWN_TOWERS = {'KingTower','PrincessTower','Cannoneer','DaggerDuchess','ChefTower','ChefTowerKing'}
+# Observed 203000076 transformation. The simulator lacks a separate bear
+# unit, so preserve it as Berserker with measured position/HP; ability
+# mechanics remain an approximation, rather than silently dropping it.
+UNIT_ALIASES = {"BerserkerHero_BearForm": "BerserkerHero",
+                "TombstoneHeroSkeleton": "Skeleton", "BarrelGoblin": "Goblin",
+                "GoblinCurseGoblin": "Goblin", "IceWizardHero": "IceWizard",
+                "IceWizardHero_IceCube": "IceWizard",
+                "IceWizardHeroFloatingCube": "IceWizard",
+                # 2026-11-23: Hero Electro Wizard (Giant Skeleton bait). Without this the
+                # hero body got unit type -1: the model never saw it and its ability
+                # button was never offered (first live games: 0 presses).
+                "ElectroWizardHero": "ElectroWizard"}
+
+
+def _unit_card(unit_type):
+    """The card whose own (primary) unit this unit type is, else -1."""
+    sys.path.insert(0, str(ROOT / "tools"))
+    from rs_eval import _spawn_tables
+    return _spawn_tables()[1].get(unit_type, -1)
+
+
+def _fallback_unit(name, ut_index):
+    """Unit type for a body whose exact name the simulator lacks, from the
+    last known part of its name: "Witch_EV1_Skeleton_Interval" -> Skeleton.
+
+    Recorded live frames (2026-10-21, 5 sessions): 4.5% of enemy body-frames
+    had names the simulator does not list, every one an Evolved Witch's
+    skeleton. They were dropped, so the model never saw that swarm. -1 when
+    no part of the name is a known unit (spell effects stay out).
+    """
+    if not name or any(k in name.lower() for k in ("projectile", "container", "dummy")):
+        return -1
+    for part in reversed(name.split("_")):
+        for cand in (part, *(part[:-len(suf)] for suf in ("EvoGhost", "Hero", "EV1", "EV2")
+                             if part.endswith(suf) and len(part) > len(suf))):
+            if cand in ut_index:
+                return ut_index[cand]
+    return -1
 
 
 def card_of_form(name, catalogue):
@@ -215,6 +257,9 @@ def card_of_form(name, catalogue):
         prim, by_unit = _spawn_tables()
         for unit, card in by_unit.items():
             _CARD_BY_NAME.setdefault(_unit_names()[unit].lower(), card)
+    if name in UNIT_ALIASES:
+        base = UNIT_ALIASES[name]
+        return _CARD_BY_NAME.get(base.removesuffix('Hero').lower(), -1)
     base = name
     for suf in _FORM_SUFFIXES:
         if base.endswith(suf):
@@ -232,13 +277,18 @@ def rs_state_from_frame(frame, my_side, deck_rs, unit_types, catalogue, sub):
     units = frame["u"]
     def is_tower(u):
         name = u[10] if len(u) > 10 else ""
-        return ("Tower" in name) or (u[9] >= TOWER_MIN_HP and abs(u[4] - 9000) in (0, 5500))
+        return name in CROWN_TOWERS or (not name and
+            u[9] >= TOWER_MIN_HP and abs(u[4] - 9000) in (0, 5500))
     towers = [u for u in units if is_tower(u)]
     # RoyaleSim team 0 owns low y. Our side's king tells which end is ours.
     mine_low = any(u[3] == my_side and u[5] < 16_000 for u in towers)
     teams[my_side] = 0 if mine_low else 1
     teams[1 - my_side] = 1 - teams[my_side]
     entities, tower_hp = [], {0: [0, 0, 0], 1: [0, 0, 0]}
+    has_cues = [False]
+    uncertain = []
+    unknown = []
+    spells_seen = []            # (addr, team, card, x_sub, y_sub): spell objects in play
     tower_max = {0: [1, 1, 1], 1: [1, 1, 1]}
     for u in units:
         addr, cat, kind, side, x, y, card, level, hp, mx = u[:10]
@@ -249,27 +299,118 @@ def rs_state_from_frame(frame, my_side, deck_rs, unit_types, catalogue, sub):
         if is_tower(u):
             slot = 0 if abs(x - 9000) < 2000 else (1 if x < 9000 else 2)
             tower_hp[team][slot], tower_max[team][slot] = max(0, hp), max(1, mx)
+            # Towers are entities in training (RoyaleSim and the engine): the model finds
+            # its own king among them and reads "this unit targets a structure / a live
+            # body" against them. Left out live (until 2026-10-20), every unit attacking a
+            # tower looked target-less and units were sorted from a default king position.
+            if hp > 0:
+                row = [0] * 28
+                row[0], row[1], row[2], row[3], row[4] = addr, team, 2 if slot == 0 else 3, -1, slot
+                row[5], row[6], row[7], row[8] = x * sub, y * sub, hp, mx
+                row[21], row[22] = level, -1
+                row[24], row[25] = -1, -1
+                # Training battles always use the Tower Princess, so the only tower tokens the
+                # model has trained are KingTower / PrincessTower: every tower troop maps to
+                # them (obs_v 7 shows towers as tokens). The troop's different damage and
+                # range are a known gap between training and live, not fixed here.
+                row[27] = ut_index.get("KingTower" if slot == 0 else "PrincessTower", -1)
+                row[15] = u[12] if len(u) > 12 and u[12] else -1
+                entities.append(row)
             continue
-        unit_type = ut_index.get(name, -1)
+        unit_type = ut_index.get(name, ut_index.get(UNIT_ALIASES.get(name, ""), -1))
+        if unit_type < 0:
+            unit_type = _fallback_unit(name, ut_index)
         # Only characters are units. Spells and their effects (the Log's
         # roller, Ice Spirits' freeze) are entities with no character name;
         # RoyaleSim keeps those out of its unit list, so the model never saw
         # them as units, and counting them logged one Log as two plays.
+        if unit_type >= 0 and 'dummy' in name.lower():
+            continue        # e.g. EliteArcherHero_Dummy: a visual, not a body
         if unit_type < 0:
+            entry_s = CARD_MAP.get(str(card))
+            if entry_s is not None and catalogue[entry_s["rs_id"]][8] == "SPELL":
+                spells_seen.append((addr, team, entry_s["rs_id"], x * sub, y * sub))
+                continue
+            if hp>0 and mx>0 and not any(s in name.lower() for s in ('dummy','projectile','container')):
+                unknown.append({'uid':addr,'team':team,'x':x,'y':y,'hp':hp,'max_hp':mx,'name':name,'native_card':card})
             continue
         entry = CARD_MAP.get(str(card))
         rs_card = entry["rs_id"] if entry else card_of_form(name, catalogue)
+        if rs_card < 0 and "_" in name:
+            # A spawned body of an evolved card ("Witch_EV1_Healing_Skeleton"):
+            # the card is the one its name starts with (the Witch).
+            parts = name.split("_")
+            for k in range(len(parts) - 1, 0, -1):
+                head = "_".join(parts[:k])
+                rs_card = card_of_form(head, catalogue)
+                if rs_card < 0:
+                    rs_card = _CARD_BY_NAME.get(head.lower(), -1)
+                if rs_card >= 0:
+                    break
         if rs_card < 0:
-            continue
+            # Last resort: the card whose own unit this body is (a Skeleton ->
+            # Skeletons), from the simulator's spawn table.
+            sys.path.insert(0, str(ROOT / "tools"))
+            from rs_eval import _spawn_tables
+            by_unit = _spawn_tables()[1]
+            rs_card = by_unit.get(unit_type, -1)
+            base = name.split("_")[0]
+            for suf in ("EvoGhost", "Hero", "Trooper"):
+                if rs_card < 0 and base.endswith(suf) and base[:-len(suf)] in ut_index:
+                    rs_card = by_unit.get(ut_index[base[:-len(suf)]], -1)
+            if rs_card < 0 and base in ut_index:
+                rs_card = by_unit.get(ut_index[base], -1)
+            if rs_card < 0:
+                # Catalogue names: GoblinHero -> Goblins, Furnace_EV1 -> FirespiritHut
+                # (the Furnace's RoyaleSim card).
+                names = {row[0].lower(): i for i, row in enumerate(catalogue)}
+                stem = base[:-4] if base.endswith("Hero") else base
+                for cand in (stem, stem + "s", {"Furnace": "FirespiritHut"}.get(stem, "")):
+                    if cand.lower() in names:
+                        rs_card = names[cand.lower()]
+                        break
+        if rs_card < 0 and name == 'GoblinCurseGoblin':
+            rs_card = next((i for i,c in enumerate(catalogue) if c[0]=='Goblins'),-1)
+        # A body the model has a token for but that no card spawns (the Mother Witch's
+        # VoodooHog) used to be dropped here, so the model never saw the pigs live
+        # (owner, 2026-11-15; capture of 2026-11-13). The model reads the unit type,
+        # not the card: the real engine's training states carry card_id -1 for every
+        # unit. Keep the body with card -1; the readers of the card field
+        # (seen-card memory, tactics) already skip negative cards.
         row = [0] * 28
         # kind 1 = building, as RoyaleSim sets it; the unit-type model reads it
         # as the "building" feature (it was always 0 live before 2026-10-10).
-        kind = 1 if rs_card >= 0 and catalogue[rs_card][8] == "BUILDING" else 0
+        # A building is the building card's own body: a Tombstone's Skeletons or a
+        # Furnace's spirits are troops (training marks them 0; live marked them 1 from
+        # the card that made them, until 2026-10-20).
+        own_card = _unit_card(unit_type)
+        kind = 1 if own_card >= 0 and catalogue[own_card][8] == "BUILDING" else 0
+        if name == 'MusketeerTurret':
+            kind = 1
+        elif name.startswith('TombstoneHero_Monster') or name == 'TombstoneHeroSkeleton':
+            kind = 0
         row[0], row[1], row[2], row[3], row[4] = addr, team, kind, rs_card, -1
         row[5], row[6], row[7], row[8] = x * sub, y * sub, hp, mx
         row[10] = bool(catalogue[rs_card][5]) if rs_card >= 0 else False
         row[21], row[27] = level, unit_type
+        # Deploy time left: reader field 12 (ms, entity +0x15c, 2026-10-14);
+        # RoyaleSim's deploy_ticks, which the imitation models were trained on.
+        if len(u) > 11 and u[11] > 0:
+            row[11] = (u[11] + 49) // 50
+        # Current target: reader field 13 (entity address, 2026-10-14), the
+        # same thing as RoyaleSim's target_uid since uids here are addresses.
+        if len(u) > 12 and u[12]:
+            row[15] = u[12]
+        # Cues (reader fields 14-15, 2026-10-21): attack clock ms -> attack_phase,
+        # active buffs "Name:ms,..." -> buffs, as the engine's state gives them.
+        if len(u) > 14:
+            row[16] = u[13]
+            row[19] = [[n, int(m)] for n, _, m in (p.partition(":") for p in (u[14] or "").split(","))
+                       if n and m.lstrip("-").isdigit()]
+            has_cues[0] = True
         entities.append(row)
+        if name in UNIT_ALIASES or 'Hero' in name or name == 'MusketeerTurret':
+            uncertain.append(name)
     me = frame.get("me") or [my_side, 0, [], []]
     hand_idx = me[2] if len(me) > 2 else []
     hand = [deck_rs[i] for i in hand_idx if 0 <= i < len(deck_rs)]
@@ -285,7 +426,9 @@ def rs_state_from_frame(frame, my_side, deck_rs, unit_types, catalogue, sub):
         hand=hand, hand_costs=[catalogue[c][2] for c in hand], deck=list(deck_rs),
         next_card=deck_rs[cyc[0]] if cyc and 0 <= cyc[0] < len(deck_rs) else -1)
     return {"tick": frame["t"], "entities": entities, "players": players,
-            "spells": [], "projectiles": [], "game_over": False}
+            "spells": [], "projectiles": [], "game_over": False,
+            "unmodelled_forms": uncertain + (['unknown living units'] if unknown else []),
+            "unknown_units":unknown, "spells_seen": spells_seen, "cues": has_cues[0]}
 
 
 if __name__ == "__main__":

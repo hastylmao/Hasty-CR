@@ -1,7 +1,0 @@
-{
- "mode": "Anchored 0.1 best (pre-physics)",
- "order": 20,
- "blurb": "Trained before the 2026-08-30 movement-speed correction, so it learned a game where every unit moved 20% slower than the real one. Kept for comparison; see docs/SPEED_SCALE_CORRECTION.md.",
- "measured": "80% vs rule engine (W32 L8), hog 19%, crowns 31-6, in-training eval",
- "step": 2954496
-}

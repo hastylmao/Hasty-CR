@@ -1,0 +1,578 @@
+{
+"Knight": [
+13000000,
+203000000
+],
+"Archer": [
+13000001,
+null
+],
+"Goblins": [
+26000002,
+203000002
+],
+"Giant": [
+13000003,
+203000003
+],
+"Pekka": [
+13000004,
+null
+],
+"Minions": [
+26000005,
+null
+],
+"Balloon": [
+26000006,
+203000006
+],
+"Witch": [
+13000007,
+null
+],
+"Barbarians": [
+13000008,
+null
+],
+"Golem": [
+26000009,
+null
+],
+"Skeletons": [
+13000010,
+null
+],
+"Valkyrie": [
+13000011,
+203000011
+],
+"SkeletonArmy": [
+13000012,
+null
+],
+"Bomber": [
+13000013,
+null
+],
+"Musketeer": [
+13000014,
+203000014
+],
+"BabyDragon": [
+13000015,
+null
+],
+"Prince": [
+26000016,
+null
+],
+"Wizard": [
+13000017,
+203000017
+],
+"MiniPekka": [
+26000018,
+203000018
+],
+"SpearGoblins": [
+26000019,
+null
+],
+"GiantSkeleton": [
+26000020,
+null
+],
+"HogRider": [
+26000021,
+null
+],
+"MinionHorde": [
+13000022,
+null
+],
+"IceWizard": [
+26000023,
+203000023
+],
+"RoyalGiant": [
+13000024,
+null
+],
+"SkeletonWarriors": [
+26000025,
+null
+],
+"Princess": [
+13000026,
+null
+],
+"DarkPrince": [
+26000027,
+203000027
+],
+"ThreeMusketeers": [
+26000028,
+null
+],
+"LavaHound": [
+26000029,
+null
+],
+"IceSpirits": [
+13000030,
+null
+],
+"FireSpirits": [
+26000031,
+null
+],
+"Miner": [
+26000032,
+null
+],
+"ZapMachine": [
+26000033,
+null
+],
+"Bowler": [
+26000034,
+203000034
+],
+"RageBarbarian": [
+13000035,
+null
+],
+"BattleRam": [
+13000036,
+null
+],
+"InfernoDragon": [
+13000037,
+null
+],
+"IceGolemite": [
+26000038,
+203000038
+],
+"MegaMinion": [
+26000039,
+203000039
+],
+"BlowdartGoblin": [
+13000040,
+null
+],
+"GoblinGang": [
+26000041,
+null
+],
+"ElectroWizard": [
+26000042,
+203000042
+],
+"AngryBarbarians": [
+13000043,
+null
+],
+"Hunter": [
+13000044,
+null
+],
+"AxeMan": [
+13000045,
+null
+],
+"Assassin": [
+26000046,
+null
+],
+"RoyalRecruits": [
+13000047,
+null
+],
+"DarkWitch": [
+26000048,
+null
+],
+"Bats": [
+13000049,
+null
+],
+"Ghost": [
+13000050,
+null
+],
+"RamRider": [
+26000051,
+null
+],
+"MiniSparkys": [
+26000052,
+null
+],
+"Rascals": [
+26000053,
+null
+],
+"MovingCannon": [
+26000054,
+null
+],
+"MegaKnight": [
+13000055,
+null
+],
+"SkeletonBalloon": [
+13000056,
+null
+],
+"DartBarrell": [
+26000057,
+null
+],
+"Wallbreakers": [
+13000058,
+null
+],
+"RoyalHogs": [
+13000059,
+null
+],
+"GoblinGiant": [
+13000060,
+null
+],
+"Fisherman": [
+26000061,
+null
+],
+"EliteArcher": [
+26000062,
+203000062
+],
+"ElectroDragon": [
+13000063,
+null
+],
+"Firecracker": [
+13000064,
+null
+],
+"MightyMiner": [
+26000065,
+null
+],
+"ElixirGolem": [
+26000067,
+null
+],
+"BattleHealer": [
+26000068,
+null
+],
+"SkeletonKing": [
+26000069,
+null
+],
+"ArcherQueen": [
+26000072,
+null
+],
+"GoldenKnight": [
+26000074,
+null
+],
+"SuperIceGolemite": [
+26000075,
+null
+],
+"Monk": [
+26000077,
+null
+],
+"SuperArcher": [
+26000078,
+null
+],
+"RoyalRecruits_Chess": [
+26000079,
+null
+],
+"SkeletonDragons": [
+26000080,
+null
+],
+"SuperHogRiderTerry": [
+26000081,
+null
+],
+"WitchMother": [
+26000083,
+null
+],
+"ElectroSpirit": [
+26000084,
+null
+],
+"ElectroGiant": [
+13000075,
+null
+],
+"PrinceBuff": [
+26000086,
+null
+],
+"Phoenix": [
+26000087,
+null
+],
+"TriWizards": [
+26000094,
+null
+],
+"GoblinDemolisher": [
+26000095,
+null
+],
+"GoblinMachine": [
+26000096,
+null
+],
+"SuspiciousBush": [
+26000097,
+null
+],
+"SuperKnight": [
+26000098,
+null
+],
+"SkeletonWarriors_SpookyChess": [
+26000100,
+null
+],
+"GiantBuffer": [
+26000101,
+null
+],
+"Berserker": [
+26000102,
+203000076
+],
+"MergeMaiden_Normal": [
+26000104,
+null
+],
+"MergeMaiden_Mounted": [
+26000105,
+null
+],
+"Ronin": [
+26000106,
+null
+],
+"Cannon": [
+13000096,
+null
+],
+"GoblinHut": [
+27000001,
+null
+],
+"Mortar": [
+13000098,
+null
+],
+"InfernoTower": [
+27000003,
+null
+],
+"BombTower": [
+27000004,
+null
+],
+"BarbarianHut": [
+27000005,
+null
+],
+"Tesla": [
+13000102,
+null
+],
+"Xbow": [
+27000008,
+null
+],
+"Tombstone": [
+27000009,
+203000088
+],
+"FirespiritHut": [
+13000106,
+null
+],
+"BarbarianLauncher": [
+27000011,
+null
+],
+"GoblinCage": [
+13000107,
+null
+],
+"GoblinDrill": [
+13000108,
+null
+],
+"GoblinPartyHut": [
+27000014,
+null
+],
+"Fireball": [
+28000000,
+null
+],
+"Arrows": [
+28000001,
+null
+],
+"Rage": [
+28000002,
+null
+],
+"Rocket": [
+28000003,
+null
+],
+"GoblinBarrel": [
+13000081,
+null
+],
+"Freeze": [
+28000005,
+null
+],
+"Mirror": [
+13000003,
+null
+],
+"Lightning": [
+28000007,
+null
+],
+"Zap": [
+13000085,
+null
+],
+"Poison": [
+28000009,
+null
+],
+"Graveyard": [
+28000010,
+null
+],
+"Log": [
+28000011,
+null
+],
+"Tornado": [
+28000012,
+null
+],
+"Clone": [
+28000013,
+null
+],
+"Earthquake": [
+28000014,
+null
+],
+"BarbLog": [
+28000015,
+203000107
+],
+"Heal": [
+28000016,
+null
+],
+"Snowball": [
+13000094,
+null
+],
+"RoyalDelivery": [
+28000018,
+null
+],
+"WarmSpell": [
+28000021,
+null
+],
+"DarkMagic": [
+28000023,
+null
+],
+"GoblinCurse": [
+28000024,
+null
+],
+"MergeMaiden": [
+28000025,
+null
+],
+"Vines": [
+28000026,
+null
+],
+"MinionGiant": [
+26000107,
+null
+],
+"LittlePrince": [
+26000093,
+null
+],
+"Goblinstein": [
+26000099,
+null
+],
+"BossBandit": [
+26000103,
+null
+],
+"SuperWitch": [
+26000066,
+null
+],
+"SuperLavaHound": [
+26000070,
+null
+],
+"SuperEliteArcher": [
+26000071,
+null
+],
+"SuperMiniPekka": [
+26000082,
+null
+],
+"GoblinRocketSilo": [
+27000017,
+null
+],
+"GlobalClone": [
+28000019,
+null
+],
+"GoblinPartyRocket": [
+28000020,
+null
+],
+"SuperHogRider": [
+26000073,
+null
+],
+"GlobalLightning": [
+28000022,
+null
+]
+}

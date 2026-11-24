@@ -44,6 +44,10 @@ HORIZON, WAIT_EVERY, CHUNK = 200, 20, 10
 HOG26 = frozenset({"Cannon", "Fireball", "HogRider", "IceGolemite", "IceSpirits",
                    "Musketeer", "Skeletons", "Log"})
 MODES = {"Ranked", "Ladder", "1v1 Battle", "Grand Challenge", "Classic Challenge"}
+# The deck a run focuses on: rows from a player holding all of these cards
+# are flagged `hog` (the name train_tokens --finetune-hog reads). Hog 2.6 by
+# default; --focus "Golem" flags every Golem deck.
+FOCUS = HOG26
 F = None   # field indexes, filled on first use
 # --live-compat: unit tokens carry only what the live memory reader provides.
 # The reader reports the card that put a unit down (a Witch's skeleton reads as
@@ -68,6 +72,15 @@ def _setup():
     import royaleimitate
     names = json.loads((Path(royaleimitate.__file__).with_name("replay_cards.json"))
                        .read_text(encoding="utf-8"))
+    # Replay keys the packaged map lacks (2026-11-16). Without them every game holding
+    # one was dropped whole: 17.3% of data/uc/gen2.jsonl, 546 of the 6,767 exact-deck
+    # games. Names checked against the engine catalogue by cost and by RoyaleAPI card id
+    # order (28000023 DarkMagic, 28000025 MergeMaiden); each runs alone in the engine
+    # (runs/league/battery/four.jsonl). The engine's Void cost of 5 is UNVERIFIED
+    # against the live game.
+    for key, name in (("minion-giant", "MinionGiant"), ("void", "DarkMagic"),
+                      ("spirit-empress", "MergeMaiden"), ("rune-giant", "GiantBuffer")):
+        names.setdefault(key, name)
     b = royalesim.Battle(card_names=None, slot_of_k=[[0, 1, 2], [0, 1, 2]])
     cat = json.loads(b.catalogue_json())
     ids = {row[0]: i for i, row in enumerate(cat)}
@@ -106,6 +119,15 @@ def obs_row(state, team, sub, mem, tick, live=None):
     kx, ky = ((king[F["x"]], king[F["y"]]) if king is not None
               else (9000 * 18, (3000 if team == 0 else 29000) * 18))
     ents.sort(key=lambda e: (e[F["x"]] - kx) ** 2 + (e[F["y"]] - ky) ** 2)
+    if len(ents) > MAX_UNITS:
+        # Keep approaching enemies represented even when our own swarm is
+        # closer to our king. Preserve room for defenders as well.
+        enemy = [e for e in ents if e[F['team']] != team][:24]
+        friendly = [e for e in ents if e[F['team']] == team][:12]
+        reserved = {e[F['uid']] for e in enemy+friendly}
+        kept = enemy+friendly+[e for e in ents if e[F['uid']] not in reserved][:MAX_UNITS-len(reserved)]
+        kept_ids = {e[F['uid']] for e in kept}
+        ents = [e for e in ents if e[F['uid']] in kept_ids]
     ids = np.zeros(MAX_UNITS, dtype=np.int16)
     feats = np.zeros((MAX_UNITS, UF), dtype=np.float16)
     for k, e in enumerate(ents[:MAX_UNITS]):
@@ -169,6 +191,18 @@ def rows_for(payload: dict, ctx):
     events = sorted((e for e in payload["events"] if e["kind"] == "play_card"),
                     key=lambda e: (e["replay_tick_20hz"], e["source_index"]))
     plays = {0: [], 1: []}
+    # Hero / champion presses. The recording names the ability's card (its
+    # index field is not the button), so the press maps to whichever of the
+    # player's sim buttons belongs to that card. Before 2026-10-15 these were
+    # dropped: re-driven boards never saw an ability, and no model pressed one.
+    presses = {0: [], 1: []}
+    for e in payload["events"]:
+        if e["kind"] != "activate_ability":
+            continue
+        cands = {names.get(base_key(c)[0]) for c in e.get("ability_source_candidates") or []}
+        cands = {ids[c] for c in cands if c in ids}
+        if cands:
+            presses[0 if e["side"] == "team" else 1].append((int(e["replay_tick_20hz"]), cands))
     for e in events:
         seat = 0 if e["side"] == "team" else 1
         name = names.get(base_key(e["card_key"])[0])
@@ -197,6 +231,9 @@ def rows_for(payload: dict, ctx):
     won_team = 1.0 if result in ("victory", "win") else 0.0 if result in ("defeat", "loss") else 0.5
     won = {rs[0]: won_team, rs[1]: 1.0 - won_team}
     queue = sorted([(t, rs[s], c, x, y) for s in (0, 1) for (t, c, x, y) in plays[s]])
+    btn_queue = sorted((t, rs[s], tuple(c)) for s in (0, 1) for (t, c) in presses[s])
+    j = 0
+    n_press = n_pressed = 0
     play_ticks = {0: [q[0] for q in queue if q[1] == 0], 1: [q[0] for q in queue if q[1] == 1]}
     mem = {"seen": {0: set(), 1: set()}, "last": {0: [], 1: []}}
     rows, track = [], []
@@ -241,7 +278,18 @@ def rows_for(payload: dict, ctx):
                     row = obs_row(state, team, sub, mem, tick)
                     row["action"] = (0, 0, 0)
                     rows.append(row)
+        while j < len(btn_queue) and btn_queue[j][0] <= tick:
+            _, team, cands = btn_queue[j]
+            j += 1
+            n_press += 1
+            for k, ab in enumerate(state["players"][team].get("abilities") or []):
+                if ab[3] in cands and ab[0] and not ab[1]:
+                    cmds.append((team, 4 + k, 0, 0))
+                    n_pressed += 1
+                    break
         nxt = queue[i][0] if i < len(queue) else end + 1
+        if j < len(btn_queue):
+            nxt = min(nxt, btn_queue[j][0])
         step = max(1, min(nxt, (tick // WAIT_EVERY + 1) * WAIT_EVERY) - tick)
         res = b.step(cmds, step)
         for r in res:
@@ -261,7 +309,9 @@ def rows_for(payload: dict, ctx):
         row["outcome"] = float((opp_lost[a] - opp_lost[z]) - (own_lost[a] - own_lost[z]))
         row["trusted"] = row["tick"] + HORIZON <= cut
         row["won"] = won[team]
-        row["hog"] = frozenset(decks[seat_of[team]]) == HOG26
+        row["hog"] = FOCUS <= frozenset(decks[seat_of[team]])
+    if rows:
+        rows[0]["_presses"] = (n_press, n_pressed)
     return rows, "ok"
 
 
@@ -270,13 +320,15 @@ FIELDS = ("tick", "side", "hand_exact", "unit_ids", "unit_feats", "towers", "sca
           "won", "hog")
 
 
-def build(batch_id, payload_texts, live=False, out_dir=None):
-    global LIVE, OUT
+def build(batch_id, payload_texts, live=False, out_dir=None, focus=None):
+    global LIVE, OUT, FOCUS
     LIVE = live
+    if focus:
+        FOCUS = frozenset(focus)
     if out_dir:
         OUT = Path(out_dir)
     ctx = _setup()
-    rows, tags, skipped = [], [], {}
+    rows, tags, skipped = [], [], {"presses": 0, "pressed": 0}
     for text in payload_texts:
         p = json.loads(text)
         tag = p["source"]["replay_tag"]
@@ -287,6 +339,9 @@ def build(batch_id, payload_texts, live=False, out_dir=None):
         if r is None:
             skipped[why] = skipped.get(why, 0) + 1
             continue
+        a, b = r[0].pop("_presses") if r else (0, 0)
+        skipped["presses"] += a
+        skipped["pressed"] += b
         rows += r
         tags += [tag] * len(r)
     if rows:
@@ -309,8 +364,12 @@ def main() -> int:
     ap.add_argument("--live-compat", action="store_true",
                     help="unit tokens limited to what the live reader provides")
     ap.add_argument("--out", type=Path, default=None)
+    ap.add_argument("--focus", default="",
+                    help="comma-separated cards a focus deck must hold (default: exact Hog 2.6)")
     args = ap.parse_args()
-    global OUT, LIVE
+    global OUT, LIVE, FOCUS
+    if args.focus:
+        FOCUS = frozenset(args.focus.split(","))
     LIVE = args.live_compat
     if args.out:
         OUT = args.out
@@ -338,12 +397,12 @@ def main() -> int:
                 continue
             p.setdefault("source", {})["replay_tag"] = r["replay_tag"]
             text = json.dumps(p)
-            if HOG26 in sides:
+            if any(FOCUS <= sd for sd in sides) if args.focus else HOG26 in sides:
                 hog.append(text)
             elif len(others) < args.others:
                 others.append(text)
     picked = hog + others
-    print(f"selected {len(hog):,} Hog 2.6 + {len(others):,} others ({time.time() - t0:.0f}s)", flush=True)
+    print(f"selected {len(hog):,} focus ({','.join(sorted(FOCUS))}) + {len(others):,} others ({time.time() - t0:.0f}s)", flush=True)
     OUT.mkdir(parents=True, exist_ok=True)
     unit_types = json.loads(royalesim.Battle(card_names=None, slot_of_k=[[0, 1, 2], [0, 1, 2]])
                             .unit_types_json())
@@ -357,7 +416,7 @@ def main() -> int:
     batches = [picked[i:i + args.batch] for i in range(0, len(picked), args.batch)]
     total, skipped = 0, {}
     with ProcessPoolExecutor(args.workers) as pool:
-        futs = [pool.submit(build, k, b, LIVE, str(OUT)) for k, b in enumerate(batches)]
+        futs = [pool.submit(build, k, b, LIVE, str(OUT), sorted(FOCUS)) for k, b in enumerate(batches)]
         for n, f in enumerate(as_completed(futs), 1):
             bid, rows, sk = f.result()
             total += rows
